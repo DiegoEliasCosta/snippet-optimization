@@ -6,24 +6,53 @@ import xml.etree.ElementTree as etree
 
 
 # Report Variables
-qInspected = 0
-qFound = 0
-aFound = 0
-startTime = time.time()
-nErrors = 0
-progressStep = 100000
 
-# progress = 100000
+class Report:
+    """
+    Class to report the progress of the filter operation
+    """
 
-# Question - Answer Map
+    def __init__(self):
+        self.qInspected = 0
+        self.qFound = 0
+        self.aFound = 0
+        self.startTime = time.time()
+        self.nErrors = 0
+        self.progressStep = 100000  # default
+        self.errorList = []
+
+    def questionInspected(self):
+        self.qInspected += 1
+
+    def questionFound(self):
+        self.qFound += 1
+
+    def answerFound(self):
+        self.aFound += 1
+
+    def errorFound(self, msg):
+        self.nErrors += 1
+        self.errorList.append(msg)
+
+    def reportProgress(self):
+        if self.qInspected % self.progressStep == 0:
+            elapsed = time.time() - self.startTime
+            print("# inspected = %d | # of questions %d | # of answers %d | Time elapsed %s" %
+                  (self.qInspected, self.qFound, self.aFound, timedelta(seconds=elapsed)), flush=True)
+
+
+# Global
 questionsIdsSet = set()
+report = Report()
 
 
 def isQuestion(elem):
-    return elem.get("PostTypeId") == '1'  # Only Questions have titles
+    return elem.get("PostTypeId") == '1'
 
 
 def filter_post(file, output, title, tag):
+    global report
+
     with open(output, "a") as outputFile:
 
         # Header
@@ -39,50 +68,44 @@ def filter_post(file, output, title, tag):
                 inspectQuestion(elem, outputFile, tag, title)
             else:
                 inspectAnswer(elem, outputFile)
+            # Clean the memory
+            elem.clear()
             root.clear()
+            # Report progress
+            report.reportProgress()
 
         outputFile.write("\n</posts>")
 
 
 def writeToOutput(elem, outputFile):
-    global nErrors
+    global report
     try:
         outputFile.write(etree.tostring(elem, encoding="unicode"))
 
     except UnicodeEncodeError:
-        #print("Error on processing element ")
-        nErrors += 1
+        # print("Error on processing element ")
+        id = elem.get("Id")
+        report.errorFound('Unicode Error while processing the elem with Id = %s' %
+                          id)
         # ignore for now
         pass
 
 
 def inspectAnswer(elem, outputFile):
-
-    global aFound
-    global questionsIdsSet
+    global report
 
     questionId = elem.get("ParentId")
 
     # Add answers to the already inspected question
     if questionId in questionsIdsSet:
+        report.answerFound()
         writeToOutput(elem, outputFile)
-        aFound += 1
 
 
 def inspectQuestion(elem, outputFile, tag, title):
-    global qInspected
-    global qFound
-    global questionsIdsSet
-    global progress
-    global startTime
-    global progressStep
+    global report
 
-    qInspected += 1
-    # Report progress
-    if qInspected % progressStep == 0:
-        elapsed = time.time() - startTime
-        print("# inspected = %d | # of questions %d | # of answers %d | Time elapsed %s" % (qInspected, qFound, aFound,
-                                                                                            timedelta(seconds=elapsed)))
+    report.questionInspected()
 
     found = False
     if title and title in str(elem.get("Title")).lower():
@@ -95,8 +118,8 @@ def inspectQuestion(elem, outputFile, tag, title):
         # Adds the question id to filter the answers
         id = elem.get('Id')
         questionsIdsSet.add(id)
+        report.questionFound()
         writeToOutput(elem, outputFile)
-        qFound += 1
 
 
 def existingFile(file):
@@ -143,7 +166,7 @@ if __name__ == '__main__':
         print('\tQuestion contains Tag: %s' % args.tag)
 
     if args.progress_step:
-        progressStep = int(args.progress_step)
+        report.progressStep = int(args.progress_step)
 
     if args.in_memory:
         raise NotImplementedError('Functionality not yet implemented')
@@ -151,7 +174,8 @@ if __name__ == '__main__':
     filter_post(args.file, args.output, title, tag)
 
     print('Process Finished')
-    print('\t # of Questions Inspected = %d' % qInspected)
-    print('\t # of Questions Found = %d' % qFound)
-    print('\t # of Answers Found = %d' % aFound)
-    print('\t # of Errors = %d' % nErrors)
+    print('\t # of Questions Inspected = %d' % report.qInspected)
+    print('\t # of Questions Found = %d' % report.qFound)
+    print('\t # of Answers Found = %d' % report.aFound)
+    print('\t # of Errors = %d' % report.nErrors)
+    print('\n'.join(report.errorList))
