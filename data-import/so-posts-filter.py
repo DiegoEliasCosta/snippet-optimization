@@ -4,7 +4,6 @@ import time
 from datetime import timedelta
 import xml.etree.ElementTree as etree
 
-
 # Report Variables
 
 class Report:
