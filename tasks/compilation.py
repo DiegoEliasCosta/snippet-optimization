@@ -47,3 +47,28 @@ class ExtractCode(JupyterNotebookTask):
         return luigi.LocalTarget(os.path.join(
             data_path, 'pandas-code-dataset.csv')
         )
+
+
+class PreProcessCode(JupyterNotebookTask):
+    notebook_path = os.path.join(notebooks_path, 'code-preprocess.ipynb')
+    kernel_name = 'python3'
+    timeout = 60
+    
+    input_col = luigi.Parameter(default='Code')
+    output_col = luigi.Parameter(default='PreprocessedCode')
+
+    def requires(self):
+        return ExtractCode()
+        
+    def output(self):
+        return luigi.LocalTarget(os.path.join(
+            data_path, 'pandas-preprocessedcode-dataset.csv')
+        )
+        
+class NormalizeCode(JupyterNotebookTask):
+    notebook_path = os.path.join(notebooks_path, 'code-preprocess.ipynb')
+    kernel_name = 'python3'
+    timeout = 60
+
+
+
