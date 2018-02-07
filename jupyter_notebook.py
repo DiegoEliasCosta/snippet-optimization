@@ -84,7 +84,7 @@ logger = logging.getLogger('luigi-interface')
 
 try:
     import nbformat
-    from nbconvert.preprocessors import (
+    from nbconvert.preprocessors.execute import (
         CellExecutionError,
         ExecutePreprocessor
     )

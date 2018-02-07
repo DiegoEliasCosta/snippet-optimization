@@ -1,3 +1,0 @@
-,Unnamed: 0,AcceptedAnswerId,AnswerCount,Body,ClosedDate,CommentCount,CommunityOwnedDate,CreationDate,FavoriteCount,Id,LastActivityDate,LastEditDate,LastEditorDisplayName,LastEditorUserId,OwnerDisplayName,OwnerUserId,ParentId,PostTypeId,Score,Tags,Title,ViewCount
-28,28,,,"<p>The <code>append</code> function has an optional argument <code>ignore_index</code> which you should use here to join the records together, since the index isn't meaningful for your application.</p>
-",,2,,2011-10-15T16:58:28.077,,7779260,2011-10-15T16:58:28.077,,,,,776560.0,7776679.0,2,38,,,
