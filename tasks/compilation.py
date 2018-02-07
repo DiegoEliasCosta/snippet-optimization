@@ -122,3 +122,56 @@ class NormalizeCode_Dataframe(JupyterNotebookTask):
         return luigi.LocalTarget(os.path.join(
             data_path, 'pandas-normalized-dataframe-dataset.csv')
         )
+        
+        
+        
+"""
+
+    ---------- PARSER METHODS -----------
+
+"""
+class ParseCode(JupyterNotebookTask):
+    notebook_path = os.path.join(notebooks_path, 'code-parser.ipynb')
+    kernel_name = 'python3'
+    timeout = 60
+    
+    input_col = luigi.Parameter(default='DataframeCode')
+    output_col = luigi.Parameter(default='DataframeParsed')
+
+    def requires(self):
+        return NormalizeCode_NumpyImport()
+    
+    
+    def output(self):
+        return luigi.LocalTarget(os.path.join(
+            data_path, 'pandas-parsedcode-dataset.csv')
+        ) 
+        
+"""
+
+    ---------- COMPILATION METHODS -----------
+
+"""
+class CompileCode(JupyterNotebookTask):
+    notebook_path = os.path.join(notebooks_path, 'code-compiler.ipynb')
+    kernel_name = 'python3'
+    timeout = 60
+    
+    input_col = luigi.Parameter(default='DataframeCode')
+    output_col = luigi.Parameter(default='DataframeCompiled')
+
+    def requires(self):
+        return NormalizeCode_NumpyImport()
+    
+    
+    def output(self):
+        return luigi.LocalTarget(os.path.join(
+            data_path, 'pandas-compiledcode-dataset.csv')
+        )
+
+
+
+
+
+
+
