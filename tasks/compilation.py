@@ -64,11 +64,29 @@ class PreProcessCode(JupyterNotebookTask):
         return luigi.LocalTarget(os.path.join(
             data_path, 'pandas-preprocessedcode-dataset.csv')
         )
-        
-class NormalizeCode(JupyterNotebookTask):
-    notebook_path = os.path.join(notebooks_path, 'code-preprocess.ipynb')
+
+      
+"""
+
+    ---------- NORMALIZATION METHODS -----------
+
+"""
+      
+      
+class NormalizeCode_PandasImport(JupyterNotebookTask):
+    notebook_path = os.path.join(notebooks_path, 'code-normalizer-pandasimport.ipynb')
     kernel_name = 'python3'
     timeout = 60
 
+    input_col = luigi.Parameter(default='PreprocessedCode')
+    output_col = luigi.Parameter(default='PandasImportCode')
 
+    def requires(self):
+        return PreProcessCode()
+        
+    def output(self):
+        return luigi.LocalTarget(os.path.join(
+            data_path, 'pandas-normalized-pandasimport-dataset.csv')
+        )
+        
 
