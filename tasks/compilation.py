@@ -139,7 +139,7 @@ class ParseCode(JupyterNotebookTask):
     output_col = luigi.Parameter(default='DataframeParsed')
 
     def requires(self):
-        return NormalizeCode_NumpyImport()
+        return NormalizeCode_Dataframe()
     
     
     def output(self):
