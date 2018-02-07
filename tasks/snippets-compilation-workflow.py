@@ -19,8 +19,6 @@ class FilterPosts(JupyterNotebookTask):
     kernel_name = 'python3'
     timeout = 60
 
-    input_file = luigi.Parameter(default=os.path.join(data_path, 'pandas-posts-dataset.csv'))
-
     questions_score = luigi.Parameter(default=10)
     answers_score = luigi.Parameter(default=5)
 
@@ -34,6 +32,19 @@ class FilterPosts(JupyterNotebookTask):
             data_path, 'pandas-filteredposts-dataset.csv')
         )
 
+
+class ExtractCode(JupyterNotebookTask):
+    notebook_path = os.path.join(notebooks_path, 'posts-filter.ipynb')
+    kernel_name = 'python3'
+    timeout = 60
+
+    def requires(self):
+        return FilterPosts()
+
+    def output(self):
+        return luigi.LocalTarget(os.path.join(
+            data_path, 'pandas-code-dataset.csv')
+        )
 
 
 
