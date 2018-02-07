@@ -90,3 +90,35 @@ class NormalizeCode_PandasImport(JupyterNotebookTask):
         )
         
 
+class NormalizeCode_NumpyImport(JupyterNotebookTask):
+    notebook_path = os.path.join(notebooks_path, 'code-normalizer-numpyimport.ipynb')
+    kernel_name = 'python3'
+    timeout = 60
+
+    input_col = luigi.Parameter(default='PandasImportCode')
+    output_col = luigi.Parameter(default='NumpyImportCode')
+
+    def requires(self):
+        return NormalizeCode_PandasImport()
+        
+    def output(self):
+        return luigi.LocalTarget(os.path.join(
+            data_path, 'pandas-normalized-numpyimport-dataset.csv')
+        )
+        
+        
+class NormalizeCode_Dataframe(JupyterNotebookTask):
+    notebook_path = os.path.join(notebooks_path, 'code-normalizer-dataframe.ipynb')
+    kernel_name = 'python3'
+    timeout = 60
+
+    input_col = luigi.Parameter(default='NumpyImportCode')
+    output_col = luigi.Parameter(default='DataframeCode')
+
+    def requires(self):
+        return NormalizeCode_NumpyImport()
+        
+    def output(self):
+        return luigi.LocalTarget(os.path.join(
+            data_path, 'pandas-normalized-dataframe-dataset.csv')
+        )
