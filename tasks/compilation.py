@@ -1,4 +1,3 @@
-
 import luigi
 import os
 import sys
@@ -14,6 +13,7 @@ from jupyter_notebook import JupyterNotebookTask
 notebooks_path = os.path.join('..', 'data-exploration')
 data_path = os.path.join('..', 'data')
 
+
 class FilterPosts(JupyterNotebookTask):
     notebook_path = os.path.join(notebooks_path, 'posts-filter.ipynb')
     kernel_name = 'python3'
@@ -21,11 +21,12 @@ class FilterPosts(JupyterNotebookTask):
 
     questions_score = luigi.Parameter(default=10)
     answers_score = luigi.Parameter(default=5)
+    input_file = luigi.Parameter(default=os.path.join(data_path, 'pandas-posts-dataset.csv'))
 
-    def input(self):
-        luigi.LocalTarget(os.path.join(
-            data_path, 'pandas-posts-dataset.csv')
-        )
+    #def input(self):
+    #    luigi.LocalTarget(os.path.join(
+    #        data_path, 'pandas-posts-dataset.csv')
+    #    )
 
     def output(self):
         return luigi.LocalTarget(os.path.join(
@@ -33,8 +34,9 @@ class FilterPosts(JupyterNotebookTask):
         )
 
 
+
 class ExtractCode(JupyterNotebookTask):
-    notebook_path = os.path.join(notebooks_path, 'posts-filter.ipynb')
+    notebook_path = os.path.join(notebooks_path, 'codeblock-extractor.ipynb')
     kernel_name = 'python3'
     timeout = 60
 
@@ -45,6 +47,3 @@ class ExtractCode(JupyterNotebookTask):
         return luigi.LocalTarget(os.path.join(
             data_path, 'pandas-code-dataset.csv')
         )
-
-
-
