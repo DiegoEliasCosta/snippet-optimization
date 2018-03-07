@@ -23,7 +23,7 @@ Jupyter Notebook
 First of all, we need to launch the Luigi daemon with:
 
 ```
-luigid
+	luigid
 ```
 
 This daemon will be responsible for scheduling and executing the tasks.
