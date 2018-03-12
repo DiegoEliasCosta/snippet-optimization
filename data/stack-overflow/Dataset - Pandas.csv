@@ -1,0 +1,166 @@
+QuestionId,QuestionText,ObjectiveQuestion,AnswerId,SolutionId,Solution,Remark
+20109391,How to make good reproducible pandas examples,N,0,0,NA,
+20625582,How to deal with SettingWithCopyWarning in Pandas?,N,0,0,NA,
+47152691,How to pivot a dataframe,N,0,0,NA,
+17071871,Select rows from a DataFrame based on values in a column in pandas,Y,17071908,1,df.loc[df['column_name'] == some_value],
+17071871,Select rows from a DataFrame based on values in a column in pandas,Y,17071908,2,df.loc[df['column_name'].isin(some_values)],
+17071871,Select rows from a DataFrame based on values in a column in pandas,Y,17071908,3,df.loc[(df['column_name'] == some_value) & df['other_column'].isin(some_values)],
+17071871,Select rows from a DataFrame based on values in a column in pandas,Y,17071908,4,df.loc[df['column_name'] != some_value],
+17071871,Select rows from a DataFrame based on values in a column in pandas,Y,17071908,5,df.loc[~df['column_name'].isin(some_values)],
+17071871,Select rows from a DataFrame based on values in a column in pandas,Y,17071908,6,df.loc[df['A'] == 'foo'],
+17071871,Select rows from a DataFrame based on values in a column in pandas,Y,17071908,7,"df.loc[df['B'].isin(['one','three'])]",
+17071871,Select rows from a DataFrame based on values in a column in pandas,Y,17071908,8,"df = df.set_index(['B'])
+df.loc['one']",mutliline
+17071871,Select rows from a DataFrame based on values in a column in pandas,Y,17071908,9,"df.loc[df.index.isin(['one','two'])]",
+14262433,“Large data” work flows using pandas,N,0,0,NA,
+12065885,Filter dataframe rows if value in column is in a set list of values,Y,12065904,2,rpt[rpt['STK_ID'].isin(stk_list)],Solution but not in <pre><code>
+19960077,How to implement 'in' and 'not in' for Pandas dataframe,Y,19960116,1,pd.isin(),Solution but not in <pre><code>
+19960077,How to implement 'in' and 'not in' for Pandas dataframe,Y,19960116,2,something.isin(somewhere),Solution but not in <pre><code>
+19960077,How to implement 'in' and 'not in' for Pandas dataframe,Y,19960116,3,~something.isin(somewhere),Solution but not in <pre><code>
+19960077,How to implement 'in' and 'not in' for Pandas dataframe,Y,19960116,4,df.countries.isin(countries),
+19960077,How to implement 'in' and 'not in' for Pandas dataframe,Y,19960116,5,df[df.countries.isin(countries)],
+19960077,How to implement 'in' and 'not in' for Pandas dataframe,Y,19960116,6,df[~df.countries.isin(countries)],
+36921951,"Truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all()",N,0,0,NA,
+11346283,Renaming columns in pandas,Y,11346337,1,"df.columns = ['a', 'b']",
+11346283,Renaming columns in pandas,Y,11354850,2,"df = df.rename(columns={'oldName1': 'newName1', 'oldName2': 'newName2'})",
+11346283,Renaming columns in pandas,Y,11354850,3,"df.rename(columns={'oldName1': 'newName1', 'oldName2': 'newName2'}, inplace=True)",
+20219254,How to write to an existing excel file without overwriting data (using pandas)?,Y,20221655,1,"book = load_workbook('Masterfile.xlsx')
+writer = pandas.ExcelWriter('Masterfile.xlsx', engine='openpyxl') 
+writer.book = book
+writer.sheets = dict((ws.title, ws) for ws in book.worksheets)
+
+data_filtered.to_excel(writer, ""Main"", cols=['Diff1', 'Diff2'])
+
+writer.save()",mutliline
+12680754,Split (explode) pandas dataframe string entry to separate rows,Y,12681217,1,"pd.concat([Series(row['var2'], row['var1'].split(','))",
+33346591,What is the difference between size and count in pandas?,N,0,0,NA,
+41386443,Create Pandas DataFrame from txt file with specific pattern,Y,41386927,1,"df = pd.read_csv('filename.txt', sep="";"", names=['Region Name'])",
+41386443,Create Pandas DataFrame from txt file with specific pattern,Y,41386927,2,"df.insert(0, 'State', df['Region Name'].str.extract('(.*)\[edit\]', expand=False).ffill())
+df['Region Name'] = df['Region Name'].str.replace(r' \(.+$', '')",mutliline
+41386443,Create Pandas DataFrame from txt file with specific pattern,Y,41386927,3,df = df[~df['Region Name'].str.contains('\[edit\]')].reset_index(drop=True),
+41386443,Create Pandas DataFrame from txt file with specific pattern,Y,41386927,4,"df = pd.read_csv('filename.txt', sep="";"", names=['Region Name'])
+df.insert(0, 'State', df['Region Name'].str.extract('(.*)\[edit\]', expand=False).ffill())
+df = df[~df['Region Name'].str.contains('\[edit\]')].reset_index(drop=True)",mutliline
+10715965,add one row in a pandas.DataFrame,Y,24888331,1,"df.loc[i] = [randint(-1,1) for n in range(3)]",
+25962114,How to read a 6 GB csv file with pandas,Y,25962187,1,"for chunk in pd.read_csv(filename, chunksize=chunksize):
+    process(chunk)",mutliline
+24870953,Does iterrows have performance issues?,N,0,0,NA,
+13269890,cartesian product in pandas,Y,13270110,1,"merge(df1, df2,on='key')[['col1', 'col2', 'col3']]",
+31593201,"pandas iloc vs ix vs loc explanation, how are they different?",N,0,0,NA,
+15891038,Change data type of columns in Pandas,Y,28648923,1,pd.to_numeric(s),
+15891038,Change data type of columns in Pandas,Y,28648923,2,"pd.to_numeric(s, errors='coerce')",
+15891038,Change data type of columns in Pandas,Y,28648923,3,"pd.to_numeric(s, errors='ignore')",
+15891038,Change data type of columns in Pandas,Y,28648923,4,"df[['col2','col3']] = df[['col2','col3']].apply(pd.to_numeric)",
+15891038,Change data type of columns in Pandas,Y,28648923,5,"df.apply(pd.to_numeric, errors='ignore')",
+15891038,Change data type of columns in Pandas,Y,28648923,6,df = df.infer_objects(),
+19798153,"Difference between map, applymap and apply methods in Pandas",N,0,0,NA,
+16476924,How to iterate over rows in a DataFrame in Pandas?,Y,16476974,1,"for index, row in df.iterrows():
+    print row['c1'], row['c2']",
+7837722,What is the most efficient way to loop through dataframes with pandas?,Y,11617194,1,"for index, row in df.iterrows():",
+7837722,What is the most efficient way to loop through dataframes with pandas?,Y,11617194,2,itertuples(),Solution but not in <pre><code>
+18172851,Deleting DataFrame row in Pandas based on column value,Y,18173074,1,df = df[df.line_race != 0],
+13842088,Set value for particular cell in pandas DataFrame using index,Y,13842286,1,"df.set_value('C', 'x', 10)",Solution but not in <pre><code>
+13842088,Set value for particular cell in pandas DataFrame using index,Y,13842286,2,df.xs('C')['x']=10,
+13842088,Set value for particular cell in pandas DataFrame using index,Y,13842286,3,df['x']['C'] = 10,
+13842088,Set value for particular cell in pandas DataFrame using index,Y,13842286,4,"df.at['C', 'x'] = 10",
+13842088,Set value for particular cell in pandas DataFrame using index,Y,13842286,5,"df.set_value('C', 'x', 10)",
+13842088,Set value for particular cell in pandas DataFrame using index,Y,13842286,6,df['x']['C'] = 10,
+13842088,Set value for particular cell in pandas DataFrame using index,Y,13842286,7,"df.at['C', 'x'] = 10",
+17729853,Replace value for a selected cell in pandas DataFrame without using index,Y,17729985,1,d.sales[d.sales==24] = 100,
+17729853,Replace value for a selected cell in pandas DataFrame without using index,Y,17729985,2,"d.loc[d.sales == 12, 'sales'] = 99",
+17729853,Replace value for a selected cell in pandas DataFrame without using index,Y,17729985,3,"d.sales = d.sales.replace(23, 24)",
+14745022,How to split a column into two columns?,Y,14745484,1,"df = pd.DataFrame(df.row.str.split(' ',1).tolist(),
+                                   columns = ['flips','row'])",
+14745022,How to split a column into two columns?,Y,39358924,2,"df['A'], df['B'] = df['AB'].str.split(' ', 1).str",
+14745022,How to split a column into two columns?,Y,39358924,3,"df['AB'].str.split(' ', 1, expand=True)",
+14745022,How to split a column into two columns?,Y,39358924,4,df['AB_split'] = df['AB'].str.split('-'),
+14745022,How to split a column into two columns?,Y,39358924,5,"df['AB'].str.split('-', 1).str[0]",
+14745022,How to split a column into two columns?,Y,39358924,6,"df['AB'].str.split('-', 1).str[1]",
+14745022,How to split a column into two columns?,Y,39358924,7,"df['A'], df['B'] = df['AB'].str.split('-', 1).str",
+14745022,How to split a column into two columns?,Y,39358924,8,"df['AB'].str.split('-', 1, expand=True)",
+14745022,How to split a column into two columns?,Y,39358924,9,"df.join(df['AB'].str.split('-', 1, expand=True).rename(columns={0:'A', 1:'B'}))",
+28901683,pandas get rows which are NOT in other dataframe,Y,28902170,1,"common = df1.merge(df2,on=['col1','col2'])
+df1[(~df1.col1.isin(common.col1))&(~df1.col2.isin(common.col2))]",
+28901683,pandas get rows which are NOT in other dataframe,Y,28902170,2,df1[~df1.isin(df2)].dropna(),
+28901683,pandas get rows which are NOT in other dataframe,Y,28902170,3,df1[~df1.isin(df2)].dropna(),
+13035764,Remove rows with duplicate indices (Pandas DataFrame and TimeSeries),Y,14900065,1,"df4 = df3.drop_duplicates(subset='rownum', keep='last')",
+13035764,Remove rows with duplicate indices (Pandas DataFrame and TimeSeries),Y,14900065,2,"df3 = df3.reset_index().drop_duplicates(subset='index', keep='last').set_index('index')",
+13035764,Remove rows with duplicate indices (Pandas DataFrame and TimeSeries),Y,34297689,1,df3 = df3[~df3.index.duplicated(keep='first')],
+13035764,Remove rows with duplicate indices (Pandas DataFrame and TimeSeries),Y,34297689,2,"df3.reset_index().drop_duplicates(subset='index', keep='first').set_index('index')",
+13035764,Remove rows with duplicate indices (Pandas DataFrame and TimeSeries),Y,34297689,3,df3.groupby(df3.index).first(),
+13035764,Remove rows with duplicate indices (Pandas DataFrame and TimeSeries),Y,34297689,4,df3[~df3.index.duplicated(keep='first')],
+15705630,Python : Getting the Row which has the max value in groups using groupby,Y,15705958,1,"df.groupby(['Mt'], sort=False)['count'].max()",
+15705630,Python : Getting the Row which has the max value in groups using groupby,Y,15705958,2,idx = df.groupby(['Mt'])['count'].transform(max) == df['count'],
+15705630,Python : Getting the Row which has the max value in groups using groupby,Y,15705958,3,df['count_max'] = df.groupby(['Mt'])['count'].transform(max),
+21390035,Python pandas groupby object apply method duplicates first group,N,0,0,NA,
+10373660,Converting a Pandas GroupBy object to DataFrame,Y,10374456,1,g1.add_suffix('_Count').reset_index(),
+10373660,Converting a Pandas GroupBy object to DataFrame,Y,10374456,2,"DataFrame({'count' : df1.groupby( [ ""Name"", ""City""] ).size()}).reset_index()",
+19124601,Is there a way to (pretty) print the entire Pandas Series / DataFrame?,Y,30691921,1,"with pd.option_context('display.max_rows', None, 'display.max_columns', 3):",
+22391433,count the frequency that a value occurs in a dataframe column,Y,22391554,1,df.groupby('a').count(),
+22391433,count the frequency that a value occurs in a dataframe column,Y,22391554,2,df['a'].value_counts(),
+22391433,count the frequency that a value occurs in a dataframe column,Y,22391554,3,df['freq'] = df.groupby('a')['a'].transform('count'),
+16923281,Pandas writing dataframe to CSV file,Y,16923367,1,"df.to_csv(file_name, sep='\t')",
+16923281,Pandas writing dataframe to CSV file,Y,16923367,2,"df.to_csv(file_name, sep='\t', encoding='utf-8')",
+11350770,pandas + dataframe - select by partial string match,Y,11531402,1,"df[df['A'].str.contains(""hello"")]",
+17709641,"ValueError: numpy.dtype has the wrong size, try recompiling",N,0,0,NA,
+20906474,Import multiple csv files into pandas and concatenate into one DataFrame,Y,21232849,1,"frame = pd.DataFrame()
+list_ = []
+for file_ in allFiles:
+    df = pd.read_csv(file_,index_col=None, header=0)
+    list_.append(df)
+frame = pd.concat(list_)",mutliline
+19377969,Combine two columns of text in dataframe in pandas/python,Y,19378497,1,"dataframe[""period""] = dataframe[""Year""].map(str) + dataframe[""quarter""]",
+28757389,Loc vs. iloc vs. ix vs. at vs. iat?,N,0,0,NA,
+16353729,Pandas: How to use apply function to multiple columns,Y,16354730,1,"df['Value'] = df.apply(lambda row: my_test(row['a'], row['c']), axis=1)",
+15315452,Selecting with complex criteria from pandas.DataFrame,N,0,0,NA,Subjective
+14507794,Python Pandas - How to flatten a hierarchical index in columns,Y,14508355,1,df.columns = df.columns.get_level_values(0),
+14507794,Python Pandas - How to flatten a hierarchical index in columns,Y,14508355,2,df.columns = [' '.join(col).strip() for col in df.columns.values],
+14507794,Python Pandas - How to flatten a hierarchical index in columns,Y,14508355,3,[' '.join(col).strip() for col in df.columns.values],
+17530542,How to add pandas data to an existing csv file?,Y,17531025,1,"with open('my_csv.csv', 'a') as f:
+    df.to_csv(f, header=False)",mutliline
+17530542,How to add pandas data to an existing csv file?,Y,17531025,2,"with open('foo.csv', 'a') as f:
+             (df + 6).to_csv(f, header=False)",mutliline
+15771472,Pandas: rolling mean by time interval,Y,15772263,1,"pd.rolling_mean(df.resample(""1D"", fill_method=""ffill""), window=3, min_periods=1)",
+15771472,Pandas: rolling mean by time interval,Y,15772263,2,"df.resample(""1d"").sum().fillna(0).rolling(window=3, min_periods=1).mean()",
+21463589,Pandas: Chained assignments,Y,21463854,1,"data['amount'] = data[""amount""].fillna(data.groupby(""num"")[""amount""].transform(""mean""))",
+21463589,Pandas: Chained assignments,Y,21463854,2,"data[""amount""] = data['amount'].fillna(mean_avg)",
+21463589,Pandas: Chained assignments,Y,21463854,3,data['amount'] = data['amount'].fillna(mean_avg)*2,
+13331698,How to apply a function to two columns of Pandas dataframe,Y,13337376,1,"df.apply(f, axis=1)",
+23668427,pandas joining multiple dataframes on columns,Y,30512931,1,"dfs = [df0, df1, df2, dfN]
+df_final = reduce(lambda left,right: pd.merge(left,right,on='name'), dfs",mutliline in different <code>
+39922986,Pandas group-by and sum,Y,39923012,1,"df.groupby(['Fruit','Name']).sum()",
+24147278,How do I create test and train samples from one dataframe with pandas?,Y,24147363,1,"train, test = train_test_split(df, test_size=0.2)",
+13682044,Pandas DataFrame: remove unwanted parts from strings in a column,Y,13682381,1,data['result'] = data['result'].map(lambda x: x.lstrip('+-').rstrip('aAbBcC')),
+23296282,What rules does Pandas use to generate a view vs a copy?,N,0,0,NA,Subjective
+18039057,Python Pandas Error tokenizing data while reading csv file,Y,18129082,1,"data = pd.read_csv('file1.csv', error_bad_lines=False)",
+15242746,Handling Variable Number of Columns with Pandas while reading CSV file,Y,15252012,1,"my_cols = [""A"", ""B"", ""C"", ""D"", ""E""]
+pd.read_csv(""ragged.csv"", names=my_cols, engine='python')
+",
+18429491,groupby columns with NaN (missing) values,Y,18431417,1,df.fillna(-1).groupby('b').sum(),
+15026698,How to make separator in read_csv more flexible wrt whitespace?,Y,15026839,1,"pd.read_csv(""whitespace.csv"", header=None, delimiter=r""\s+"")",
+15026698,How to make separator in read_csv more flexible wrt whitespace?,Y,15026839,2,"pd.read_csv(""whitespace.csv"", header=None, delim_whitespace=True)",
+26277757,Pandas to_html() truncates string contents,Y,26301947,1,"pd.set_option('display.max_colwidth', -1)",
+23667369,Drop all duplicate rows in Python Pandas,Y,34272155,1,"df.drop_duplicates(subset=['A', 'C'], keep=False)",
+29545704,Fast Haversine Approximation (Python/Pandas),N,0,0,NA,Subjective
+11285613,Selecting columns in a pandas dataframe,Y,11287278,1,"df1 = df[['a','b']]",
+11285613,Selecting columns in a pandas dataframe,Y,11287278,2,"df1 = df.iloc[:,0:2]",
+11285613,Selecting columns in a pandas dataframe,Y,11287278,3,"df1 = df.iloc[0,0:2].copy()",
+17001389,pandas resample documentation,N,0,0,NA,Subjective
+18837262,Convert Python dict into a dataframe,Y,18837389,1,pd.DataFrame(d.items()),
+18837262,Convert Python dict into a dataframe,Y,18837389,2,"pd.DataFrame(d.items(), columns=['Date', 'DateValue'])",
+18837262,Convert Python dict into a dataframe,Y,18837389,3,"s = pd.Series(d, name='DateValue')
+s.index.name = 'Date'
+s.reset_index()",
+13187778,"Convert pandas dataframe to numpy array, preserving index",Y,37043071,1,df=df.values,
+13187778,"Convert pandas dataframe to numpy array, preserving index",Y,24793359,1,numpyMatrix = df.as_matrix(),
+24251219,Pandas read_csv low_memory and dtype options,N,0,0,NA,Subjective
+17095101,Outputting difference in two Pandas dataframes side by side - highlighting the difference,Y,17095620,1,ne = (df1 != df2).any(1),
+17095101,Outputting difference in two Pandas dataframes side by side - highlighting the difference,Y,17095620,2,ne_stacked = (df1 != df2).stack(),
+21104592,JSON to pandas DataFrame,Y,21266043,1,json_normalize(data['results']),
+18695605,python pandas dataframe to dictionary,Y,18695700,1,df.set_index('id').to_dict(),
+18695605,python pandas dataframe to dictionary,Y,18695700,2,df.set_index('id')['value'].to_dict(),
+19324453,Add missing dates to pandas dataframe,Y,19324591,1,"s = s.reindex(idx, fill_value=0)",
+46525786,How to join two dataframes for which column values are within a certain range?,Y,46526249,1,"df_2.index = pd.IntervalIndex.from_arrays(df_2['start'],df_2['end'],closed='both')
+df_1['event'] = df_1['timestamp'].apply(lambda x : df_2.iloc[df_2.index.get_loc(x)]['event'])",
+37787698,how to sort pandas dataframe from one column,Y,37787724,1,df.sort_values('2'),
+17841149,Pandas groupby: How to get a union of strings,Y,17841294,,,
