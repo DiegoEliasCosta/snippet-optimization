@@ -1,0 +1,12 @@
+<p>What you are seeing is pandas truncating the output for display purposes only. </p>
+
+<p>The default <code>max_colwidth</code> value is 50 which is what you are seeing.</p>
+
+<p>You can set this value to whatever you desire or you can set it to -1 which effectively turns this off:</p>
+
+<pre><code>pd.set_option('display.max_colwidth', -1)
+</code></pre>
+
+<p>Although I would advise against this, it would be better to set it to something that can be displayed easily in your console or ipython.</p>
+
+<p>A list of the options can be found here: <a href="http://pandas.pydata.org/pandas-docs/stable/options.html">http://pandas.pydata.org/pandas-docs/stable/options.html</a></p>

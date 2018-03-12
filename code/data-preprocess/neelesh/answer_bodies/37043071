@@ -1,0 +1,5 @@
+<p>To convert a pandas dataframe (df) to a numpy ndarray, use this code:</p>
+
+<p><code>df=df.values</code></p>
+
+<p>df now becomes a numpy ndarray.</p>

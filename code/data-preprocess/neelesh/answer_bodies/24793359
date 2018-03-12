@@ -1,0 +1,4 @@
+<p>Pandas has something built in...</p>
+
+<pre><code>numpyMatrix = df.as_matrix()
+</code></pre>

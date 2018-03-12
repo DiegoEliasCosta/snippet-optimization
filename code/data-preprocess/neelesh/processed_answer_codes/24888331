@@ -1,0 +1,5 @@
+import pandas as pd
+df = pd.DataFrame(columns=['lib', 'qty1', 'qty2'])
+df.loc[i] = [randint(-1,1) for n in range(3)]
+print(df)
+

@@ -1,0 +1,35 @@
+df = pd.read_csv('filename.txt', sep=";", names=['Region Name'])
+df.insert(0, 'State', df['Region Name'].str.extract('(.*)\[edit\]', expand=False).ffill())
+df['Region Name'] = df['Region Name'].str.replace(r' \(.+$', '')
+df = df[~df['Region Name'].str.contains('\[edit\]')].reset_index(drop=True)
+print (df)
+      State   Region Name
+0   Alabama        Auburn
+1   Alabama      Florence
+2   Alabama  Jacksonville
+3   Alabama    Livingston
+4   Alabama    Montevallo
+5   Alabama          Troy
+6   Alabama    Tuscaloosa
+7   Alabama      Tuskegee
+8    Alaska     Fairbanks
+9   Arizona     Flagstaff
+10  Arizona         Tempe
+11  Arizona        Tucson
+df = pd.read_csv('filename.txt', sep=";", names=['Region Name'])
+df.insert(0, 'State', df['Region Name'].str.extract('(.*)\[edit\]', expand=False).ffill())
+df = df[~df['Region Name'].str.contains('\[edit\]')].reset_index(drop=True)
+print (df)
+      State                                        Region Name
+0   Alabama                      Auburn (Auburn University)[1]
+1   Alabama             Florence (University of North Alabama)
+2   Alabama    Jacksonville (Jacksonville State University)[2]
+3   Alabama         Livingston (University of West Alabama)[2]
+4   Alabama           Montevallo (University of Montevallo)[2]
+5   Alabama                          Troy (Troy University)[2]
+6   Alabama  Tuscaloosa (University of Alabama, Stillman Co...
+7   Alabama                  Tuskegee (Tuskegee University)[5]
+8    Alaska      Fairbanks (University of Alaska Fairbanks)[2]
+9   Arizona         Flagstaff (Northern Arizona University)[6]
+10  Arizona                   Tempe (Arizona State University)
+11  Arizona                     Tucson (University of Arizona)

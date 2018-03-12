@@ -1,0 +1,10 @@
+<p>You can also use the <a href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.option_context.html" rel="noreferrer">option_context</a>, with one or more options:</p>
+
+<pre><code>with pd.option_context('display.max_rows', None, 'display.max_columns', 3):
+    print(df)
+</code></pre>
+
+<p>This will automatically return the options to their previous values.</p>
+
+<p><strong>Addition</strong>:
+If you are working on jupyter-notebook, using <code>display</code> instead of <code>print</code> will use jupyter rich display logic.</p>

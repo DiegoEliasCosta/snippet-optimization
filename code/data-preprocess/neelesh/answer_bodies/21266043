@@ -1,0 +1,15 @@
+<p>I found a quick and easy solution to what I wanted using json_normalize function included in the latest release of pandas 0.13.   </p>
+
+<pre><code>from urllib2 import Request, urlopen
+import json
+from pandas.io.json import json_normalize
+
+path1 = '42.974049,-81.205203|42.974298,-81.195755'
+request=Request('http://maps.googleapis.com/maps/api/elevation/json?locations='+path1+'&amp;sensor=false')
+response = urlopen(request)
+elevations = response.read()
+data = json.loads(elevations)
+json_normalize(data['results'])
+</code></pre>
+
+<p>This gives a nice flattened dataframe with the json data that I got from the google maps API.</p>

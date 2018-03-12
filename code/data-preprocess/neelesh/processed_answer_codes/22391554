@@ -1,0 +1,8 @@
+df = pd.DataFrame({'a':list('abssbab')})
+df.groupby('a').count()
+
+df['a'].value_counts()
+
+df['freq'] = df.groupby('a')['a'].transform('count')
+df
+

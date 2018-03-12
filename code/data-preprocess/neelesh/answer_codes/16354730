@@ -1,0 +1,16 @@
+In [43]: df['Value'] = df.apply(lambda row: my_test(row['a'], row['c']), axis=1)
+
+In [44]: df
+Out[44]:
+                    a    b         c     Value
+          0 -1.674308  foo  0.343801  0.044698
+          1 -2.163236  bar -2.046438 -0.116798
+          2 -0.199115  foo -0.458050 -0.199115
+          3  0.918646  bar -0.007185 -0.001006
+          4  1.336830  foo  0.534292  0.268245
+          5  0.976844  bar -0.773630 -0.570417
+In [53]: def my_test2(row):
+....:     return row['a'] % row['c']
+....:     
+
+In [54]: df['Value'] = df.apply(my_test2, axis=1)

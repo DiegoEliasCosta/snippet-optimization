@@ -1,0 +1,41 @@
+<p>You can <em>append</em> to a csv by <a href="http://docs.python.org/2/library/functions.html#open">opening the file</a> in append mode:</p>
+
+<pre><code>with open('my_csv.csv', 'a') as f:
+    df.to_csv(f, header=False)
+</code></pre>
+
+<p>If this was your csv, <code>foo.csv</code>:</p>
+
+<pre><code>,A,B,C
+0,1,2,3
+1,4,5,6
+</code></pre>
+
+<p>If you read that and then append, for example, <code>df + 6</code>:</p>
+
+<pre><code>In [1]: df = pd.read_csv('foo.csv', index_col=0)
+
+In [2]: df
+Out[2]:
+   A  B  C
+0  1  2  3
+1  4  5  6
+
+In [3]: df + 6
+Out[3]:
+    A   B   C
+0   7   8   9
+1  10  11  12
+
+In [4]: with open('foo.csv', 'a') as f:
+             (df + 6).to_csv(f, header=False)
+</code></pre>
+
+<p><code>foo.csv</code> becomes:</p>
+
+<pre><code>,A,B,C
+0,1,2,3
+1,4,5,6
+0,7,8,9
+1,10,11,12
+</code></pre>

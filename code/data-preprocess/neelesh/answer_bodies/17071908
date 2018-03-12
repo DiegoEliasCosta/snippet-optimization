@@ -1,0 +1,112 @@
+<p>To select rows whose column value equals a scalar, <code>some_value</code>, use <code>==</code>:</p>
+
+<pre><code>df.loc[df['column_name'] == some_value]
+</code></pre>
+
+<p>To select rows whose column value is in an iterable, <code>some_values</code>, use <code>isin</code>:</p>
+
+<pre><code>df.loc[df['column_name'].isin(some_values)]
+</code></pre>
+
+<p>Combine multiple conditions with <code>&amp;</code>: </p>
+
+<pre><code>df.loc[(df['column_name'] == some_value) &amp; df['other_column'].isin(some_values)]
+</code></pre>
+
+<hr>
+
+<p>To select rows whose column value <em>does not equal</em> <code>some_value</code>, use <code>!=</code>:</p>
+
+<pre><code>df.loc[df['column_name'] != some_value]
+</code></pre>
+
+<p><code>isin</code> returns a boolean Series, so to select rows whose value is <em>not</em> in <code>some_values</code>, negate the boolean Series using <code>~</code>:</p>
+
+<pre><code>df.loc[~df['column_name'].isin(some_values)]
+</code></pre>
+
+<hr>
+
+<p>For example,</p>
+
+<pre><code>import pandas as pd
+import numpy as np
+df = pd.DataFrame({'A': 'foo bar foo bar foo bar foo foo'.split(),
+                   'B': 'one one two three two two one three'.split(),
+                   'C': np.arange(8), 'D': np.arange(8) * 2})
+print(df)
+#      A      B  C   D
+# 0  foo    one  0   0
+# 1  bar    one  1   2
+# 2  foo    two  2   4
+# 3  bar  three  3   6
+# 4  foo    two  4   8
+# 5  bar    two  5  10
+# 6  foo    one  6  12
+# 7  foo  three  7  14
+
+print(df.loc[df['A'] == 'foo'])
+</code></pre>
+
+<p>yields</p>
+
+<pre><code>     A      B  C   D
+0  foo    one  0   0
+2  foo    two  2   4
+4  foo    two  4   8
+6  foo    one  6  12
+7  foo  three  7  14
+</code></pre>
+
+<hr>
+
+<p>If you have multiple values you want to include, put them in a
+list (or more generally, any iterable) and use <code>isin</code>:</p>
+
+<pre><code>print(df.loc[df['B'].isin(['one','three'])])
+</code></pre>
+
+<p>yields</p>
+
+<pre><code>     A      B  C   D
+0  foo    one  0   0
+1  bar    one  1   2
+3  bar  three  3   6
+6  foo    one  6  12
+7  foo  three  7  14
+</code></pre>
+
+<hr>
+
+<p>Note, however, that if you wish to do this many times, it is more efficient to
+make an index first, and then use <code>df.loc</code>:</p>
+
+<pre><code>df = df.set_index(['B'])
+print(df.loc['one'])
+</code></pre>
+
+<p>yields</p>
+
+<pre><code>       A  C   D
+B              
+one  foo  0   0
+one  bar  1   2
+one  foo  6  12
+</code></pre>
+
+<p>or, to include multiple values from the index use <code>df.index.isin</code>:</p>
+
+<pre><code>df.loc[df.index.isin(['one','two'])]
+</code></pre>
+
+<p>yields</p>
+
+<pre><code>       A  C   D
+B              
+one  foo  0   0
+one  bar  1   2
+two  foo  2   4
+two  foo  4   8
+two  bar  5  10
+one  foo  6  12
+</code></pre>

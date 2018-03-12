@@ -1,0 +1,6 @@
+<p>Use the <a href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.rename.html" rel="noreferrer"><code>df.rename()</code></a> function and refer the columns to be renamed. Not all the columns have to be renamed:</p>
+
+<pre><code>df = df.rename(columns={'oldName1': 'newName1', 'oldName2': 'newName2'})
+# Or rename the existing DataFrame (rather than creating a copy) 
+df.rename(columns={'oldName1': 'newName1', 'oldName2': 'newName2'}, inplace=True)
+</code></pre>

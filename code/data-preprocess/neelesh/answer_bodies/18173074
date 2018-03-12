@@ -1,0 +1,4 @@
+<p>If I'm understanding correctly, it should be as simple as:</p>
+
+<pre><code>df = df[df.line_race != 0]
+</code></pre>

@@ -1,0 +1,10 @@
+ne = (df1 != df2).any(1)
+
+ne_stacked = (df1 != df2).stack()
+
+
+
+difference_locations = np.where(df1 != df2)
+
+
+

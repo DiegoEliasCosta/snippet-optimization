@@ -1,0 +1,16 @@
+<p>One simple solution is create <code>interval index</code> from <code>start and end</code> setting <code>closed = both</code> then use <code>get_loc</code> to get the event i.e (Hope all the date times are in timestamps dtype ) </p>
+
+<pre><code>df_2.index = pd.IntervalIndex.from_arrays(df_2['start'],df_2['end'],closed='both')
+df_1['event'] = df_1['timestamp'].apply(lambda x : df_2.iloc[df_2.index.get_loc(x)]['event'])
+</code></pre>
+
+<p>Output : </p>
+
+<pre>
+            timestamp         A         B event
+0 2016-05-14 10:54:33  0.020228  0.026572    E1
+1 2016-05-14 10:54:34  0.057780  0.175499    E2
+2 2016-05-14 10:54:35  0.098808  0.620986    E2
+3 2016-05-14 10:54:36  0.158789  1.014819    E2
+4 2016-05-14 10:54:39  0.038129  2.384590    E3
+</pre>

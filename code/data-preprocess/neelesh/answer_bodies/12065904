@@ -1,0 +1,1 @@
+<p>Use the <code>isin</code> method.  <code>rpt[rpt['STK_ID'].isin(stk_list)]</code>.</p>

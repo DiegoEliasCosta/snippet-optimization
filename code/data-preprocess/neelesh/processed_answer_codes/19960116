@@ -1,0 +1,8 @@
+df
+countries
+countries
+df.countries.isin(countries)
+df[df.countries.isin(countries)]
+countries
+df[~df.countries.isin(countries)]
+countries

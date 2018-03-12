@@ -1,0 +1,9 @@
+<p><a href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.iterrows.html#pandas.DataFrame.iterrows">iterrows</a> is a generator which yield both index and row</p>
+
+<pre><code>In [18]: for index, row in df.iterrows():
+   ....:     print row['c1'], row['c2']
+   ....:     
+10 100
+11 110
+12 120
+</code></pre>

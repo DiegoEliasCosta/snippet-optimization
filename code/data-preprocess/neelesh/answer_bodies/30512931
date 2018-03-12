@@ -1,0 +1,21 @@
+<p>Assumed imports:</p>
+
+<pre><code>import pandas as pd
+</code></pre>
+
+<p><a href="https://stackoverflow.com/a/23671390/366309">John Galt's answer</a> is basically a <code>reduce</code> operation.  If I have more than a handful of dataframes, I'd put them in a list like this (generated via list comprehensions or loops or whatnot):</p>
+
+<pre><code>dfs = [df0, df1, df2, dfN]
+</code></pre>
+
+<p>Assuming they have some common column, like <code>name</code> in your example, I'd do the following:</p>
+
+<pre><code>df_final = reduce(lambda left,right: pd.merge(left,right,on='name'), dfs)
+</code></pre>
+
+<p>That way, your code should work with whatever number of dataframes you want to merge.</p>
+
+<p><em>Edit August 1, 2016</em>: For those using Python 3: <code>reduce</code> has been moved into <code>functools</code>. So to use this function, you'll first need to import that module:</p>
+
+<pre><code>from functools import reduce
+</code></pre>

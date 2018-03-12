@@ -1,0 +1,2 @@
+<pre><code>dataframe["period"] = dataframe["Year"].map(str) + dataframe["quarter"]
+</code></pre>

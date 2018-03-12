@@ -1,0 +1,22 @@
+>>> df
+  countries
+0        US
+1        UK
+2   Germany
+3     China
+>>> countries
+['UK', 'China']
+>>> df.countries.isin(countries)
+0    False
+1     True
+2    False
+3     True
+Name: countries, dtype: bool
+>>> df[df.countries.isin(countries)]
+  countries
+1        UK
+3     China
+>>> df[~df.countries.isin(countries)]
+  countries
+0        US
+2   Germany

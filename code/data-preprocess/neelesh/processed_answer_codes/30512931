@@ -1,0 +1,4 @@
+import pandas as pd
+dfs = [df0, df1, df2, dfN]
+df_final = reduce(lambda left,right: pd.merge(left,right,on='name'), dfs)
+from functools import reduce

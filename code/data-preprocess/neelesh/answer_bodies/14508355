@@ -1,0 +1,30 @@
+<p>I think the easiest way to do this would be to set the columns to the top level:</p>
+
+<pre><code>df.columns = df.columns.get_level_values(0)
+</code></pre>
+
+<p><em>Note: if the to level has a name you can also access it by this, rather than 0.</em></p>
+
+<p>.</p>
+
+<p>If you want to combine/<a href="http://docs.python.org/2/library/stdtypes.html#str.join"><code>join</code></a> your MultiIndex into one Index <em>(assuming you have just string entries in your columns)</em> you could:</p>
+
+<pre><code>df.columns = [' '.join(col).strip() for col in df.columns.values]
+</code></pre>
+
+<p><em>Note: we must <a href="http://docs.python.org/2/library/stdtypes.html#str.strip"><code>strip</code></a> the whitespace for when there is no second index.</em></p>
+
+<pre><code>In [11]: [' '.join(col).strip() for col in df.columns.values]
+Out[11]: 
+['USAF',
+ 'WBAN',
+ 'day',
+ 'month',
+ 's_CD sum',
+ 's_CL sum',
+ 's_CNT sum',
+ 's_PC sum',
+ 'tempf amax',
+ 'tempf amin',
+ 'year']
+</code></pre>

@@ -1,0 +1,1 @@
+[' '.join(col).strip() for col in df.columns.values]

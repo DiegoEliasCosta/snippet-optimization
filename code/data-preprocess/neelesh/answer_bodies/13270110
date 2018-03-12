@@ -1,0 +1,10 @@
+<p>If you have a key that is repeated for each row, then you can produce a cartesian product using merge (like you would in SQL).</p>
+
+<pre><code>from pandas import DataFrame, merge
+df1 = DataFrame({'key':[1,1], 'col1':[1,2],'col2':[3,4]})
+df2 = DataFrame({'key':[1,1], 'col3':[5,6]})
+
+merge(df1, df2,on='key')[['col1', 'col2', 'col3']]
+</code></pre>
+
+<p>See here for the documentation: <a href="http://pandas.pydata.org/pandas-docs/stable/merging.html#brief-primer-on-merge-methods-relational-algebra" rel="noreferrer">http://pandas.pydata.org/pandas-docs/stable/merging.html#brief-primer-on-merge-methods-relational-algebra</a></p>

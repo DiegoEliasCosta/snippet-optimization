@@ -1,0 +1,2 @@
+df.to_csv(file_name, sep='\t')
+df.to_csv(file_name, sep='\t', encoding='utf-8')

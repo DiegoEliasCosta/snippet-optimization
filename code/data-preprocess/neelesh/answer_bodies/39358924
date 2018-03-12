@@ -1,0 +1,140 @@
+<h1>TL;DR version:</h1>
+
+<p>For the simple case of:</p>
+
+<ul>
+<li>I have a text column with a delimiter and I want two columns</li>
+</ul>
+
+<p>The simplest solution is:</p>
+
+<pre><code>df['A'], df['B'] = df['AB'].str.split(' ', 1).str
+</code></pre>
+
+<p>Or you can create create a DataFrame with one column for each entry of the split automatically with:</p>
+
+<pre><code>df['AB'].str.split(' ', 1, expand=True)
+</code></pre>
+
+<p>Notice how, in either case, the <code>.tolist()</code> method is not necessary. Neither is <code>zip()</code>.</p>
+
+<h1>In detail:</h1>
+
+<p><a href="https://stackoverflow.com/a/21296915/1273938">Andy Hayden's solution</a> is most excellent in demonstrating the power of the <a href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.str.extract.html" rel="noreferrer"><code>str.extract()</code></a> method.</p>
+
+<p>But for a simple split over a known separator (like, splitting by dashes, or splitting by whitespace), the <a href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.str.split.html" rel="noreferrer"><code>.str.split()</code></a> method is enough<sup>1</sup>. It operates on a column (Series) of strings, and returns a column (Series) of lists:</p>
+
+<pre><code>&gt;&gt;&gt; import pandas as pd
+&gt;&gt;&gt; df = pd.DataFrame({'AB': ['A1-B1', 'A2-B2']})
+&gt;&gt;&gt; df
+
+      AB
+0  A1-B1
+1  A2-B2
+&gt;&gt;&gt; df['AB_split'] = df['AB'].str.split('-')
+&gt;&gt;&gt; df
+
+      AB  AB_split
+0  A1-B1  [A1, B1]
+1  A2-B2  [A2, B2]
+</code></pre>
+
+<p><sub>1: If you're unsure what the first two parameters of <code>.str.split()</code> do,
+ I recommend the docs for the <a href="https://docs.python.org/3.6/library/stdtypes.html#str.split" rel="noreferrer">plain Python version of the method</a>.</sub></p>
+
+<p>But how do you go from:</p>
+
+<ul>
+<li>a column containing two-element lists</li>
+</ul>
+
+<p>to:</p>
+
+<ul>
+<li>two columns, each containing the respective element of the lists?</li>
+</ul>
+
+<p>Well, we need to take a closer look at the <code>.str</code> attribute of a column.</p>
+
+<p>It's a magical object that is used to collect methods that treat each element in a column as a string, and then apply the respective method in each element as efficient as possible:</p>
+
+<pre><code>&gt;&gt;&gt; upper_lower_df = pd.DataFrame({"U": ["A", "B", "C"]})
+&gt;&gt;&gt; upper_lower_df
+
+   U
+0  A
+1  B
+2  C
+&gt;&gt;&gt; upper_lower_df["L"] = upper_lower_df["U"].str.lower()
+&gt;&gt;&gt; upper_lower_df
+
+   U  L
+0  A  a
+1  B  b
+2  C  c
+</code></pre>
+
+<p>But it also has an "indexing" interface for getting each element of a string by its index:</p>
+
+<pre><code>&gt;&gt;&gt; df['AB'].str[0]
+
+0    A
+1    A
+Name: AB, dtype: object
+
+&gt;&gt;&gt; df['AB'].str[1]
+
+0    1
+1    2
+Name: AB, dtype: object
+</code></pre>
+
+<p>Of course, this indexing interface of <code>.str</code> doesn't really care if each element it's indexing is actually a string, as long as it can be indexed, so:</p>
+
+<pre><code>&gt;&gt;&gt; df['AB'].str.split('-', 1).str[0]
+
+0    A1
+1    A2
+Name: AB, dtype: object
+
+&gt;&gt;&gt; df['AB'].str.split('-', 1).str[1]
+
+0    B1
+1    B2
+Name: AB, dtype: object
+</code></pre>
+
+<p>Then, it's a simple matter of taking advantage of the Python tuple unpacking of iterables to do</p>
+
+<pre><code>&gt;&gt;&gt; df['A'], df['B'] = df['AB'].str.split('-', 1).str
+&gt;&gt;&gt; df
+
+      AB  AB_split   A   B
+0  A1-B1  [A1, B1]  A1  B1
+1  A2-B2  [A2, B2]  A2  B2
+</code></pre>
+
+<p>Of course, getting a DataFrame out of splitting a column of strings is so useful that the <code>.str.split()</code> method can do it for you with the <code>expand=True</code> parameter:</p>
+
+<pre><code>&gt;&gt;&gt; df['AB'].str.split('-', 1, expand=True)
+
+    0   1
+0  A1  B1
+1  A2  B2
+</code></pre>
+
+<p>So, another way of accomplishing what we wanted is to do:</p>
+
+<pre><code>&gt;&gt;&gt; df = df[['AB']]
+&gt;&gt;&gt; df
+
+      AB
+0  A1-B1
+1  A2-B2
+
+&gt;&gt;&gt; df.join(df['AB'].str.split('-', 1, expand=True).rename(columns={0:'A', 1:'B'}))
+
+      AB   A   B
+0  A1-B1  A1  B1
+1  A2-B2  A2  B2
+</code></pre>

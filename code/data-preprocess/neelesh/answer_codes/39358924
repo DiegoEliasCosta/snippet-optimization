@@ -1,0 +1,74 @@
+df['A'], df['B'] = df['AB'].str.split(' ', 1).str
+df['AB'].str.split(' ', 1, expand=True)
+>>> import pandas as pd
+>>> df = pd.DataFrame({'AB': ['A1-B1', 'A2-B2']})
+>>> df
+
+      AB
+0  A1-B1
+1  A2-B2
+>>> df['AB_split'] = df['AB'].str.split('-')
+>>> df
+
+      AB  AB_split
+0  A1-B1  [A1, B1]
+1  A2-B2  [A2, B2]
+>>> upper_lower_df = pd.DataFrame({"U": ["A", "B", "C"]})
+>>> upper_lower_df
+
+   U
+0  A
+1  B
+2  C
+>>> upper_lower_df["L"] = upper_lower_df["U"].str.lower()
+>>> upper_lower_df
+
+   U  L
+0  A  a
+1  B  b
+2  C  c
+>>> df['AB'].str[0]
+
+0    A
+1    A
+Name: AB, dtype: object
+
+>>> df['AB'].str[1]
+
+0    1
+1    2
+Name: AB, dtype: object
+>>> df['AB'].str.split('-', 1).str[0]
+
+0    A1
+1    A2
+Name: AB, dtype: object
+
+>>> df['AB'].str.split('-', 1).str[1]
+
+0    B1
+1    B2
+Name: AB, dtype: object
+>>> df['A'], df['B'] = df['AB'].str.split('-', 1).str
+>>> df
+
+      AB  AB_split   A   B
+0  A1-B1  [A1, B1]  A1  B1
+1  A2-B2  [A2, B2]  A2  B2
+>>> df['AB'].str.split('-', 1, expand=True)
+
+    0   1
+0  A1  B1
+1  A2  B2
+>>> df = df[['AB']]
+>>> df
+
+      AB
+0  A1-B1
+1  A2-B2
+
+>>> df.join(df['AB'].str.split('-', 1, expand=True).rename(columns={0:'A', 1:'B'}))
+
+      AB   A   B
+0  A1-B1  A1  B1
+1  A2-B2  A2  B2

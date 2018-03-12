@@ -1,0 +1,15 @@
+df.columns = df.columns.get_level_values(0)
+df.columns = [' '.join(col).strip() for col in df.columns.values]
+In [11]: [' '.join(col).strip() for col in df.columns.values]
+Out[11]: 
+['USAF',
+ 'WBAN',
+ 'day',
+ 'month',
+ 's_CD sum',
+ 's_CL sum',
+ 's_CNT sum',
+ 's_PC sum',
+ 'tempf amax',
+ 'tempf amin',
+ 'year']

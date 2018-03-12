@@ -1,0 +1,18 @@
+<p>use the sum() method</p>
+
+<pre><code>df.groupby(['Fruit','Name']).sum()
+
+Out[31]: 
+               Number
+Fruit   Name         
+Apples  Bob        16
+        Mike        9
+        Steve      10
+Grapes  Bob        35
+        Tom        87
+        Tony       15
+Oranges Bob        67
+        Mike       57
+        Tom        15
+        Tony        1
+</code></pre>

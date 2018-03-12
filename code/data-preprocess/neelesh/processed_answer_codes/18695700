@@ -1,0 +1,2 @@
+df.set_index('id').to_dict()
+df.set_index('id')['value'].to_dict()

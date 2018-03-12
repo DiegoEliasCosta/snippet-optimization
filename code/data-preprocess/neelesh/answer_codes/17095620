@@ -1,0 +1,34 @@
+In [21]: ne = (df1 != df2).any(1)
+
+In [22]: ne
+Out[22]:
+0    False
+1     True
+2     True
+dtype: bool
+In [23]: ne_stacked = (df1 != df2).stack()
+
+In [24]: changed = ne_stacked[ne_stacked]
+
+In [25]: changed.index.names = ['id', 'col']
+
+In [26]: changed
+Out[26]:
+id  col
+1   score         True
+2   isEnrolled    True
+    Comment       True
+dtype: bool
+In [27]: difference_locations = np.where(df1 != df2)
+
+In [28]: changed_from = df1.values[difference_locations]
+
+In [29]: changed_to = df2.values[difference_locations]
+
+In [30]: pd.DataFrame({'from': changed_from, 'to': changed_to}, index=changed.index)
+Out[30]:
+               from           to
+id col
+1  score       1.11         1.21
+2  isEnrolled  True        False
+   Comment     None  On vacation

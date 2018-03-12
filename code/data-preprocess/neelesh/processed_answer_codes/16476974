@@ -1,0 +1,1 @@
+print row['c1'], row['c2']

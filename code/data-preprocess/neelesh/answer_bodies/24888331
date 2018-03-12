@@ -1,0 +1,17 @@
+<p>Example at @Nasser's answer:</p>
+
+<pre><code>&gt;&gt;&gt; import pandas as pd
+&gt;&gt;&gt; df = pd.DataFrame(columns=['lib', 'qty1', 'qty2'])
+&gt;&gt;&gt; for i in range(5):
+&gt;&gt;&gt;     df.loc[i] = [randint(-1,1) for n in range(3)]
+&gt;&gt;&gt;
+&gt;&gt;&gt; print(df)
+    lib  qty1  qty2
+0    0     0    -1
+1   -1    -1     1
+2    1    -1     1
+3    0     0     0
+4    1    -1    -1
+
+[5 rows x 3 columns]
+</code></pre>

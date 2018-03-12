@@ -1,0 +1,31 @@
+In [119]:
+
+common = df1.merge(df2,on=['col1','col2'])
+print(common)
+df1[(~df1.col1.isin(common.col1))&(~df1.col2.isin(common.col2))]
+   col1  col2
+0     1    10
+1     2    11
+2     3    12
+Out[119]:
+   col1  col2
+3     4    13
+4     5    14
+In [138]:
+
+df1[~df1.isin(df2)].dropna()
+Out[138]:
+   col1  col2
+3     4    13
+4     5    14
+df2 = pd.DataFrame(data = {'col1' : [2, 3,4], 'col2' : [11, 12,13]})
+In [140]:
+
+df1[~df1.isin(df2)].dropna()
+Out[140]:
+   col1  col2
+0     1    10
+1     2    11
+2     3    12
+3     4    13
+4     5    14

@@ -1,0 +1,6 @@
+In [18]: for index, row in df.iterrows():
+   ....:     print row['c1'], row['c2']
+   ....:     
+10 100
+11 110
+12 120

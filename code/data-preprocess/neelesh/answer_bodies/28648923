@@ -1,0 +1,97 @@
+<p>You can use <a href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.to_numeric.html" rel="noreferrer"><code>pd.to_numeric</code></a> (introduced in version 0.17) to convert a column or a Series to a numeric type. The function can also be applied over multiple columns of a DataFrame using <code>apply</code>.</p>
+
+<p>Importantly, the function also takes an <code>errors</code> key word argument that lets you force not-numeric values to be <code>NaN</code>, or simply ignore columns containing these values.</p>
+
+<p>Example uses are shown below.</p>
+
+<h3>Individual column / Series</h3>
+
+<p>Here's an example using a Series of strings <code>s</code> which has the object dtype:</p>
+
+<pre><code>&gt;&gt;&gt; s = pd.Series(['1', '2', '4.7', 'pandas', '10'])
+&gt;&gt;&gt; s
+0         1
+1         2
+2       4.7
+3    pandas
+4        10
+dtype: object
+</code></pre>
+
+<p>The function's default behaviour is to raise if it can't convert a value. In this case, it can't cope with the string 'pandas':</p>
+
+<pre><code>&gt;&gt;&gt; pd.to_numeric(s) # or pd.to_numeric(s, errors='raise')
+ValueError: Unable to parse string
+</code></pre>
+
+<p>Rather than fail, we might want 'pandas' to be considered a missing/bad value. We can coerce invalid values to <code>NaN</code> as follows:</p>
+
+<pre><code>&gt;&gt;&gt; pd.to_numeric(s, errors='coerce')
+0     1.0
+1     2.0
+2     4.7
+3     NaN
+4    10.0
+dtype: float64
+</code></pre>
+
+<p>The third option is just to ignore the operation if an invalid value is encountered:</p>
+
+<pre><code>&gt;&gt;&gt; pd.to_numeric(s, errors='ignore')
+# the original Series is returned untouched
+</code></pre>
+
+<h3>Multiple columns / entire DataFrames</h3>
+
+<p>We might want to apply this operation to multiple columns. Processing each column in turn is tedious, so we can use <code>DataFrame.apply</code> to have the function act on each column.</p>
+
+<p>Borrowing the DataFrame from the question:</p>
+
+<pre><code>&gt;&gt;&gt; a = [['a', '1.2', '4.2'], ['b', '70', '0.03'], ['x', '5', '0']]
+&gt;&gt;&gt; df = pd.DataFrame(a, columns=['col1','col2','col3'])
+&gt;&gt;&gt; df
+  col1 col2  col3
+0    a  1.2   4.2
+1    b   70  0.03
+2    x    5     0
+</code></pre>
+
+<p>Then we can write:</p>
+
+<pre><code>df[['col2','col3']] = df[['col2','col3']].apply(pd.to_numeric)
+</code></pre>
+
+<p>and now 'col2' and 'col3' have dtype <code>float64</code> as desired.</p>
+
+<p>However, we might not know which of our columns can be converted reliably to a numeric type. In that case we can just write:</p>
+
+<pre><code>df.apply(pd.to_numeric, errors='ignore')
+</code></pre>
+
+<p>Then the function will be applied to the <em>whole</em> DataFrame. Columns that can be converted to a numeric type will be converted, while columns that cannot (e.g. they contain non-digit strings or dates) will be left alone.</p>
+
+<p>There is also <code>pd.to_datetime</code> and <code>pd.to_timedelta</code> for conversion to dates and timestamps.</p>
+
+<h3>Soft conversions</h3>
+
+<p>Version 0.21.0 introduces the method <code>infer_objects()</code> for converting columns of a DataFrame that have an object datatype to a more specific type.</p>
+
+<p>For example, let's create a DataFrame with two columns of object type, with one holding integers and the other holding strings of integers:</p>
+
+<pre><code>&gt;&gt;&gt; df = pd.DataFrame({'a': [7, 1, 5], 'b': ['3','2','1']}, dtype='object')
+&gt;&gt;&gt; df.dtypes
+a    object
+b    object
+dtype: object
+</code></pre>
+
+<p>Then using <code>infer_objects()</code>, we can change the type of column 'a' to int64:</p>
+
+<pre><code>&gt;&gt;&gt; df = df.infer_objects()
+&gt;&gt;&gt; df.dtypes
+a     int64
+b    object
+dtype: object
+</code></pre>
+
+<p>Column 'b' has been left alone since its values were strings, not integers. If we wanted to try and force the conversion of both columns to an integer type, we could use <code>df.astype(int)</code> instead.</p>

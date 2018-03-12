@@ -1,0 +1,55 @@
+In [4]: df = read_csv(StringIO(data),sep='\s+')
+
+In [5]: df
+Out[5]: 
+   A         B       C
+0  1  0.749065    This
+1  2  0.301084      is
+2  3  0.463468       a
+3  4  0.643961  random
+4  1  0.866521  string
+5  2  0.120737       !
+
+In [6]: df.dtypes
+Out[6]: 
+A      int64
+B    float64
+C     object
+dtype: object
+In [8]: df.groupby('A').apply(lambda x: x.sum())
+Out[8]: 
+   A         B           C
+A                         
+1  2  1.615586  Thisstring
+2  4  0.421821         is!
+3  3  0.463468           a
+4  4  0.643961      random
+In [9]: df.groupby('A')['C'].apply(lambda x: x.sum())
+Out[9]: 
+A
+1    Thisstring
+2           is!
+3             a
+4        random
+dtype: object
+In [11]: df.groupby('A')['C'].apply(lambda x: "{%s}" % ', '.join(x))
+Out[11]: 
+A
+1    {This, string}
+2           {is, !}
+3               {a}
+4          {random}
+dtype: object
+def f(x):
+     return Series(dict(A = x['A'].sum(), 
+                        B = x['B'].sum(), 
+                        C = "{%s}" % ', '.join(x['C'])))
+
+In [14]: df.groupby('A').apply(f)
+Out[14]: 
+   A         B               C
+A                             
+1  2  1.615586  {This, string}
+2  4  0.421821         {is, !}
+3  3  0.463468             {a}
+4  4  0.643961        {random}

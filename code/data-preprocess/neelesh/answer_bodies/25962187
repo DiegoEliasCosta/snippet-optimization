@@ -1,0 +1,9 @@
+<p>The error shows that the machine does not have enough memory to read the entire
+CSV into a DataFrame at one time. Assuming you do not need the entire dataset in
+memory all at one time, one way to avoid the problem would be to <a href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.io.parsers.read_csv.html">process the CSV in
+chunks</a> (by specifying the <code>chunksize</code> parameter):</p>
+
+<pre><code>chunksize = 10 ** 6
+for chunk in pd.read_csv(filename, chunksize=chunksize):
+    process(chunk)
+</code></pre>

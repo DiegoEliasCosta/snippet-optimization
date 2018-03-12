@@ -1,0 +1,51 @@
+df.loc[df['column_name'] == some_value]
+df.loc[df['column_name'].isin(some_values)]
+df.loc[(df['column_name'] == some_value) & df['other_column'].isin(some_values)]
+df.loc[df['column_name'] != some_value]
+df.loc[~df['column_name'].isin(some_values)]
+import pandas as pd
+import numpy as np
+df = pd.DataFrame({'A': 'foo bar foo bar foo bar foo foo'.split(),
+                   'B': 'one one two three two two one three'.split(),
+                   'C': np.arange(8), 'D': np.arange(8) * 2})
+print(df)
+#      A      B  C   D
+# 0  foo    one  0   0
+# 1  bar    one  1   2
+# 2  foo    two  2   4
+# 3  bar  three  3   6
+# 4  foo    two  4   8
+# 5  bar    two  5  10
+# 6  foo    one  6  12
+# 7  foo  three  7  14
+
+print(df.loc[df['A'] == 'foo'])
+     A      B  C   D
+0  foo    one  0   0
+2  foo    two  2   4
+4  foo    two  4   8
+6  foo    one  6  12
+7  foo  three  7  14
+print(df.loc[df['B'].isin(['one','three'])])
+     A      B  C   D
+0  foo    one  0   0
+1  bar    one  1   2
+3  bar  three  3   6
+6  foo    one  6  12
+7  foo  three  7  14
+df = df.set_index(['B'])
+print(df.loc['one'])
+       A  C   D
+B              
+one  foo  0   0
+one  bar  1   2
+one  foo  6  12
+df.loc[df.index.isin(['one','two'])]
+       A  C   D
+B              
+one  foo  0   0
+one  bar  1   2
+two  foo  2   4
+two  foo  4   8
+two  bar  5  10
+one  foo  6  12

@@ -1,0 +1,30 @@
+<p>The point of the <code>SettingWithCopy</code> is to warn the user that you <em>may</em> be doing something that will not update the original data frame as one might expect.</p>
+
+<p>Here, <code>data</code> is a dataframe, possibly of a single dtype (or not). You are then taking a reference to this <code>data['amount']</code> which is a Series, and updating it. This probably works in your case because you are returning the same dtype of data as existed.</p>
+
+<p>However it <em>could</em> create a copy which updates a copy of <code>data['amount']</code> which you would not see; Then you would be wondering why it is not updating.</p>
+
+<p>Pandas returns a copy of an object in almost all method calls. The <code>inplace</code> operations are a convience operation which work, but in general are not clear that data is being modified and could potentially work on copies.</p>
+
+<p>Much more clear to do this:</p>
+
+<pre><code>data['amount'] = data["amount"].fillna(data.groupby("num")["amount"].transform("mean"))
+
+data["amount"] = data['amount'].fillna(mean_avg)
+</code></pre>
+
+<p>One further plus to working on copies. You can chain operations, this is not possible with <code>inplace</code> ones.</p>
+
+<p>e.g.</p>
+
+<pre><code>data['amount'] = data['amount'].fillna(mean_avg)*2
+</code></pre>
+
+<p>And just an FYI. <code>inplace</code> operations are neither faster nor more memory efficient. my2c they should be banned. But too late on that API.</p>
+
+<p>You can of course turn this off:</p>
+
+<pre><code>pd.set_option('chained_assignment',None)
+</code></pre>
+
+<p>Pandas runs with the entire test suite with this set to <code>raise</code> (so we know if chaining is happening) on, FYI.</p>

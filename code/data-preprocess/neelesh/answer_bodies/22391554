@@ -1,0 +1,51 @@
+<p>Use <code>groupby</code> and <code>count</code>:</p>
+
+<pre><code>In [37]:
+df = pd.DataFrame({'a':list('abssbab')})
+df.groupby('a').count()
+
+Out[37]:
+
+   a
+a   
+a  2
+b  3
+s  2
+
+[3 rows x 1 columns]
+</code></pre>
+
+<p>See the online docs: <a href="http://pandas.pydata.org/pandas-docs/stable/groupby.html" rel="noreferrer">http://pandas.pydata.org/pandas-docs/stable/groupby.html</a></p>
+
+<p>Also <a href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.value_counts.html" rel="noreferrer"><code>value_counts()</code></a> as @DSM has commented, many ways to skin a cat here</p>
+
+<pre><code>In [38]:
+df['a'].value_counts()
+
+Out[38]:
+
+b    3
+a    2
+s    2
+dtype: int64
+</code></pre>
+
+<p>If you wanted to add frequency back to the original dataframe use <code>transform</code> to return an aligned index:</p>
+
+<pre><code>In [41]:
+df['freq'] = df.groupby('a')['a'].transform('count')
+df
+
+Out[41]:
+
+   a freq
+0  a    2
+1  b    3
+2  s    2
+3  s    2
+4  b    3
+5  a    2
+6  b    3
+
+[7 rows x 2 columns]
+</code></pre>

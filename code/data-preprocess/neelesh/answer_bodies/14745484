@@ -1,0 +1,25 @@
+<p>There might be a better way, but this here's one approach:</p>
+
+<pre><code>In [34]: import pandas as pd
+
+In [35]: df
+Out[35]: 
+                        row
+0       00000 UNITED STATES
+1             01000 ALABAMA
+2  01001 Autauga County, AL
+3  01003 Baldwin County, AL
+4  01005 Barbour County, AL
+
+In [36]: df = pd.DataFrame(df.row.str.split(' ',1).tolist(),
+                                   columns = ['flips','row'])
+
+In [37]: df
+Out[37]: 
+   flips                 row
+0  00000       UNITED STATES
+1  01000             ALABAMA
+2  01001  Autauga County, AL
+3  01003  Baldwin County, AL
+4  01005  Barbour County, AL
+</code></pre>

@@ -1,0 +1,32 @@
+<p><code>g1</code> here <em>is</em> a DataFrame. It has a hierarchical index, though:</p>
+
+<pre><code>In [19]: type(g1)
+Out[19]: pandas.core.frame.DataFrame
+
+In [20]: g1.index
+Out[20]: 
+MultiIndex([('Alice', 'Seattle'), ('Bob', 'Seattle'), ('Mallory', 'Portland'),
+       ('Mallory', 'Seattle')], dtype=object)
+</code></pre>
+
+<p>Perhaps you want something like this?</p>
+
+<pre><code>In [21]: g1.add_suffix('_Count').reset_index()
+Out[21]: 
+      Name      City  City_Count  Name_Count
+0    Alice   Seattle           1           1
+1      Bob   Seattle           2           2
+2  Mallory  Portland           2           2
+3  Mallory   Seattle           1           1
+</code></pre>
+
+<p>Or something like:</p>
+
+<pre><code>In [36]: DataFrame({'count' : df1.groupby( [ "Name", "City"] ).size()}).reset_index()
+Out[36]: 
+      Name      City  count
+0    Alice   Seattle      1
+1      Bob   Seattle      2
+2  Mallory  Portland      2
+3  Mallory   Seattle      1
+</code></pre>
