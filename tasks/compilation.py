@@ -10,8 +10,8 @@ if module_path not in sys.path:
 
 from jupyter_notebook import JupyterNotebookTask
 
-notebooks_path = os.path.join('..', 'code', 'preprocessing')
-data_path = os.path.join('..', 'stack-overflow', 'data')
+notebooks_path = os.path.join('..', 'code', 'data-preprocess')
+data_path = os.path.join('..', 'data', 'stack-overflow')
 
 
 class FilterPosts(JupyterNotebookTask):
