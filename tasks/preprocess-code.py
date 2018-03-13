@@ -13,6 +13,7 @@ from jupyter_notebook import JupyterNotebookTask
 notebooks_path = os.path.join(module_path, 'code', 'data-preprocess')
 data_path = os.path.join(module_path, 'data', 'stack-overflow')
 
+DEBUG = 1
 
 class FilterPosts(JupyterNotebookTask):
     notebook_path = os.path.join(notebooks_path, 'posts-filter.ipynb')
@@ -21,11 +22,12 @@ class FilterPosts(JupyterNotebookTask):
 
     questions_score = luigi.Parameter(default=0)
     answers_score = luigi.Parameter(default=0)
+    debug = luigi.Parameter(default=DEBUG)
     input_file = luigi.Parameter(default=os.path.join(data_path, 'pandas-posts-dataset.csv'))
 
     def output(self):
         return luigi.LocalTarget(os.path.join(
-            data_path, 'pandas-filteredposts-dataset.csv')
+            data_path, 'pandas-filteredposts-dataset')
         )
 
 		
@@ -33,13 +35,15 @@ class ExtractCode(JupyterNotebookTask):
     notebook_path = os.path.join(notebooks_path, 'codeblock-extractor.ipynb')
     kernel_name = 'python3'
     timeout = 60
+	
+    debug = luigi.Parameter(default=DEBUG)
 
     def requires(self):
         return FilterPosts()
 
     def output(self):
         return luigi.LocalTarget(os.path.join(
-            data_path, 'pandas-code-dataset.csv')
+            data_path, 'pandas-code-dataset')
         )
 
 		
@@ -51,12 +55,14 @@ class FormatCode(JupyterNotebookTask):
     input_col = luigi.Parameter(default='Code')
     output_col = luigi.Parameter(default='Code')
 	
+    debug = luigi.Parameter(default=DEBUG)
+	
     def requires(self):
         return ExtractCode()
 
     def output(self):
         return luigi.LocalTarget(os.path.join(
-            data_path, 'pandas-formattedcode-dataset.csv')
+            data_path, 'pandas-formattedcode-dataset')
         )
 		
 
@@ -67,13 +73,15 @@ class PreProcessSpecialCharsCode(JupyterNotebookTask):
     
     input_col = luigi.Parameter(default='Code')
     output_col = luigi.Parameter(default='PreprocessedCode')
+	
+    debug = luigi.Parameter(default=DEBUG)
 
     def requires(self):
         return FormatCode()
         
     def output(self):
         return luigi.LocalTarget(os.path.join(
-            data_path, 'pandas-preprocessedcode-dataset-part1.csv')
+            data_path, 'pandas-preprocessedcode-dataset-part1')
         )
 		
 
@@ -84,13 +92,15 @@ class PreProcessTerminalLikeCode(JupyterNotebookTask):
     
     input_col = luigi.Parameter(default='PreprocessedCode')
     output_col = luigi.Parameter(default='PreprocessedCode2')
+	
+    debug = luigi.Parameter(default=DEBUG)
 
     def requires(self):
         return PreProcessSpecialCharsCode()
         
     def output(self):
         return luigi.LocalTarget(os.path.join(
-            data_path, 'pandas-preprocessedcode-dataset-part2.csv')
+            data_path, 'pandas-preprocessedcode-dataset-part2')
         )
 		
 		
@@ -101,12 +111,14 @@ class PreProcessParseableCode(JupyterNotebookTask):
     
     input_col = luigi.Parameter(default='PreprocessedCode2')
     output_col = luigi.Parameter(default='PreprocessedCode3')
+	
+    debug = luigi.Parameter(default=DEBUG)
 
     def requires(self):
         return PreProcessTerminalLikeCode()
         
     def output(self):
         return luigi.LocalTarget(os.path.join(
-            data_path, 'pandas-preprocessedcode-dataset-part3.csv')
+            data_path, 'pandas-preprocessedcode-dataset-part3')
         )
 		
