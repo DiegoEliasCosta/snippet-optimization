@@ -42,6 +42,23 @@ class ExtractCode(JupyterNotebookTask):
             data_path, 'pandas-code-dataset.csv')
         )
 
+		
+class FormatCode(JupyterNotebookTask):
+    notebook_path = os.path.join(notebooks_path, 'code-formatter.ipynb')
+    kernel_name = 'python3'
+    timeout = 60
+
+    input_col = luigi.Parameter(default='Code')
+    output_col = luigi.Parameter(default='Code')
+	
+    def requires(self):
+        return ExtractCode()
+
+    def output(self):
+        return luigi.LocalTarget(os.path.join(
+            data_path, 'pandas-formattedcode-dataset.csv')
+        )
+		
 
 class PreProcessSpecialCharsCode(JupyterNotebookTask):
     notebook_path = os.path.join(notebooks_path, 'code-preprocess-specialchars.ipynb')
@@ -52,7 +69,7 @@ class PreProcessSpecialCharsCode(JupyterNotebookTask):
     output_col = luigi.Parameter(default='PreprocessedCode')
 
     def requires(self):
-        return ExtractCode()
+        return FormatCode()
         
     def output(self):
         return luigi.LocalTarget(os.path.join(
@@ -90,6 +107,6 @@ class PreProcessParseableCode(JupyterNotebookTask):
         
     def output(self):
         return luigi.LocalTarget(os.path.join(
-            data_path, 'pandas-preprocessedcode-dataset-done.csv')
+            data_path, 'pandas-preprocessedcode-dataset-part3.csv')
         )
 		
