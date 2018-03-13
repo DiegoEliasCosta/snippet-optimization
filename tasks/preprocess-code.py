@@ -83,7 +83,7 @@ class PreProcessTerminalLikeCode(JupyterNotebookTask):
     timeout = 120
     
     input_col = luigi.Parameter(default='PreprocessedCode')
-    output_col = luigi.Parameter(default='PreprocessedCode')
+    output_col = luigi.Parameter(default='PreprocessedCode2')
 
     def requires(self):
         return PreProcessSpecialCharsCode()
@@ -95,12 +95,12 @@ class PreProcessTerminalLikeCode(JupyterNotebookTask):
 		
 		
 class PreProcessParseableCode(JupyterNotebookTask):
-    notebook_path = os.path.join(notebooks_path, 'code-preprocess-parseablecode.ipynb')
+    notebook_path = os.path.join(notebooks_path, 'code-preprocess-parseableiteractive.ipynb')
     kernel_name = 'python3'
     timeout = 120
     
-    input_col = luigi.Parameter(default='PreprocessedCode')
-    output_col = luigi.Parameter(default='PreprocessedCode')
+    input_col = luigi.Parameter(default='PreprocessedCode2')
+    output_col = luigi.Parameter(default='PreprocessedCode3')
 
     def requires(self):
         return PreProcessTerminalLikeCode()
