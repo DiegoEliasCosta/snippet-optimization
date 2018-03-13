@@ -1,5 +1,0 @@
-pd.DataFrame(d.items())  # or list(d.items()) in python 3
-pd.DataFrame(d.items(), columns=['Date', 'DateValue'])
-s = pd.Series(d, name='DateValue')
-s.index.name = 'Date'
-

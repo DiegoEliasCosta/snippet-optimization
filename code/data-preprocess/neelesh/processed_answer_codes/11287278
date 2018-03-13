@@ -1,3 +1,0 @@
-df1 = df[['a','b']]
-df1 = df.iloc[:,0:2] # Remember that Python does not slice inclusive of the ending index.
-df1 = df.iloc[0,0:2].copy() # To avoid the case where changing df1 also changes df

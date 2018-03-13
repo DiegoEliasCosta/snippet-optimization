@@ -1,1 +1,0 @@
-df = df[df.line_race != 0]

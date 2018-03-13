@@ -1,6 +1,0 @@
-df
-df.groupby(['Mt'], sort=False)['count'].max()
-idx = df.groupby(['Mt'])['count'].transform(max) == df['count']
-
-df['count_max'] = df.groupby(['Mt'])['count'].transform(max)
-

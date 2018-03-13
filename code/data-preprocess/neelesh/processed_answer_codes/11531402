@@ -1,1 +1,0 @@
-df[df['A'].str.contains("hello")]

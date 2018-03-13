@@ -1,6 +1,0 @@
-<p>This is much easier in pandas now with <a href="http://pandas.pydata.org/pandas-docs/version/0.17.1/generated/pandas.DataFrame.drop_duplicates.html">drop_duplicates</a> and the keep parameter.</p>
-
-<pre><code>import pandas as pd
-df = pd.DataFrame({"A":["foo", "foo", "foo", "bar"], "B":[0,1,1,1], "C":["A","A","B","A"]})
-df.drop_duplicates(subset=['A', 'C'], keep=False)
-</code></pre>

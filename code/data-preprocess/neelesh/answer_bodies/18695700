@@ -1,9 +1,0 @@
-<p>See the docs for <a href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.to_dict.html" rel="noreferrer"><code>to_dict</code></a>. You can use it like this:</p>
-
-<pre><code>df.set_index('id').to_dict()
-</code></pre>
-
-<p>And if you have only one column, to avoid the column name is also a level in the dict (actually, in this case you use the <code>Series.to_dict()</code>):</p>
-
-<pre><code>df.set_index('id')['value'].to_dict()
-</code></pre>

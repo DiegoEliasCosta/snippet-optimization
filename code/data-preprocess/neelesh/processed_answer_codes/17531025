@@ -1,3 +1,0 @@
-df = pd.read_csv('foo.csv', index_col=0)
-
-df + 6

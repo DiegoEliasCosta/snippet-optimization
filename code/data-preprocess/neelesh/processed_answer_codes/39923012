@@ -1,3 +1,0 @@
-df.groupby(['Fruit','Name']).sum()
-
-Number

@@ -1,2 +1,0 @@
-chunksize = 10 ** 6
-process(chunk)

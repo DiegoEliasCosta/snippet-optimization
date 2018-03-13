@@ -1,2 +1,0 @@
-df['Value'] = df.apply(lambda row: my_test(row['a'], row['c']), axis=1)
-

@@ -1,3 +1,0 @@
-df = df.rename(columns={'oldName1': 'newName1', 'oldName2': 'newName2'})
-# Or rename the existing DataFrame (rather than creating a copy) 
-df.rename(columns={'oldName1': 'newName1', 'oldName2': 'newName2'}, inplace=True)

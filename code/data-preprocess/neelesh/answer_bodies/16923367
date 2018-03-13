@@ -1,9 +1,0 @@
-<p>To delimit by a tab you can use the <code>sep</code> argument of <a href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.to_csv.html"><code>to_csv</code></a>:</p>
-
-<pre><code>df.to_csv(file_name, sep='\t')
-</code></pre>
-
-<p>To use a specific encoding (e.g. 'utf-8') use the <code>encoding</code> argument:</p>
-
-<pre><code>df.to_csv(file_name, sep='\t', encoding='utf-8')
-</code></pre>

@@ -1,7 +1,0 @@
-df = read_csv(StringIO(data),sep='\s+')
-
-df.dtypes
-df.groupby('A').apply(lambda x: x.sum())
-df.groupby('A')['C'].apply(lambda x: x.sum())
-df.groupby('A')['C'].apply(lambda x: "{%s}" % ', '.join(x))
-df.groupby('A').apply(f)

@@ -1,2 +1,0 @@
-df.fillna(-1)
-df.fillna(-1).groupby('b').sum()

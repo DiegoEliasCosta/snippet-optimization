@@ -1,5 +1,0 @@
-data['amount'] = data["amount"].fillna(data.groupby("num")["amount"].transform("mean"))
-
-data["amount"] = data['amount'].fillna(mean_avg)
-data['amount'] = data['amount'].fillna(mean_avg)*2
-pd.set_option('chained_assignment',None)

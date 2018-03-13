@@ -1,6 +1,0 @@
-<p>Based on github issue <a href="https://github.com/pydata/pandas/issues/620" rel="noreferrer">#620</a>, it looks like you'll soon be able to do the following:</p>
-
-<pre><code>df[df['A'].str.contains("hello")]
-</code></pre>
-
-<p>Update: <a href="http://pandas.pydata.org/pandas-docs/stable/text.html#text-string-methods" rel="noreferrer">vectorized string methods (i.e., Series.str)</a> are available in pandas 0.8.1 and up. </p>

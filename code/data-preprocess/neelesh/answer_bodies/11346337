@@ -1,9 +1,0 @@
-<p>Just assign it to the <code>.columns</code> attribute:</p>
-
-<pre><code>&gt;&gt;&gt; df = pd.DataFrame({'$a':[1,2], '$b': [10,20]})
-&gt;&gt;&gt; df.columns = ['a', 'b']
-&gt;&gt;&gt; df
-   a   b
-0  1  10
-1  2  20
-</code></pre>

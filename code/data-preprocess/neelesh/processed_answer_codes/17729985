@@ -1,6 +1,0 @@
-d.sales[d.sales==24] = 100
-
-d.loc[d.sales == 12, 'sales'] = 99
-
-d.sales = d.sales.replace(23, 24)
-

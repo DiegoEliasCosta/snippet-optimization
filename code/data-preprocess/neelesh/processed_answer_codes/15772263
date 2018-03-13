@@ -1,4 +1,0 @@
-pd.rolling_mean(df.resample("1D", fill_method="ffill"), window=3, min_periods=1)
-
-enddate
-df.resample("1d").sum().fillna(0).rolling(window=3, min_periods=1).mean()

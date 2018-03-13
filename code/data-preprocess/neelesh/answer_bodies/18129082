@@ -1,4 +1,0 @@
-<p>you could also try;</p>
-
-<pre><code>data = pd.read_csv('file1.csv', error_bad_lines=False)
-</code></pre>

@@ -1,2 +1,0 @@
-<pre><code>data['result'] = data['result'].map(lambda x: x.lstrip('+-').rstrip('aAbBcC'))
-</code></pre>

@@ -1,5 +1,0 @@
-common = df1.merge(df2,on=['col1','col2'])
-print(common)
-df1[(~df1.col1.isin(common.col1))&(~df1.col2.isin(common.col2))]
-df1[~df1.isin(df2)].dropna()
-df1[~df1.isin(df2)].dropna()

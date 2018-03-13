@@ -1,5 +1,0 @@
-df = pd.DataFrame(np.random.randn(100, 2))
-
-
-
-len(train)
