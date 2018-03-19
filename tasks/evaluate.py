@@ -18,7 +18,7 @@ analyze_notebook_path = os.path.join(module_path, 'code', 'analysis')
 data_path = os.path.join(module_path, 'data', 'stack-overflow')
 results_path = os.path.join(module_path, 'data', 'results')
 
-api_doc_file = os.path.join(module_path, 'data-import', 'build_api_doc_base', 'api_doc.csv') 
+api_doc_file = os.path.join(module_path, 'code', 'data-import', 'build_api_doc_base', 'api_doc.csv') 
 
 
 # ------------------------------------------------
