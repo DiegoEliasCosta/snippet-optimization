@@ -22,6 +22,41 @@ api_doc_file = os.path.join(module_path, 'code', 'data-import', 'build_api_doc_b
 
 
 # ------------------------------------------------
+#  						BASELINE  
+# ------------------------------------------------
+
+class RunBaseline(JupyterNotebookTask):
+    notebook_path = os.path.join(method_notebook_path, 'baseline', 'baseline.ipynb')
+    kernel_name = 'python3'
+    timeout = 60
+
+    input_col = luigi.Parameter(default='PreprocessedCode3')    
+    
+    def requires(self):
+        return PreProcessParseableCode()
+
+    def output(self):
+        return luigi.LocalTarget(os.path.join(data_path, 'pandas-solutioncode-baseline'))
+
+		
+		
+class EvaluateBaseline(JupyterNotebookTask):
+    notebook_path = os.path.join(analyze_notebook_path, 'evaluate.ipynb')
+    kernel_name = 'python3'
+    timeout = 60
+
+    dataset = luigi.Parameter(default=os.path.join(data_path, 'Dataset - Pandas.csv'))
+
+
+    def requires(self):
+        return RunBaseline()
+
+    def output(self):
+        return luigi.LocalTarget(os.path.join(results_path, 'results-baseline'))
+		
+
+
+# ------------------------------------------------
 #  						H1  
 # ------------------------------------------------
 
