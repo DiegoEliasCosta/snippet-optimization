@@ -38,7 +38,7 @@ class AnalyzeAllBlock(JupyterNotebookTask):
             'h1': EvaluateH1(),
             'h2': EvaluateH2(),
             'h1h2': EvaluateH1H2(),
-            #'m1': EvaluateM1(),
+            'm1': EvaluateM1(),
             }
         
 
@@ -60,7 +60,7 @@ class AnalyzeAllLine(JupyterNotebookTask):
             'h1': EvaluateH1_Line(),
             'h2': EvaluateH2_Line(),
             'h1h2': EvaluateH1H2_Line(),
-            #'m1': EvaluateM1_Line(),
+            'm1': EvaluateM1_Line(),
             }
         
 
