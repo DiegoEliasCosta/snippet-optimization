@@ -17,9 +17,11 @@ analyze_notebook_path = os.path.join(module_path, 'code', 'analysis')
 
 data_path = os.path.join(module_path, 'data', 'stack-overflow')
 results_path = os.path.join(module_path, 'data', 'results')
+analysis_path = os.path.join(module_path, 'data', 'analysis')
 
 api_doc_file = os.path.join(module_path, 'code', 'data-import', 'build_api_doc_base', 'api_doc.csv') 
 
+DEBUG = 1
 
 # ------------------------------------------------
 #  						BASELINE  
@@ -46,7 +48,7 @@ class EvaluateBaseline(JupyterNotebookTask):
     timeout = 60
 
     dataset = luigi.Parameter(default=os.path.join(data_path, 'Dataset - Pandas.csv'))
-
+    debug = luigi.Parameter(default=DEBUG)
 
     def requires(self):
         return RunBaseline()
@@ -55,6 +57,19 @@ class EvaluateBaseline(JupyterNotebookTask):
         return luigi.LocalTarget(os.path.join(results_path, 'results-baseline'))
 		
 
+class EvaluateBaseline_Line(JupyterNotebookTask):
+    notebook_path = os.path.join(analyze_notebook_path, 'evaluate-line-granularity.ipynb')
+    kernel_name = 'python3'
+    timeout = 60
+
+    dataset = luigi.Parameter(default=os.path.join(data_path, 'Dataset - Pandas.csv'))
+    debug = luigi.Parameter(default=DEBUG)
+
+    def requires(self):
+        return RunBaseline()
+
+    def output(self):
+        return luigi.LocalTarget(os.path.join(results_path, 'results-baseline-line'))
 
 # ------------------------------------------------
 #  						H1  
@@ -67,6 +82,7 @@ class RunH1(JupyterNotebookTask):
 
     dataset = luigi.Parameter(default=os.path.join(data_path, 'Dataset - Pandas.csv'))
 
+    
     input_col = luigi.Parameter(default='PreprocessedCode3')    
     api_doc_file = luigi.Parameter(default=api_doc_file)   
     
@@ -84,13 +100,29 @@ class EvaluateH1(JupyterNotebookTask):
     timeout = 60
 
     dataset = luigi.Parameter(default=os.path.join(data_path, 'Dataset - Pandas.csv'))
-
+    debug = luigi.Parameter(default=DEBUG)
 
     def requires(self):
         return RunH1()
 
     def output(self):
         return luigi.LocalTarget(os.path.join(results_path, 'results-h1'))
+        
+        
+        
+class EvaluateH1_Line(JupyterNotebookTask):
+    notebook_path = os.path.join(analyze_notebook_path, 'evaluate-line-granularity.ipynb')
+    kernel_name = 'python3'
+    timeout = 60
+
+    dataset = luigi.Parameter(default=os.path.join(data_path, 'Dataset - Pandas.csv'))
+    debug = luigi.Parameter(default=DEBUG)
+
+    def requires(self):
+        return RunH1()
+
+    def output(self):
+        return luigi.LocalTarget(os.path.join(results_path, 'results-h1-line'))
 		
 		
 # ------------------------------------------------
@@ -121,7 +153,7 @@ class EvaluateH2(JupyterNotebookTask):
     timeout = 60
 
     dataset = luigi.Parameter(default=os.path.join(data_path, 'Dataset - Pandas.csv'))
-
+    debug = luigi.Parameter(default=DEBUG)
 
     def requires(self):
         return RunH2()
@@ -129,6 +161,20 @@ class EvaluateH2(JupyterNotebookTask):
     def output(self):
         return luigi.LocalTarget(os.path.join(results_path, 'results-h2'))
 		
+        
+class EvaluateH2_Line(JupyterNotebookTask):
+    notebook_path = os.path.join(analyze_notebook_path, 'evaluate-line-granularity.ipynb')
+    kernel_name = 'python3'
+    timeout = 60
+
+    dataset = luigi.Parameter(default=os.path.join(data_path, 'Dataset - Pandas.csv'))
+    debug = luigi.Parameter(default=DEBUG)
+
+    def requires(self):
+        return RunH2()
+
+    def output(self):
+        return luigi.LocalTarget(os.path.join(results_path, 'results-h2-line'))
 		
 # ------------------------------------------------
 #  					H1 and H2
@@ -140,6 +186,7 @@ class RunH1H2(JupyterNotebookTask):
 
     dataset = luigi.Parameter(default=os.path.join(data_path, 'Dataset - Pandas.csv'))
 
+    
     input_col = luigi.Parameter(default='PreprocessedCode3')    
     api_doc_file = luigi.Parameter(default=api_doc_file)   
     
@@ -157,13 +204,29 @@ class EvaluateH1H2(JupyterNotebookTask):
     timeout = 60
 
     dataset = luigi.Parameter(default=os.path.join(data_path, 'Dataset - Pandas.csv'))
-
+    debug = luigi.Parameter(default=DEBUG)
 
     def requires(self):
         return RunH1H2()
 
     def output(self):
         return luigi.LocalTarget(os.path.join(results_path, 'results-h1h2'))
+        
+        
+        
+class EvaluateH1H2_Line(JupyterNotebookTask):
+    notebook_path = os.path.join(analyze_notebook_path, 'evaluate-line-granularity.ipynb')
+    kernel_name = 'python3'
+    timeout = 60
+
+    dataset = luigi.Parameter(default=os.path.join(data_path, 'Dataset - Pandas.csv'))
+    debug = luigi.Parameter(default=DEBUG)
+
+    def requires(self):
+        return RunH1H2()
+
+    def output(self):
+        return luigi.LocalTarget(os.path.join(results_path, 'results-h1h2-line'))
 
 
 # ------------------------------------------------
@@ -179,7 +242,7 @@ class RunM1(JupyterNotebookTask):
     code_snippet_col = luigi.Parameter(default='PreprocessedCode3')
     id_col = luigi.Parameter(default='Id')     
     api_doc_file = luigi.Parameter(default=api_doc_file)   
-    cosine_sim_th = luigi.Parameter(default=0.0)
+    cosine_sim_th = luigi.Parameter(default=0.1)
      
     def requires(self):
         return PreProcessParseableCode()
@@ -188,6 +251,8 @@ class RunM1(JupyterNotebookTask):
         return luigi.LocalTarget(os.path.join(data_path, 'pandas-solutioncode-m1'))
 
 		
+        
+        
 		
 class EvaluateM1(JupyterNotebookTask):
     notebook_path = os.path.join(analyze_notebook_path, 'evaluate.ipynb')
@@ -195,10 +260,27 @@ class EvaluateM1(JupyterNotebookTask):
     timeout = 60
 
     dataset = luigi.Parameter(default=os.path.join(data_path, 'Dataset - Pandas.csv'))
-
+    debug = luigi.Parameter(default=DEBUG)
 
     def requires(self):
         return RunM1()
 
     def output(self):
         return luigi.LocalTarget(os.path.join(results_path, 'results-m1'))
+
+        
+        
+class EvaluateM1_Line(JupyterNotebookTask):
+    notebook_path = os.path.join(analyze_notebook_path, 'evaluate-line-granularity.ipynb')
+    kernel_name = 'python3'
+    timeout = 60
+
+    dataset = luigi.Parameter(default=os.path.join(data_path, 'Dataset - Pandas.csv'))
+    debug = luigi.Parameter(default=DEBUG)
+
+
+    def requires(self):
+        return RunM1()
+
+    def output(self):
+        return luigi.LocalTarget(os.path.join(results_path, 'results-m1-line'))
