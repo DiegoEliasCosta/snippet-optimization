@@ -164,3 +164,41 @@ class EvaluateH1H2(JupyterNotebookTask):
 
     def output(self):
         return luigi.LocalTarget(os.path.join(results_path, 'results-h1h2'))
+
+
+# ------------------------------------------------
+#  					M1
+# ------------------------------------------------
+class RunM1(JupyterNotebookTask):
+    notebook_path = os.path.join(method_notebook_path, 'm1', 'M1-Question_Text_Api_Desc.ipynb')
+    kernel_name = 'python3'
+    timeout = 60
+
+    dataset = luigi.Parameter(default=os.path.join(data_path, 'Dataset - Pandas.csv'))
+
+    code_snippet_col = luigi.Parameter(default='PreprocessedCode3')
+    id_col = luigi.Parameter(default='Id')     
+    api_doc_file = luigi.Parameter(default=api_doc_file)   
+    cosine_sim_th = luigi.Parameter(default=0.0)
+     
+    def requires(self):
+        return PreProcessParseableCode()
+
+    def output(self):
+        return luigi.LocalTarget(os.path.join(data_path, 'pandas-solutioncode-m1'))
+
+		
+		
+class EvaluateM1(JupyterNotebookTask):
+    notebook_path = os.path.join(analyze_notebook_path, 'evaluate.ipynb')
+    kernel_name = 'python3'
+    timeout = 60
+
+    dataset = luigi.Parameter(default=os.path.join(data_path, 'Dataset - Pandas.csv'))
+
+
+    def requires(self):
+        return RunM1()
+
+    def output(self):
+        return luigi.LocalTarget(os.path.join(results_path, 'results-m1'))
