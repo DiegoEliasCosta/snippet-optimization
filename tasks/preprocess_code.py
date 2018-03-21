@@ -103,19 +103,36 @@ class PreProcessTerminalLikeCode(JupyterNotebookTask):
             data_path, 'pandas-preprocessedcode-dataset-part2')
         )
 		
+class PreProcessExtraCode(JupyterNotebookTask):
+    notebook_path = os.path.join(notebooks_path, 'code-preprocess-extra.ipynb')
+    kernel_name = 'python3'
+    timeout = 120
+    
+    input_col = luigi.Parameter(default='PreprocessedCode2')
+    output_col = luigi.Parameter(default='PreprocessedCode2_1')
+	
+    debug = luigi.Parameter(default=DEBUG)
+
+    def requires(self):
+        return PreProcessTerminalLikeCode()
+        
+    def output(self):
+        return luigi.LocalTarget(os.path.join(
+            data_path, 'pandas-preprocessedcode-dataset-part2_1')
+        )
 		
 class PreProcessParseableCode(JupyterNotebookTask):
     notebook_path = os.path.join(notebooks_path, 'code-preprocess-parseableiteractive.ipynb')
     kernel_name = 'python3'
     timeout = 120
     
-    input_col = luigi.Parameter(default='PreprocessedCode2')
+    input_col = luigi.Parameter(default='PreprocessedCode2_1')
     output_col = luigi.Parameter(default='PreprocessedCode3')
 	
     debug = luigi.Parameter(default=DEBUG)
 
     def requires(self):
-        return PreProcessTerminalLikeCode()
+        return PreProcessExtraCode()
         
     def output(self):
         return luigi.LocalTarget(os.path.join(
