@@ -1,0 +1,5 @@
+Earlier we used to look up for API method calls only. Sometimes the solutions are in the form of attributes also.
+
+df.loc is may also be the solution but not a function.
+
+We have seen an increase in recall in all the methods.

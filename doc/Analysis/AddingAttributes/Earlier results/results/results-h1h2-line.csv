@@ -1,0 +1,1325 @@
+Id,Matched_Prediction,Unmatched_Prediction,Matched_Actual,Unmatched_Actual
+12681217,"pd.concat([Series(row['var2'], row['var1'].split(','))
+","for _, row in a.iterrows()]).reset_index()
+","pd.concat([Series(row['var2'], row['var1'].split(','))
+",
+29319200,,,,"df = pd.read_csv(""test_data2.csv"", index_col=[0,1], skipinitialspace=True)
+"
+29319200,,,,"df = pd.read_csv(""test_data2.csv"", index_col=[0,1], skipinitialspace=True)
+"
+29319200,,,,"df = pd.read_csv(""test_data2.csv"", index_col=[0,1], skipinitialspace=True)
+"
+17531025,"df.to_csv(f, header=False)
+(df + 6).to_csv(f, header=False)
+","df = pd.read_csv('foo.csv', index_col=0)
+","df.to_csv(f, header=False)
+","(df + 6).to_csv(f, header=False)
+"
+17531025,"df.to_csv(f, header=False)
+(df + 6).to_csv(f, header=False)
+","df = pd.read_csv('foo.csv', index_col=0)
+","(df + 6).to_csv(f, header=False)
+","(df + 6).to_csv(f, header=False)
+"
+18129082,"data = pd.read_csv('file1.csv', error_bad_lines=False)
+",,"data = pd.read_csv('file1.csv', error_bad_lines=False)
+",
+12525836,"df_norm = (df - df.mean()) / (df.max() - df.min())
+","df_norm.mean()
+df_norm.max() - df_norm.min()
+","df_norm = (df - df.mean()) / (df.max() - df.min())
+",
+32801170,,"df.groupby(key_columns).size()
+counts = df.groupby('col1').size(); counts
+counts_df = pd.DataFrame(df.groupby('col1').size().rename('counts'))
+df[['col1', 'col2', 'col3', 'col4']]\
+groupby_object = df[['col1', 'col2', 'col3', 'col4']]\
+groupby_object.agg('mean')\
+.rename(columns = lambda x: x + ' mean')\
+.join(pd.DataFrame(groupby_object.size(),
+",,".join(pd.DataFrame(groupby_object.size(),
+"
+32801170,,"df.groupby(key_columns).size()
+counts = df.groupby('col1').size(); counts
+counts_df = pd.DataFrame(df.groupby('col1').size().rename('counts'))
+df[['col1', 'col2', 'col3', 'col4']]\
+groupby_object = df[['col1', 'col2', 'col3', 'col4']]\
+groupby_object.agg('mean')\
+.rename(columns = lambda x: x + ' mean')\
+.join(pd.DataFrame(groupby_object.size(),
+",,".join(pd.DataFrame(groupby_object.size(),
+"
+32801170,,"df.groupby(key_columns).size()
+counts = df.groupby('col1').size(); counts
+counts_df = pd.DataFrame(df.groupby('col1').size().rename('counts'))
+df[['col1', 'col2', 'col3', 'col4']]\
+groupby_object = df[['col1', 'col2', 'col3', 'col4']]\
+groupby_object.agg('mean')\
+.rename(columns = lambda x: x + ' mean')\
+.join(pd.DataFrame(groupby_object.size(),
+",,".join(pd.DataFrame(groupby_object.size(),
+"
+32801170,,"df.groupby(key_columns).size()
+counts = df.groupby('col1').size(); counts
+counts_df = pd.DataFrame(df.groupby('col1').size().rename('counts'))
+df[['col1', 'col2', 'col3', 'col4']]\
+groupby_object = df[['col1', 'col2', 'col3', 'col4']]\
+groupby_object.agg('mean')\
+.rename(columns = lambda x: x + ' mean')\
+.join(pd.DataFrame(groupby_object.size(),
+",,".join(pd.DataFrame(groupby_object.size(),
+"
+11346337,,,,"for j in range(len(df.columns)):
+"
+23749057,"df['a'].values.tolist()
+df['a'].tolist()
+df['a'].drop_duplicates().values.tolist()
+",,"df['a'].values.tolist()
+",
+23749057,"df['a'].values.tolist()
+df['a'].tolist()
+df['a'].drop_duplicates().values.tolist()
+",,"df['a'].tolist()
+",
+23749057,"df['a'].values.tolist()
+df['a'].tolist()
+df['a'].drop_duplicates().values.tolist()
+",,"df['a'].drop_duplicates().values.tolist()
+",
+23749057,"df['a'].values.tolist()
+df['a'].tolist()
+df['a'].drop_duplicates().values.tolist()
+",,,"df['a'].drop_duplicates().values.tolist()
+"
+13148611,"cols = df.columns.tolist()
+",,"cols = df.columns.tolist()
+","cols = df.columns.tolist()
+cols = df.columns.tolist()
+"
+21291622,,"df.a = df.a.astype(float)
+",,"df.a = df.a.astype(float)
+"
+21291622,,"df.a = df.a.astype(float)
+",,"df.a = df.a.astype(float)
+"
+11354850,"df = df.rename(columns={'oldName1': 'newName1', 'oldName2': 'newName2'})
+df.rename(columns={'oldName1': 'newName1', 'oldName2': 'newName2'}, inplace=True)
+",,"df = df.rename(columns={'oldName1': 'newName1', 'oldName2': 'newName2'})
+",
+11354850,"df = df.rename(columns={'oldName1': 'newName1', 'oldName2': 'newName2'})
+df.rename(columns={'oldName1': 'newName1', 'oldName2': 'newName2'}, inplace=True)
+",,"df.rename(columns={'oldName1': 'newName1', 'oldName2': 'newName2'}, inplace=True)
+",
+28902170,"common = df1.merge(df2,on=['col1','col2'])
+df1[(~df1.col1.isin(common.col1))&(~df1.col2.isin(common.col2))]
+df1[~df1.isin(df2)].dropna()
+df1[~df1.isin(df2)].dropna()
+",,"common = df1.merge(df2,on=['col1','col2'])
+df1[(~df1.col1.isin(common.col1))&(~df1.col2.isin(common.col2))]
+",
+28902170,"common = df1.merge(df2,on=['col1','col2'])
+df1[(~df1.col1.isin(common.col1))&(~df1.col2.isin(common.col2))]
+df1[~df1.isin(df2)].dropna()
+df1[~df1.isin(df2)].dropna()
+",,"df1[~df1.isin(df2)].dropna()
+",
+28902170,"common = df1.merge(df2,on=['col1','col2'])
+df1[(~df1.col1.isin(common.col1))&(~df1.col2.isin(common.col2))]
+df1[~df1.isin(df2)].dropna()
+df1[~df1.isin(df2)].dropna()
+",,"df1[~df1.isin(df2)].dropna()
+",
+13337376,,,,"df1[~df1.isin(df2)].dropna()
+"
+21463854,"data['amount'] = data[""amount""].fillna(data.groupby(""num"")[""amount""].transform(""mean""))
+data[""amount""] = data['amount'].fillna(mean_avg)
+data['amount'] = data['amount'].fillna(mean_avg)*2
+","pd.set_option('chained_assignment',None)
+","data['amount'] = data[""amount""].fillna(data.groupby(""num"")[""amount""].transform(""mean""))
+",
+21463854,"data['amount'] = data[""amount""].fillna(data.groupby(""num"")[""amount""].transform(""mean""))
+data[""amount""] = data['amount'].fillna(mean_avg)
+data['amount'] = data['amount'].fillna(mean_avg)*2
+","pd.set_option('chained_assignment',None)
+","data[""amount""] = data['amount'].fillna(mean_avg)
+",
+21463854,"data['amount'] = data[""amount""].fillna(data.groupby(""num"")[""amount""].transform(""mean""))
+data[""amount""] = data['amount'].fillna(mean_avg)
+data['amount'] = data['amount'].fillna(mean_avg)*2
+","pd.set_option('chained_assignment',None)
+","data['amount'] = data['amount'].fillna(mean_avg)*2
+",
+11617194,,,,"df[""B""] = df[""A""].map(equiv)
+"
+11617194,,,,"df[""B""] = df[""A""].map(equiv)
+"
+19112890,,,,"A
+"
+24888331,,,,"cols.insert(0, x)
+"
+18023468,,,,"A
+"
+13295801,"df.fillna(0)
+df[1].fillna(0, inplace=True)
+",,"df.fillna(0)
+",
+13295801,"df.fillna(0)
+df[1].fillna(0, inplace=True)
+",,"df[1].fillna(0, inplace=True)
+",
+23307361,"w['female'] = w['female'].map({'female': 1, 'male': 0})
+",,"w['female'] = w['female'].map({'female': 1, 'male': 0})
+",
+25376997,"df.loc[len(df)]=['8/19/2014','Jun','Fly','98765']
+",,"df.loc[len(df)]=['8/19/2014','Jun','Fly','98765']
+",
+37043071,,,,"sum(counts)
+"
+25748826,"df['e'] = df.sum(axis=1)
+df['e'] = df[col_list].sum(axis=1)
+",,"df['e'] = df.sum(axis=1)
+",
+25748826,"df['e'] = df.sum(axis=1)
+df['e'] = df[col_list].sum(axis=1)
+",,"df['e'] = df[col_list].sum(axis=1)
+","df['e'] = df[col_list].sum(axis=1)
+df['e'] = df[col_list].sum(axis=1)
+"
+17682662,,,,"dtf2.plot()
+"
+21800319,,"df[df['BoolCol'] == True].index.tolist()
+df[df['BoolCol']].index.tolist()
+df[df['BoolCol']].index.tolist()
+idx = df[df['BoolCol']].index.tolist()
+",,"idx = df[df['BoolCol']].index.tolist()
+"
+21800319,,"df[df['BoolCol'] == True].index.tolist()
+df[df['BoolCol']].index.tolist()
+df[df['BoolCol']].index.tolist()
+idx = df[df['BoolCol']].index.tolist()
+",,"idx = df[df['BoolCol']].index.tolist()
+"
+21800319,,"df[df['BoolCol'] == True].index.tolist()
+df[df['BoolCol']].index.tolist()
+df[df['BoolCol']].index.tolist()
+idx = df[df['BoolCol']].index.tolist()
+",,"idx = df[df['BoolCol']].index.tolist()
+"
+21800319,,"df[df['BoolCol'] == True].index.tolist()
+df[df['BoolCol']].index.tolist()
+df[df['BoolCol']].index.tolist()
+idx = df[df['BoolCol']].index.tolist()
+",,"idx = df[df['BoolCol']].index.tolist()
+"
+21800319,,"df[df['BoolCol'] == True].index.tolist()
+df[df['BoolCol']].index.tolist()
+df[df['BoolCol']].index.tolist()
+idx = df[df['BoolCol']].index.tolist()
+",,"idx = df[df['BoolCol']].index.tolist()
+"
+21800319,,"df[df['BoolCol'] == True].index.tolist()
+df[df['BoolCol']].index.tolist()
+df[df['BoolCol']].index.tolist()
+idx = df[df['BoolCol']].index.tolist()
+",,"idx = df[df['BoolCol']].index.tolist()
+"
+28648923,"pd.to_numeric(s)
+pd.to_numeric(s, errors='coerce')
+pd.to_numeric(s, errors='ignore')
+df[['col2','col3']] = df[['col2','col3']].apply(pd.to_numeric)
+df.apply(pd.to_numeric, errors='ignore')
+df = df.infer_objects()
+",,"pd.to_numeric(s)
+",
+28648923,"pd.to_numeric(s)
+pd.to_numeric(s, errors='coerce')
+pd.to_numeric(s, errors='ignore')
+df[['col2','col3']] = df[['col2','col3']].apply(pd.to_numeric)
+df.apply(pd.to_numeric, errors='ignore')
+df = df.infer_objects()
+",,"pd.to_numeric(s, errors='coerce')
+",
+28648923,"pd.to_numeric(s)
+pd.to_numeric(s, errors='coerce')
+pd.to_numeric(s, errors='ignore')
+df[['col2','col3']] = df[['col2','col3']].apply(pd.to_numeric)
+df.apply(pd.to_numeric, errors='ignore')
+df = df.infer_objects()
+",,"pd.to_numeric(s, errors='ignore')
+",
+28648923,"pd.to_numeric(s)
+pd.to_numeric(s, errors='coerce')
+pd.to_numeric(s, errors='ignore')
+df[['col2','col3']] = df[['col2','col3']].apply(pd.to_numeric)
+df.apply(pd.to_numeric, errors='ignore')
+df = df.infer_objects()
+",,"df[['col2','col3']] = df[['col2','col3']].apply(pd.to_numeric)
+",
+28648923,"pd.to_numeric(s)
+pd.to_numeric(s, errors='coerce')
+pd.to_numeric(s, errors='ignore')
+df[['col2','col3']] = df[['col2','col3']].apply(pd.to_numeric)
+df.apply(pd.to_numeric, errors='ignore')
+df = df.infer_objects()
+",,"df.apply(pd.to_numeric, errors='ignore')
+",
+28648923,"pd.to_numeric(s)
+pd.to_numeric(s, errors='coerce')
+pd.to_numeric(s, errors='ignore')
+df[['col2','col3']] = df[['col2','col3']].apply(pd.to_numeric)
+df.apply(pd.to_numeric, errors='ignore')
+df = df.infer_objects()
+",,"df = df.infer_objects()
+",
+18695700,"df.set_index('id').to_dict()
+df.set_index('id')['value'].to_dict()
+",,"df.set_index('id').to_dict()
+",
+18695700,"df.set_index('id').to_dict()
+df.set_index('id')['value'].to_dict()
+",,"df.set_index('id')['value'].to_dict()
+",
+16729808,,,,"return pd.DataFrame.from_items(data)
+"
+16729808,,,,"return pd.DataFrame.from_items(data)
+"
+13270110,"merge(df1, df2,on='key')[['col1', 'col2', 'col3']]
+",,"merge(df1, df2,on='key')[['col1', 'col2', 'col3']]
+",
+22341390,"dfList = df['one'].tolist()
+",,"dfList = df['one'].tolist()
+",
+22341390,"dfList = df['one'].tolist()
+",,,"dfList = df['one'].tolist()
+"
+15705958,"df.groupby(['Mt'], sort=False)['count'].max()
+idx = df.groupby(['Mt'])['count'].transform(max) == df['count']
+df['count_max'] = df.groupby(['Mt'])['count'].transform(max)
+",,"df.groupby(['Mt'], sort=False)['count'].max()
+",
+15705958,"df.groupby(['Mt'], sort=False)['count'].max()
+idx = df.groupby(['Mt'])['count'].transform(max) == df['count']
+df['count_max'] = df.groupby(['Mt'])['count'].transform(max)
+",,"idx = df.groupby(['Mt'])['count'].transform(max) == df['count']
+",
+15705958,"df.groupby(['Mt'], sort=False)['count'].max()
+idx = df.groupby(['Mt'])['count'].transform(max) == df['count']
+df['count_max'] = df.groupby(['Mt'])['count'].transform(max)
+",,"df['count_max'] = df.groupby(['Mt'])['count'].transform(max)
+",
+20461206,"df.reset_index(level=0, inplace=True)
+df.reset_index(level=['tick', 'obs'])
+",,,"df.reset_index(level=['tick', 'obs'])
+"
+20461206,"df.reset_index(level=0, inplace=True)
+df.reset_index(level=['tick', 'obs'])
+",,"df.reset_index(level=0, inplace=True)
+",
+20461206,"df.reset_index(level=0, inplace=True)
+df.reset_index(level=['tick', 'obs'])
+",,"df.reset_index(level=['tick', 'obs'])
+",
+14508355,"df.columns = df.columns.get_level_values(0)
+df.columns = [' '.join(col).strip() for col in df.columns.values]
+[' '.join(col).strip() for col in df.columns.values]
+",,"df.columns = df.columns.get_level_values(0)
+",
+14508355,"df.columns = df.columns.get_level_values(0)
+df.columns = [' '.join(col).strip() for col in df.columns.values]
+[' '.join(col).strip() for col in df.columns.values]
+",,"df.columns = [' '.join(col).strip() for col in df.columns.values]
+",
+14508355,"df.columns = df.columns.get_level_values(0)
+df.columns = [' '.join(col).strip() for col in df.columns.values]
+[' '.join(col).strip() for col in df.columns.values]
+",,"[' '.join(col).strip() for col in df.columns.values]
+",
+11872393,,,,"A
+"
+11872393,,,,"A
+A
+A
+A
+A
+"
+25962187,"for chunk in pd.read_csv(filename, chunksize=chunksize):
+",,"for chunk in pd.read_csv(filename, chunksize=chunksize):
+","for chunk in pd.read_csv(filename, chunksize=chunksize):
+"
+17950531,"df['A'].apply(str)
+df.applymap(str)
+","df['A'].apply(str)[0]
+df.applymap(str).iloc[0,0]
+","df['A'].apply(str)
+",
+17950531,"df['A'].apply(str)
+df.applymap(str)
+","df['A'].apply(str)[0]
+df.applymap(str).iloc[0,0]
+","df.applymap(str)
+",
+15943975,"len(df.index)
+",,,"len(df.index)
+"
+15943975,"len(df.index)
+",,,"len(df.index)
+"
+15943975,"len(df.index)
+",,"len(df.index)
+",
+18327852,,,,"A
+"
+15411596,"table.groupby('YEARMONTH').CLIENTCODE.nunique()
+table.groupby('YEARMONTH').CLIENTCODE.nunique()
+",,"table.groupby('YEARMONTH').CLIENTCODE.nunique()
+",
+17729985,"d.sales = d.sales.replace(23, 24)
+",,,"d.sales = d.sales.replace(23, 24)
+"
+17729985,"d.sales = d.sales.replace(23, 24)
+",,,"d.sales = d.sales.replace(23, 24)
+"
+17729985,"d.sales = d.sales.replace(23, 24)
+",,"d.sales = d.sales.replace(23, 24)
+",
+18942558,"df['Col3'] = (df['Col2'] <= 1).astype(int)
+df['Col3'] = df['Col2'].map(lambda x: 42 if x > 1 else 55)
+",,"df['Col3'] = (df['Col2'] <= 1).astype(int)
+",
+18942558,"df['Col3'] = (df['Col2'] <= 1).astype(int)
+df['Col3'] = df['Col2'].map(lambda x: 42 if x > 1 else 55)
+",,"df['Col3'] = df['Col2'].map(lambda x: 42 if x > 1 else 55)
+",
+18942558,"df['Col3'] = (df['Col2'] <= 1).astype(int)
+df['Col3'] = df['Col2'].map(lambda x: 42 if x > 1 else 55)
+",,,"df['Col3'] = df['Col2'].map(lambda x: 42 if x > 1 else 55)
+df['Col3'] = df['Col2'].map(lambda x: 42 if x > 1 else 55)
+df['Col3'] = df['Col2'].map(lambda x: 42 if x > 1 else 55)
+df['Col3'] = df['Col2'].map(lambda x: 42 if x > 1 else 55)
+"
+15772263,"pd.rolling_mean(df.resample(""1D"", fill_method=""ffill""), window=3, min_periods=1)
+df.resample(""1d"").sum().fillna(0).rolling(window=3, min_periods=1).mean()
+",,"pd.rolling_mean(df.resample(""1D"", fill_method=""ffill""), window=3, min_periods=1)
+",
+15772263,"pd.rolling_mean(df.resample(""1D"", fill_method=""ffill""), window=3, min_periods=1)
+df.resample(""1d"").sum().fillna(0).rolling(window=3, min_periods=1).mean()
+",,"df.resample(""1d"").sum().fillna(0).rolling(window=3, min_periods=1).mean()
+",
+15362700,,,,"A
+"
+22276757,,,,"df = df.sort_index(ascending=False)
+"
+22276757,,,,"df = df.sort_index(ascending=False)
+"
+15026839,,,,"df = df.sort_index(ascending=False)
+"
+15026839,,,,"df = df.sort_index(ascending=False)
+"
+13704307,"datetime.utcfromtimestamp(ts)
+np.datetime64(datetime.utcnow()).astype(datetime)
+numpy.datetime64('2002-06-28T01:00:00.000000000+0100').astype(datetime)
+numpy.datetime64('2002-06-28T01:00:00.000000000+0100').astype(datetime)
+datetime.utcfromtimestamp(dt64.astype(int) * ns)
+datetime.utcfromtimestamp(dt64.astype(int))
+","dt = datetime.utcnow()
+dtype('<M8[ns]')
+dtype('<M8[s]')
+",,"datetime.utcfromtimestamp(dt64.astype(int))
+"
+13704307,"datetime.utcfromtimestamp(ts)
+np.datetime64(datetime.utcnow()).astype(datetime)
+numpy.datetime64('2002-06-28T01:00:00.000000000+0100').astype(datetime)
+numpy.datetime64('2002-06-28T01:00:00.000000000+0100').astype(datetime)
+datetime.utcfromtimestamp(dt64.astype(int) * ns)
+datetime.utcfromtimestamp(dt64.astype(int))
+","dt = datetime.utcnow()
+dtype('<M8[ns]')
+dtype('<M8[s]')
+","datetime.utcfromtimestamp(ts)
+",
+13704307,"datetime.utcfromtimestamp(ts)
+np.datetime64(datetime.utcnow()).astype(datetime)
+numpy.datetime64('2002-06-28T01:00:00.000000000+0100').astype(datetime)
+numpy.datetime64('2002-06-28T01:00:00.000000000+0100').astype(datetime)
+datetime.utcfromtimestamp(dt64.astype(int) * ns)
+datetime.utcfromtimestamp(dt64.astype(int))
+","dt = datetime.utcnow()
+dtype('<M8[ns]')
+dtype('<M8[s]')
+","np.datetime64(datetime.utcnow()).astype(datetime)
+",
+13704307,"datetime.utcfromtimestamp(ts)
+np.datetime64(datetime.utcnow()).astype(datetime)
+numpy.datetime64('2002-06-28T01:00:00.000000000+0100').astype(datetime)
+numpy.datetime64('2002-06-28T01:00:00.000000000+0100').astype(datetime)
+datetime.utcfromtimestamp(dt64.astype(int) * ns)
+datetime.utcfromtimestamp(dt64.astype(int))
+","dt = datetime.utcnow()
+dtype('<M8[ns]')
+dtype('<M8[s]')
+","numpy.datetime64('2002-06-28T01:00:00.000000000+0100').astype(datetime)
+",
+13704307,"datetime.utcfromtimestamp(ts)
+np.datetime64(datetime.utcnow()).astype(datetime)
+numpy.datetime64('2002-06-28T01:00:00.000000000+0100').astype(datetime)
+numpy.datetime64('2002-06-28T01:00:00.000000000+0100').astype(datetime)
+datetime.utcfromtimestamp(dt64.astype(int) * ns)
+datetime.utcfromtimestamp(dt64.astype(int))
+","dt = datetime.utcnow()
+dtype('<M8[ns]')
+dtype('<M8[s]')
+","numpy.datetime64('2002-06-28T01:00:00.000000000+0100').astype(datetime)
+",
+13704307,"datetime.utcfromtimestamp(ts)
+np.datetime64(datetime.utcnow()).astype(datetime)
+numpy.datetime64('2002-06-28T01:00:00.000000000+0100').astype(datetime)
+numpy.datetime64('2002-06-28T01:00:00.000000000+0100').astype(datetime)
+datetime.utcfromtimestamp(dt64.astype(int) * ns)
+datetime.utcfromtimestamp(dt64.astype(int))
+","dt = datetime.utcnow()
+dtype('<M8[ns]')
+dtype('<M8[s]')
+","datetime.utcfromtimestamp(dt64.astype(int) * ns)
+",
+13704307,"datetime.utcfromtimestamp(ts)
+np.datetime64(datetime.utcnow()).astype(datetime)
+numpy.datetime64('2002-06-28T01:00:00.000000000+0100').astype(datetime)
+numpy.datetime64('2002-06-28T01:00:00.000000000+0100').astype(datetime)
+datetime.utcfromtimestamp(dt64.astype(int) * ns)
+datetime.utcfromtimestamp(dt64.astype(int))
+","dt = datetime.utcnow()
+dtype('<M8[ns]')
+dtype('<M8[s]')
+","datetime.utcfromtimestamp(dt64.astype(int))
+",
+22006514,"total_rows['ColumnID'] = total_rows['ColumnID'].astype(str)
+","df.to_json()
+df[0].to_json()
+","total_rows['ColumnID'] = total_rows['ColumnID'].astype(str)
+",
+16476974,,,,"A
+A
+"
+16476974,,,,"A
+A
+"
+26266451,"s.isnull().sum()
+df.isnull().sum()
+",,"s.isnull().sum()
+",
+26266451,"s.isnull().sum()
+df.isnull().sum()
+",,"df.isnull().sum()
+",
+36572039,"df.read_csv(filename ,  index = False)
+",,,"df.read_csv(filename ,  index = False)
+"
+36572039,"df.read_csv(filename ,  index = False)
+",,"df.read_csv(filename ,  index = False)
+",
+19237920,"k1 = df[['Time', 'Product']].query('Product == p_id and start_time <= Time < end_time')
+","df[['Time', 'Product']].query('Product == p_id and Month < mn and Year == yr')
+df.query('gender == ""m"" and price < 100')
+",,"k1 = df[['Time', 'Product']].query('Product == p_id and start_time <= Time < end_time')
+"
+19237920,"k1 = df[['Time', 'Product']].query('Product == p_id and start_time <= Time < end_time')
+","df[['Time', 'Product']].query('Product == p_id and Month < mn and Year == yr')
+df.query('gender == ""m"" and price < 100')
+","k1 = df[['Time', 'Product']].query('Product == p_id and start_time <= Time < end_time')
+",
+18173074,,,,"results.set_value(i, j, timeit(stmt, setp, number=10))
+"
+19385591,"df[['col1', 'col2', 'col3', 'col4']].groupby(['col1', 'col2']).agg(['mean', 'count'])
+",,"df[['col1', 'col2', 'col3', 'col4']].groupby(['col1', 'col2']).agg(['mean', 'count'])
+",
+10374456,"g1.add_suffix('_Count').reset_index()
+DataFrame({'count' : df1.groupby( [ ""Name"", ""City""] ).size()}).reset_index()
+",,"g1.add_suffix('_Count').reset_index()
+",
+10374456,"g1.add_suffix('_Count').reset_index()
+DataFrame({'count' : df1.groupby( [ ""Name"", ""City""] ).size()}).reset_index()
+",,"DataFrame({'count' : df1.groupby( [ ""Name"", ""City""] ).size()}).reset_index()
+",
+20868446,"df=df.rename(columns = {'two':'new_name'})
+",,"df=df.rename(columns = {'two':'new_name'})
+",
+16354730,"df['Value'] = df.apply(lambda row: my_test(row['a'], row['c']), axis=1)
+",,"df['Value'] = df.apply(lambda row: my_test(row['a'], row['c']), axis=1)
+",
+13413845,,,,"df.b.str.contains('^f')
+"
+32558621,,,,"df.b.str.contains('^f')
+df.b.str.contains('^f')
+"
+20491748,"df = df.reset_index(drop=True)
+",,"df = df.reset_index(drop=True)
+",
+18837389,"s.reset_index()
+",,,"s.reset_index()
+"
+18837389,"s.reset_index()
+",,,"s.reset_index()
+"
+18837389,"s.reset_index()
+",,"s.reset_index()
+","s.reset_index()
+s.reset_index()
+"
+24284680,,,,"[my_series[c].value_counts() for c in list(my_series.select_dtypes(include=['O']).columns)]
+[my_series[c].value_counts() for c in list(my_series.select_dtypes(include=['O']).columns)]
+[my_series[c].value_counts() for c in list(my_series.select_dtypes(include=['O']).columns)]
+"
+10202789,"df['A'].argmax()
+df['B'].argmax()
+df['C'].argmax()
+dfrm['A'].idxmax()
+dfrm.ix[dfrm['A'].idxmax()]
+",,"df['A'].argmax()
+",
+10202789,"df['A'].argmax()
+df['B'].argmax()
+df['C'].argmax()
+dfrm['A'].idxmax()
+dfrm.ix[dfrm['A'].idxmax()]
+",,"df['B'].argmax()
+",
+10202789,"df['A'].argmax()
+df['B'].argmax()
+df['C'].argmax()
+dfrm['A'].idxmax()
+dfrm.ix[dfrm['A'].idxmax()]
+",,"df['C'].argmax()
+",
+10202789,"df['A'].argmax()
+df['B'].argmax()
+df['C'].argmax()
+dfrm['A'].idxmax()
+dfrm.ix[dfrm['A'].idxmax()]
+",,"dfrm['A'].idxmax()
+",
+10202789,"df['A'].argmax()
+df['B'].argmax()
+df['C'].argmax()
+dfrm['A'].idxmax()
+dfrm.ix[dfrm['A'].idxmax()]
+",,"dfrm.ix[dfrm['A'].idxmax()]
+",
+20221655,"data_filtered.to_excel(writer, ""Main"", cols=['Diff1', 'Diff2'])
+",,"data_filtered.to_excel(writer, ""Main"", cols=['Diff1', 'Diff2'])
+","data_filtered.to_excel(writer, ""Main"", cols=['Diff1', 'Diff2'])
+data_filtered.to_excel(writer, ""Main"", cols=['Diff1', 'Diff2'])
+data_filtered.to_excel(writer, ""Main"", cols=['Diff1', 'Diff2'])
+data_filtered.to_excel(writer, ""Main"", cols=['Diff1', 'Diff2'])
+data_filtered.to_excel(writer, ""Main"", cols=['Diff1', 'Diff2'])
+"
+17813222,"df.plot(x='col_name_1', y='col_name_2', style='o')
+df.plot(style=['o','rx'])
+",,"df.plot(x='col_name_1', y='col_name_2', style='o')
+",
+17813222,"df.plot(x='col_name_1', y='col_name_2', style='o')
+df.plot(style=['o','rx'])
+",,"df.plot(style=['o','rx'])
+",
+17098736,"df.to_pickle(file_name)
+","df = pd.read_pickle(file_name)
+","df.to_pickle(file_name)
+",
+17098736,"df.to_pickle(file_name)
+","df = pd.read_pickle(file_name)
+",,"df = pd.read_pickle(file_name)
+"
+14946246,"grp = df.groupby('A')
+grp[['B']].transform(sum).sort('B')
+sort1 = df.ix[grp[['B']].transform(sum).sort('B').index]
+sort2 = sort1.groupby('A', sort=False).apply(f)
+sort2.reset_index(0, drop=True)
+",,"grp = df.groupby('A')
+grp[['B']].transform(sum).sort('B')
+sort1 = df.ix[grp[['B']].transform(sum).sort('B').index]
+sort2 = sort1.groupby('A', sort=False).apply(f)
+sort2.reset_index(0, drop=True)
+","sort2.reset_index(0, drop=True)
+"
+17141755,"df.sort_values(['a', 'b'], ascending=[True, False])
+",,"df.sort_values(['a', 'b'], ascending=[True, False])
+",
+17141755,"df.sort_values(['a', 'b'], ascending=[True, False])
+",,,"df.sort_values(['a', 'b'], ascending=[True, False])
+"
+17141755,"df.sort_values(['a', 'b'], ascending=[True, False])
+",,,"df.sort_values(['a', 'b'], ascending=[True, False])
+"
+17141755,"df.sort_values(['a', 'b'], ascending=[True, False])
+",,,"df.sort_values(['a', 'b'], ascending=[True, False])
+"
+17141755,"df.sort_values(['a', 'b'], ascending=[True, False])
+",,,"df.sort_values(['a', 'b'], ascending=[True, False])
+"
+27791362,"df = pd.read_csv(StringIO(csv),
+",,"df = pd.read_csv(StringIO(csv),
+","df = pd.read_csv(StringIO(csv),
+df = pd.read_csv(StringIO(csv),
+df = pd.read_csv(StringIO(csv),
+df = pd.read_csv(StringIO(csv),
+"
+24793359,"numpyMatrix = df.as_matrix()
+",,"numpyMatrix = df.as_matrix()
+",
+17682726,,,,"df.groupby('A').agg({'B': [lambda x: x.min(), lambda x: x.max]})
+"
+19960116,"df.countries.isin(countries)
+df[df.countries.isin(countries)]
+df[~df.countries.isin(countries)]
+",,,"df[~df.countries.isin(countries)]
+"
+19960116,"df.countries.isin(countries)
+df[df.countries.isin(countries)]
+df[~df.countries.isin(countries)]
+",,,"df[~df.countries.isin(countries)]
+"
+19960116,"df.countries.isin(countries)
+df[df.countries.isin(countries)]
+df[~df.countries.isin(countries)]
+",,,"df[~df.countries.isin(countries)]
+"
+19960116,"df.countries.isin(countries)
+df[df.countries.isin(countries)]
+df[~df.countries.isin(countries)]
+",,"df.countries.isin(countries)
+",
+19960116,"df.countries.isin(countries)
+df[df.countries.isin(countries)]
+df[~df.countries.isin(countries)]
+",,"df[df.countries.isin(countries)]
+",
+19960116,"df.countries.isin(countries)
+df[df.countries.isin(countries)]
+df[~df.countries.isin(countries)]
+",,"df[~df.countries.isin(countries)]
+",
+19378497,"dataframe[""period""] = dataframe[""Year""].map(str) + dataframe[""quarter""]
+",,"dataframe[""period""] = dataframe[""Year""].map(str) + dataframe[""quarter""]
+",
+22475141,"g = df.columns.to_series().groupby(df.dtypes).groups
+","{dtype('int64'): ['A', 'E'], dtype('float64'): ['B'], dtype('O'): ['C', 'D']}
+","g = df.columns.to_series().groupby(df.dtypes).groups
+",
+39358924,"df['A'], df['B'] = df['AB'].str.split(' ', 1).str
+df['AB'].str.split(' ', 1, expand=True)
+df['AB_split'] = df['AB'].str.split('-')
+df['AB'].str.split('-', 1).str[0]
+df['AB'].str.split('-', 1).str[1]
+df['A'], df['B'] = df['AB'].str.split('-', 1).str
+df['AB'].str.split('-', 1, expand=True)
+df.join(df['AB'].str.split('-', 1, expand=True).rename(columns={0:'A', 1:'B'}))
+","upper_lower_df[""L""] = upper_lower_df[""U""].str.lower()
+","df['A'], df['B'] = df['AB'].str.split(' ', 1).str
+",
+39358924,"df['A'], df['B'] = df['AB'].str.split(' ', 1).str
+df['AB'].str.split(' ', 1, expand=True)
+df['AB_split'] = df['AB'].str.split('-')
+df['AB'].str.split('-', 1).str[0]
+df['AB'].str.split('-', 1).str[1]
+df['A'], df['B'] = df['AB'].str.split('-', 1).str
+df['AB'].str.split('-', 1, expand=True)
+df.join(df['AB'].str.split('-', 1, expand=True).rename(columns={0:'A', 1:'B'}))
+","upper_lower_df[""L""] = upper_lower_df[""U""].str.lower()
+","df['AB'].str.split(' ', 1, expand=True)
+",
+39358924,"df['A'], df['B'] = df['AB'].str.split(' ', 1).str
+df['AB'].str.split(' ', 1, expand=True)
+df['AB_split'] = df['AB'].str.split('-')
+df['AB'].str.split('-', 1).str[0]
+df['AB'].str.split('-', 1).str[1]
+df['A'], df['B'] = df['AB'].str.split('-', 1).str
+df['AB'].str.split('-', 1, expand=True)
+df.join(df['AB'].str.split('-', 1, expand=True).rename(columns={0:'A', 1:'B'}))
+","upper_lower_df[""L""] = upper_lower_df[""U""].str.lower()
+","df['AB_split'] = df['AB'].str.split('-')
+",
+39358924,"df['A'], df['B'] = df['AB'].str.split(' ', 1).str
+df['AB'].str.split(' ', 1, expand=True)
+df['AB_split'] = df['AB'].str.split('-')
+df['AB'].str.split('-', 1).str[0]
+df['AB'].str.split('-', 1).str[1]
+df['A'], df['B'] = df['AB'].str.split('-', 1).str
+df['AB'].str.split('-', 1, expand=True)
+df.join(df['AB'].str.split('-', 1, expand=True).rename(columns={0:'A', 1:'B'}))
+","upper_lower_df[""L""] = upper_lower_df[""U""].str.lower()
+","df['AB'].str.split('-', 1).str[0]
+",
+39358924,"df['A'], df['B'] = df['AB'].str.split(' ', 1).str
+df['AB'].str.split(' ', 1, expand=True)
+df['AB_split'] = df['AB'].str.split('-')
+df['AB'].str.split('-', 1).str[0]
+df['AB'].str.split('-', 1).str[1]
+df['A'], df['B'] = df['AB'].str.split('-', 1).str
+df['AB'].str.split('-', 1, expand=True)
+df.join(df['AB'].str.split('-', 1, expand=True).rename(columns={0:'A', 1:'B'}))
+","upper_lower_df[""L""] = upper_lower_df[""U""].str.lower()
+","df['AB'].str.split('-', 1).str[1]
+",
+39358924,"df['A'], df['B'] = df['AB'].str.split(' ', 1).str
+df['AB'].str.split(' ', 1, expand=True)
+df['AB_split'] = df['AB'].str.split('-')
+df['AB'].str.split('-', 1).str[0]
+df['AB'].str.split('-', 1).str[1]
+df['A'], df['B'] = df['AB'].str.split('-', 1).str
+df['AB'].str.split('-', 1, expand=True)
+df.join(df['AB'].str.split('-', 1, expand=True).rename(columns={0:'A', 1:'B'}))
+","upper_lower_df[""L""] = upper_lower_df[""U""].str.lower()
+","df['A'], df['B'] = df['AB'].str.split('-', 1).str
+",
+39358924,"df['A'], df['B'] = df['AB'].str.split(' ', 1).str
+df['AB'].str.split(' ', 1, expand=True)
+df['AB_split'] = df['AB'].str.split('-')
+df['AB'].str.split('-', 1).str[0]
+df['AB'].str.split('-', 1).str[1]
+df['A'], df['B'] = df['AB'].str.split('-', 1).str
+df['AB'].str.split('-', 1, expand=True)
+df.join(df['AB'].str.split('-', 1, expand=True).rename(columns={0:'A', 1:'B'}))
+","upper_lower_df[""L""] = upper_lower_df[""U""].str.lower()
+","df['AB'].str.split('-', 1, expand=True)
+",
+39358924,"df['A'], df['B'] = df['AB'].str.split(' ', 1).str
+df['AB'].str.split(' ', 1, expand=True)
+df['AB_split'] = df['AB'].str.split('-')
+df['AB'].str.split('-', 1).str[0]
+df['AB'].str.split('-', 1).str[1]
+df['A'], df['B'] = df['AB'].str.split('-', 1).str
+df['AB'].str.split('-', 1, expand=True)
+df.join(df['AB'].str.split('-', 1, expand=True).rename(columns={0:'A', 1:'B'}))
+","upper_lower_df[""L""] = upper_lower_df[""U""].str.lower()
+","df.join(df['AB'].str.split('-', 1, expand=True).rename(columns={0:'A', 1:'B'}))
+",
+13682381,"data['result'] = data['result'].map(lambda x: x.lstrip('+-').rstrip('aAbBcC'))
+",,"data['result'] = data['result'].map(lambda x: x.lstrip('+-').rstrip('aAbBcC'))
+",
+30691921,"with pd.option_context('display.max_rows', None, 'display.max_columns', 3):
+",,"with pd.option_context('display.max_rows', None, 'display.max_columns', 3):
+",
+20763459,,,,"ticklabels[::12] = [item.strftime('%b %d\n%Y') for item in df_ts.index[::12]]
+ticklabels[::12] = [item.strftime('%b %d\n%Y') for item in df_ts.index[::12]]
+ticklabels[::12] = [item.strftime('%b %d\n%Y') for item in df_ts.index[::12]]
+"
+34272155,"df.drop_duplicates(subset=['A', 'C'], keep=False)
+",,"df.drop_duplicates(subset=['A', 'C'], keep=False)
+",
+11531402,"df[df['A'].str.contains(""hello"")]
+",,"df[df['A'].str.contains(""hello"")]
+",
+11711637,"pd.set_option('display.height', 1000)
+pd.set_option('display.max_rows', 500)
+pd.set_option('display.max_columns', 500)
+pd.set_option('display.width', 1000)
+",,"pd.set_option('display.height', 1000)
+",
+11711637,"pd.set_option('display.height', 1000)
+pd.set_option('display.max_rows', 500)
+pd.set_option('display.max_columns', 500)
+pd.set_option('display.width', 1000)
+",,"pd.set_option('display.max_rows', 500)
+",
+11711637,"pd.set_option('display.height', 1000)
+pd.set_option('display.max_rows', 500)
+pd.set_option('display.max_columns', 500)
+pd.set_option('display.width', 1000)
+",,"pd.set_option('display.max_columns', 500)
+",
+11711637,"pd.set_option('display.height', 1000)
+pd.set_option('display.max_rows', 500)
+pd.set_option('display.max_columns', 500)
+pd.set_option('display.width', 1000)
+",,"pd.set_option('display.width', 1000)
+",
+17134750,"df['col'] = pd.to_datetime(df['col'])
+pd.to_datetime(pd.Series(['05/23/2005']))
+pd.to_datetime(pd.Series(['05/23/2005']), format=""%m/%d/%Y"")
+",,"df['col'] = pd.to_datetime(df['col'])
+",
+17134750,"df['col'] = pd.to_datetime(df['col'])
+pd.to_datetime(pd.Series(['05/23/2005']))
+pd.to_datetime(pd.Series(['05/23/2005']), format=""%m/%d/%Y"")
+",,"pd.to_datetime(pd.Series(['05/23/2005']))
+",
+17134750,"df['col'] = pd.to_datetime(df['col'])
+pd.to_datetime(pd.Series(['05/23/2005']))
+pd.to_datetime(pd.Series(['05/23/2005']), format=""%m/%d/%Y"")
+",,"pd.to_datetime(pd.Series(['05/23/2005']), format=""%m/%d/%Y"")
+",
+12555510,,"sLength = len(df1['a'])
+df1 = df1.assign(e=p.Series(np.random.randn(sLength)).values)
+",,"df1 = df1.assign(e=p.Series(np.random.randn(sLength)).values)
+"
+12555510,,"sLength = len(df1['a'])
+df1 = df1.assign(e=p.Series(np.random.randn(sLength)).values)
+",,"df1 = df1.assign(e=p.Series(np.random.randn(sLength)).values)
+"
+12555510,,"sLength = len(df1['a'])
+df1 = df1.assign(e=p.Series(np.random.randn(sLength)).values)
+",,"df1 = df1.assign(e=p.Series(np.random.randn(sLength)).values)
+"
+10458386,,,,"A
+"
+14734627,"gb.get_group('foo')
+gb[[""A"", ""B""]].get_group(""foo"")
+gb[""C""].get_group(""foo"")
+",,"gb.get_group('foo')
+",
+14734627,"gb.get_group('foo')
+gb[[""A"", ""B""]].get_group(""foo"")
+gb[""C""].get_group(""foo"")
+",,"gb[[""A"", ""B""]].get_group(""foo"")
+",
+14734627,"gb.get_group('foo')
+gb[[""A"", ""B""]].get_group(""foo"")
+gb[""C""].get_group(""foo"")
+",,"gb[""C""].get_group(""foo"")
+",
+24147363,,"msk = np.random.rand(len(df)) < 0.8
+len(test)
+len(train)
+",,"len(train)
+"
+26301947,"pd.set_option('display.max_colwidth', -1)
+",,"pd.set_option('display.max_colwidth', -1)
+",
+19851521,"df1 = df.set_index('A')
+df1.rename(index={1: 'a'})
+df1.rename(columns={'B': 'BB'})
+",,,"df1.rename(columns={'B': 'BB'})
+"
+19851521,"df1 = df.set_index('A')
+df1.rename(index={1: 'a'})
+df1.rename(columns={'B': 'BB'})
+",,"df1 = df.set_index('A')
+",
+19851521,"df1 = df.set_index('A')
+df1.rename(index={1: 'a'})
+df1.rename(columns={'B': 'BB'})
+",,"df1.rename(index={1: 'a'})
+",
+19851521,"df1 = df.set_index('A')
+df1.rename(index={1: 'a'})
+df1.rename(columns={'B': 'BB'})
+",,"df1.rename(columns={'B': 'BB'})
+",
+19851521,"df1 = df.set_index('A')
+df1.rename(index={1: 'a'})
+df1.rename(columns={'B': 'BB'})
+",,,"df1.rename(columns={'B': 'BB'})
+"
+34297689,"df3 = df3[~df3.index.duplicated(keep='first')]
+",,"df3 = df3[~df3.index.duplicated(keep='first')]
+",
+34297689,"df3 = df3[~df3.index.duplicated(keep='first')]
+",,,"df3 = df3[~df3.index.duplicated(keep='first')]
+"
+34297689,"df3 = df3[~df3.index.duplicated(keep='first')]
+",,,"df3 = df3[~df3.index.duplicated(keep='first')]
+"
+34297689,"df3 = df3[~df3.index.duplicated(keep='first')]
+",,,"df3 = df3[~df3.index.duplicated(keep='first')]
+"
+19961557,"df.pivot(index=0, columns=1, values=2)
+df.pivot(index=0, columns=1, values=3)
+",,"df.pivot(index=0, columns=1, values=2)
+","df.pivot(index=0, columns=1, values=3)
+"
+19961557,"df.pivot(index=0, columns=1, values=2)
+df.pivot(index=0, columns=1, values=3)
+",,"df.pivot(index=0, columns=1, values=3)
+",
+16597375,"df.append(data)
+df = df.append(data)
+",,"df.append(data)
+",
+16597375,"df.append(data)
+df = df.append(data)
+",,"df = df.append(data)
+",
+30512931,,"df_final = reduce(lambda left,right: pd.merge(left,right,on='name'), dfs)
+",,"df_final = reduce(lambda left,right: pd.merge(left,right,on='name'), dfs)
+df_final = reduce(lambda left,right: pd.merge(left,right,on='name'), dfs)
+"
+13842286,"df.xs('C')['x']=10
+","df.xs('C', copy = False)['x']=10
+",,"df.xs('C', copy = False)['x']=10
+"
+13842286,"df.xs('C')['x']=10
+","df.xs('C', copy = False)['x']=10
+","df.xs('C')['x']=10
+",
+13842286,"df.xs('C')['x']=10
+","df.xs('C', copy = False)['x']=10
+",,"df.xs('C', copy = False)['x']=10
+"
+13842286,"df.xs('C')['x']=10
+","df.xs('C', copy = False)['x']=10
+",,"df.xs('C', copy = False)['x']=10
+"
+13842286,"df.xs('C')['x']=10
+","df.xs('C', copy = False)['x']=10
+",,"df.xs('C', copy = False)['x']=10
+"
+13842286,"df.xs('C')['x']=10
+","df.xs('C', copy = False)['x']=10
+",,"df.xs('C', copy = False)['x']=10
+"
+13842286,"df.xs('C')['x']=10
+","df.xs('C', copy = False)['x']=10
+",,"df.xs('C', copy = False)['x']=10
+"
+22391554,"df.groupby('a').count()
+df['a'].value_counts()
+df['freq'] = df.groupby('a')['a'].transform('count')
+",,"df.groupby('a').count()
+",
+22391554,"df.groupby('a').count()
+df['a'].value_counts()
+df['freq'] = df.groupby('a')['a'].transform('count')
+",,"df['a'].value_counts()
+",
+22391554,"df.groupby('a').count()
+df['a'].value_counts()
+df['freq'] = df.groupby('a')['a'].transform('count')
+",,"df['freq'] = df.groupby('a')['a'].transform('count')
+",
+17619032,"df.sort_values(['c1','c2'], ascending=[False,True])
+",,,"df.sort_values(['c1','c2'], ascending=[False,True])
+"
+17619032,"df.sort_values(['c1','c2'], ascending=[False,True])
+",,,"df.sort_values(['c1','c2'], ascending=[False,True])
+"
+17619032,"df.sort_values(['c1','c2'], ascending=[False,True])
+",,,"df.sort_values(['c1','c2'], ascending=[False,True])
+"
+17619032,"df.sort_values(['c1','c2'], ascending=[False,True])
+",,"df.sort_values(['c1','c2'], ascending=[False,True])
+",
+20084895,"Series(df.values.ravel()).unique()
+",,"Series(df.values.ravel()).unique()
+",
+20084895,"Series(df.values.ravel()).unique()
+",,"Series(df.values.ravel()).unique()
+",
+20084895,"Series(df.values.ravel()).unique()
+",,,"Series(df.values.ravel()).unique()
+"
+25254087,,,,"A
+"
+25254087,,,,"A
+"
+17242374,,,,"A
+"
+17063653,"df = xl.parse(""Sheet1"")
+parsed = pd.io.parsers.ExcelFile.parse(xl, ""Sheet1"")
+","df.head()
+","df = xl.parse(""Sheet1"")
+","parsed = pd.io.parsers.ExcelFile.parse(xl, ""Sheet1"")
+"
+17063653,"df = xl.parse(""Sheet1"")
+parsed = pd.io.parsers.ExcelFile.parse(xl, ""Sheet1"")
+","df.head()
+","parsed = pd.io.parsers.ExcelFile.parse(xl, ""Sheet1"")
+",
+19483025,,,,"A
+"
+19483025,,,,"A
+"
+29530601,"df.isnull().values.any()
+",,"df.isnull().values.any()
+",
+29530601,"df.isnull().values.any()
+",,,"df.isnull().values.any()
+"
+29530601,"df.isnull().values.any()
+",,,"df.isnull().values.any()
+"
+29530601,"df.isnull().values.any()
+",,,"df.isnull().values.any()
+"
+29530601,"df.isnull().values.any()
+",,"df.isnull().values.any()
+",
+15252012,"pd.read_csv(""ragged.csv"", names=my_cols, engine='python')
+",,"pd.read_csv(""ragged.csv"", names=my_cols, engine='python')
+","pd.read_csv(""ragged.csv"", names=my_cols, engine='python')
+"
+16923367,"df.to_csv(file_name, sep='\t')
+df.to_csv(file_name, sep='\t', encoding='utf-8')
+",,"df.to_csv(file_name, sep='\t')
+",
+16923367,"df.to_csv(file_name, sep='\t')
+df.to_csv(file_name, sep='\t', encoding='utf-8')
+",,"df.to_csv(file_name, sep='\t', encoding='utf-8')
+",
+11287278,,"df1 = df.ix[0,0:2].copy()
+",,"df1 = df.ix[0,0:2].copy()
+"
+11287278,,"df1 = df.ix[0,0:2].copy()
+",,"df1 = df.ix[0,0:2].copy()
+"
+11287278,,"df1 = df.ix[0,0:2].copy()
+",,"df1 = df.ix[0,0:2].copy()
+"
+14900065,"df4 = df3.drop_duplicates(subset='rownum', keep='last')
+df3 = df3.reset_index().drop_duplicates(subset='index', keep='last').set_index('index')
+",,"df4 = df3.drop_duplicates(subset='rownum', keep='last')
+",
+14900065,"df4 = df3.drop_duplicates(subset='rownum', keep='last')
+df3 = df3.reset_index().drop_duplicates(subset='index', keep='last').set_index('index')
+",,"df3 = df3.reset_index().drop_duplicates(subset='index', keep='last').set_index('index')
+",
+27360130,,,,"pd.melt(x, id_vars=['farm', 'fruit'], var_name='year', value_name='value')
+"
+27360130,,,,"pd.melt(x, id_vars=['farm', 'fruit'], var_name='year', value_name='value')
+"
+27360130,,,,"pd.melt(x, id_vars=['farm', 'fruit'], var_name='year', value_name='value')
+"
+27360130,,,,"pd.melt(x, id_vars=['farm', 'fruit'], var_name='year', value_name='value')
+"
+27360130,,,,"pd.melt(x, id_vars=['farm', 'fruit'], var_name='year', value_name='value')
+"
+17095620,"ne = (df1 != df2).any(1)
+ne_stacked = (df1 != df2).stack()
+","difference_locations = np.where(df1 != df2)
+","ne = (df1 != df2).any(1)
+",
+17095620,"ne = (df1 != df2).any(1)
+ne_stacked = (df1 != df2).stack()
+","difference_locations = np.where(df1 != df2)
+","ne_stacked = (df1 != df2).stack()
+",
+13851602,"df[df['column name'].map(len) < 2]
+",,"df[df['column name'].map(len) < 2]
+",
+14760930,,,,"A
+"
+12098586,"df[df['A'].isin([3, 6])]
+",,"df[df['A'].isin([3, 6])]
+",
+16104482,,,,"A
+"
+16104482,,,,"A
+"
+12065904,,,,"A
+"
+17841294,"df.groupby('A')['C'].apply(lambda x: ""{%s}"" % ', '.join(x))
+","df = read_csv(StringIO(data),sep='\s+')
+df.groupby('A').apply(lambda x: x.sum())
+df.groupby('A')['C'].apply(lambda x: x.sum())
+df.groupby('A').apply(f)
+","df.groupby('A')['C'].apply(lambda x: ""{%s}"" % ', '.join(x))
+",
+18062521,"pd.concat([s1, s2], axis=1)
+pd.concat([s1, s2], axis=1).reset_index()
+",,"pd.concat([s1, s2], axis=1)
+",
+18062521,"pd.concat([s1, s2], axis=1)
+pd.concat([s1, s2], axis=1).reset_index()
+",,"pd.concat([s1, s2], axis=1).reset_index()
+",
+21232849,"df = pd.read_csv(file_,index_col=None, header=0)
+list_.append(df)
+frame = pd.concat(list_)
+",,"df = pd.read_csv(file_,index_col=None, header=0)
+list_.append(df)
+frame = pd.concat(list_)
+","frame = pd.concat(list_)
+frame = pd.concat(list_)
+frame = pd.concat(list_)
+"
+13786327,,"todays_date = datetime.datetime.now().date()
+index = pd.date_range(todays_date-datetime.timedelta(10), periods=10, freq='D')
+df_ = df_.fillna(0)
+",,"df_ = df_.fillna(0)
+df_ = df_.fillna(0)
+"
+16735476,"df.convert_objects(convert_numeric=True)
+","df.convert_objects(convert_numeric=True).dtypes
+","df.convert_objects(convert_numeric=True)
+",
+11138275,"df_ora = pd.read_sql('select * from user_objects', con=ora_conn)
+df_mysql = pd.read_sql('select * from VIEWS;', con=mysql_cn)
+",,"df_ora = pd.read_sql('select * from user_objects', con=ora_conn)
+","df_mysql = pd.read_sql('select * from VIEWS;', con=mysql_cn)
+df_mysql = pd.read_sql('select * from VIEWS;', con=mysql_cn)
+df_mysql = pd.read_sql('select * from VIEWS;', con=mysql_cn)
+df_mysql = pd.read_sql('select * from VIEWS;', con=mysql_cn)
+df_mysql = pd.read_sql('select * from VIEWS;', con=mysql_cn)
+"
+11138275,"df_ora = pd.read_sql('select * from user_objects', con=ora_conn)
+df_mysql = pd.read_sql('select * from VIEWS;', con=mysql_cn)
+",,"df_mysql = pd.read_sql('select * from VIEWS;', con=mysql_cn)
+","df_mysql = pd.read_sql('select * from VIEWS;', con=mysql_cn)
+df_mysql = pd.read_sql('select * from VIEWS;', con=mysql_cn)
+df_mysql = pd.read_sql('select * from VIEWS;', con=mysql_cn)
+df_mysql = pd.read_sql('select * from VIEWS;', con=mysql_cn)
+df_mysql = pd.read_sql('select * from VIEWS;', con=mysql_cn)
+df_mysql = pd.read_sql('select * from VIEWS;', con=mysql_cn)
+"
+18431417,"df.fillna(-1).groupby('b').sum()
+","df.fillna(-1)
+","df.fillna(-1).groupby('b').sum()
+",
+14661768,"df.drop(df.index[[1,3]])
+",,"df.drop(df.index[[1,3]])
+",
+21266043,,,,"plt.plot(grp['D'], label='rolling ({k})'.format(k=key))
+"
+13434501,"df.dropna()
+df.dropna(how='all')
+df.dropna(thresh=2)
+df.dropna(subset=[1])
+",,"df.dropna()
+",
+13434501,"df.dropna()
+df.dropna(how='all')
+df.dropna(thresh=2)
+df.dropna(subset=[1])
+",,"df.dropna(how='all')
+",
+13434501,"df.dropna()
+df.dropna(how='all')
+df.dropna(thresh=2)
+df.dropna(subset=[1])
+",,"df.dropna(thresh=2)
+",
+13434501,"df.dropna()
+df.dropna(how='all')
+df.dropna(thresh=2)
+df.dropna(subset=[1])
+",,"df.dropna(subset=[1])
+",
+19324591,"s = s.reindex(idx, fill_value=0)
+","idx = pd.date_range('09-01-2013', '09-30-2013')
+","s = s.reindex(idx, fill_value=0)
+",
+11067072,"df.reindex_axis(sorted(df.columns), axis=1)
+",,"df.reindex_axis(sorted(df.columns), axis=1)
+",
+11362056,,,,"mask = (df[0] == 0).cumsum().cumsum()
+"
+17071908,"df.loc[df['column_name'].isin(some_values)]
+df.loc[(df['column_name'] == some_value) & df['other_column'].isin(some_values)]
+df.loc[~df['column_name'].isin(some_values)]
+df = df.set_index(['B'])
+df.loc[df.index.isin(['one','two'])]
+","df = pd.DataFrame({'A': 'foo bar foo bar foo bar foo foo'.split(),
+'B': 'one one two three two two one three'.split(),
+print(df.loc[df['B'].isin(['one','three'])])
+",,"df.loc[df.index.isin(['one','two'])]
+"
+17071908,"df.loc[df['column_name'].isin(some_values)]
+df.loc[(df['column_name'] == some_value) & df['other_column'].isin(some_values)]
+df.loc[~df['column_name'].isin(some_values)]
+df = df.set_index(['B'])
+df.loc[df.index.isin(['one','two'])]
+","df = pd.DataFrame({'A': 'foo bar foo bar foo bar foo foo'.split(),
+'B': 'one one two three two two one three'.split(),
+print(df.loc[df['B'].isin(['one','three'])])
+","df.loc[df['column_name'].isin(some_values)]
+",
+17071908,"df.loc[df['column_name'].isin(some_values)]
+df.loc[(df['column_name'] == some_value) & df['other_column'].isin(some_values)]
+df.loc[~df['column_name'].isin(some_values)]
+df = df.set_index(['B'])
+df.loc[df.index.isin(['one','two'])]
+","df = pd.DataFrame({'A': 'foo bar foo bar foo bar foo foo'.split(),
+'B': 'one one two three two two one three'.split(),
+print(df.loc[df['B'].isin(['one','three'])])
+","df.loc[(df['column_name'] == some_value) & df['other_column'].isin(some_values)]
+",
+17071908,"df.loc[df['column_name'].isin(some_values)]
+df.loc[(df['column_name'] == some_value) & df['other_column'].isin(some_values)]
+df.loc[~df['column_name'].isin(some_values)]
+df = df.set_index(['B'])
+df.loc[df.index.isin(['one','two'])]
+","df = pd.DataFrame({'A': 'foo bar foo bar foo bar foo foo'.split(),
+'B': 'one one two three two two one three'.split(),
+print(df.loc[df['B'].isin(['one','three'])])
+",,"df.loc[df.index.isin(['one','two'])]
+"
+17071908,"df.loc[df['column_name'].isin(some_values)]
+df.loc[(df['column_name'] == some_value) & df['other_column'].isin(some_values)]
+df.loc[~df['column_name'].isin(some_values)]
+df = df.set_index(['B'])
+df.loc[df.index.isin(['one','two'])]
+","df = pd.DataFrame({'A': 'foo bar foo bar foo bar foo foo'.split(),
+'B': 'one one two three two two one three'.split(),
+print(df.loc[df['B'].isin(['one','three'])])
+","df.loc[~df['column_name'].isin(some_values)]
+",
+17071908,"df.loc[df['column_name'].isin(some_values)]
+df.loc[(df['column_name'] == some_value) & df['other_column'].isin(some_values)]
+df.loc[~df['column_name'].isin(some_values)]
+df = df.set_index(['B'])
+df.loc[df.index.isin(['one','two'])]
+","df = pd.DataFrame({'A': 'foo bar foo bar foo bar foo foo'.split(),
+'B': 'one one two three two two one three'.split(),
+print(df.loc[df['B'].isin(['one','three'])])
+",,"df.loc[df.index.isin(['one','two'])]
+"
+17071908,"df.loc[df['column_name'].isin(some_values)]
+df.loc[(df['column_name'] == some_value) & df['other_column'].isin(some_values)]
+df.loc[~df['column_name'].isin(some_values)]
+df = df.set_index(['B'])
+df.loc[df.index.isin(['one','two'])]
+","df = pd.DataFrame({'A': 'foo bar foo bar foo bar foo foo'.split(),
+'B': 'one one two three two two one three'.split(),
+print(df.loc[df['B'].isin(['one','three'])])
+",,"df.loc[df.index.isin(['one','two'])]
+"
+17071908,"df.loc[df['column_name'].isin(some_values)]
+df.loc[(df['column_name'] == some_value) & df['other_column'].isin(some_values)]
+df.loc[~df['column_name'].isin(some_values)]
+df = df.set_index(['B'])
+df.loc[df.index.isin(['one','two'])]
+","df = pd.DataFrame({'A': 'foo bar foo bar foo bar foo foo'.split(),
+'B': 'one one two three two two one three'.split(),
+print(df.loc[df['B'].isin(['one','three'])])
+","df = df.set_index(['B'])
+","df.loc[df.index.isin(['one','two'])]
+"
+17071908,"df.loc[df['column_name'].isin(some_values)]
+df.loc[(df['column_name'] == some_value) & df['other_column'].isin(some_values)]
+df.loc[~df['column_name'].isin(some_values)]
+df = df.set_index(['B'])
+df.loc[df.index.isin(['one','two'])]
+","df = pd.DataFrame({'A': 'foo bar foo bar foo bar foo foo'.split(),
+'B': 'one one two three two two one three'.split(),
+print(df.loc[df['B'].isin(['one','three'])])
+","df.loc[df.index.isin(['one','two'])]
+",
+14745484,"df = pd.DataFrame(df.row.str.split(' ',1).tolist(),
+",,"df = pd.DataFrame(df.row.str.split(' ',1).tolist(),
+","df = pd.DataFrame(df.row.str.split(' ',1).tolist(),
+"
+44736467,"df.loc[:, slice('quz',None, 2)]
+",,,"df.loc[:, slice('quz',None, 2)]
+"
+44736467,"df.loc[:, slice('quz',None, 2)]
+",,,"df.loc[:, slice('quz',None, 2)]
+"
+44736467,"df.loc[:, slice('quz',None, 2)]
+",,,"df.loc[:, slice('quz',None, 2)]
+"
+44736467,"df.loc[:, slice('quz',None, 2)]
+",,,"df.loc[:, slice('quz',None, 2)]
+"
+44736467,"df.loc[:, slice('quz',None, 2)]
+",,,"df.loc[:, slice('quz',None, 2)]
+"
+44736467,"df.loc[:, slice('quz',None, 2)]
+",,,"df.loc[:, slice('quz',None, 2)]
+"
+44736467,"df.loc[:, slice('quz',None, 2)]
+",,"df.loc[:, slice('quz',None, 2)]
+",
+44736467,"df.loc[:, slice('quz',None, 2)]
+",,,"df.loc[:, slice('quz',None, 2)]
+"
+44736467,"df.loc[:, slice('quz',None, 2)]
+",,,"df.loc[:, slice('quz',None, 2)]
+"

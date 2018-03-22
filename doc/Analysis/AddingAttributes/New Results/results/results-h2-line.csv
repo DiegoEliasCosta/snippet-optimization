@@ -1,0 +1,2597 @@
+Id,Matched_Prediction,Unmatched_Prediction,Matched_Actual,Unmatched_Actual
+12681217,"pd.concat([Series(row['var2'], row['var1'].split(','))
+","for _, row in a.iterrows()]).reset_index()
+","pd.concat([Series(row['var2'], row['var1'].split(','))
+",
+29319200,,,,"~s
+"
+29319200,,,,"~s
+"
+29319200,,,,"~s
+"
+17531025,"with open('my_csv.csv', 'a') as f:
+df.to_csv(f, header=False)
+with open('foo.csv', 'a') as f:
+(df + 6).to_csv(f, header=False)
+","0,1,2,3
+1,4,5,6
+df = pd.read_csv('foo.csv', index_col=0)
+df
+df + 6
+0,1,2,3
+1,4,5,6
+0,7,8,9
+1,10,11,12
+","with open('my_csv.csv', 'a') as f:
+df.to_csv(f, header=False)
+",
+17531025,"with open('my_csv.csv', 'a') as f:
+df.to_csv(f, header=False)
+with open('foo.csv', 'a') as f:
+(df + 6).to_csv(f, header=False)
+","0,1,2,3
+1,4,5,6
+df = pd.read_csv('foo.csv', index_col=0)
+df
+df + 6
+0,1,2,3
+1,4,5,6
+0,7,8,9
+1,10,11,12
+","with open('foo.csv', 'a') as f:
+(df + 6).to_csv(f, header=False)
+",
+18129082,"data = pd.read_csv('file1.csv', error_bad_lines=False)
+",,"data = pd.read_csv('file1.csv', error_bad_lines=False)
+",
+12525836,"df_norm = (df - df.mean()) / (df.max() - df.min())
+","df
+df_norm
+df_norm.mean()
+df_norm.max() - df_norm.min()
+","df_norm = (df - df.mean()) / (df.max() - df.min())
+",
+32801170,,"df.groupby(key_columns).size()
+import pandas as pd
+['b', 2],
+['c', 3],
+['a', 4],
+['b', 5]],
+columns=['col1', 'col2'])
+counts = df.groupby('col1').size(); counts
+type(counts)
+counts_df
+type(counts_df)
+df.dtypes
+df
+df[['col1', 'col2', 'col3', 'col4']]\
+.groupby(['col1', 'col2']).agg(['mean', 'count'])
+groupby_object = df[['col1', 'col2', 'col3', 'col4']]\
+.groupby(['col1', 'col2'])
+groupby_object.agg('mean')\
+.rename(columns = lambda x: x + ' mean')\
+columns=['counts']))
+",,"columns=['counts']))
+"
+32801170,,"df.groupby(key_columns).size()
+import pandas as pd
+['b', 2],
+['c', 3],
+['a', 4],
+['b', 5]],
+columns=['col1', 'col2'])
+counts = df.groupby('col1').size(); counts
+type(counts)
+counts_df
+type(counts_df)
+df.dtypes
+df
+df[['col1', 'col2', 'col3', 'col4']]\
+.groupby(['col1', 'col2']).agg(['mean', 'count'])
+groupby_object = df[['col1', 'col2', 'col3', 'col4']]\
+.groupby(['col1', 'col2'])
+groupby_object.agg('mean')\
+.rename(columns = lambda x: x + ' mean')\
+columns=['counts']))
+",,"columns=['counts']))
+"
+32801170,,"df.groupby(key_columns).size()
+import pandas as pd
+['b', 2],
+['c', 3],
+['a', 4],
+['b', 5]],
+columns=['col1', 'col2'])
+counts = df.groupby('col1').size(); counts
+type(counts)
+counts_df
+type(counts_df)
+df.dtypes
+df
+df[['col1', 'col2', 'col3', 'col4']]\
+.groupby(['col1', 'col2']).agg(['mean', 'count'])
+groupby_object = df[['col1', 'col2', 'col3', 'col4']]\
+.groupby(['col1', 'col2'])
+groupby_object.agg('mean')\
+.rename(columns = lambda x: x + ' mean')\
+columns=['counts']))
+",,"columns=['counts']))
+"
+32801170,,"df.groupby(key_columns).size()
+import pandas as pd
+['b', 2],
+['c', 3],
+['a', 4],
+['b', 5]],
+columns=['col1', 'col2'])
+counts = df.groupby('col1').size(); counts
+type(counts)
+counts_df
+type(counts_df)
+df.dtypes
+df
+df[['col1', 'col2', 'col3', 'col4']]\
+.groupby(['col1', 'col2']).agg(['mean', 'count'])
+groupby_object = df[['col1', 'col2', 'col3', 'col4']]\
+.groupby(['col1', 'col2'])
+groupby_object.agg('mean')\
+.rename(columns = lambda x: x + ' mean')\
+columns=['counts']))
+",,"columns=['counts']))
+"
+11346337,"df.columns = ['a', 'b']
+","df
+","df.columns = ['a', 'b']
+",
+23749057,"df['a'].values.tolist()
+df['a'].tolist()
+df['a'].drop_duplicates().values.tolist()
+list(set(df['a']))
+","import pandas as pd
+'b':[3,5,6,2,4,6,7,8,7,8,9]})
+[1, 3, 5, 7, 4, 5, 6, 4, 7, 8, 9]
+[1, 3, 5, 7, 4, 5, 6, 4, 7, 8, 9]
+[1, 3, 5, 7, 4, 6, 8, 9]
+[1, 3, 4, 5, 6, 7, 8, 9]
+","df['a'].values.tolist()
+",
+23749057,"df['a'].values.tolist()
+df['a'].tolist()
+df['a'].drop_duplicates().values.tolist()
+list(set(df['a']))
+","import pandas as pd
+'b':[3,5,6,2,4,6,7,8,7,8,9]})
+[1, 3, 5, 7, 4, 5, 6, 4, 7, 8, 9]
+[1, 3, 5, 7, 4, 5, 6, 4, 7, 8, 9]
+[1, 3, 5, 7, 4, 6, 8, 9]
+[1, 3, 4, 5, 6, 7, 8, 9]
+","df['a'].tolist()
+",
+23749057,"df['a'].values.tolist()
+df['a'].tolist()
+df['a'].drop_duplicates().values.tolist()
+list(set(df['a']))
+","import pandas as pd
+'b':[3,5,6,2,4,6,7,8,7,8,9]})
+[1, 3, 5, 7, 4, 5, 6, 4, 7, 8, 9]
+[1, 3, 5, 7, 4, 5, 6, 4, 7, 8, 9]
+[1, 3, 5, 7, 4, 6, 8, 9]
+[1, 3, 4, 5, 6, 7, 8, 9]
+","df['a'].drop_duplicates().values.tolist()
+",
+23749057,"df['a'].values.tolist()
+df['a'].tolist()
+df['a'].drop_duplicates().values.tolist()
+list(set(df['a']))
+","import pandas as pd
+'b':[3,5,6,2,4,6,7,8,7,8,9]})
+[1, 3, 5, 7, 4, 5, 6, 4, 7, 8, 9]
+[1, 3, 5, 7, 4, 5, 6, 4, 7, 8, 9]
+[1, 3, 5, 7, 4, 6, 8, 9]
+[1, 3, 4, 5, 6, 7, 8, 9]
+","list(set(df['a']))
+",
+13148611,"cols = df.columns.tolist()
+cols = cols[-1:] + cols[:-1]
+df = df[cols]
+","df
+cols
+cols
+df
+","cols = df.columns.tolist()
+cols = cols[-1:] + cols[:-1]
+df = df[cols]
+",
+21291622,,"df.a = df.a.astype(float)
+df
+pd.options.display.float_format = '{:,.0f}'.format
+df
+",,"df
+"
+21291622,,"df.a = df.a.astype(float)
+df
+pd.options.display.float_format = '{:,.0f}'.format
+df
+",,"df
+"
+11354850,"df = df.rename(columns={'oldName1': 'newName1', 'oldName2': 'newName2'})
+df.rename(columns={'oldName1': 'newName1', 'oldName2': 'newName2'}, inplace=True)
+","OR
+","df = df.rename(columns={'oldName1': 'newName1', 'oldName2': 'newName2'})
+",
+11354850,"df = df.rename(columns={'oldName1': 'newName1', 'oldName2': 'newName2'})
+df.rename(columns={'oldName1': 'newName1', 'oldName2': 'newName2'}, inplace=True)
+","OR
+","df.rename(columns={'oldName1': 'newName1', 'oldName2': 'newName2'}, inplace=True)
+",
+28902170,"common = df1.merge(df2,on=['col1','col2'])
+df1[(~df1.col1.isin(common.col1))&(~df1.col2.isin(common.col2))]
+df1[~df1.isin(df2)].dropna()
+df1[~df1.isin(df2)].dropna()
+","print(common)
+","common = df1.merge(df2,on=['col1','col2'])
+df1[(~df1.col1.isin(common.col1))&(~df1.col2.isin(common.col2))]
+",
+28902170,"common = df1.merge(df2,on=['col1','col2'])
+df1[(~df1.col1.isin(common.col1))&(~df1.col2.isin(common.col2))]
+df1[~df1.isin(df2)].dropna()
+df1[~df1.isin(df2)].dropna()
+","print(common)
+","df1[~df1.isin(df2)].dropna()
+",
+28902170,"common = df1.merge(df2,on=['col1','col2'])
+df1[(~df1.col1.isin(common.col1))&(~df1.col2.isin(common.col2))]
+df1[~df1.isin(df2)].dropna()
+df1[~df1.isin(df2)].dropna()
+","print(common)
+","df1[~df1.isin(df2)].dropna()
+",
+13337376,,"df
+",,"df
+"
+21463854,"data['amount'] = data[""amount""].fillna(data.groupby(""num"")[""amount""].transform(""mean""))
+data[""amount""] = data['amount'].fillna(mean_avg)
+data['amount'] = data['amount'].fillna(mean_avg)*2
+","pd.set_option('chained_assignment',None)
+","data['amount'] = data[""amount""].fillna(data.groupby(""num"")[""amount""].transform(""mean""))
+",
+21463854,"data['amount'] = data[""amount""].fillna(data.groupby(""num"")[""amount""].transform(""mean""))
+data[""amount""] = data['amount'].fillna(mean_avg)
+data['amount'] = data['amount'].fillna(mean_avg)*2
+","pd.set_option('chained_assignment',None)
+","data[""amount""] = data['amount'].fillna(mean_avg)
+",
+21463854,"data['amount'] = data[""amount""].fillna(data.groupby(""num"")[""amount""].transform(""mean""))
+data[""amount""] = data['amount'].fillna(mean_avg)
+data['amount'] = data['amount'].fillna(mean_avg)*2
+","pd.set_option('chained_assignment',None)
+","data['amount'] = data['amount'].fillna(mean_avg)*2
+",
+11617194,,,,"print(df)
+"
+11617194,,,,"print(df)
+"
+19112890,"df = DataFrame(table, columns=headers)
+","df
+","df = DataFrame(table, columns=headers)
+",
+24888331,,"df = DataFrame(columns=('lib', 'qty1', 'qty2'))
+",,"df = DataFrame(columns=('lib', 'qty1', 'qty2'))
+"
+18023468,"df.index.name
+df.index.name
+","df.index.name = 'foo'
+df
+foo
+","df.index.name
+",
+13295801,"df.fillna(0)
+df[1].fillna(0, inplace=True)
+","df
+df
+","df.fillna(0)
+",
+13295801,"df.fillna(0)
+df[1].fillna(0, inplace=True)
+","df
+df
+","df[1].fillna(0, inplace=True)
+",
+23307361,"w['female'] = w['female'].map({'female': 1, 'male': 0})
+",,"w['female'] = w['female'].map({'female': 1, 'male': 0})
+",
+25376997,"df.loc[len(df)]=['8/19/2014','Jun','Fly','98765']
+",,"df.loc[len(df)]=['8/19/2014','Jun','Fly','98765']
+",
+37043071,,,,"{1.8: 2, 2: 2, 3: 3, 1: 1, 'fred': 1}
+"
+25748826,"df['e'] = df.sum(axis=1)
+col_list= list(df)
+col_list.remove('d')
+df['e'] = df[col_list].sum(axis=1)
+","df
+col_list
+['a', 'b', 'c']
+df
+","df['e'] = df.sum(axis=1)
+",
+25748826,"df['e'] = df.sum(axis=1)
+col_list= list(df)
+col_list.remove('d')
+df['e'] = df[col_list].sum(axis=1)
+","df
+col_list
+['a', 'b', 'c']
+df
+","col_list= list(df)
+col_list.remove('d')
+df['e'] = df[col_list].sum(axis=1)
+",
+17682662,"df[df.c > 0.5][['b', 'e']].values
+","array([[ 0.98836259,  0.82403141],
+[ 0.337358  ,  0.02054435],
+[ 0.29271728,  0.37813099],
+[ 0.70033513,  0.69919695]])
+","df[df.c > 0.5][['b', 'e']].values
+",
+21800319,"df.loc[df['BoolCol']]
+df.iloc[np.flatnonzero(df['BoolCol'])]
+","df[df['BoolCol'] == True].index.tolist()
+df[df['BoolCol']].index.tolist()
+index=[10,20,30,40,50])
+df
+df[df['BoolCol']].index.tolist()
+idx = df[df['BoolCol']].index.tolist()
+idx
+df.loc[idx]
+np.flatnonzero(df['BoolCol'])
+",,"df.iloc[np.flatnonzero(df['BoolCol'])]
+"
+21800319,"df.loc[df['BoolCol']]
+df.iloc[np.flatnonzero(df['BoolCol'])]
+","df[df['BoolCol'] == True].index.tolist()
+df[df['BoolCol']].index.tolist()
+index=[10,20,30,40,50])
+df
+df[df['BoolCol']].index.tolist()
+idx = df[df['BoolCol']].index.tolist()
+idx
+df.loc[idx]
+np.flatnonzero(df['BoolCol'])
+",,"df.iloc[np.flatnonzero(df['BoolCol'])]
+"
+21800319,"df.loc[df['BoolCol']]
+df.iloc[np.flatnonzero(df['BoolCol'])]
+","df[df['BoolCol'] == True].index.tolist()
+df[df['BoolCol']].index.tolist()
+index=[10,20,30,40,50])
+df
+df[df['BoolCol']].index.tolist()
+idx = df[df['BoolCol']].index.tolist()
+idx
+df.loc[idx]
+np.flatnonzero(df['BoolCol'])
+",,"df.iloc[np.flatnonzero(df['BoolCol'])]
+"
+21800319,"df.loc[df['BoolCol']]
+df.iloc[np.flatnonzero(df['BoolCol'])]
+","df[df['BoolCol'] == True].index.tolist()
+df[df['BoolCol']].index.tolist()
+index=[10,20,30,40,50])
+df
+df[df['BoolCol']].index.tolist()
+idx = df[df['BoolCol']].index.tolist()
+idx
+df.loc[idx]
+np.flatnonzero(df['BoolCol'])
+",,"df.iloc[np.flatnonzero(df['BoolCol'])]
+"
+21800319,"df.loc[df['BoolCol']]
+df.iloc[np.flatnonzero(df['BoolCol'])]
+","df[df['BoolCol'] == True].index.tolist()
+df[df['BoolCol']].index.tolist()
+index=[10,20,30,40,50])
+df
+df[df['BoolCol']].index.tolist()
+idx = df[df['BoolCol']].index.tolist()
+idx
+df.loc[idx]
+np.flatnonzero(df['BoolCol'])
+","df.loc[df['BoolCol']]
+",
+21800319,"df.loc[df['BoolCol']]
+df.iloc[np.flatnonzero(df['BoolCol'])]
+","df[df['BoolCol'] == True].index.tolist()
+df[df['BoolCol']].index.tolist()
+index=[10,20,30,40,50])
+df
+df[df['BoolCol']].index.tolist()
+idx = df[df['BoolCol']].index.tolist()
+idx
+df.loc[idx]
+np.flatnonzero(df['BoolCol'])
+","df.iloc[np.flatnonzero(df['BoolCol'])]
+",
+28648923,"pd.to_numeric(s)
+pd.to_numeric(s, errors='coerce')
+pd.to_numeric(s, errors='ignore')
+df[['col2','col3']] = df[['col2','col3']].apply(pd.to_numeric)
+df.apply(pd.to_numeric, errors='ignore')
+df = df.infer_objects()
+","s
+a = [['a', '1.2', '4.2'], ['b', '70', '0.03'], ['x', '5', '0']]
+df
+df.dtypes
+df.dtypes
+","pd.to_numeric(s)
+",
+28648923,"pd.to_numeric(s)
+pd.to_numeric(s, errors='coerce')
+pd.to_numeric(s, errors='ignore')
+df[['col2','col3']] = df[['col2','col3']].apply(pd.to_numeric)
+df.apply(pd.to_numeric, errors='ignore')
+df = df.infer_objects()
+","s
+a = [['a', '1.2', '4.2'], ['b', '70', '0.03'], ['x', '5', '0']]
+df
+df.dtypes
+df.dtypes
+","pd.to_numeric(s, errors='coerce')
+",
+28648923,"pd.to_numeric(s)
+pd.to_numeric(s, errors='coerce')
+pd.to_numeric(s, errors='ignore')
+df[['col2','col3']] = df[['col2','col3']].apply(pd.to_numeric)
+df.apply(pd.to_numeric, errors='ignore')
+df = df.infer_objects()
+","s
+a = [['a', '1.2', '4.2'], ['b', '70', '0.03'], ['x', '5', '0']]
+df
+df.dtypes
+df.dtypes
+","pd.to_numeric(s, errors='ignore')
+",
+28648923,"pd.to_numeric(s)
+pd.to_numeric(s, errors='coerce')
+pd.to_numeric(s, errors='ignore')
+df[['col2','col3']] = df[['col2','col3']].apply(pd.to_numeric)
+df.apply(pd.to_numeric, errors='ignore')
+df = df.infer_objects()
+","s
+a = [['a', '1.2', '4.2'], ['b', '70', '0.03'], ['x', '5', '0']]
+df
+df.dtypes
+df.dtypes
+","df[['col2','col3']] = df[['col2','col3']].apply(pd.to_numeric)
+",
+28648923,"pd.to_numeric(s)
+pd.to_numeric(s, errors='coerce')
+pd.to_numeric(s, errors='ignore')
+df[['col2','col3']] = df[['col2','col3']].apply(pd.to_numeric)
+df.apply(pd.to_numeric, errors='ignore')
+df = df.infer_objects()
+","s
+a = [['a', '1.2', '4.2'], ['b', '70', '0.03'], ['x', '5', '0']]
+df
+df.dtypes
+df.dtypes
+","df.apply(pd.to_numeric, errors='ignore')
+",
+28648923,"pd.to_numeric(s)
+pd.to_numeric(s, errors='coerce')
+pd.to_numeric(s, errors='ignore')
+df[['col2','col3']] = df[['col2','col3']].apply(pd.to_numeric)
+df.apply(pd.to_numeric, errors='ignore')
+df = df.infer_objects()
+","s
+a = [['a', '1.2', '4.2'], ['b', '70', '0.03'], ['x', '5', '0']]
+df
+df.dtypes
+df.dtypes
+","df = df.infer_objects()
+",
+18695700,"df.set_index('id').to_dict()
+df.set_index('id')['value'].to_dict()
+",,"df.set_index('id').to_dict()
+",
+18695700,"df.set_index('id').to_dict()
+df.set_index('id')['value'].to_dict()
+",,"df.set_index('id')['value'].to_dict()
+",
+16729808,"sub_df.iloc[0]
+sub_df.iloc[0]['A']
+","sub_df
+","sub_df.iloc[0]
+",
+16729808,"sub_df.iloc[0]
+sub_df.iloc[0]['A']
+","sub_df
+","sub_df.iloc[0]['A']
+",
+13270110,"merge(df1, df2,on='key')[['col1', 'col2', 'col3']]
+","from pandas import DataFrame, merge
+df1 = DataFrame({'key':[1,1], 'col1':[1,2],'col2':[3,4]})
+df2 = DataFrame({'key':[1,1], 'col3':[5,6]})
+","merge(df1, df2,on='key')[['col1', 'col2', 'col3']]
+",
+22341390,"dfList = df['one'].tolist()
+","from pandas import *
+d = {'one' : Series([1., 2., 3.], index=['a', 'b', 'c']),
+'two' : Series([1., 2., 3., 4.], index=['a', 'b', 'c', 'd'])}
+df = DataFrame(d)
+","dfList = df['one'].tolist()
+",
+22341390,"dfList = df['one'].tolist()
+","from pandas import *
+d = {'one' : Series([1., 2., 3.], index=['a', 'b', 'c']),
+'two' : Series([1., 2., 3., 4.], index=['a', 'b', 'c', 'd'])}
+df = DataFrame(d)
+",,"dfList = df['one'].tolist()
+"
+15705958,"df.groupby(['Mt'], sort=False)['count'].max()
+idx = df.groupby(['Mt'])['count'].transform(max) == df['count']
+df['count_max'] = df.groupby(['Mt'])['count'].transform(max)
+","df
+df[idx]
+df
+","df.groupby(['Mt'], sort=False)['count'].max()
+",
+15705958,"df.groupby(['Mt'], sort=False)['count'].max()
+idx = df.groupby(['Mt'])['count'].transform(max) == df['count']
+df['count_max'] = df.groupby(['Mt'])['count'].transform(max)
+","df
+df[idx]
+df
+","idx = df.groupby(['Mt'])['count'].transform(max) == df['count']
+",
+15705958,"df.groupby(['Mt'], sort=False)['count'].max()
+idx = df.groupby(['Mt'])['count'].transform(max) == df['count']
+df['count_max'] = df.groupby(['Mt'])['count'].transform(max)
+","df
+df[idx]
+df
+","df['count_max'] = df.groupby(['Mt'])['count'].transform(max)
+",
+20461206,"df['index1'] = df.index
+df.reset_index(level=0, inplace=True)
+df.reset_index(level=['tick', 'obs'])
+","df
+tag
+","df['index1'] = df.index
+",
+20461206,"df['index1'] = df.index
+df.reset_index(level=0, inplace=True)
+df.reset_index(level=['tick', 'obs'])
+","df
+tag
+","df.reset_index(level=0, inplace=True)
+",
+20461206,"df['index1'] = df.index
+df.reset_index(level=0, inplace=True)
+df.reset_index(level=['tick', 'obs'])
+","df
+tag
+","df.reset_index(level=['tick', 'obs'])
+",
+14508355,"df.columns = df.columns.get_level_values(0)
+df.columns = [' '.join(col).strip() for col in df.columns.values]
+[' '.join(col).strip() for col in df.columns.values]
+","['USAF',
+'WBAN',
+'day',
+'month',
+'s_CD sum',
+'s_CL sum',
+'s_CNT sum',
+'s_PC sum',
+'tempf amax',
+'tempf amin',
+'year']
+","df.columns = df.columns.get_level_values(0)
+",
+14508355,"df.columns = df.columns.get_level_values(0)
+df.columns = [' '.join(col).strip() for col in df.columns.values]
+[' '.join(col).strip() for col in df.columns.values]
+","['USAF',
+'WBAN',
+'day',
+'month',
+'s_CD sum',
+'s_CL sum',
+'s_CNT sum',
+'s_PC sum',
+'tempf amax',
+'tempf amin',
+'year']
+","df.columns = [' '.join(col).strip() for col in df.columns.values]
+",
+14508355,"df.columns = df.columns.get_level_values(0)
+df.columns = [' '.join(col).strip() for col in df.columns.values]
+[' '.join(col).strip() for col in df.columns.values]
+","['USAF',
+'WBAN',
+'day',
+'month',
+'s_CD sum',
+'s_CL sum',
+'s_CNT sum',
+'s_PC sum',
+'tempf amax',
+'tempf amin',
+'year']
+","[' '.join(col).strip() for col in df.columns.values]
+",
+11872393,"df[(df.A == 1) & (df.D == 6)]
+","df
+","df[(df.A == 1) & (df.D == 6)]
+",
+11872393,"df[(df.A == 1) & (df.D == 6)]
+","df
+",,"df[(df.A == 1) & (df.D == 6)]
+df[(df.A == 1) & (df.D == 6)]
+df[(df.A == 1) & (df.D == 6)]
+df[(df.A == 1) & (df.D == 6)]
+df[(df.A == 1) & (df.D == 6)]
+"
+25962187,"for chunk in pd.read_csv(filename, chunksize=chunksize):
+process(chunk)
+","chunksize = 10 ** 6
+","for chunk in pd.read_csv(filename, chunksize=chunksize):
+process(chunk)
+",
+17950531,"df['A'].apply(str)
+df.applymap(str)
+","df = DataFrame(np.arange(10).reshape(5,2),columns=list('AB'))
+df
+df.dtypes
+df['A'].apply(str)[0]
+df.applymap(str).iloc[0,0]
+","df['A'].apply(str)
+",
+17950531,"df['A'].apply(str)
+df.applymap(str)
+","df = DataFrame(np.arange(10).reshape(5,2),columns=list('AB'))
+df
+df.dtypes
+df['A'].apply(str)[0]
+df.applymap(str).iloc[0,0]
+","df.applymap(str)
+",
+15943975,"df.shape
+len(df.index)
+","import numpy as np
+import pandas as pd
+df
+","df.shape
+",
+15943975,"df.shape
+len(df.index)
+","import numpy as np
+import pandas as pd
+df
+",,"len(df.index)
+"
+15943975,"df.shape
+len(df.index)
+","import numpy as np
+import pandas as pd
+df
+","len(df.index)
+",
+18327852,"myseries[myseries == 7].index[0]
+","myseries[myseries == 7]
+3
+","myseries[myseries == 7].index[0]
+",
+15411596,"table.groupby('YEARMONTH').CLIENTCODE.nunique()
+table.groupby('YEARMONTH').CLIENTCODE.nunique()
+","table
+YEARMONTH
+","table.groupby('YEARMONTH').CLIENTCODE.nunique()
+",
+17729985,"d.sales[d.sales==24] = 100
+d.loc[d.sales == 12, 'sales'] = 99
+d.sales = d.sales.replace(23, 24)
+","d
+d
+d
+","d.sales[d.sales==24] = 100
+",
+17729985,"d.sales[d.sales==24] = 100
+d.loc[d.sales == 12, 'sales'] = 99
+d.sales = d.sales.replace(23, 24)
+","d
+d
+d
+","d.loc[d.sales == 12, 'sales'] = 99
+",
+17729985,"d.sales[d.sales==24] = 100
+d.loc[d.sales == 12, 'sales'] = 99
+d.sales = d.sales.replace(23, 24)
+","d
+d
+d
+","d.sales = d.sales.replace(23, 24)
+",
+18942558,"df['Col3'] = (df['Col2'] <= 1).astype(int)
+df['Col3'] = df['Col2'].map(lambda x: 42 if x > 1 else 55)
+df['Col3'] = 0
+condition = df['Col2'] > 1
+df.loc[condition, 'Col3'] = 42
+df.loc[~condition, 'Col3'] = 55
+",,"df['Col3'] = (df['Col2'] <= 1).astype(int)
+",
+18942558,"df['Col3'] = (df['Col2'] <= 1).astype(int)
+df['Col3'] = df['Col2'].map(lambda x: 42 if x > 1 else 55)
+df['Col3'] = 0
+condition = df['Col2'] > 1
+df.loc[condition, 'Col3'] = 42
+df.loc[~condition, 'Col3'] = 55
+",,"df['Col3'] = df['Col2'].map(lambda x: 42 if x > 1 else 55)
+",
+18942558,"df['Col3'] = (df['Col2'] <= 1).astype(int)
+df['Col3'] = df['Col2'].map(lambda x: 42 if x > 1 else 55)
+df['Col3'] = 0
+condition = df['Col2'] > 1
+df.loc[condition, 'Col3'] = 42
+df.loc[~condition, 'Col3'] = 55
+",,"df['Col3'] = 0
+condition = df['Col2'] > 1
+df.loc[condition, 'Col3'] = 42
+df.loc[~condition, 'Col3'] = 55
+",
+15772263,"pd.rolling_mean(df.resample(""1D"", fill_method=""ffill""), window=3, min_periods=1)
+df.resample(""1d"").sum().fillna(0).rolling(window=3, min_periods=1).mean()
+","enddate
+","pd.rolling_mean(df.resample(""1D"", fill_method=""ffill""), window=3, min_periods=1)
+",
+15772263,"pd.rolling_mean(df.resample(""1D"", fill_method=""ffill""), window=3, min_periods=1)
+df.resample(""1d"").sum().fillna(0).rolling(window=3, min_periods=1).mean()
+","enddate
+","df.resample(""1d"").sum().fillna(0).rolling(window=3, min_periods=1).mean()
+",
+15362700,"s = df.ix[:,0]
+","import pandas as pd
+df
+type(s)
+","s = df.ix[:,0]
+",
+22276757,,,,"df = df.sort_index(ascending=False)
+"
+22276757,,,,"df = df.sort_index(ascending=False)
+"
+15026839,,"import pandas as pd
+",,"import pandas as pd
+"
+15026839,,"import pandas as pd
+",,"import pandas as pd
+"
+13704307,"dt64 = np.datetime64(dt)
+datetime.utcfromtimestamp(ts)
+np.datetime64(datetime.utcnow()).astype(datetime)
+numpy.datetime64('2002-06-28T01:00:00.000000000+0100').astype(datetime)
+numpy.datetime64('2002-06-28T01:00:00.000000000+0100').astype(datetime)
+datetime.utcfromtimestamp(dt64.astype(int) * ns)
+datetime.utcfromtimestamp(dt64.astype(int))
+","from datetime import datetime
+import numpy as np
+dt = datetime.utcnow()
+dt
+datetime.datetime(2012, 12, 4, 19, 51, 25, 362455)
+ts = (dt64 - np.datetime64('1970-01-01T00:00:00Z')) / np.timedelta64(1, 's')
+ts
+1354650685.3624549
+datetime.datetime(2012, 12, 4, 19, 51, 25, 362455)
+np.__version__
+'1.8.0.dev-7b75899'
+datetime.datetime(2012, 12, 4, 13, 34, 52, 827542)
+from datetime import datetime
+import numpy
+datetime.datetime(2002, 6, 28, 0, 0)
+numpy.__version__
+'1.6.2'
+from datetime import datetime
+import numpy
+numpy.__version__
+'1.8.0.dev-7b75899'
+dt64.dtype
+dtype('<M8[ns]')
+ns = 1e-9
+datetime.datetime(2002, 6, 28, 0, 0)
+dt64 = numpy.datetime64('2002-06-28T01:00:00.000000000+0100', 's')
+dt64.dtype
+dtype('<M8[s]')
+datetime.datetime(2002, 6, 28, 0, 0)
+","dt64 = np.datetime64(dt)
+",
+13704307,"dt64 = np.datetime64(dt)
+datetime.utcfromtimestamp(ts)
+np.datetime64(datetime.utcnow()).astype(datetime)
+numpy.datetime64('2002-06-28T01:00:00.000000000+0100').astype(datetime)
+numpy.datetime64('2002-06-28T01:00:00.000000000+0100').astype(datetime)
+datetime.utcfromtimestamp(dt64.astype(int) * ns)
+datetime.utcfromtimestamp(dt64.astype(int))
+","from datetime import datetime
+import numpy as np
+dt = datetime.utcnow()
+dt
+datetime.datetime(2012, 12, 4, 19, 51, 25, 362455)
+ts = (dt64 - np.datetime64('1970-01-01T00:00:00Z')) / np.timedelta64(1, 's')
+ts
+1354650685.3624549
+datetime.datetime(2012, 12, 4, 19, 51, 25, 362455)
+np.__version__
+'1.8.0.dev-7b75899'
+datetime.datetime(2012, 12, 4, 13, 34, 52, 827542)
+from datetime import datetime
+import numpy
+datetime.datetime(2002, 6, 28, 0, 0)
+numpy.__version__
+'1.6.2'
+from datetime import datetime
+import numpy
+numpy.__version__
+'1.8.0.dev-7b75899'
+dt64.dtype
+dtype('<M8[ns]')
+ns = 1e-9
+datetime.datetime(2002, 6, 28, 0, 0)
+dt64 = numpy.datetime64('2002-06-28T01:00:00.000000000+0100', 's')
+dt64.dtype
+dtype('<M8[s]')
+datetime.datetime(2002, 6, 28, 0, 0)
+","datetime.utcfromtimestamp(ts)
+",
+13704307,"dt64 = np.datetime64(dt)
+datetime.utcfromtimestamp(ts)
+np.datetime64(datetime.utcnow()).astype(datetime)
+numpy.datetime64('2002-06-28T01:00:00.000000000+0100').astype(datetime)
+numpy.datetime64('2002-06-28T01:00:00.000000000+0100').astype(datetime)
+datetime.utcfromtimestamp(dt64.astype(int) * ns)
+datetime.utcfromtimestamp(dt64.astype(int))
+","from datetime import datetime
+import numpy as np
+dt = datetime.utcnow()
+dt
+datetime.datetime(2012, 12, 4, 19, 51, 25, 362455)
+ts = (dt64 - np.datetime64('1970-01-01T00:00:00Z')) / np.timedelta64(1, 's')
+ts
+1354650685.3624549
+datetime.datetime(2012, 12, 4, 19, 51, 25, 362455)
+np.__version__
+'1.8.0.dev-7b75899'
+datetime.datetime(2012, 12, 4, 13, 34, 52, 827542)
+from datetime import datetime
+import numpy
+datetime.datetime(2002, 6, 28, 0, 0)
+numpy.__version__
+'1.6.2'
+from datetime import datetime
+import numpy
+numpy.__version__
+'1.8.0.dev-7b75899'
+dt64.dtype
+dtype('<M8[ns]')
+ns = 1e-9
+datetime.datetime(2002, 6, 28, 0, 0)
+dt64 = numpy.datetime64('2002-06-28T01:00:00.000000000+0100', 's')
+dt64.dtype
+dtype('<M8[s]')
+datetime.datetime(2002, 6, 28, 0, 0)
+","np.datetime64(datetime.utcnow()).astype(datetime)
+",
+13704307,"dt64 = np.datetime64(dt)
+datetime.utcfromtimestamp(ts)
+np.datetime64(datetime.utcnow()).astype(datetime)
+numpy.datetime64('2002-06-28T01:00:00.000000000+0100').astype(datetime)
+numpy.datetime64('2002-06-28T01:00:00.000000000+0100').astype(datetime)
+datetime.utcfromtimestamp(dt64.astype(int) * ns)
+datetime.utcfromtimestamp(dt64.astype(int))
+","from datetime import datetime
+import numpy as np
+dt = datetime.utcnow()
+dt
+datetime.datetime(2012, 12, 4, 19, 51, 25, 362455)
+ts = (dt64 - np.datetime64('1970-01-01T00:00:00Z')) / np.timedelta64(1, 's')
+ts
+1354650685.3624549
+datetime.datetime(2012, 12, 4, 19, 51, 25, 362455)
+np.__version__
+'1.8.0.dev-7b75899'
+datetime.datetime(2012, 12, 4, 13, 34, 52, 827542)
+from datetime import datetime
+import numpy
+datetime.datetime(2002, 6, 28, 0, 0)
+numpy.__version__
+'1.6.2'
+from datetime import datetime
+import numpy
+numpy.__version__
+'1.8.0.dev-7b75899'
+dt64.dtype
+dtype('<M8[ns]')
+ns = 1e-9
+datetime.datetime(2002, 6, 28, 0, 0)
+dt64 = numpy.datetime64('2002-06-28T01:00:00.000000000+0100', 's')
+dt64.dtype
+dtype('<M8[s]')
+datetime.datetime(2002, 6, 28, 0, 0)
+","numpy.datetime64('2002-06-28T01:00:00.000000000+0100').astype(datetime)
+",
+13704307,"dt64 = np.datetime64(dt)
+datetime.utcfromtimestamp(ts)
+np.datetime64(datetime.utcnow()).astype(datetime)
+numpy.datetime64('2002-06-28T01:00:00.000000000+0100').astype(datetime)
+numpy.datetime64('2002-06-28T01:00:00.000000000+0100').astype(datetime)
+datetime.utcfromtimestamp(dt64.astype(int) * ns)
+datetime.utcfromtimestamp(dt64.astype(int))
+","from datetime import datetime
+import numpy as np
+dt = datetime.utcnow()
+dt
+datetime.datetime(2012, 12, 4, 19, 51, 25, 362455)
+ts = (dt64 - np.datetime64('1970-01-01T00:00:00Z')) / np.timedelta64(1, 's')
+ts
+1354650685.3624549
+datetime.datetime(2012, 12, 4, 19, 51, 25, 362455)
+np.__version__
+'1.8.0.dev-7b75899'
+datetime.datetime(2012, 12, 4, 13, 34, 52, 827542)
+from datetime import datetime
+import numpy
+datetime.datetime(2002, 6, 28, 0, 0)
+numpy.__version__
+'1.6.2'
+from datetime import datetime
+import numpy
+numpy.__version__
+'1.8.0.dev-7b75899'
+dt64.dtype
+dtype('<M8[ns]')
+ns = 1e-9
+datetime.datetime(2002, 6, 28, 0, 0)
+dt64 = numpy.datetime64('2002-06-28T01:00:00.000000000+0100', 's')
+dt64.dtype
+dtype('<M8[s]')
+datetime.datetime(2002, 6, 28, 0, 0)
+","numpy.datetime64('2002-06-28T01:00:00.000000000+0100').astype(datetime)
+",
+13704307,"dt64 = np.datetime64(dt)
+datetime.utcfromtimestamp(ts)
+np.datetime64(datetime.utcnow()).astype(datetime)
+numpy.datetime64('2002-06-28T01:00:00.000000000+0100').astype(datetime)
+numpy.datetime64('2002-06-28T01:00:00.000000000+0100').astype(datetime)
+datetime.utcfromtimestamp(dt64.astype(int) * ns)
+datetime.utcfromtimestamp(dt64.astype(int))
+","from datetime import datetime
+import numpy as np
+dt = datetime.utcnow()
+dt
+datetime.datetime(2012, 12, 4, 19, 51, 25, 362455)
+ts = (dt64 - np.datetime64('1970-01-01T00:00:00Z')) / np.timedelta64(1, 's')
+ts
+1354650685.3624549
+datetime.datetime(2012, 12, 4, 19, 51, 25, 362455)
+np.__version__
+'1.8.0.dev-7b75899'
+datetime.datetime(2012, 12, 4, 13, 34, 52, 827542)
+from datetime import datetime
+import numpy
+datetime.datetime(2002, 6, 28, 0, 0)
+numpy.__version__
+'1.6.2'
+from datetime import datetime
+import numpy
+numpy.__version__
+'1.8.0.dev-7b75899'
+dt64.dtype
+dtype('<M8[ns]')
+ns = 1e-9
+datetime.datetime(2002, 6, 28, 0, 0)
+dt64 = numpy.datetime64('2002-06-28T01:00:00.000000000+0100', 's')
+dt64.dtype
+dtype('<M8[s]')
+datetime.datetime(2002, 6, 28, 0, 0)
+","datetime.utcfromtimestamp(dt64.astype(int) * ns)
+",
+13704307,"dt64 = np.datetime64(dt)
+datetime.utcfromtimestamp(ts)
+np.datetime64(datetime.utcnow()).astype(datetime)
+numpy.datetime64('2002-06-28T01:00:00.000000000+0100').astype(datetime)
+numpy.datetime64('2002-06-28T01:00:00.000000000+0100').astype(datetime)
+datetime.utcfromtimestamp(dt64.astype(int) * ns)
+datetime.utcfromtimestamp(dt64.astype(int))
+","from datetime import datetime
+import numpy as np
+dt = datetime.utcnow()
+dt
+datetime.datetime(2012, 12, 4, 19, 51, 25, 362455)
+ts = (dt64 - np.datetime64('1970-01-01T00:00:00Z')) / np.timedelta64(1, 's')
+ts
+1354650685.3624549
+datetime.datetime(2012, 12, 4, 19, 51, 25, 362455)
+np.__version__
+'1.8.0.dev-7b75899'
+datetime.datetime(2012, 12, 4, 13, 34, 52, 827542)
+from datetime import datetime
+import numpy
+datetime.datetime(2002, 6, 28, 0, 0)
+numpy.__version__
+'1.6.2'
+from datetime import datetime
+import numpy
+numpy.__version__
+'1.8.0.dev-7b75899'
+dt64.dtype
+dtype('<M8[ns]')
+ns = 1e-9
+datetime.datetime(2002, 6, 28, 0, 0)
+dt64 = numpy.datetime64('2002-06-28T01:00:00.000000000+0100', 's')
+dt64.dtype
+dtype('<M8[s]')
+datetime.datetime(2002, 6, 28, 0, 0)
+","datetime.utcfromtimestamp(dt64.astype(int))
+",
+22006514,"total_rows['ColumnID'] = total_rows['ColumnID'].astype(str)
+","df.to_json()
+df[0].to_json()
+","total_rows['ColumnID'] = total_rows['ColumnID'].astype(str)
+",
+16476974,,,,"A
+A
+"
+16476974,,,,"A
+A
+"
+26266451,"s.isnull().sum()
+df.isnull().sum()
+",,"s.isnull().sum()
+",
+26266451,"s.isnull().sum()
+df.isnull().sum()
+",,"df.isnull().sum()
+",
+36572039,"df.read_csv(filename ,  index = False)
+",,,"df.read_csv(filename ,  index = False)
+"
+36572039,"df.read_csv(filename ,  index = False)
+",,"df.read_csv(filename ,  index = False)
+",
+19237920,"k1 = df.loc[(df.Product == p_id) & (df.Time >= start_time) & (df.Time < end_time), ['Time', 'Product']]
+k1 = df[['Time', 'Product']].query('Product == p_id and start_time <= Time < end_time')
+","df[['Time', 'Product']].query('Product == p_id and Month < mn and Year == yr')
+df = DataFrame({'gender': np.random.choice(['m', 'f'], size=10), 'price': poisson(100, size=10)})
+df
+df.query('gender == ""m"" and price < 100')
+","k1 = df.loc[(df.Product == p_id) & (df.Time >= start_time) & (df.Time < end_time), ['Time', 'Product']]
+",
+19237920,"k1 = df.loc[(df.Product == p_id) & (df.Time >= start_time) & (df.Time < end_time), ['Time', 'Product']]
+k1 = df[['Time', 'Product']].query('Product == p_id and start_time <= Time < end_time')
+","df[['Time', 'Product']].query('Product == p_id and Month < mn and Year == yr')
+df = DataFrame({'gender': np.random.choice(['m', 'f'], size=10), 'price': poisson(100, size=10)})
+df
+df.query('gender == ""m"" and price < 100')
+","k1 = df[['Time', 'Product']].query('Product == p_id and start_time <= Time < end_time')
+",
+18173074,"df = df[df.line_race != 0]
+",,"df = df[df.line_race != 0]
+",
+19385591,"df[['col1', 'col2', 'col3', 'col4']].groupby(['col1', 'col2']).agg(['mean', 'count'])
+",,"df[['col1', 'col2', 'col3', 'col4']].groupby(['col1', 'col2']).agg(['mean', 'count'])
+",
+10374456,"g1.add_suffix('_Count').reset_index()
+DataFrame({'count' : df1.groupby( [ ""Name"", ""City""] ).size()}).reset_index()
+","type(g1)
+g1.index
+","g1.add_suffix('_Count').reset_index()
+",
+10374456,"g1.add_suffix('_Count').reset_index()
+DataFrame({'count' : df1.groupby( [ ""Name"", ""City""] ).size()}).reset_index()
+","type(g1)
+g1.index
+","DataFrame({'count' : df1.groupby( [ ""Name"", ""City""] ).size()}).reset_index()
+",
+20868446,"df=df.rename(columns = {'two':'new_name'})
+","df
+Parameters
+Series.rename
+Returns
+","df=df.rename(columns = {'two':'new_name'})
+",
+16354730,"df['Value'] = df.apply(lambda row: my_test(row['a'], row['c']), axis=1)
+","df
+","df['Value'] = df.apply(lambda row: my_test(row['a'], row['c']), axis=1)
+",
+13413845,"df = df[np.isfinite(df['EPS'])]
+",,"df = df[np.isfinite(df['EPS'])]
+",
+32558621,"for column in df:
+print(df[column])
+",,"for column in df:
+print(df[column])
+",
+20491748,"df = df.reset_index(drop=True)
+",,"df = df.reset_index(drop=True)
+",
+18837389,"s.index.name = 'Date'
+s.reset_index()
+",,,"s.reset_index()
+"
+18837389,"s.index.name = 'Date'
+s.reset_index()
+",,,"s.reset_index()
+"
+18837389,"s.index.name = 'Date'
+s.reset_index()
+",,"s.index.name = 'Date'
+s.reset_index()
+","s.reset_index()
+"
+24284680,,,,"[my_series[c].value_counts() for c in list(my_series.select_dtypes(include=['O']).columns)]
+[my_series[c].value_counts() for c in list(my_series.select_dtypes(include=['O']).columns)]
+[my_series[c].value_counts() for c in list(my_series.select_dtypes(include=['O']).columns)]
+"
+10202789,"df['A'].argmax()
+df['B'].argmax()
+df['C'].argmax()
+dfrm['A'].idxmax()
+dfrm.ix[dfrm['A'].idxmax()]
+","import pandas
+import numpy as np
+df
+3
+4
+1
+dfrm
+","df['A'].argmax()
+",
+10202789,"df['A'].argmax()
+df['B'].argmax()
+df['C'].argmax()
+dfrm['A'].idxmax()
+dfrm.ix[dfrm['A'].idxmax()]
+","import pandas
+import numpy as np
+df
+3
+4
+1
+dfrm
+","df['B'].argmax()
+",
+10202789,"df['A'].argmax()
+df['B'].argmax()
+df['C'].argmax()
+dfrm['A'].idxmax()
+dfrm.ix[dfrm['A'].idxmax()]
+","import pandas
+import numpy as np
+df
+3
+4
+1
+dfrm
+","df['C'].argmax()
+",
+10202789,"df['A'].argmax()
+df['B'].argmax()
+df['C'].argmax()
+dfrm['A'].idxmax()
+dfrm.ix[dfrm['A'].idxmax()]
+","import pandas
+import numpy as np
+df
+3
+4
+1
+dfrm
+","dfrm['A'].idxmax()
+",
+10202789,"df['A'].argmax()
+df['B'].argmax()
+df['C'].argmax()
+dfrm['A'].idxmax()
+dfrm.ix[dfrm['A'].idxmax()]
+","import pandas
+import numpy as np
+df
+3
+4
+1
+dfrm
+","dfrm.ix[dfrm['A'].idxmax()]
+",
+20221655,"book = load_workbook('Masterfile.xlsx')
+writer = pandas.ExcelWriter('Masterfile.xlsx', engine='openpyxl')
+writer.book = book
+writer.sheets = dict((ws.title, ws) for ws in book.worksheets)
+data_filtered.to_excel(writer, ""Main"", cols=['Diff1', 'Diff2'])
+writer.save()
+","import pandas
+from openpyxl import load_workbook
+","book = load_workbook('Masterfile.xlsx')
+writer = pandas.ExcelWriter('Masterfile.xlsx', engine='openpyxl')
+writer.book = book
+writer.sheets = dict((ws.title, ws) for ws in book.worksheets)
+data_filtered.to_excel(writer, ""Main"", cols=['Diff1', 'Diff2'])
+writer.save()
+",
+17813222,"df.plot(x='col_name_1', y='col_name_2', style='o')
+df.plot(style=['o','rx'])
+","import numpy as np
+import pandas as pd
+d = {'one' : np.random.rand(10),
+'two' : np.random.rand(10)}
+","df.plot(x='col_name_1', y='col_name_2', style='o')
+",
+17813222,"df.plot(x='col_name_1', y='col_name_2', style='o')
+df.plot(style=['o','rx'])
+","import numpy as np
+import pandas as pd
+d = {'one' : np.random.rand(10),
+'two' : np.random.rand(10)}
+","df.plot(style=['o','rx'])
+",
+17098736,"df.to_pickle(file_name)
+store = HDFStore('store.h5')
+","df = pd.read_pickle(file_name)
+store['df'] = df
+store['df']
+","df.to_pickle(file_name)
+",
+17098736,"df.to_pickle(file_name)
+store = HDFStore('store.h5')
+","df = pd.read_pickle(file_name)
+store['df'] = df
+store['df']
+","store = HDFStore('store.h5')
+",
+14946246,"grp = df.groupby('A')
+grp[['B']].transform(sum).sort('B')
+sort1 = df.ix[grp[['B']].transform(sum).sort('B').index]
+f = lambda x: x.sort('C', ascending=False)
+sort2 = sort1.groupby('A', sort=False).apply(f)
+sort2.reset_index(0, drop=True)
+","sort1
+sort2
+","grp = df.groupby('A')
+grp[['B']].transform(sum).sort('B')
+sort1 = df.ix[grp[['B']].transform(sum).sort('B').index]
+f = lambda x: x.sort('C', ascending=False)
+sort2 = sort1.groupby('A', sort=False).apply(f)
+sort2.reset_index(0, drop=True)
+",
+17141755,"df.sort_values(['a', 'b'], ascending=[True, False])
+df.sort(['a', 'b'], ascending=[True, False])
+df1.sort(['a', 'b'], ascending=[True, False])
+df1 = df1.sort(['a', 'b'], ascending=[True, False])
+df1.sort(['a', 'b'], ascending=[True, False], inplace=True)
+",,"df.sort_values(['a', 'b'], ascending=[True, False])
+",
+17141755,"df.sort_values(['a', 'b'], ascending=[True, False])
+df.sort(['a', 'b'], ascending=[True, False])
+df1.sort(['a', 'b'], ascending=[True, False])
+df1 = df1.sort(['a', 'b'], ascending=[True, False])
+df1.sort(['a', 'b'], ascending=[True, False], inplace=True)
+",,"df.sort(['a', 'b'], ascending=[True, False])
+",
+17141755,"df.sort_values(['a', 'b'], ascending=[True, False])
+df.sort(['a', 'b'], ascending=[True, False])
+df1.sort(['a', 'b'], ascending=[True, False])
+df1 = df1.sort(['a', 'b'], ascending=[True, False])
+df1.sort(['a', 'b'], ascending=[True, False], inplace=True)
+",,"df1.sort(['a', 'b'], ascending=[True, False])
+",
+17141755,"df.sort_values(['a', 'b'], ascending=[True, False])
+df.sort(['a', 'b'], ascending=[True, False])
+df1.sort(['a', 'b'], ascending=[True, False])
+df1 = df1.sort(['a', 'b'], ascending=[True, False])
+df1.sort(['a', 'b'], ascending=[True, False], inplace=True)
+",,"df1 = df1.sort(['a', 'b'], ascending=[True, False])
+",
+17141755,"df.sort_values(['a', 'b'], ascending=[True, False])
+df.sort(['a', 'b'], ascending=[True, False])
+df1.sort(['a', 'b'], ascending=[True, False])
+df1 = df1.sort(['a', 'b'], ascending=[True, False])
+df1.sort(['a', 'b'], ascending=[True, False], inplace=True)
+",,"df1.sort(['a', 'b'], ascending=[True, False], inplace=True)
+",
+27791362,"df = pd.read_csv(StringIO(csv),
+header=0,
+index_col=[""date"", ""loc""],
+usecols=[""date"", ""loc"", ""x""],
+parse_dates=[""date""])
+","import pandas as pd
+from StringIO import StringIO
+csv = r""""""dummy,date,loc,x
+bar,20090101,a,1
+bar,20090102,a,3
+bar,20090103,a,5
+bar,20090101,b,1
+bar,20090102,b,3
+bar,20090103,b,5""""""
+","df = pd.read_csv(StringIO(csv),
+header=0,
+index_col=[""date"", ""loc""],
+usecols=[""date"", ""loc"", ""x""],
+parse_dates=[""date""])
+",
+24793359,"numpyMatrix = df.as_matrix()
+",,"numpyMatrix = df.as_matrix()
+",
+17682726,"df.loc[df['c']>0.5,['a','d']].values
+","df = DataFrame(np.random.rand(4,5), columns = list('abcde'))
+df
+df.loc[df['c']>0.5,['a','d']]
+array([[ 0.66970138,  0.45157274],
+[ 0.95276167,  0.64325143],
+[ 0.90071271,  0.50577509]])
+","df.loc[df['c']>0.5,['a','d']].values
+",
+19960116,"df.countries.isin(countries)
+df[df.countries.isin(countries)]
+df[~df.countries.isin(countries)]
+","df
+countries
+['UK', 'China']
+",,"df[~df.countries.isin(countries)]
+"
+19960116,"df.countries.isin(countries)
+df[df.countries.isin(countries)]
+df[~df.countries.isin(countries)]
+","df
+countries
+['UK', 'China']
+",,"df[~df.countries.isin(countries)]
+"
+19960116,"df.countries.isin(countries)
+df[df.countries.isin(countries)]
+df[~df.countries.isin(countries)]
+","df
+countries
+['UK', 'China']
+",,"df[~df.countries.isin(countries)]
+"
+19960116,"df.countries.isin(countries)
+df[df.countries.isin(countries)]
+df[~df.countries.isin(countries)]
+","df
+countries
+['UK', 'China']
+","df.countries.isin(countries)
+",
+19960116,"df.countries.isin(countries)
+df[df.countries.isin(countries)]
+df[~df.countries.isin(countries)]
+","df
+countries
+['UK', 'China']
+","df[df.countries.isin(countries)]
+",
+19960116,"df.countries.isin(countries)
+df[df.countries.isin(countries)]
+df[~df.countries.isin(countries)]
+","df
+countries
+['UK', 'China']
+","df[~df.countries.isin(countries)]
+",
+19378497,"dataframe[""period""] = dataframe[""Year""].map(str) + dataframe[""quarter""]
+",,"dataframe[""period""] = dataframe[""Year""].map(str) + dataframe[""quarter""]
+",
+22475141,"g = df.columns.to_series().groupby(df.dtypes).groups
+","df
+df.dtypes
+g
+{dtype('int64'): ['A', 'E'], dtype('float64'): ['B'], dtype('O'): ['C', 'D']}
+{'object': ['C', 'D'], 'int64': ['A', 'E'], 'float64': ['B']}
+","g = df.columns.to_series().groupby(df.dtypes).groups
+",
+39358924,"df['A'], df['B'] = df['AB'].str.split(' ', 1).str
+df['AB'].str.split(' ', 1, expand=True)
+df['AB_split'] = df['AB'].str.split('-')
+df['AB'].str.split('-', 1).str[0]
+df['AB'].str.split('-', 1).str[1]
+df['A'], df['B'] = df['AB'].str.split('-', 1).str
+df['AB'].str.split('-', 1, expand=True)
+df.join(df['AB'].str.split('-', 1, expand=True).rename(columns={0:'A', 1:'B'}))
+","import pandas as pd
+df
+df
+upper_lower_df
+upper_lower_df[""L""] = upper_lower_df[""U""].str.lower()
+upper_lower_df
+df['AB'].str[0]
+df['AB'].str[1]
+df
+df = df[['AB']]
+df
+","df['A'], df['B'] = df['AB'].str.split(' ', 1).str
+",
+39358924,"df['A'], df['B'] = df['AB'].str.split(' ', 1).str
+df['AB'].str.split(' ', 1, expand=True)
+df['AB_split'] = df['AB'].str.split('-')
+df['AB'].str.split('-', 1).str[0]
+df['AB'].str.split('-', 1).str[1]
+df['A'], df['B'] = df['AB'].str.split('-', 1).str
+df['AB'].str.split('-', 1, expand=True)
+df.join(df['AB'].str.split('-', 1, expand=True).rename(columns={0:'A', 1:'B'}))
+","import pandas as pd
+df
+df
+upper_lower_df
+upper_lower_df[""L""] = upper_lower_df[""U""].str.lower()
+upper_lower_df
+df['AB'].str[0]
+df['AB'].str[1]
+df
+df = df[['AB']]
+df
+","df['AB'].str.split(' ', 1, expand=True)
+",
+39358924,"df['A'], df['B'] = df['AB'].str.split(' ', 1).str
+df['AB'].str.split(' ', 1, expand=True)
+df['AB_split'] = df['AB'].str.split('-')
+df['AB'].str.split('-', 1).str[0]
+df['AB'].str.split('-', 1).str[1]
+df['A'], df['B'] = df['AB'].str.split('-', 1).str
+df['AB'].str.split('-', 1, expand=True)
+df.join(df['AB'].str.split('-', 1, expand=True).rename(columns={0:'A', 1:'B'}))
+","import pandas as pd
+df
+df
+upper_lower_df
+upper_lower_df[""L""] = upper_lower_df[""U""].str.lower()
+upper_lower_df
+df['AB'].str[0]
+df['AB'].str[1]
+df
+df = df[['AB']]
+df
+","df['AB_split'] = df['AB'].str.split('-')
+",
+39358924,"df['A'], df['B'] = df['AB'].str.split(' ', 1).str
+df['AB'].str.split(' ', 1, expand=True)
+df['AB_split'] = df['AB'].str.split('-')
+df['AB'].str.split('-', 1).str[0]
+df['AB'].str.split('-', 1).str[1]
+df['A'], df['B'] = df['AB'].str.split('-', 1).str
+df['AB'].str.split('-', 1, expand=True)
+df.join(df['AB'].str.split('-', 1, expand=True).rename(columns={0:'A', 1:'B'}))
+","import pandas as pd
+df
+df
+upper_lower_df
+upper_lower_df[""L""] = upper_lower_df[""U""].str.lower()
+upper_lower_df
+df['AB'].str[0]
+df['AB'].str[1]
+df
+df = df[['AB']]
+df
+","df['AB'].str.split('-', 1).str[0]
+",
+39358924,"df['A'], df['B'] = df['AB'].str.split(' ', 1).str
+df['AB'].str.split(' ', 1, expand=True)
+df['AB_split'] = df['AB'].str.split('-')
+df['AB'].str.split('-', 1).str[0]
+df['AB'].str.split('-', 1).str[1]
+df['A'], df['B'] = df['AB'].str.split('-', 1).str
+df['AB'].str.split('-', 1, expand=True)
+df.join(df['AB'].str.split('-', 1, expand=True).rename(columns={0:'A', 1:'B'}))
+","import pandas as pd
+df
+df
+upper_lower_df
+upper_lower_df[""L""] = upper_lower_df[""U""].str.lower()
+upper_lower_df
+df['AB'].str[0]
+df['AB'].str[1]
+df
+df = df[['AB']]
+df
+","df['AB'].str.split('-', 1).str[1]
+",
+39358924,"df['A'], df['B'] = df['AB'].str.split(' ', 1).str
+df['AB'].str.split(' ', 1, expand=True)
+df['AB_split'] = df['AB'].str.split('-')
+df['AB'].str.split('-', 1).str[0]
+df['AB'].str.split('-', 1).str[1]
+df['A'], df['B'] = df['AB'].str.split('-', 1).str
+df['AB'].str.split('-', 1, expand=True)
+df.join(df['AB'].str.split('-', 1, expand=True).rename(columns={0:'A', 1:'B'}))
+","import pandas as pd
+df
+df
+upper_lower_df
+upper_lower_df[""L""] = upper_lower_df[""U""].str.lower()
+upper_lower_df
+df['AB'].str[0]
+df['AB'].str[1]
+df
+df = df[['AB']]
+df
+","df['A'], df['B'] = df['AB'].str.split('-', 1).str
+",
+39358924,"df['A'], df['B'] = df['AB'].str.split(' ', 1).str
+df['AB'].str.split(' ', 1, expand=True)
+df['AB_split'] = df['AB'].str.split('-')
+df['AB'].str.split('-', 1).str[0]
+df['AB'].str.split('-', 1).str[1]
+df['A'], df['B'] = df['AB'].str.split('-', 1).str
+df['AB'].str.split('-', 1, expand=True)
+df.join(df['AB'].str.split('-', 1, expand=True).rename(columns={0:'A', 1:'B'}))
+","import pandas as pd
+df
+df
+upper_lower_df
+upper_lower_df[""L""] = upper_lower_df[""U""].str.lower()
+upper_lower_df
+df['AB'].str[0]
+df['AB'].str[1]
+df
+df = df[['AB']]
+df
+","df['AB'].str.split('-', 1, expand=True)
+",
+39358924,"df['A'], df['B'] = df['AB'].str.split(' ', 1).str
+df['AB'].str.split(' ', 1, expand=True)
+df['AB_split'] = df['AB'].str.split('-')
+df['AB'].str.split('-', 1).str[0]
+df['AB'].str.split('-', 1).str[1]
+df['A'], df['B'] = df['AB'].str.split('-', 1).str
+df['AB'].str.split('-', 1, expand=True)
+df.join(df['AB'].str.split('-', 1, expand=True).rename(columns={0:'A', 1:'B'}))
+","import pandas as pd
+df
+df
+upper_lower_df
+upper_lower_df[""L""] = upper_lower_df[""U""].str.lower()
+upper_lower_df
+df['AB'].str[0]
+df['AB'].str[1]
+df
+df = df[['AB']]
+df
+","df.join(df['AB'].str.split('-', 1, expand=True).rename(columns={0:'A', 1:'B'}))
+",
+13682381,"data['result'] = data['result'].map(lambda x: x.lstrip('+-').rstrip('aAbBcC'))
+",,"data['result'] = data['result'].map(lambda x: x.lstrip('+-').rstrip('aAbBcC'))
+",
+30691921,"with pd.option_context('display.max_rows', None, 'display.max_columns', 3):
+","print(df)
+","with pd.option_context('display.max_rows', None, 'display.max_columns', 3):
+",
+20763459,,,,"plt.show()
+plt.show()
+plt.show()
+"
+34272155,"df.drop_duplicates(subset=['A', 'C'], keep=False)
+","import pandas as pd
+","df.drop_duplicates(subset=['A', 'C'], keep=False)
+",
+11531402,"df[df['A'].str.contains(""hello"")]
+",,"df[df['A'].str.contains(""hello"")]
+",
+11711637,"pd.set_option('display.height', 1000)
+pd.set_option('display.max_rows', 500)
+pd.set_option('display.max_columns', 500)
+pd.set_option('display.width', 1000)
+","import pandas as pd
+Parameters
+Returns
+None
+Raises
+float or None
+boolean
+boolean
+str/unicode
+boolean
+callable
+int
+int
+int
+int
+int
+int or None
+int
+int or None
+bool
+boolean
+boolean
+int
+int
+int
+boolean
+boolean
+","pd.set_option('display.height', 1000)
+",
+11711637,"pd.set_option('display.height', 1000)
+pd.set_option('display.max_rows', 500)
+pd.set_option('display.max_columns', 500)
+pd.set_option('display.width', 1000)
+","import pandas as pd
+Parameters
+Returns
+None
+Raises
+float or None
+boolean
+boolean
+str/unicode
+boolean
+callable
+int
+int
+int
+int
+int
+int or None
+int
+int or None
+bool
+boolean
+boolean
+int
+int
+int
+boolean
+boolean
+","pd.set_option('display.max_rows', 500)
+",
+11711637,"pd.set_option('display.height', 1000)
+pd.set_option('display.max_rows', 500)
+pd.set_option('display.max_columns', 500)
+pd.set_option('display.width', 1000)
+","import pandas as pd
+Parameters
+Returns
+None
+Raises
+float or None
+boolean
+boolean
+str/unicode
+boolean
+callable
+int
+int
+int
+int
+int
+int or None
+int
+int or None
+bool
+boolean
+boolean
+int
+int
+int
+boolean
+boolean
+","pd.set_option('display.max_columns', 500)
+",
+11711637,"pd.set_option('display.height', 1000)
+pd.set_option('display.max_rows', 500)
+pd.set_option('display.max_columns', 500)
+pd.set_option('display.width', 1000)
+","import pandas as pd
+Parameters
+Returns
+None
+Raises
+float or None
+boolean
+boolean
+str/unicode
+boolean
+callable
+int
+int
+int
+int
+int
+int or None
+int
+int or None
+bool
+boolean
+boolean
+int
+int
+int
+boolean
+boolean
+","pd.set_option('display.width', 1000)
+",
+17134750,"df['col'] = pd.to_datetime(df['col'])
+",,"df['col'] = pd.to_datetime(df['col'])
+",
+17134750,"df['col'] = pd.to_datetime(df['col'])
+",,,"df['col'] = pd.to_datetime(df['col'])
+"
+17134750,"df['col'] = pd.to_datetime(df['col'])
+",,,"df['col'] = pd.to_datetime(df['col'])
+"
+12555510,"df1['e'] = Series(np.random.randn(sLength), index=df1.index)
+","sLength = len(df1['a'])
+df1
+df1
+p.version.short_version
+'0.16.1'
+df1
+","df1['e'] = Series(np.random.randn(sLength), index=df1.index)
+",
+12555510,"df1['e'] = Series(np.random.randn(sLength), index=df1.index)
+","sLength = len(df1['a'])
+df1
+df1
+p.version.short_version
+'0.16.1'
+df1
+",,"df1
+"
+12555510,"df1['e'] = Series(np.random.randn(sLength), index=df1.index)
+","sLength = len(df1['a'])
+df1
+df1
+p.version.short_version
+'0.16.1'
+df1
+",,"df1
+"
+10458386,,"a
+",,"a
+"
+14734627,"gb.get_group('foo')
+gb[[""A"", ""B""]].get_group(""foo"")
+gb[""C""].get_group(""foo"")
+",,"gb.get_group('foo')
+",
+14734627,"gb.get_group('foo')
+gb[[""A"", ""B""]].get_group(""foo"")
+gb[""C""].get_group(""foo"")
+",,"gb[[""A"", ""B""]].get_group(""foo"")
+",
+14734627,"gb.get_group('foo')
+gb[[""A"", ""B""]].get_group(""foo"")
+gb[""C""].get_group(""foo"")
+",,"gb[""C""].get_group(""foo"")
+",
+24147363,,"msk = np.random.rand(len(df)) < 0.8
+train = df[msk]
+test = df[~msk]
+len(test)
+len(train)
+",,"len(train)
+"
+26301947,"pd.set_option('display.max_colwidth', -1)
+",,"pd.set_option('display.max_colwidth', -1)
+",
+19851521,"df.index.names = ['Date']
+df1 = df.set_index('A')
+df1.rename(index={1: 'a'})
+df1.rename(columns={'B': 'BB'})
+df1.index.names = ['index']
+","df
+df1
+df1
+index
+","df.index.names = ['Date']
+",
+19851521,"df.index.names = ['Date']
+df1 = df.set_index('A')
+df1.rename(index={1: 'a'})
+df1.rename(columns={'B': 'BB'})
+df1.index.names = ['index']
+","df
+df1
+df1
+index
+","df1 = df.set_index('A')
+",
+19851521,"df.index.names = ['Date']
+df1 = df.set_index('A')
+df1.rename(index={1: 'a'})
+df1.rename(columns={'B': 'BB'})
+df1.index.names = ['index']
+","df
+df1
+df1
+index
+","df1.rename(index={1: 'a'})
+",
+19851521,"df.index.names = ['Date']
+df1 = df.set_index('A')
+df1.rename(index={1: 'a'})
+df1.rename(columns={'B': 'BB'})
+df1.index.names = ['index']
+","df
+df1
+df1
+index
+","df1.rename(columns={'B': 'BB'})
+",
+19851521,"df.index.names = ['Date']
+df1 = df.set_index('A')
+df1.rename(index={1: 'a'})
+df1.rename(columns={'B': 'BB'})
+df1.index.names = ['index']
+","df
+df1
+df1
+index
+","df1.index.names = ['index']
+",
+34297689,"df3 = df3[~df3.index.duplicated(keep='first')]
+",,"df3 = df3[~df3.index.duplicated(keep='first')]
+",
+34297689,"df3 = df3[~df3.index.duplicated(keep='first')]
+",,,"df3 = df3[~df3.index.duplicated(keep='first')]
+"
+34297689,"df3 = df3[~df3.index.duplicated(keep='first')]
+",,,"df3 = df3[~df3.index.duplicated(keep='first')]
+"
+34297689,"df3 = df3[~df3.index.duplicated(keep='first')]
+",,,"df3 = df3[~df3.index.duplicated(keep='first')]
+"
+19961557,"df.pivot(index=0, columns=1, values=2)
+df.pivot(index=0, columns=1, values=3)
+","0
+0
+","df.pivot(index=0, columns=1, values=2)
+","0
+"
+19961557,"df.pivot(index=0, columns=1, values=2)
+df.pivot(index=0, columns=1, values=3)
+","0
+0
+","df.pivot(index=0, columns=1, values=3)
+",
+16597375,"df.append(data)
+df = df.append(data)
+","df
+df
+","df.append(data)
+",
+16597375,"df.append(data)
+df = df.append(data)
+","df
+df
+","df = df.append(data)
+",
+30512931,"dfs = [df0, df1, df2, dfN]
+","import pandas as pd
+df_final = reduce(lambda left,right: pd.merge(left,right,on='name'), dfs)
+","dfs = [df0, df1, df2, dfN]
+","df_final = reduce(lambda left,right: pd.merge(left,right,on='name'), dfs)
+"
+13842286,"df.xs('C')['x']=10
+df['x']['C'] = 10
+","df.xs('C', copy = False)['x']=10
+",,"df.xs('C', copy = False)['x']=10
+"
+13842286,"df.xs('C')['x']=10
+df['x']['C'] = 10
+","df.xs('C', copy = False)['x']=10
+","df.xs('C')['x']=10
+",
+13842286,"df.xs('C')['x']=10
+df['x']['C'] = 10
+","df.xs('C', copy = False)['x']=10
+","df['x']['C'] = 10
+",
+13842286,"df.xs('C')['x']=10
+df['x']['C'] = 10
+","df.xs('C', copy = False)['x']=10
+",,"df.xs('C', copy = False)['x']=10
+"
+13842286,"df.xs('C')['x']=10
+df['x']['C'] = 10
+","df.xs('C', copy = False)['x']=10
+",,"df.xs('C', copy = False)['x']=10
+"
+13842286,"df.xs('C')['x']=10
+df['x']['C'] = 10
+","df.xs('C', copy = False)['x']=10
+","df['x']['C'] = 10
+",
+13842286,"df.xs('C')['x']=10
+df['x']['C'] = 10
+","df.xs('C', copy = False)['x']=10
+",,"df.xs('C', copy = False)['x']=10
+"
+22391554,"df.groupby('a').count()
+df['a'].value_counts()
+df['freq'] = df.groupby('a')['a'].transform('count')
+","a
+df
+","df.groupby('a').count()
+",
+22391554,"df.groupby('a').count()
+df['a'].value_counts()
+df['freq'] = df.groupby('a')['a'].transform('count')
+","a
+df
+","df['a'].value_counts()
+",
+22391554,"df.groupby('a').count()
+df['a'].value_counts()
+df['freq'] = df.groupby('a')['a'].transform('count')
+","a
+df
+","df['freq'] = df.groupby('a')['a'].transform('count')
+",
+17619032,"df.sort(['c1','c2'], ascending=[False,True])
+df.sort(['c1','c2'], ascending=[True,True])
+df.sort(['c1','c2'], ascending=[False,True])
+df.sort_values(['c1','c2'], ascending=[False,True])
+","import pandas
+","df.sort(['c1','c2'], ascending=[False,True])
+",
+17619032,"df.sort(['c1','c2'], ascending=[False,True])
+df.sort(['c1','c2'], ascending=[True,True])
+df.sort(['c1','c2'], ascending=[False,True])
+df.sort_values(['c1','c2'], ascending=[False,True])
+","import pandas
+","df.sort(['c1','c2'], ascending=[True,True])
+",
+17619032,"df.sort(['c1','c2'], ascending=[False,True])
+df.sort(['c1','c2'], ascending=[True,True])
+df.sort(['c1','c2'], ascending=[False,True])
+df.sort_values(['c1','c2'], ascending=[False,True])
+","import pandas
+","df.sort(['c1','c2'], ascending=[False,True])
+",
+17619032,"df.sort(['c1','c2'], ascending=[False,True])
+df.sort(['c1','c2'], ascending=[True,True])
+df.sort(['c1','c2'], ascending=[False,True])
+df.sort_values(['c1','c2'], ascending=[False,True])
+","import pandas
+","df.sort_values(['c1','c2'], ascending=[False,True])
+",
+20084895,"Series(df.values.ravel()).unique()
+","df = DataFrame(np.random.randint(0,10,size=100).reshape(10,10))
+df
+df = DataFrame(np.random.randint(0,10,size=10000).reshape(100,100))
+","Series(df.values.ravel()).unique()
+",
+20084895,"Series(df.values.ravel()).unique()
+","df = DataFrame(np.random.randint(0,10,size=100).reshape(10,10))
+df
+df = DataFrame(np.random.randint(0,10,size=10000).reshape(100,100))
+","Series(df.values.ravel()).unique()
+",
+20084895,"Series(df.values.ravel()).unique()
+","df = DataFrame(np.random.randint(0,10,size=100).reshape(10,10))
+df
+df = DataFrame(np.random.randint(0,10,size=10000).reshape(100,100))
+",,"df = DataFrame(np.random.randint(0,10,size=10000).reshape(100,100))
+"
+25254087,"df_test.iloc[0]
+df_test['Btime'].iloc[0]
+","df
+df.ix[1, 'foo']
+","df_test.iloc[0]
+",
+25254087,"df_test.iloc[0]
+df_test['Btime'].iloc[0]
+","df
+df.ix[1, 'foo']
+","df_test['Btime'].iloc[0]
+",
+17242374,"df.index.values
+",,"df.index.values
+",
+17063653,"xl = pd.ExcelFile(""dummydata.xlsx"")
+df = xl.parse(""Sheet1"")
+parsed = pd.io.parsers.ExcelFile.parse(xl, ""Sheet1"")
+","xl.sheet_names
+[u'Sheet1', u'Sheet2', u'Sheet3']
+df.head()
+parsed.columns
+Index([u'Tid', u'dummy1', u'dummy2', u'dummy3', u'dummy4', u'dummy5', u'dummy6', u'dummy7', u'dummy8', u'dummy9'], dtype=object)
+","xl = pd.ExcelFile(""dummydata.xlsx"")
+df = xl.parse(""Sheet1"")
+",
+17063653,"xl = pd.ExcelFile(""dummydata.xlsx"")
+df = xl.parse(""Sheet1"")
+parsed = pd.io.parsers.ExcelFile.parse(xl, ""Sheet1"")
+","xl.sheet_names
+[u'Sheet1', u'Sheet2', u'Sheet3']
+df.head()
+parsed.columns
+Index([u'Tid', u'dummy1', u'dummy2', u'dummy3', u'dummy4', u'dummy5', u'dummy6', u'dummy7', u'dummy8', u'dummy9'], dtype=object)
+","parsed = pd.io.parsers.ExcelFile.parse(xl, ""Sheet1"")
+",
+19483025,"list(my_dataframe.columns.values)
+list(my_dataframe)
+",,"list(my_dataframe.columns.values)
+",
+19483025,"list(my_dataframe.columns.values)
+list(my_dataframe)
+",,"list(my_dataframe)
+",
+29530601,"df.isnull().values.any()
+","df[df > 0.9] = pd.np.nan
+","df.isnull().values.any()
+",
+29530601,"df.isnull().values.any()
+","df[df > 0.9] = pd.np.nan
+",,"df[df > 0.9] = pd.np.nan
+"
+29530601,"df.isnull().values.any()
+","df[df > 0.9] = pd.np.nan
+",,"df[df > 0.9] = pd.np.nan
+"
+29530601,"df.isnull().values.any()
+","df[df > 0.9] = pd.np.nan
+",,"df[df > 0.9] = pd.np.nan
+"
+29530601,"df.isnull().values.any()
+","df[df > 0.9] = pd.np.nan
+","df.isnull().values.any()
+",
+15252012,"my_cols = [""A"", ""B"", ""C"", ""D"", ""E""]
+pd.read_csv(""ragged.csv"", names=my_cols, engine='python')
+","1,2,3
+1,2,3,4
+1,2,3,4,5
+1,2
+1,2,3,4
+","my_cols = [""A"", ""B"", ""C"", ""D"", ""E""]
+pd.read_csv(""ragged.csv"", names=my_cols, engine='python')
+",
+16923367,"df.to_csv(file_name, sep='\t')
+df.to_csv(file_name, sep='\t', encoding='utf-8')
+",,"df.to_csv(file_name, sep='\t')
+",
+16923367,"df.to_csv(file_name, sep='\t')
+df.to_csv(file_name, sep='\t', encoding='utf-8')
+",,"df.to_csv(file_name, sep='\t', encoding='utf-8')
+",
+11287278,"df1 = df[['a','b']]
+","df1 = df.ix[:,0:2]
+df1 = df.ix[0,0:2].copy()
+","df1 = df[['a','b']]
+",
+11287278,"df1 = df[['a','b']]
+","df1 = df.ix[:,0:2]
+df1 = df.ix[0,0:2].copy()
+",,"df1 = df.ix[0,0:2].copy()
+"
+11287278,"df1 = df[['a','b']]
+","df1 = df.ix[:,0:2]
+df1 = df.ix[0,0:2].copy()
+",,"df1 = df.ix[0,0:2].copy()
+"
+14900065,"df4 = df3.drop_duplicates(subset='rownum', keep='last')
+df3 = df3.reset_index().drop_duplicates(subset='index', keep='last').set_index('index')
+","df3 = df3.sort()
+","df4 = df3.drop_duplicates(subset='rownum', keep='last')
+",
+14900065,"df4 = df3.drop_duplicates(subset='rownum', keep='last')
+df3 = df3.reset_index().drop_duplicates(subset='index', keep='last').set_index('index')
+","df3 = df3.sort()
+","df3 = df3.reset_index().drop_duplicates(subset='index', keep='last').set_index('index')
+",
+27360130,,,,"pd.melt(x, id_vars=['farm', 'fruit'], var_name='year', value_name='value')
+"
+27360130,,,,"pd.melt(x, id_vars=['farm', 'fruit'], var_name='year', value_name='value')
+"
+27360130,,,,"pd.melt(x, id_vars=['farm', 'fruit'], var_name='year', value_name='value')
+"
+27360130,,,,"pd.melt(x, id_vars=['farm', 'fruit'], var_name='year', value_name='value')
+"
+27360130,,,,"pd.melt(x, id_vars=['farm', 'fruit'], var_name='year', value_name='value')
+"
+17095620,"ne = (df1 != df2).any(1)
+ne_stacked = (df1 != df2).stack()
+","ne
+changed = ne_stacked[ne_stacked]
+changed.index.names = ['id', 'col']
+changed
+difference_locations = np.where(df1 != df2)
+changed_from = df1.values[difference_locations]
+changed_to = df2.values[difference_locations]
+","ne = (df1 != df2).any(1)
+",
+17095620,"ne = (df1 != df2).any(1)
+ne_stacked = (df1 != df2).stack()
+","ne
+changed = ne_stacked[ne_stacked]
+changed.index.names = ['id', 'col']
+changed
+difference_locations = np.where(df1 != df2)
+changed_from = df1.values[difference_locations]
+changed_to = df2.values[difference_locations]
+","ne_stacked = (df1 != df2).stack()
+",
+13851602,"df[df['column name'].map(len) < 2]
+",,"df[df['column name'].map(len) < 2]
+",
+14760930,,,,"A
+"
+12098586,"df[df['A'].isin([3, 6])]
+","df = DataFrame({'A' : [5,6,3,4], 'B' : [1,2,3, 5]})
+df
+","df[df['A'].isin([3, 6])]
+",
+16104482,"df.iloc[[2]]
+df.loc[[2]]
+","df = DataFrame(randn(5,2),index=range(0,10,2),columns=list('AB'))
+df
+","df.iloc[[2]]
+",
+16104482,"df.iloc[[2]]
+df.loc[[2]]
+","df = DataFrame(randn(5,2),index=range(0,10,2),columns=list('AB'))
+df
+","df.loc[[2]]
+",
+12065904,,,,"A
+"
+17841294,"df.groupby('A')['C'].apply(lambda x: ""{%s}"" % ', '.join(x))
+","df = read_csv(StringIO(data),sep='\s+')
+df
+df.dtypes
+df.groupby('A').apply(lambda x: x.sum())
+df.groupby('A')['C'].apply(lambda x: x.sum())
+df.groupby('A').apply(f)
+A
+","df.groupby('A')['C'].apply(lambda x: ""{%s}"" % ', '.join(x))
+",
+18062521,"pd.concat([s1, s2], axis=1)
+pd.concat([s1, s2], axis=1).reset_index()
+",,"pd.concat([s1, s2], axis=1)
+",
+18062521,"pd.concat([s1, s2], axis=1)
+pd.concat([s1, s2], axis=1).reset_index()
+",,"pd.concat([s1, s2], axis=1).reset_index()
+",
+21232849,"list_ = []
+for file_ in allFiles:
+df = pd.read_csv(file_,index_col=None, header=0)
+list_.append(df)
+frame = pd.concat(list_)
+","path =r'C:\DRO\DCL_rawdata_files'
+allFiles = glob.glob(path + ""/*.csv"")
+","list_ = []
+for file_ in allFiles:
+df = pd.read_csv(file_,index_col=None, header=0)
+list_.append(df)
+frame = pd.concat(list_)
+","frame = pd.concat(list_)
+"
+13786327,,"import datetime
+import pandas as pd
+import numpy as np
+todays_date = datetime.datetime.now().date()
+index = pd.date_range(todays_date-datetime.timedelta(10), periods=10, freq='D')
+columns = ['A','B', 'C']
+df_ = df_.fillna(0)
+data = np.array([np.arange(10)]*3).T
+df
+",,"df
+df
+"
+16735476,"df.convert_objects(convert_numeric=True)
+","df = DataFrame(dict(A = Series(['1.0','1']), B = Series(['1.0','foo'])))
+df
+df.dtypes
+df.convert_objects(convert_numeric=True).dtypes
+","df.convert_objects(convert_numeric=True)
+",
+11138275,"import pandas as pd
+import cx_Oracle
+ora_conn = cx_Oracle.connect('your_connection_string')
+df_ora = pd.read_sql('select * from user_objects', con=ora_conn)
+ora_conn.close()
+import MySQLdb
+mysql_cn= MySQLdb.connect(host='myhost',
+port=3306,user='myusername', passwd='mypassword',
+db='information_schema')
+df_mysql = pd.read_sql('select * from VIEWS;', con=mysql_cn)
+mysql_cn.close()
+",,"import pandas as pd
+import cx_Oracle
+ora_conn = cx_Oracle.connect('your_connection_string')
+df_ora = pd.read_sql('select * from user_objects', con=ora_conn)
+ora_conn.close()
+","mysql_cn.close()
+"
+11138275,"import pandas as pd
+import cx_Oracle
+ora_conn = cx_Oracle.connect('your_connection_string')
+df_ora = pd.read_sql('select * from user_objects', con=ora_conn)
+ora_conn.close()
+import MySQLdb
+mysql_cn= MySQLdb.connect(host='myhost',
+port=3306,user='myusername', passwd='mypassword',
+db='information_schema')
+df_mysql = pd.read_sql('select * from VIEWS;', con=mysql_cn)
+mysql_cn.close()
+",,"import MySQLdb
+mysql_cn= MySQLdb.connect(host='myhost',
+port=3306,user='myusername', passwd='mypassword',
+db='information_schema')
+df_mysql = pd.read_sql('select * from VIEWS;', con=mysql_cn)
+mysql_cn.close()
+","mysql_cn.close()
+"
+18431417,"df.fillna(-1).groupby('b').sum()
+","df.fillna(-1)
+b
+","df.fillna(-1).groupby('b').sum()
+",
+14661768,"df.drop(df.index[[1,3]])
+","df
+","df.drop(df.index[[1,3]])
+",
+21266043,"json_normalize(data['results'])
+","from urllib2 import Request, urlopen
+import json
+from pandas.io.json import json_normalize
+path1 = '42.974049,-81.205203|42.974298,-81.195755'
+request=Request('http://maps.googleapis.com/maps/api/elevation/json?locations='+path1+'&sensor=false')
+response = urlopen(request)
+elevations = response.read()
+data = json.loads(elevations)
+","json_normalize(data['results'])
+",
+13434501,"df.dropna()
+df.dropna(how='all')
+df.dropna(thresh=2)
+df.dropna(subset=[1])
+","df.iloc[::2,0] = np.nan; df.iloc[::4,1] = np.nan; df.iloc[::3,2] = np.nan;
+df
+","df.dropna()
+",
+13434501,"df.dropna()
+df.dropna(how='all')
+df.dropna(thresh=2)
+df.dropna(subset=[1])
+","df.iloc[::2,0] = np.nan; df.iloc[::4,1] = np.nan; df.iloc[::3,2] = np.nan;
+df
+","df.dropna(how='all')
+",
+13434501,"df.dropna()
+df.dropna(how='all')
+df.dropna(thresh=2)
+df.dropna(subset=[1])
+","df.iloc[::2,0] = np.nan; df.iloc[::4,1] = np.nan; df.iloc[::3,2] = np.nan;
+df
+","df.dropna(thresh=2)
+",
+13434501,"df.dropna()
+df.dropna(how='all')
+df.dropna(thresh=2)
+df.dropna(subset=[1])
+","df.iloc[::2,0] = np.nan; df.iloc[::4,1] = np.nan; df.iloc[::3,2] = np.nan;
+df
+","df.dropna(subset=[1])
+",
+19324591,"s = s.reindex(idx, fill_value=0)
+","import pandas as pd
+idx = pd.date_range('09-01-2013', '09-30-2013')
+'09-03-2013': 10,
+'09-06-2013': 5,
+'09-07-2013': 1})
+s.index = pd.DatetimeIndex(s.index)
+print(s)
+...
+","s = s.reindex(idx, fill_value=0)
+",
+11067072,"df.reindex_axis(sorted(df.columns), axis=1)
+",,"df.reindex_axis(sorted(df.columns), axis=1)
+",
+11362056,,"paramdata.columns
+paramdata.index
+",,"paramdata.index
+"
+17071908,"df.loc[df['column_name'] == some_value]
+df.loc[df['column_name'].isin(some_values)]
+df.loc[(df['column_name'] == some_value) & df['other_column'].isin(some_values)]
+df.loc[df['column_name'] != some_value]
+df.loc[~df['column_name'].isin(some_values)]
+df = df.set_index(['B'])
+df.loc[df.index.isin(['one','two'])]
+","import pandas as pd
+import numpy as np
+'B': 'one one two three two two one three'.split(),
+'C': np.arange(8), 'D': np.arange(8) * 2})
+print(df)
+print(df.loc[df['A'] == 'foo'])
+print(df.loc[df['B'].isin(['one','three'])])
+print(df.loc['one'])
+B
+B
+","df.loc[df['column_name'] == some_value]
+",
+17071908,"df.loc[df['column_name'] == some_value]
+df.loc[df['column_name'].isin(some_values)]
+df.loc[(df['column_name'] == some_value) & df['other_column'].isin(some_values)]
+df.loc[df['column_name'] != some_value]
+df.loc[~df['column_name'].isin(some_values)]
+df = df.set_index(['B'])
+df.loc[df.index.isin(['one','two'])]
+","import pandas as pd
+import numpy as np
+'B': 'one one two three two two one three'.split(),
+'C': np.arange(8), 'D': np.arange(8) * 2})
+print(df)
+print(df.loc[df['A'] == 'foo'])
+print(df.loc[df['B'].isin(['one','three'])])
+print(df.loc['one'])
+B
+B
+","df.loc[df['column_name'].isin(some_values)]
+",
+17071908,"df.loc[df['column_name'] == some_value]
+df.loc[df['column_name'].isin(some_values)]
+df.loc[(df['column_name'] == some_value) & df['other_column'].isin(some_values)]
+df.loc[df['column_name'] != some_value]
+df.loc[~df['column_name'].isin(some_values)]
+df = df.set_index(['B'])
+df.loc[df.index.isin(['one','two'])]
+","import pandas as pd
+import numpy as np
+'B': 'one one two three two two one three'.split(),
+'C': np.arange(8), 'D': np.arange(8) * 2})
+print(df)
+print(df.loc[df['A'] == 'foo'])
+print(df.loc[df['B'].isin(['one','three'])])
+print(df.loc['one'])
+B
+B
+","df.loc[(df['column_name'] == some_value) & df['other_column'].isin(some_values)]
+",
+17071908,"df.loc[df['column_name'] == some_value]
+df.loc[df['column_name'].isin(some_values)]
+df.loc[(df['column_name'] == some_value) & df['other_column'].isin(some_values)]
+df.loc[df['column_name'] != some_value]
+df.loc[~df['column_name'].isin(some_values)]
+df = df.set_index(['B'])
+df.loc[df.index.isin(['one','two'])]
+","import pandas as pd
+import numpy as np
+'B': 'one one two three two two one three'.split(),
+'C': np.arange(8), 'D': np.arange(8) * 2})
+print(df)
+print(df.loc[df['A'] == 'foo'])
+print(df.loc[df['B'].isin(['one','three'])])
+print(df.loc['one'])
+B
+B
+","df.loc[df['column_name'] != some_value]
+",
+17071908,"df.loc[df['column_name'] == some_value]
+df.loc[df['column_name'].isin(some_values)]
+df.loc[(df['column_name'] == some_value) & df['other_column'].isin(some_values)]
+df.loc[df['column_name'] != some_value]
+df.loc[~df['column_name'].isin(some_values)]
+df = df.set_index(['B'])
+df.loc[df.index.isin(['one','two'])]
+","import pandas as pd
+import numpy as np
+'B': 'one one two three two two one three'.split(),
+'C': np.arange(8), 'D': np.arange(8) * 2})
+print(df)
+print(df.loc[df['A'] == 'foo'])
+print(df.loc[df['B'].isin(['one','three'])])
+print(df.loc['one'])
+B
+B
+","df.loc[~df['column_name'].isin(some_values)]
+",
+17071908,"df.loc[df['column_name'] == some_value]
+df.loc[df['column_name'].isin(some_values)]
+df.loc[(df['column_name'] == some_value) & df['other_column'].isin(some_values)]
+df.loc[df['column_name'] != some_value]
+df.loc[~df['column_name'].isin(some_values)]
+df = df.set_index(['B'])
+df.loc[df.index.isin(['one','two'])]
+","import pandas as pd
+import numpy as np
+'B': 'one one two three two two one three'.split(),
+'C': np.arange(8), 'D': np.arange(8) * 2})
+print(df)
+print(df.loc[df['A'] == 'foo'])
+print(df.loc[df['B'].isin(['one','three'])])
+print(df.loc['one'])
+B
+B
+",,"B
+"
+17071908,"df.loc[df['column_name'] == some_value]
+df.loc[df['column_name'].isin(some_values)]
+df.loc[(df['column_name'] == some_value) & df['other_column'].isin(some_values)]
+df.loc[df['column_name'] != some_value]
+df.loc[~df['column_name'].isin(some_values)]
+df = df.set_index(['B'])
+df.loc[df.index.isin(['one','two'])]
+","import pandas as pd
+import numpy as np
+'B': 'one one two three two two one three'.split(),
+'C': np.arange(8), 'D': np.arange(8) * 2})
+print(df)
+print(df.loc[df['A'] == 'foo'])
+print(df.loc[df['B'].isin(['one','three'])])
+print(df.loc['one'])
+B
+B
+",,"B
+"
+17071908,"df.loc[df['column_name'] == some_value]
+df.loc[df['column_name'].isin(some_values)]
+df.loc[(df['column_name'] == some_value) & df['other_column'].isin(some_values)]
+df.loc[df['column_name'] != some_value]
+df.loc[~df['column_name'].isin(some_values)]
+df = df.set_index(['B'])
+df.loc[df.index.isin(['one','two'])]
+","import pandas as pd
+import numpy as np
+'B': 'one one two three two two one three'.split(),
+'C': np.arange(8), 'D': np.arange(8) * 2})
+print(df)
+print(df.loc[df['A'] == 'foo'])
+print(df.loc[df['B'].isin(['one','three'])])
+print(df.loc['one'])
+B
+B
+","df = df.set_index(['B'])
+","B
+"
+17071908,"df.loc[df['column_name'] == some_value]
+df.loc[df['column_name'].isin(some_values)]
+df.loc[(df['column_name'] == some_value) & df['other_column'].isin(some_values)]
+df.loc[df['column_name'] != some_value]
+df.loc[~df['column_name'].isin(some_values)]
+df = df.set_index(['B'])
+df.loc[df.index.isin(['one','two'])]
+","import pandas as pd
+import numpy as np
+'B': 'one one two three two two one three'.split(),
+'C': np.arange(8), 'D': np.arange(8) * 2})
+print(df)
+print(df.loc[df['A'] == 'foo'])
+print(df.loc[df['B'].isin(['one','three'])])
+print(df.loc['one'])
+B
+B
+","df.loc[df.index.isin(['one','two'])]
+",
+14745484,"columns = ['flips','row'])
+","import pandas as pd
+df
+df
+","columns = ['flips','row'])
+","df
+"
+44736467,"df.loc[:, 'foo':'sat']
+df.loc[:, 'foo':'cat':2]
+df.loc[:, :'bar']
+df.loc[:, 'quz'::3]
+df.loc[:, 'sat':'bar']
+df.loc[:, 'sat':'bar':-1]
+df.loc[:, slice('quz',None, 2)]
+df.loc[:, ['foo','bar','dat']]
+df.loc['w':'y', 'foo':'ant':3]
+","w
+x
+y
+","df.loc[:, 'foo':'sat']
+",
+44736467,"df.loc[:, 'foo':'sat']
+df.loc[:, 'foo':'cat':2]
+df.loc[:, :'bar']
+df.loc[:, 'quz'::3]
+df.loc[:, 'sat':'bar']
+df.loc[:, 'sat':'bar':-1]
+df.loc[:, slice('quz',None, 2)]
+df.loc[:, ['foo','bar','dat']]
+df.loc['w':'y', 'foo':'ant':3]
+","w
+x
+y
+","df.loc[:, 'foo':'cat':2]
+",
+44736467,"df.loc[:, 'foo':'sat']
+df.loc[:, 'foo':'cat':2]
+df.loc[:, :'bar']
+df.loc[:, 'quz'::3]
+df.loc[:, 'sat':'bar']
+df.loc[:, 'sat':'bar':-1]
+df.loc[:, slice('quz',None, 2)]
+df.loc[:, ['foo','bar','dat']]
+df.loc['w':'y', 'foo':'ant':3]
+","w
+x
+y
+","df.loc[:, :'bar']
+",
+44736467,"df.loc[:, 'foo':'sat']
+df.loc[:, 'foo':'cat':2]
+df.loc[:, :'bar']
+df.loc[:, 'quz'::3]
+df.loc[:, 'sat':'bar']
+df.loc[:, 'sat':'bar':-1]
+df.loc[:, slice('quz',None, 2)]
+df.loc[:, ['foo','bar','dat']]
+df.loc['w':'y', 'foo':'ant':3]
+","w
+x
+y
+","df.loc[:, 'quz'::3]
+",
+44736467,"df.loc[:, 'foo':'sat']
+df.loc[:, 'foo':'cat':2]
+df.loc[:, :'bar']
+df.loc[:, 'quz'::3]
+df.loc[:, 'sat':'bar']
+df.loc[:, 'sat':'bar':-1]
+df.loc[:, slice('quz',None, 2)]
+df.loc[:, ['foo','bar','dat']]
+df.loc['w':'y', 'foo':'ant':3]
+","w
+x
+y
+","df.loc[:, 'sat':'bar']
+",
+44736467,"df.loc[:, 'foo':'sat']
+df.loc[:, 'foo':'cat':2]
+df.loc[:, :'bar']
+df.loc[:, 'quz'::3]
+df.loc[:, 'sat':'bar']
+df.loc[:, 'sat':'bar':-1]
+df.loc[:, slice('quz',None, 2)]
+df.loc[:, ['foo','bar','dat']]
+df.loc['w':'y', 'foo':'ant':3]
+","w
+x
+y
+","df.loc[:, 'sat':'bar':-1]
+",
+44736467,"df.loc[:, 'foo':'sat']
+df.loc[:, 'foo':'cat':2]
+df.loc[:, :'bar']
+df.loc[:, 'quz'::3]
+df.loc[:, 'sat':'bar']
+df.loc[:, 'sat':'bar':-1]
+df.loc[:, slice('quz',None, 2)]
+df.loc[:, ['foo','bar','dat']]
+df.loc['w':'y', 'foo':'ant':3]
+","w
+x
+y
+","df.loc[:, slice('quz',None, 2)]
+",
+44736467,"df.loc[:, 'foo':'sat']
+df.loc[:, 'foo':'cat':2]
+df.loc[:, :'bar']
+df.loc[:, 'quz'::3]
+df.loc[:, 'sat':'bar']
+df.loc[:, 'sat':'bar':-1]
+df.loc[:, slice('quz',None, 2)]
+df.loc[:, ['foo','bar','dat']]
+df.loc['w':'y', 'foo':'ant':3]
+","w
+x
+y
+","df.loc[:, ['foo','bar','dat']]
+",
+44736467,"df.loc[:, 'foo':'sat']
+df.loc[:, 'foo':'cat':2]
+df.loc[:, :'bar']
+df.loc[:, 'quz'::3]
+df.loc[:, 'sat':'bar']
+df.loc[:, 'sat':'bar':-1]
+df.loc[:, slice('quz',None, 2)]
+df.loc[:, ['foo','bar','dat']]
+df.loc['w':'y', 'foo':'ant':3]
+","w
+x
+y
+","df.loc['w':'y', 'foo':'ant':3]
+",
