@@ -20,6 +20,18 @@ Jupyter Notebook
 
 ## Running the tasks
 
+``` 
+cd tasks
+luigi --module my_module MyTask --local-scheduler
+```
+
+Note that my_module needs to be in your PYTHONPATH, or else this can produce an error (ImportError: No module named my_module). Add the current working directory to the command PYTHONPATH with:
+
+```
+PYTHONPATH='.' luigi --module my_module MyTask --local-scheduler
+```
+
+## Running the task earlier way
 First of all, we need to launch the Luigi daemon with:
 
 ```
