@@ -14,22 +14,29 @@ Therefore, in order to run the tasks you need to have installed in your system t
 
 ```
 Python 3
-Luigi
+Luigi - upgrade luigi to 2.8.8
 Jupyter Notebook
 ```
 
 ## Running the tasks
 
-``` 
-cd tasks
-luigi --module my_module MyTask --local-scheduler
-```
+1. With luigi daemon
+luigid
 
 Note that my_module needs to be in your PYTHONPATH, or else this can produce an error (ImportError: No module named my_module). Add the current working directory to the command PYTHONPATH with:
 
 ```
+cd tasks
+PYTHONPATH='.' luigi --module my_module MyTask
+```
+
+2. Without luigi daemon and local scheduler
+```
+cd tasks
 PYTHONPATH='.' luigi --module my_module MyTask --local-scheduler
 ```
+
+Luigi GUI could be seen at http://localhost:8082/
 
 ## Running the task earlier way
 First of all, we need to launch the Luigi daemon with:
