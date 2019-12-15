@@ -31,9 +31,6 @@ Note that my_module needs to be in your PYTHONPATH, or else this can produce an 
 PYTHONPATH='.' luigi --module my_module MyTask --local-scheduler
 ```
 
-```
-PYTHONPATH='.' python3 -m luigi --module preprocess_code PreProcessParseableCode --local-scheduler
-```
 ## Running the task earlier way
 First of all, we need to launch the Luigi daemon with:
 
