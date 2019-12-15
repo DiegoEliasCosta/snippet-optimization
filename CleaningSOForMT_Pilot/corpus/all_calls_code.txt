@@ -1,0 +1,111 @@
+pandas.DataFrame df.argmax df.argmax df.argmax dfrm.idxmax dfrm.ix np.random.randn np.random dfrm.idxmax
+g1.index g1.add_suffix.reset_index df1.groupby.size.DataFrame.reset_index g1.add_suffix df1.groupby.size df1.groupby
+data.set_index
+df.reindex_axis df.columns
+cx_Oracle.connect pd.read_sql ora_conn.close MySQLdb.connect pd.read_sql mysql_cn.close
+df.ix df.ix.copy df.ix
+df.columns pd.DataFrame
+df.rename df.rename
+paramdata.columns paramdata.index
+df.str.contains df.str
+pd.set_option pd.set_option pd.set_option pd.set_option
+df.A df.D
+df.isin
+df_norm.mean df_norm.max df_norm.min df.mean df.max df.min
+p.version.short_version p.Series p.version df1.loc p.Series df1.assign np.random.randn df1.index np.random.randn df1.index np.random.randn df1.index sLength.np.random.randn.p.Series.values np.random np.random np.random p.Series np.random.randn np.random
+a.iterrows.row._.row.split.row.Series.pd.concat.reset_index pd.concat row.split a.iterrows
+df.columns.tolist df.columns
+df.fillna df.fillna
+np.isfinite
+np.nan np.nan np.nan pd.DataFrame df.iloc df.iloc df.iloc df.dropna df.dropna df.dropna df.dropna np.random.randn np.random
+data.map x.lstrip.rstrip x.lstrip
+np.__version__ numpy.__version__ numpy.__version__ dt64.dtype dt64.dtype datetime.utcnow datetime.datetime np.datetime64 datetime.utcfromtimestamp datetime.datetime datetime.utcnow.np.datetime64.astype datetime.datetime numpy.datetime64.astype datetime.datetime numpy.datetime64.astype datetime.utcfromtimestamp datetime.datetime numpy.datetime64 datetime.utcfromtimestamp datetime.datetime np.timedelta64 dt64.astype np.datetime64 np.datetime64 numpy.datetime64 numpy.datetime64 dt64.astype datetime.utcnow
+np.arange.np.array.T datetime.datetime.now.date pd.date_range pd.DataFrame df_.fillna pd.DataFrame np.array datetime.datetime.now datetime.timedelta datetime.datetime np.arange
+df.xs df.xs
+df.map
+df.columns df.columns df.columns.get_level_values df.columns col.join.strip df.columns.values col.join.strip df.columns.values df.columns df.columns join join
+df.drop df.index
+gb.get_group gb.get_group gb.get_group
+pd.DataFrame df.row.str.split.tolist df.row.str.split df.row.str df.row
+df3.drop_duplicates df3.reset_index.drop_duplicates.set_index df3.sort df3.reset_index.drop_duplicates df3.reset_index
+df.groupby sum.grp.transform.sort df.ix sort1.groupby.apply sort2.reset_index sum.grp.transform.sort.index x.sort grp.transform sort1.groupby sum.grp.transform.sort grp.transform
+pd.read_csv
+pd.DataFrame df.ix
+table.groupby.CLIENTCODE.nunique table.groupby.CLIENTCODE.nunique table.groupby.CLIENTCODE table.groupby.CLIENTCODE table.groupby table.groupby
+df.groupby.max df.groupby.transform df.groupby.transform df.groupby df.groupby df.groupby
+pd.rolling_mean df.resample.sum.fillna.rolling.mean df.resample df.resample.sum.fillna.rolling df.resample.sum.fillna df.resample.sum df.resample
+df.shape pd.DataFrame df.index np.arange.reshape np.arange
+df.iloc df.loc
+df.apply
+pd.DataFrame pd.DataFrame df.append df.append
+sub_df.iloc sub_df.iloc
+df.dtypes df.convert_objects.dtypes df.convert_objects df.convert_objects
+df.to_csv df.to_csv
+xl.sheet_names parsed.columns pd.ExcelFile xl.parse df.head pd.io.parsers.ExcelFile.parse pd.io.parsers.ExcelFile pd.io.parsers pd.io
+df.loc df.loc df.loc df.loc df.loc pd.DataFrame df.set_index df.loc df.loc df.loc df.loc df.isin split split np.arange df.index.isin df.isin df.isin np.arange df.isin df.index
+changed.index.names df2.df1.any df2.df1.stack changed.index np.where df1.values df2.values pd.DataFrame changed.index
+df.to_pickle pd.read_pickle
+pd.to_datetime pd.to_datetime pd.to_datetime pd.Series pd.Series
+df.sort_values df.sort pd.DataFrame df1.sort df1.sort df1.sort np.random.randint np.random
+df.index.values pd.DataFrame df.index
+pd.read_csv df.to_csv df.to_csv
+pandas.DataFrame df.sort df.sort df.sort df.sort_values
+df.c.df.values df.c
+df.df.loc.values df.loc np.random.rand df.loc np.random
+d.sales d.sales d.loc d.sales.replace d.sales d.sales d.sales
+df.plot pd.DataFrame df.plot np.random.rand np.random.rand np.random np.random
+df.dtypes df.groupby.apply df.groupby.apply df.groupby.apply df.groupby.apply df.groupby x.sum x.sum df.groupby df.groupby df.groupby join
+df.dtypes df.apply df.applymap str.df.applymap.iloc np.arange.reshape df.apply df.applymap np.arange
+df.index.name df.index.name df.index.name df.index df.index df.index
+pd.Series pd.Series pd.concat s2.s1.pd.concat.reset_index pd.concat
+pd.read_csv
+df.line_race
+myseries.myseries.index
+df.fillna df.fillna.groupby.sum df.fillna.groupby df.fillna
+df.set_index.to_dict df.set_index.to_dict df.set_index df.set_index
+s.index.name pd.DataFrame pd.DataFrame pd.DataFrame pd.Series s.index s.reset_index d.items d.items
+df.astype df.map df.loc df.loc
+df.loc df.query df.query df.query np.random.choice np.random df.Time df.Product df.Time
+s.index pd.date_range pd.Series pd.DatetimeIndex s.index s.reindex
+dataframe.map
+df.groupby.agg df.groupby
+my_dataframe.columns.values my_dataframe.columns
+df.index.names df1.index.names df.index pd.DataFrame df.set_index df1.rename df1.rename df1.index
+df.countries.isin df.countries df.countries.isin df.countries df.countries.isin df.countries
+pd.DataFrame df.pivot df.pivot
+df.values.ravel.Series.unique np.random.randint.reshape np.random.randint.reshape np.random.randint df.values.ravel np.random.randint np.random df.values np.random
+writer.book writer.sheets pandas.ExcelWriter data_filtered.to_excel writer.save ws.title book.worksheets
+df.index df.reset_index df.reset_index
+df.reset_index
+Series.rename df.rename df.rename
+glob.glob pd.DataFrame pd.concat pd.read_csv list_.append
+response.read json.loads
+df.a pd.options.display.float_format format pd.DataFrame df.a.astype pd.options.display df.a pd.options
+data.fillna data.fillna pd.set_option data.groupby.transform data.fillna data.groupby
+df.df.index.tolist df.df.index.tolist pd.DataFrame df.df.index.tolist df.df.index.tolist df.loc df.loc np.flatnonzero df.iloc df.df.index df.df.index df.df.index df.df.index np.flatnonzero
+total_rows.astype pd.DataFrame df.to_json df.to_json
+df.tolist
+pd.DataFrame df.groupby.count df.value_counts df.groupby.transform df.groupby df.groupby
+df.dtypes df.dtypes.df.columns.to_series.groupby.groups pd.DataFrame df.columns.to_series.groupby df.dtypes df.columns.to_series df.columns
+w.map
+pd.DataFrame df.values.tolist df.tolist df.drop_duplicates.values.tolist df.values df.drop_duplicates.values df.drop_duplicates
+pd.DataFrame np.random.randn np.random.rand np.random np.random
+df.as_matrix
+df_test.iloc df_test.iloc pd.DataFrame df.ix
+df.loc
+pd.DataFrame df.sum col_list.remove col_list.df.sum
+pd.read_csv
+pd.Series s.isnull.sum pd.DataFrame df.isnull.sum np.nan np.nan s.isnull np.nan np.nan np.nan df.isnull
+pd.set_option
+pd.read_csv
+df.dtypes df.dtypes pd.Series pd.to_numeric pd.to_numeric pd.to_numeric pd.DataFrame df.apply pd.to_numeric df.apply pd.to_numeric pd.DataFrame df.infer_objects
+df1.merge df2.df1.isin.df1.dropna pd.DataFrame df2.df1.isin.df1.dropna df1.col1.isin common.col1 df1.col2.isin common.col2 df1.col1 df1.col2 df1.isin df1.isin
+pd.np.nan df.isnull.values.any pd.DataFrame pd.np df.isnull.values np.random.randn np.random df.isnull
+pd.merge
+pd.option_context
+df.dtypes key_columns.df.groupby.size pd.DataFrame df.groupby.size pd.DataFrame df.groupby.agg df.groupby x.groupby_object.agg.rename.join df.groupby.size.rename pd.DataFrame df.groupby df.groupby df.groupby groupby_object.agg.rename groupby_object.size df.groupby.size groupby_object.agg df.groupby
+pd.DataFrame df.drop_duplicates
+df3.index.duplicated df3.index
+df.read_csv
+df.str.split.str df.str.split.str df.str.split pd.DataFrame df.str.split pd.DataFrame upper_lower_df.str.lower df.str df.str df.str.split.str df.str.split.str df.str.split df.join df.str.split df.str df.str upper_lower_df.str df.str.split df.str df.str.split.rename df.str df.str.split df.str.split df.str df.str df.str df.str.split df.str
+df.loc df.loc df.loc df.loc df.loc df.loc df.loc df.loc df.loc
