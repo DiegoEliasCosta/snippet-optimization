@@ -1,0 +1,14 @@
+mkdir /my/installation/dir
+cd /my/installation/dir
+wget http://berkeleyaligner.googlecode.com/files/berkeleyaligner_unsupervised-2.1.tar.gz
+tar xzf berkeleyaligner_unsupervised-2.1.tar.gz
+
+cd berkeleyaligner
+ chmod +x align 
+ ./align example.conf
+
+
+ ./align configuration.conf
+
+
+ http://www.statmt.org/moses/?n=Moses.ExternalTools
