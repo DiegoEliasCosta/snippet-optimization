@@ -1,0 +1,16 @@
+
+*.aux
+
+*.bbl
+
+*.blg
+
+*.log
+
+*.out
+
+*.gz
+
+*.cut
+
+codesnippet_main.pdf

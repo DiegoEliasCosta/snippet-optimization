@@ -1,0 +1,55 @@
+% Introduction goes here...
+
+% \begin{itemize}
+% 	\item Python has a solid claim to being the fastest-growing major programming language. \footnote{https://insights.stackoverflow.com/survey/2018/\#technology} 
+% \end{itemize}
+
+
+The argumentation should go as follows:
+
+
+\textbf{Importance of Stack Overflow code snippets.}
+\begin{itemize}
+	\item Programmers use the web extensively as a source of reusable code.
+	\item \neelesh{Stackoverflow is rich bilingual corpus with natural human langauges like English and programming language code. Extracting reusable code snippets could help in Machine Translation (MT) which requires a parallel corpus or bitext.}
+	\item Stack Overflow (SO), one of the most accessed web pages, provides an invaluable code-centric knowledge in a form of code snippets. 
+	
+	\begin{itemize}
+		\item Code snippets enriched with relevant textual explanation 
+		\item Questions and answers are ranked based on the usefulness to the community. Therefore a high-ranked question might provide snippets reused across multiple programs. 
+		\item Answers to the same question seek to provide similar code snippet functionality - snippets with equivalent semantic. A dataset with semantic equivalent code can be applied in a myriad of domains: API recommendation, performance optimization, program synthesis, etc..
+		\item In general, automated program repair \neelesh{or MT} could benefit greatly from using Stack Overflow as a source of code snippets \neelesh{and texts.}
+	\end{itemize}
+	
+\end{itemize}	
+	
+
+\textbf{Quality of \neelesh{Stackoverflow posts and} code snippets is a Challenge}
+
+\begin{itemize}
+	\item Previous work have investigated the suitability of Stack Overflow code snippets on Automated Program Repair \cite{Yang:2016_FromQueryToUsableCode} \neelesh{and Machine Translation \cite{Rahman:2019_CleaningStackOverflowforMT, Yin:2018_LearningMineAlignedCodeNLPairsSO}}.
+	
+	\begin{itemize}
+	    \item \neelesh{People write posts in informal manner like incorrect spellings, abbreviations, inappropriate use of punctuation and gramatical mistakes.}
+	    \item \neelesh{Text and code is quite intermixed while explaining the solution.}
+	    \item \neelesh{Presence of redundant and unnecessary code which were used to setup a context before providing the actual solution to the question.}
+		\item Strong-typed languages such as Java and C\# offer a very low rate of "out-of-the-box" usable snippets.
+		\item Python provided the highest rate of parseable (76\%) and compilable (25\%) snippets. 
+		\item Around 90\% of the runtime errors were related to the usage of undefined variables, attributes and modules.
+		\item Such errors can be mitigated by inferring the context in which the snippets are been applied. For instance, in Python \texttt{np} is often used as an alias for the \texttt{numpy} module, while \texttt{df} is often used as an abbreviation for pandas \texttt{dataframe}.
+		
+	\end{itemize}		
+\end{itemize}		
+
+\textbf{Using API documentation and repository mining to extract reusable code templates from Stack Overflow.}
+
+APIs are a key player in the programming language ecosystems. 
+\begin{itemize}
+	\item APIs offer a common language for problem solving and are used across programs
+	\item \textbf{Intuition.} APIs are related to a specific program domain (logging system, data analysis, data structures). Hence, questions tagged to APIs are constrained to the API domain, reducing the space of search for undefined/incomplete elements of the code.  
+	\item Programmers use similar naming conventions when using APIs, by consequence the variable name might be used for data type inference.
+
+\end{itemize}
+	
+\textbf{Main questions.} Can we combine the API documentation to extract code templates from Stack Overflow? \neelesh{Can these code templates improve the quality of parallel corpus to be built for Machine Translation?}
+

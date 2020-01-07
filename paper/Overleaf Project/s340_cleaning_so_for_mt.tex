@@ -1,0 +1,21 @@
+\neelesh{This section is written by Neelesh}\\
+This work \cite{Rahman:2019_CleaningStackOverflowforMT} proposed some cleaning approaches for text and code. We are hoping that our methods for extracting reusable code snippets will further reduce noisy code elements, improving the quality of parallel corpus. We will use these approaches as baseline for our work. Here is the summary of their approach.
+\begin{itemize}
+    \item \textbf{Extracting code elements} Extracted code elements using publicly available ACE tool \cite{Rigby:2013_DiscoveringEC} which was built for extracting code elements from free form StackOverlow text.
+    \item \textbf{Text extraction and cleaning}
+\begin{itemize}
+    \item \textbf{C0: Raw data}: Raw post body text without any preprocessing. 
+    \item \textbf{C1: Thread Title}: English corpus from thread title. Remove stop words and stem the text. Extract code from accepted answer.
+    \item \textbf{C2: Standard NLP}: Keyword extraction, stopword removal and stemming of the text from post body.
+    \item \textbf{C3: Raw data}: Extracting development tasks using TaskNavigator \cite{Treude:2015_TaskNav} from body text, stopword removal and stemming.
+\end{itemize}
+\end{itemize}
+
+Unfortunately ACE tool is built for Java which was not suitable for our study of pandas library which is used by python programmers. We looked into the corpus\footnote{\url{https://github.com/mrsumitbd/SOParallelCorpusReplication}} shared by \cite{Rahman:2019_CleaningStackOverflowforMT} and found that ACE extracts method calls. Our method of cleaning code snippet also produces method calls. We used these extracted code elements for our study. This way we are also using method calls and since same code elements will be used for all the approaches so our study is not affected by any of the method/call extraction approach.\\\\
+We adapted the best two approaches \textbf{C1: Thread Title} and \textbf{C2: Standard NLP} for extracting and cleaning text. We further cleaned the code elements using our approaches for finding reusable code snippets to filter out noisy code elements.
+\begin{itemize}
+    \item \textbf{All}: All the code elements. This will serve as baseline.
+    \item \textbf{H1}: Filter noisy code elements using H1.
+    \item \textbf{H1H2}: Filter noisy code elements using H1H2.
+    \item \textbf{M1}: Filter noisy code elements using H1H2.
+\end{itemize}

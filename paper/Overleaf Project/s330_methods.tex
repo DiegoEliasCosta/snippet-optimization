@@ -1,0 +1,40 @@
+\diego{This section will be rewritten.}
+
+\textbf{Heuristic H1: Look for the target API calls in Code Fragment}\\
+
+After analyzing the stack overflow answers, it has been identified that, usually solutions are provided in terms of API method calls.\\
+\textit{Hypothesis:} If there is API call in any statement, it as solution.\\
+\textit{Approach:} Check the candidate code fragment for the presence of calls, method or attribute. In a code there could be zero or more methods (Calls). We have using AST parser to get all the methods present. This method labels the fragment as solution if at least one of the method is call to the API. If there is no method exists or no method is an API call, that fragment is rejected.\\
+
+\textbf{Heuristic H2: Look for Non-constructors in Code Fragment}\\
+
+While programming, usually first the objects are constructed and then methods are being called on them. While providing answers to a query, usually users first define the object and then write the actual solution code on these objects.\\
+\textit{Hypothesis:} Any statement which only consists the constructor calls, could not be the solution.\\
+\textit{Approach:} In API, the methods which are used to create objects, called constructors, has been annotated in API doc. All other methods/attributes are being called non-constructor here. We are using AST parser to get all the calls. If there is at least one non-constructor present in the statement, that statement is marked as solution.\\
+
+\textbf{Heuristic H1H2: Non-constructors from API only}\\
+
+In H1, statements having methods/attributes present in the API are identified as solution. In H2, all statements having non constructor calls are the solutions. These non-constructor call could be any thing. In this heuristic, scope of non-constructor call is defined as API specific calls. \\
+\textit{Hypothesis:} Any statement which consists API specific non-constructor calls , is the solution.\\
+\textit{Approach:} We first apply H1 to identify the API specific calls and then H2 to filter out constructor calls.\\
+
+
+\textbf{Method M1: Look for API calls and Similarity between Stack overflow Question Text with the API Description}\\
+
+In H1, we are just considering all the API calls to be as solution. There could be the case that an API call is the not the intended solution for that question. To avoid this shortcoming, we came up with the method M1 which considers the context of the post to get the relevance between API call and the question. This method utilizes similarity between question text and API description to get relevance among them.\\
+We also identified that sometimes API description are too vague as below:
+
+\textit{Method name}: pandas.rename\\
+\textit{API description}: Alter axis label\\
+\textit{Stack overflow question description}:Renaming columns in pandas\\\\
+To overcome this kind of scenario, we enriched the API description with the fully qualified method name.
+
+\textit{New API Description}: pandas rename Alter axis label
+
+In this way, we will have two texts:
+\begin{itemize}
+	\item Question text for the post under consideration, say \textit{Text1}
+	\item Fully Qualified Name of the method under consideration and its API description, say \textit{Text2}
+\end{itemize}
+
+We are using scikit-learn api\footnote{\url{http://scikit-learn.org/}} to generate TF-IDF vectors from these text and then using cosine similarity score as similarity measure. Cosine score 0 corresponds to \texttt{No Similarity} and 1 as \texttt{Total Similarity}.
