@@ -1,0 +1,59 @@
+---
+jupyter:
+  jupytext:
+    text_representation:
+      extension: .Rmd
+      format_name: rmarkdown
+      format_version: '1.1'
+      jupytext_version: 1.2.4
+  kernelspec:
+    display_name: Python 3
+    language: python
+    name: python3
+---
+
+```{python}
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+```
+
+## Results for Line Granularity
+
+```{python}
+evaluate_line = pd.read_csv('evaluate_line.csv')
+```
+
+```{python}
+evaluate_line
+```
+
+```{python}
+plt.style.use("fivethirtyeight")
+fig, axes = plt.subplots(figsize=(10, 6), nrows=1, ncols=1, sharey=True)
+evaluate_line_bar_plot = evaluate_line.plot.bar(x='Method', ax=axes)
+```
+
+```{python}
+evaluate_line_bar_plot.get_figure().savefig('all_methods_line.pdf', bbox_inches='tight')
+```
+
+## Results for Block Granularity
+
+```{python}
+evaluate_block = pd.read_csv('evaluate_block.csv')
+```
+
+```{python}
+evaluate_block
+```
+
+```{python}
+plt.style.use("fivethirtyeight")
+fig, axes = plt.subplots(figsize=(10, 6), nrows=1, ncols=1, sharey=True)
+evaluate_block_bar_plot = evaluate_block.plot.bar(x='Method', ax=axes)
+```
+
+```{python}
+evaluate_block_bar_plot.get_figure().savefig('all_methods_block.pdf', bbox_inches='tight')
+```

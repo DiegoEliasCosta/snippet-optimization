@@ -65,8 +65,8 @@ class PreProcessTerminalLikeCode(JupyterNotebookTask):
         return luigi.LocalTarget(os.path.join(
             data_path, 'pandas-preprocessedcode-dataset-test2.csv')
         )
-		
-		
+
+
 class PreProcessCode(JupyterNotebookTask):
     notebook_path = os.path.join(notebooks_path, 'code-preprocess.ipynb')
     kernel_name = 'python3'
@@ -83,14 +83,14 @@ class PreProcessCode(JupyterNotebookTask):
             data_path, 'pandas-preprocessedcode-dataset.csv')
         )
 
-      
+
 """
 
     ---------- NORMALIZATION METHODS -----------
 
 """
-      
-      
+
+
 class NormalizeCode_PandasImport(JupyterNotebookTask):
     notebook_path = os.path.join(notebooks_path, 'code-normalizer-pandasimport.ipynb')
     kernel_name = 'python3'
@@ -106,7 +106,7 @@ class NormalizeCode_PandasImport(JupyterNotebookTask):
         return luigi.LocalTarget(os.path.join(
             data_path, 'pandas-normalized-pandasimport-dataset.csv')
         )
-        
+
 
 class NormalizeCode_NumpyImport(JupyterNotebookTask):
     notebook_path = os.path.join(notebooks_path, 'code-normalizer-numpyimport.ipynb')
@@ -123,8 +123,8 @@ class NormalizeCode_NumpyImport(JupyterNotebookTask):
         return luigi.LocalTarget(os.path.join(
             data_path, 'pandas-normalized-numpyimport-dataset.csv')
         )
-        
-        
+
+
 class NormalizeCode_Dataframe(JupyterNotebookTask):
     notebook_path = os.path.join(notebooks_path, 'code-normalizer-dataframe.ipynb')
     kernel_name = 'python3'
@@ -140,9 +140,9 @@ class NormalizeCode_Dataframe(JupyterNotebookTask):
         return luigi.LocalTarget(os.path.join(
             data_path, 'pandas-normalized-dataframe-dataset.csv')
         )
+
         
-        
-        
+
 """
 
     ---------- PARSER METHODS -----------
@@ -164,7 +164,7 @@ class ParseCode(JupyterNotebookTask):
         return luigi.LocalTarget(os.path.join(
             data_path, 'pandas-parsedcode-dataset.csv')
         ) 
-        
+
 """
 
     ---------- COMPILATION METHODS -----------

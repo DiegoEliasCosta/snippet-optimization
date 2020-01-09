@@ -1,0 +1,1049 @@
+Unnamed: 0,Category,SubCategory,FullyQualifiedName,MethodName,Description
+0,Input/Output,Pickling,pandas.read_pickle,read_pickle,Load pickled pandas object (or any other pickled object) from the specified
+1,Input/Output,Flat File,pandas.read_table,read_table,Read general delimited file into DataFrame
+2,Input/Output,Flat File,pandas.read_csv,read_csv,Read CSV (comma-separated) file into DataFrame
+3,Input/Output,Flat File,pandas.read_fwf,read_fwf,Read a table of fixed-width formatted lines into DataFrame
+4,Input/Output,Flat File,pandas.read_msgpack,read_msgpack,Load msgpack pandas object from the specified
+5,Input/Output,Clipboard,pandas.read_clipboard,read_clipboard,Read text from clipboard and pass to read_table.
+6,Input/Output,Excel,pandas.read_excel,read_excel,Read an Excel table into a pandas DataFrame
+7,Input/Output,Excel,pandas.ExcelFile.parse,parse,Parse specified sheet(s) into a DataFrame
+8,Input/Output,JSON,pandas.read_json,read_json,Convert a JSON string to pandas object
+9,Input/Output,HTML,pandas.read_html,read_html,Read HTML tables into a list of DataFrame objects.
+10,Input/Output,HDFStore: PyTables (HDF5),pandas.read_hdf,read_hdf,"read from the store, close it if we opened it"
+11,Input/Output,HDFStore: PyTables (HDF5),pandas.HDFStore.put,put,Store object in HDFStore
+12,Input/Output,HDFStore: PyTables (HDF5),pandas.HDFStore.append,append,Append to Table in file.
+13,Input/Output,HDFStore: PyTables (HDF5),pandas.HDFStore.get,get,Retrieve pandas object stored in file
+14,Input/Output,HDFStore: PyTables (HDF5),pandas.HDFStore.select,select,"Retrieve pandas object stored in file, optionally based on where"
+15,Input/Output,HDFStore: PyTables (HDF5),pandas.HDFStore.info,info,print detailed information on the store
+16,Input/Output,Feather,pandas.read_feather,read_feather,Load a feather-format object from the file path
+17,Input/Output,Parquet,pandas.read_parquet,read_parquet,"Load a parquet object from the file path, returning a DataFrame."
+18,Input/Output,SAS,pandas.read_sas,read_sas,Read SAS files stored as either XPORT or SAS7BDAT format files.
+19,Input/Output,SQL,pandas.read_sql_table,read_sql_table,Read SQL database table into a DataFrame.
+20,Input/Output,SQL,pandas.read_sql_query,read_sql_query,Read SQL query into a DataFrame.
+21,Input/Output,SQL,pandas.read_sql,read_sql,Read SQL query or database table into a DataFrame.
+22,Input/Output,Google BigQuery,pandas.read_gbq,read_gbq,Load data from Google BigQuery.
+23,Input/Output,STATA,pandas.read_stata,read_stata,Read Stata file into DataFrame
+24,General functions,Data manipulations,pandas.melt,melt,"Unpivots a DataFrame from wide format to long format, optionally"
+25,General functions,Data manipulations,pandas.pivot,pivot,Produce pivot table based on 3 columns of this DataFrame.
+26,General functions,Data manipulations,pandas.pivot_table,pivot_table,Create a spreadsheet-style pivot table as a DataFrame.
+27,General functions,Data manipulations,pandas.crosstab,crosstab,Compute a simple cross-tabulation of two (or more) factors.
+28,General functions,Data manipulations,pandas.cut,cut,Return indices of half-open bins to which each value of x belongs.
+29,General functions,Data manipulations,pandas.qcut,qcut,Quantile-based discretization function.
+30,General functions,Data manipulations,pandas.merge,merge,Merge DataFrame objects by performing a database-style join operation by columns or indexes.
+31,General functions,Data manipulations,pandas.merge_ordered,merge_ordered,Perform merge with optional filling/interpolation designed for ordered data like time series data.
+32,General functions,Data manipulations,pandas.merge_asof,merge_asof,Perform an asof merge.
+33,General functions,Data manipulations,pandas.concat,concat,Concatenate pandas objects along a particular axis with optional set logic along the other axes.
+34,General functions,Data manipulations,pandas.get_dummies,get_dummies,Convert categorical variable into dummy/indicator variables
+35,General functions,Data manipulations,pandas.factorize,factorize,Encode input values as an enumerated type or categorical variable
+36,General functions,Data manipulations,pandas.unique,unique,Hash table-based unique.
+37,General functions,Data manipulations,pandas.wide_to_long,wide_to_long,Wide panel to long format.
+38,General functions,Top-level missing data,pandas.isna,isna,"Detect missing values (NaN in numeric arrays, None/NaN in object arrays)"
+39,General functions,Top-level missing data,pandas.isnull,isnull,"Detect missing values (NaN in numeric arrays, None/NaN in object arrays)"
+40,General functions,Top-level missing data,pandas.notna,notna,Replacement for numpy.isfinite / -numpy.isnan which is suitable for use on object arrays.
+41,General functions,Top-level missing data,pandas.notnull,notnull,Replacement for numpy.isfinite / -numpy.isnan which is suitable for use on object arrays.
+42,General functions,Top-level conversions,pandas.to_numeric,to_numeric,Convert argument to a numeric type.
+43,General functions,Top-level dealing with datetimelike,pandas.to_datetime,to_datetime,Convert argument to datetime.
+44,General functions,Top-level dealing with datetimelike,pandas.to_timedelta,to_timedelta,Convert argument to timedelta
+45,General functions,Top-level dealing with datetimelike,pandas.date_range,date_range,"Return a fixed frequency DatetimeIndex, with day (calendar) as the default"
+46,General functions,Top-level dealing with datetimelike,pandas.bdate_range,bdate_range,"Return a fixed frequency DatetimeIndex, with business day as the default"
+47,General functions,Top-level dealing with datetimelike,pandas.period_range,period_range,"Return a fixed frequency PeriodIndex, with day (calendar) as the default"
+48,General functions,Top-level dealing with datetimelike,pandas.timedelta_range,timedelta_range,"Return a fixed frequency TimedeltaIndex, with day as the default"
+49,General functions,Top-level dealing with datetimelike,pandas.infer_freq,infer_freq,Infer the most likely frequency given the input index.
+50,General functions,Top-level dealing with intervals,pandas.interval_range,interval_range,Return a fixed frequency IntervalIndex
+51,General functions,Top-level evaluation,pandas.eval,eval,Evaluate a Python expression as a string using various backends.
+52,General functions,Testing,pandas.test,test,
+53,Series,Constructor,pandas.Series,Series,One-dimensional ndarray with axis labels (including time series).
+54,Series,Attributes,pandas.Series.values,values,Return Series as ndarray or ndarray-like
+55,Series,Attributes,pandas.Series.dtype,dtype,return the dtype object of the underlying data
+56,Series,Attributes,pandas.Series.ftype,ftype,return if the data is sparse|dense
+57,Series,Attributes,pandas.Series.shape,shape,return a tuple of the shape of the underlying data
+58,Series,Attributes,pandas.Series.nbytes,nbytes,return the number of bytes in the underlying data
+59,Series,Attributes,pandas.Series.ndim,ndim,"return the number of dimensions of the underlying data,"
+60,Series,Attributes,pandas.Series.size,size,return the number of elements in the underlying data
+61,Series,Attributes,pandas.Series.strides,strides,return the strides of the underlying data
+62,Series,Attributes,pandas.Series.itemsize,itemsize,return the size of the dtype of the item of the underlying data
+63,Series,Attributes,pandas.Series.base,base,return the base object if the memory of the underlying data is
+64,Series,Attributes,pandas.Series.T,T,"return the transpose, which is by definition self"
+65,Series,Attributes,pandas.Series.memory_usage,memory_usage,Memory usage of the Series
+66,Series,Conversion,pandas.Series.astype,astype,Cast a pandas object to a specified dtype dtype.
+67,Series,Conversion,pandas.Series.infer_objects,infer_objects,Attempt to infer better dtypes for object columns.
+68,Series,Conversion,pandas.Series.copy,copy,Make a copy of this objects data.
+69,Series,Conversion,pandas.Series.isna,isna,Return a boolean same-sized object indicating if the values are NA.
+70,Series,Conversion,pandas.Series.notna,notna,Return a boolean same-sized object indicating if the values are not NA.
+71,Series,"Indexing, iteration",pandas.Series.get,get,"Get item from object for given key (DataFrame column, Panel slice, etc.)."
+72,Series,"Indexing, iteration",pandas.Series.at,at,Fast label-based scalar accessor
+73,Series,"Indexing, iteration",pandas.Series.iat,iat,Fast integer location scalar accessor.
+74,Series,"Indexing, iteration",pandas.Series.loc,loc,Purely label-location based indexer for selection by label.
+75,Series,"Indexing, iteration",pandas.Series.iloc,iloc,Purely integer-location based indexing for selection by position.
+76,Series,"Indexing, iteration",pandas.Series.__iter__,__iter__,Return an iterator of the values.
+77,Series,"Indexing, iteration",pandas.Series.iteritems,iteritems,"Lazily iterate over (index, value) tuples"
+78,Series,Binary operator functions,pandas.Series.add,add,"Addition of series and other, element-wise (binary operator add)."
+79,Series,Binary operator functions,pandas.Series.sub,sub,"Subtraction of series and other, element-wise (binary operator sub)."
+80,Series,Binary operator functions,pandas.Series.mul,mul,"Multiplication of series and other, element-wise (binary operator mul)."
+81,Series,Binary operator functions,pandas.Series.div,div,"Floating division of series and other, element-wise (binary operator truediv)."
+82,Series,Binary operator functions,pandas.Series.truediv,truediv,"Floating division of series and other, element-wise (binary operator truediv)."
+83,Series,Binary operator functions,pandas.Series.floordiv,floordiv,"Integer division of series and other, element-wise (binary operator floordiv)."
+84,Series,Binary operator functions,pandas.Series.mod,mod,"Modulo of series and other, element-wise (binary operator mod)."
+85,Series,Binary operator functions,pandas.Series.pow,pow,"Exponential power of series and other, element-wise (binary operator pow)."
+86,Series,Binary operator functions,pandas.Series.radd,radd,"Addition of series and other, element-wise (binary operator radd)."
+87,Series,Binary operator functions,pandas.Series.rsub,rsub,"Subtraction of series and other, element-wise (binary operator rsub)."
+88,Series,Binary operator functions,pandas.Series.rmul,rmul,"Multiplication of series and other, element-wise (binary operator rmul)."
+89,Series,Binary operator functions,pandas.Series.rdiv,rdiv,"Floating division of series and other, element-wise (binary operator rtruediv)."
+90,Series,Binary operator functions,pandas.Series.rtruediv,rtruediv,"Floating division of series and other, element-wise (binary operator rtruediv)."
+91,Series,Binary operator functions,pandas.Series.rfloordiv,rfloordiv,"Integer division of series and other, element-wise (binary operator rfloordiv)."
+92,Series,Binary operator functions,pandas.Series.rmod,rmod,"Modulo of series and other, element-wise (binary operator rmod)."
+93,Series,Binary operator functions,pandas.Series.rpow,rpow,"Exponential power of series and other, element-wise (binary operator rpow)."
+94,Series,Binary operator functions,pandas.Series.combine,combine,Perform elementwise binary operation on two Series using given function
+95,Series,Binary operator functions,pandas.Series.combine_first,combine_first,"Combine Series values, choosing the calling Seriess values first."
+96,Series,Binary operator functions,pandas.Series.round,round,Round each value in a Series to the given number of decimals.
+97,Series,Binary operator functions,pandas.Series.lt,lt,"Less than of series and other, element-wise (binary operator lt)."
+98,Series,Binary operator functions,pandas.Series.gt,gt,"Greater than of series and other, element-wise (binary operator gt)."
+99,Series,Binary operator functions,pandas.Series.le,le,"Less than or equal to of series and other, element-wise (binary operator le)."
+100,Series,Binary operator functions,pandas.Series.ge,ge,"Greater than or equal to of series and other, element-wise (binary operator ge)."
+101,Series,Binary operator functions,pandas.Series.ne,ne,"Not equal to of series and other, element-wise (binary operator ne)."
+102,Series,Binary operator functions,pandas.Series.eq,eq,"Equal to of series and other, element-wise (binary operator eq)."
+103,Series,"Function application, GroupBy & Window",pandas.Series.apply,apply,Invoke function on values of Series.
+104,Series,"Function application, GroupBy & Window",pandas.Series.aggregate,aggregate,"Aggregate using callable, string, dict, or list of string/callables"
+105,Series,"Function application, GroupBy & Window",pandas.Series.transform,transform,Call function producing a like-indexed NDFrame
+106,Series,"Function application, GroupBy & Window",pandas.Series.map,map,Map values of Series using input correspondence (which can be
+107,Series,"Function application, GroupBy & Window",pandas.Series.groupby,groupby,"Group series using mapper (dict or key function, apply given 
+function to group, return result as series) or by a series of columns."
+108,Series,"Function application, GroupBy & Window",pandas.Series.rolling,rolling,Provides rolling window calculations.
+109,Series,"Function application, GroupBy & Window",pandas.Series.expanding,expanding,Provides expanding transformations.
+110,Series,"Function application, GroupBy & Window",pandas.Series.ewm,ewm,Provides exponential weighted functions
+111,Series,Computations / Descriptive Stats,pandas.Series.abs,abs,Return an object with absolute value takenonly applicable to objects that are all numeric.
+112,Series,Computations / Descriptive Stats,pandas.Series.all,all,Return whether all elements are True over requested axis
+113,Series,Computations / Descriptive Stats,pandas.Series.any,any,Return whether any element is True over requested axis
+114,Series,Computations / Descriptive Stats,pandas.Series.autocorr,autocorr,Lag-N autocorrelation
+115,Series,Computations / Descriptive Stats,pandas.Series.between,between,Return boolean Series equivalent to left <= series <= right.
+116,Series,Computations / Descriptive Stats,pandas.Series.clip,clip,Trim values at input threshold(s).
+117,Series,Computations / Descriptive Stats,pandas.Series.clip_lower,clip_lower,Return copy of the input with values below given value(s) truncated.
+118,Series,Computations / Descriptive Stats,pandas.Series.clip_upper,clip_upper,Return copy of input with values above given value(s) truncated.
+119,Series,Computations / Descriptive Stats,pandas.Series.corr,corr,"Compute correlation with other Series, excluding missing values"
+120,Series,Computations / Descriptive Stats,pandas.Series.count,count,Return number of non-NA/null observations in the Series
+121,Series,Computations / Descriptive Stats,pandas.Series.cov,cov,"Compute covariance with Series, excluding missing values"
+122,Series,Computations / Descriptive Stats,pandas.Series.cummax,cummax,Return cumulative max over requested axis.
+123,Series,Computations / Descriptive Stats,pandas.Series.cummin,cummin,Return cumulative minimum over requested axis.
+124,Series,Computations / Descriptive Stats,pandas.Series.cumprod,cumprod,Return cumulative product over requested axis.
+125,Series,Computations / Descriptive Stats,pandas.Series.cumsum,cumsum,Return cumulative sum over requested axis.
+126,Series,Computations / Descriptive Stats,pandas.Series.describe,describe,"Generates descriptive statistics that summarize the central 
+tendency, dispersion and shape of a datasets distribution, excluding NaN values."
+127,Series,Computations / Descriptive Stats,pandas.Series.diff,diff,1st discrete difference of object
+128,Series,Computations / Descriptive Stats,pandas.Series.factorize,factorize,Encode the object as an enumerated type or categorical variable
+129,Series,Computations / Descriptive Stats,pandas.Series.kurt,kurt,Return unbiased kurtosis over requested axis using Fishers definition of kurtosis (kurtosis of normal == 0.0).
+130,Series,Computations / Descriptive Stats,pandas.Series.mad,mad,Return the mean absolute deviation of the values for the requested axis
+131,Series,Computations / Descriptive Stats,pandas.Series.max,max,This method returns the maximum of the values in the object.
+132,Series,Computations / Descriptive Stats,pandas.Series.mean,mean,Return the mean of the values for the requested axis
+133,Series,Computations / Descriptive Stats,pandas.Series.median,median,Return the median of the values for the requested axis
+134,Series,Computations / Descriptive Stats,pandas.Series.min,min,This method returns the minimum of the values in the object.
+135,Series,Computations / Descriptive Stats,pandas.Series.mode,mode,Return the mode(s) of the dataset.
+136,Series,Computations / Descriptive Stats,pandas.Series.nlargest,nlargest,Return the largest n elements.
+137,Series,Computations / Descriptive Stats,pandas.Series.nsmallest,nsmallest,Return the smallest n elements.
+138,Series,Computations / Descriptive Stats,pandas.Series.pct_change,pct_change,Percent change over given number of periods.
+139,Series,Computations / Descriptive Stats,pandas.Series.prod,prod,Return the product of the values for the requested axis
+140,Series,Computations / Descriptive Stats,pandas.Series.quantile,quantile,"Return value at the given quantile, a la numpy.percentile."
+141,Series,Computations / Descriptive Stats,pandas.Series.rank,rank,Compute numerical data ranks (1 through n) along axis.
+142,Series,Computations / Descriptive Stats,pandas.Series.sem,sem,Return unbiased standard error of the mean over requested axis.
+143,Series,Computations / Descriptive Stats,pandas.Series.skew,skew,Return unbiased skew over requested axis
+144,Series,Computations / Descriptive Stats,pandas.Series.std,std,Return sample standard deviation over requested axis.
+145,Series,Computations / Descriptive Stats,pandas.Series.sum,sum,Return the sum of the values for the requested axis
+146,Series,Computations / Descriptive Stats,pandas.Series.var,var,Return unbiased variance over requested axis.
+147,Series,Computations / Descriptive Stats,pandas.Series.unique,unique,Return unique values in the object.
+148,Series,Computations / Descriptive Stats,pandas.Series.nunique,nunique,Return number of unique elements in the object.
+149,Series,Computations / Descriptive Stats,pandas.Series.is_unique,is_unique,Return boolean if values in the object are unique
+150,Series,Computations / Descriptive Stats,pandas.Series.is_monotonic,is_monotonic,Return boolean if values in the object are
+151,Series,Computations / Descriptive Stats,pandas.Series.is_monotonic_increasing,is_monotonic_increasing,Return boolean if values in the object are
+152,Series,Computations / Descriptive Stats,pandas.Series.is_monotonic_decreasing,is_monotonic_decreasing,Return boolean if values in the object are
+153,Series,Computations / Descriptive Stats,pandas.Series.value_counts,value_counts,Returns object containing counts of unique values.
+154,Series,Reindexing / Selection / Label manipulation,pandas.Series.align,align,Align two objects on their axes with the
+155,Series,Reindexing / Selection / Label manipulation,pandas.Series.drop,drop,Return new object with labels in requested axis removed.
+156,Series,Reindexing / Selection / Label manipulation,pandas.Series.drop_duplicates,drop_duplicates,Return Series with duplicate values removed
+157,Series,Reindexing / Selection / Label manipulation,pandas.Series.duplicated,duplicated,Return boolean Series denoting duplicate values
+158,Series,Reindexing / Selection / Label manipulation,pandas.Series.equals,equals,Determines if two NDFrame objects contain the same elements.
+159,Series,Reindexing / Selection / Label manipulation,pandas.Series.first,first,Convenience method for subsetting initial periods of time series data based on a date offset.
+160,Series,Reindexing / Selection / Label manipulation,pandas.Series.head,head,Return the first n rows.
+161,Series,Reindexing / Selection / Label manipulation,pandas.Series.idxmax,idxmax,Index label of the first occurrence of maximum of values.
+162,Series,Reindexing / Selection / Label manipulation,pandas.Series.idxmin,idxmin,Index label of the first occurrence of minimum of values.
+163,Series,Reindexing / Selection / Label manipulation,pandas.Series.isin,isin,Return a boolean Series showing whether each element in the Series is exactly contained in the passed sequence of values.
+164,Series,Reindexing / Selection / Label manipulation,pandas.Series.last,last,Convenience method for subsetting final periods of time series data based on a date offset.
+165,Series,Reindexing / Selection / Label manipulation,pandas.Series.reindex,reindex,"Conform Series to new index with optional filling logic, placing NA/NaN in locations having no value in the previous index."
+166,Series,Reindexing / Selection / Label manipulation,pandas.Series.reindex_like,reindex_like,Return an object with matching indices to myself.
+167,Series,Reindexing / Selection / Label manipulation,pandas.Series.rename,rename,Alter Series index labels or name
+168,Series,Reindexing / Selection / Label manipulation,pandas.Series.rename_axis,rename_axis,Alter the name of the index or columns.
+169,Series,Reindexing / Selection / Label manipulation,pandas.Series.reset_index,reset_index,"Analogous to the pandas.DataFrame.reset_index() function, see docstring there."
+170,Series,Reindexing / Selection / Label manipulation,pandas.Series.sample,sample,Returns a random sample of items from an axis of object.
+171,Series,Reindexing / Selection / Label manipulation,pandas.Series.select,select,Return data corresponding to axis labels matching criteria
+172,Series,Reindexing / Selection / Label manipulation,pandas.Series.set_axis,set_axis,Assign desired index to given axis
+173,Series,Reindexing / Selection / Label manipulation,pandas.Series.take,take,Return the elements in the given positional indices along an axis.
+174,Series,Reindexing / Selection / Label manipulation,pandas.Series.tail,tail,Return the last n rows.
+175,Series,Reindexing / Selection / Label manipulation,pandas.Series.truncate,truncate,Truncates a sorted DataFrame/Series before and/or after some particular index value.
+176,Series,Reindexing / Selection / Label manipulation,pandas.Series.where,where,Return an object of same shape as self and whose corresponding entries are from self where cond is True and otherwise are from other.
+177,Series,Reindexing / Selection / Label manipulation,pandas.Series.mask,mask,Return an object of same shape as self and whose corresponding entries are from self where cond is False and otherwise are from other.
+178,Series,Missing data handling,pandas.Series.dropna,dropna,Return Series without null values
+179,Series,Missing data handling,pandas.Series.fillna,fillna,Fill NA/NaN values using the specified method
+180,Series,Missing data handling,pandas.Series.interpolate,interpolate,Interpolate values according to different methods.
+181,Series,"Reshaping, sorting",pandas.Series.argsort,argsort,Overrides ndarray.argsort.
+182,Series,"Reshaping, sorting",pandas.Series.reorder_levels,reorder_levels,Rearrange index levels using input order.
+183,Series,"Reshaping, sorting",pandas.Series.sort_values,sort_values,Sort by the values along either axis
+184,Series,"Reshaping, sorting",pandas.Series.sort_index,sort_index,Sort object by labels (along an axis)
+185,Series,"Reshaping, sorting",pandas.Series.swaplevel,swaplevel,Swap levels i and j in a MultiIndex
+186,Series,"Reshaping, sorting",pandas.Series.unstack,unstack,"Unstack, a.k.a."
+187,Series,"Reshaping, sorting",pandas.Series.searchsorted,searchsorted,Find indices where elements should be inserted to maintain order.
+188,Series,Combining / joining / merging,pandas.Series.append,append,Concatenate two or more Series.
+189,Series,Combining / joining / merging,pandas.Series.replace,replace,Replace values given in to_replace with value.
+190,Series,Combining / joining / merging,pandas.Series.update,update,Modify Series in place using non-NA values from passed Series.
+191,Series,Time series-related,pandas.Series.asfreq,asfreq,Convert TimeSeries to specified frequency.
+192,Series,Time series-related,pandas.Series.asof,asof,The last row without any NaN is taken (or the last row without
+193,Series,Time series-related,pandas.Series.shift,shift,Shift index by desired number of periods with an optional time freq
+194,Series,Time series-related,pandas.Series.first_valid_index,first_valid_index,Return index for first non-NA/null value.
+195,Series,Time series-related,pandas.Series.last_valid_index,last_valid_index,Return index for last non-NA/null value.
+196,Series,Time series-related,pandas.Series.resample,resample,Convenience method for frequency conversion and resampling of time series.
+197,Series,Time series-related,pandas.Series.tz_convert,tz_convert,Convert tz-aware axis to target time zone.
+198,Series,Time series-related,pandas.Series.tz_localize,tz_localize,Localize tz-naive TimeSeries to target time zone.
+199,Series,Datetimelike Properties,pandas.Series.dt.date,date,"Returns numpy array of python datetime.date objects (namely, the date part of Timestamps without timezone information)."
+200,Series,Datetimelike Properties,pandas.Series.dt.time,time,Returns numpy array of datetime.time.
+201,Series,Datetimelike Properties,pandas.Series.dt.year,year,The year of the datetime
+202,Series,Datetimelike Properties,pandas.Series.dt.month,month,"The month as January=1, December=12"
+203,Series,Datetimelike Properties,pandas.Series.dt.day,day,The days of the datetime
+204,Series,Datetimelike Properties,pandas.Series.dt.hour,hour,The hours of the datetime
+205,Series,Datetimelike Properties,pandas.Series.dt.minute,minute,The minutes of the datetime
+206,Series,Datetimelike Properties,pandas.Series.dt.second,second,The seconds of the datetime
+207,Series,Datetimelike Properties,pandas.Series.dt.microsecond,microsecond,The microseconds of the datetime
+208,Series,Datetimelike Properties,pandas.Series.dt.nanosecond,nanosecond,The nanoseconds of the datetime
+209,Series,Datetimelike Properties,pandas.Series.dt.week,week,The week ordinal of the year
+210,Series,Datetimelike Properties,pandas.Series.dt.weekofyear,weekofyear,The week ordinal of the year
+211,Series,Datetimelike Properties,pandas.Series.dt.dayofweek,dayofweek,"The day of the week with Monday=0, Sunday=6"
+212,Series,Datetimelike Properties,pandas.Series.dt.weekday,weekday,"The day of the week with Monday=0, Sunday=6"
+213,Series,Datetimelike Properties,pandas.Series.dt.weekday_name,weekday_name,The name of day in a week (ex: Friday)
+214,Series,Datetimelike Properties,pandas.Series.dt.dayofyear,dayofyear,The ordinal day of the year
+215,Series,Datetimelike Properties,pandas.Series.dt.quarter,quarter,The quarter of the date
+216,Series,Datetimelike Properties,pandas.Series.dt.is_month_start,is_month_start,Logical indicating if first day of month (defined by frequency)
+217,Series,Datetimelike Properties,pandas.Series.dt.is_month_end,is_month_end,Logical indicating if last day of month (defined by frequency)
+218,Series,Datetimelike Properties,pandas.Series.dt.is_quarter_start,is_quarter_start,Logical indicating if first day of quarter (defined by frequency)
+219,Series,Datetimelike Properties,pandas.Series.dt.is_quarter_end,is_quarter_end,Logical indicating if last day of quarter (defined by frequency)
+220,Series,Datetimelike Properties,pandas.Series.dt.is_year_start,is_year_start,Logical indicating if first day of year (defined by frequency)
+221,Series,Datetimelike Properties,pandas.Series.dt.is_year_end,is_year_end,Logical indicating if last day of year (defined by frequency)
+222,Series,Datetimelike Properties,pandas.Series.dt.is_leap_year,is_leap_year,Logical indicating if the date belongs to a leap year
+223,Series,Datetimelike Properties,pandas.Series.dt.daysinmonth,daysinmonth,The number of days in the month
+224,Series,Datetimelike Properties,pandas.Series.dt.days_in_month,days_in_month,The number of days in the month
+225,Series,Datetimelike Properties,pandas.Series.dt.tz,tz,
+226,Series,Datetimelike Properties,pandas.Series.dt.freq,freq,
+227,Series,String handling,pandas.Series.str.capitalize,capitalize,Convert strings in the Series/Index to be capitalized.
+228,Series,String handling,pandas.Series.str.cat,cat,Concatenate strings in the Series/Index with given separator.
+229,Series,String handling,pandas.Series.str.center,center,Filling left and right side of strings in the Series/Index with an additional character.
+230,Series,String handling,pandas.Series.str.contains,contains,Return boolean Series/array whether given pattern/regex is contained in each string in the Series/Index.
+231,Series,String handling,pandas.Series.str.count,count,Count occurrences of pattern in each string of the Series/Index.
+232,Series,String handling,pandas.Series.str.decode,decode,Decode character string in the Series/Index using indicated encoding.
+233,Series,String handling,pandas.Series.str.encode,encode,Encode character string in the Series/Index using indicated encoding.
+234,Series,String handling,pandas.Series.str.endswith,endswith,Return boolean Series indicating whether each string in the Series/Index ends with passed pattern.
+235,Series,String handling,pandas.Series.str.extract,extract,"For each subject string in the Series, extract groups from the first match of regular expression pat."
+236,Series,String handling,pandas.Series.str.extractall,extractall,"For each subject string in the Series, extract groups from all matches of regular expression pat."
+237,Series,String handling,pandas.Series.str.find,find,Return lowest indexes in each strings in the Series/Index where the substring is fully contained between [start:end].
+238,Series,String handling,pandas.Series.str.findall,findall,Find all occurrences of pattern or regular expression in the Series/Index.
+239,Series,String handling,pandas.Series.str.get,get,"Extract element from lists, tuples, or strings in each element in the Series/Index."
+240,Series,String handling,pandas.Series.str.index,index,Return lowest indexes in each strings where the substring is fully contained between [start:end].
+241,Series,String handling,pandas.Series.str.join,join,Join lists contained as elements in the Series/Index with passed delimiter.
+242,Series,String handling,pandas.Series.str.len,len,Compute length of each string in the Series/Index.
+243,Series,String handling,pandas.Series.str.ljust,ljust,Filling right side of strings in the Series/Index with an additional character.
+244,Series,String handling,pandas.Series.str.lower,lower,Convert strings in the Series/Index to lowercase.
+245,Series,String handling,pandas.Series.str.lstrip,lstrip,Strip whitespace (including newlines) from each string in the Series/Index from left side.
+246,Series,String handling,pandas.Series.str.match,match,Determine if each string matches a regular expression.
+247,Series,String handling,pandas.Series.str.normalize,normalize,Return the Unicode normal form for the strings in the Series/Index.
+248,Series,String handling,pandas.Series.str.pad,pad,Pad strings in the Series/Index with an additional character to specified side.
+249,Series,String handling,pandas.Series.str.partition,partition,"Split the string at the first occurrence of sep, and return 3 elements containing the part before the separator, the separator itself, and the part after the separator."
+250,Series,String handling,pandas.Series.str.repeat,repeat,Duplicate each string in the Series/Index by indicated number of times.
+251,Series,String handling,pandas.Series.str.replace,replace,Replace occurrences of pattern/regex in the Series/Index with some other string.
+252,Series,String handling,pandas.Series.str.rfind,rfind,Return highest indexes in each strings in the Series/Index where the substring is fully contained between [start:end].
+253,Series,String handling,pandas.Series.str.rindex,rindex,Return highest indexes in each strings where the substring is fully contained between [start:end].
+254,Series,String handling,pandas.Series.str.rjust,rjust,Filling left side of strings in the Series/Index with an additional character.
+255,Series,String handling,pandas.Series.str.rpartition,rpartition,"Split the string at the last occurrence of sep, and return 3 elements containing the part before the separator, the separator itself, and the part after the separator."
+256,Series,String handling,pandas.Series.str.rstrip,rstrip,Strip whitespace (including newlines) from each string in the Series/Index from right side.
+257,Series,String handling,pandas.Series.str.slice,slice,Slice substrings from each element in the Series/Index
+258,Series,String handling,pandas.Series.str.slice_replace,slice_replace,Replace a slice of each string in the Series/Index with another string.
+259,Series,String handling,pandas.Series.str.split,split,"Split each string (a la re.split) in the Series/Index by given pattern, propagating NA values."
+260,Series,String handling,pandas.Series.str.rsplit,rsplit,"Split each string in the Series/Index by the given delimiter string, starting at the end of the string and working to the front."
+261,Series,String handling,pandas.Series.str.startswith,startswith,Return boolean Series/array indicating whether each string in the Series/Index starts with passed pattern.
+262,Series,String handling,pandas.Series.str.strip,strip,Strip whitespace (including newlines) from each string in the Series/Index from left and right sides.
+263,Series,String handling,pandas.Series.str.swapcase,swapcase,Convert strings in the Series/Index to be swapcased.
+264,Series,String handling,pandas.Series.str.title,title,Convert strings in the Series/Index to titlecase.
+265,Series,String handling,pandas.Series.str.translate,translate,Map all characters in the string through the given mapping table.
+266,Series,String handling,pandas.Series.str.upper,upper,Convert strings in the Series/Index to uppercase.
+267,Series,String handling,pandas.Series.str.wrap,wrap,Wrap long strings in the Series/Index to be formatted in paragraphs with length less than a given width.
+268,Series,String handling,pandas.Series.str.zfill,zfill,Filling left side of strings in the Series/Index with 0.
+269,Series,String handling,pandas.Series.str.isalnum,isalnum,Check whether all characters in each string in the Series/Index are alphanumeric.
+270,Series,String handling,pandas.Series.str.isalpha,isalpha,Check whether all characters in each string in the Series/Index are alphabetic.
+271,Series,String handling,pandas.Series.str.isdigit,isdigit,Check whether all characters in each string in the Series/Index are digits.
+272,Series,String handling,pandas.Series.str.isspace,isspace,Check whether all characters in each string in the Series/Index are whitespace.
+273,Series,String handling,pandas.Series.str.islower,islower,Check whether all characters in each string in the Series/Index are lowercase.
+274,Series,String handling,pandas.Series.str.isupper,isupper,Check whether all characters in each string in the Series/Index are uppercase.
+275,Series,String handling,pandas.Series.str.istitle,istitle,Check whether all characters in each string in the Series/Index are titlecase.
+276,Series,String handling,pandas.Series.str.isnumeric,isnumeric,Check whether all characters in each string in the Series/Index are numeric.
+277,Series,String handling,pandas.Series.str.isdecimal,isdecimal,Check whether all characters in each string in the Series/Index are decimal.
+278,Series,String handling,pandas.Series.str.get_dummies,get_dummies,Split each string in the Series by sep and return a frame of dummy/indicator variables.
+279,Series,Categorical,pandas.api.types.CategoricalDtype,CategoricalDtype,Type for categorical data with the categories and orderedness
+280,Series,Plotting,pandas.Series.plot,plot,Series plotting accessor and method
+281,Series,Serialization / IO / Conversion,pandas.Series.from_csv,from_csv,"Read CSV file (DEPRECATED, please use pandas.read_csv() instead)."
+282,Series,Serialization / IO / Conversion,pandas.Series.to_pickle,to_pickle,Pickle (serialize) object to input file path.
+283,Series,Serialization / IO / Conversion,pandas.Series.to_csv,to_csv,Write Series to a comma-separated values (csv) file
+284,Series,Serialization / IO / Conversion,pandas.Series.to_dict,to_dict,Convert Series to {label -> value} dict or dict-like object.
+285,Series,Serialization / IO / Conversion,pandas.Series.to_excel,to_excel,Write Series to an excel sheet
+286,Series,Serialization / IO / Conversion,pandas.Series.to_frame,to_frame,Convert Series to DataFrame
+287,Series,Serialization / IO / Conversion,pandas.Series.to_xarray,to_xarray,Return an xarray object from the pandas object.
+288,Series,Serialization / IO / Conversion,pandas.Series.to_hdf,to_hdf,Write the contained data to an HDF5 file using HDFStore.
+289,Series,Serialization / IO / Conversion,pandas.Series.to_sql,to_sql,Write records stored in a DataFrame to a SQL database.
+290,Series,Serialization / IO / Conversion,pandas.Series.to_msgpack,to_msgpack,msgpack (serialize) object to input file path
+291,Series,Serialization / IO / Conversion,pandas.Series.to_json,to_json,Convert the object to a JSON string.
+292,Series,Serialization / IO / Conversion,pandas.Series.to_sparse,to_sparse,Convert Series to SparseSeries
+293,Series,Serialization / IO / Conversion,pandas.Series.to_dense,to_dense,Return dense representation of NDFrame (as opposed to sparse)
+294,Series,Serialization / IO / Conversion,pandas.Series.to_string,to_string,Render a string representation of the Series
+295,Series,Serialization / IO / Conversion,pandas.Series.to_clipboard,to_clipboard,"Attempt to write text representation of object to the system clipboard This can be pasted into Excel, for example."
+296,Series,Serialization / IO / Conversion,pandas.Series.to_latex,to_latex,Render an object to a tabular environment table.
+297,Series,Sparse,pandas.SparseSeries.to_coo,to_coo,Create a scipy.sparse.coo_matrix from a SparseSeries with MultiIndex.
+298,Series,Sparse,pandas.SparseSeries.from_coo,from_coo,Create a SparseSeries from a scipy.sparse.coo_matrix.
+299,DataFrame,Constructor,pandas.DataFrame,DataFrame,"Two-dimensional size-mutable, potentially heterogeneous tabular data structure with labeled axes (rows and columns)."
+300,DataFrame,Attributes and underlying data,pandas.DataFrame.as_matrix,as_matrix,Convert the frame to its Numpy-array representation.
+301,DataFrame,Attributes and underlying data,pandas.DataFrame.dtypes,dtypes,Return the dtypes in this object.
+302,DataFrame,Attributes and underlying data,pandas.DataFrame.ftypes,ftypes,Return the ftypes (indication of sparse/dense and dtype) in this object.
+303,DataFrame,Attributes and underlying data,pandas.DataFrame.get_dtype_counts,get_dtype_counts,Return the counts of dtypes in this object.
+304,DataFrame,Attributes and underlying data,pandas.DataFrame.get_ftype_counts,get_ftype_counts,Return the counts of ftypes in this object.
+305,DataFrame,Attributes and underlying data,pandas.DataFrame.select_dtypes,select_dtypes,Return a subset of a DataFrame including/excluding columns based on their dtype.
+306,DataFrame,Attributes and underlying data,pandas.DataFrame.values,values,Numpy representation of NDFrame
+307,DataFrame,Attributes and underlying data,pandas.DataFrame.axes,axes,Return a list with the row axis labels and column axis labels as the only members.
+308,DataFrame,Attributes and underlying data,pandas.DataFrame.ndim,ndim,Number of axes / array dimensions
+309,DataFrame,Attributes and underlying data,pandas.DataFrame.size,size,number of elements in the NDFrame
+310,DataFrame,Attributes and underlying data,pandas.DataFrame.shape,shape,Return a tuple representing the dimensionality of the DataFrame.
+311,DataFrame,Attributes and underlying data,pandas.DataFrame.memory_usage,memory_usage,Memory usage of DataFrame columns.
+312,DataFrame,Conversion,pandas.DataFrame.astype,astype,Cast a pandas object to a specified dtype dtype.
+313,DataFrame,Conversion,pandas.DataFrame.convert_objects,convert_objects,Deprecated.
+314,DataFrame,Conversion,pandas.DataFrame.infer_objects,infer_objects,Attempt to infer better dtypes for object columns.
+315,DataFrame,Conversion,pandas.DataFrame.copy,copy,Make a copy of this objects data.
+316,DataFrame,Conversion,pandas.DataFrame.isna,isna,Return a boolean same-sized object indicating if the values are NA.
+317,DataFrame,Conversion,pandas.DataFrame.notna,notna,Return a boolean same-sized object indicating if the values are not NA.
+318,DataFrame,"Indexing, iteration",pandas.DataFrame.head,head,Return the first n rows.
+319,DataFrame,"Indexing, iteration",pandas.DataFrame.at,at,Fast label-based scalar accessor
+320,DataFrame,"Indexing, iteration",pandas.DataFrame.iat,iat,Fast integer location scalar accessor.
+321,DataFrame,"Indexing, iteration",pandas.DataFrame.loc,loc,Purely label-location based indexer for selection by label.
+322,DataFrame,"Indexing, iteration",pandas.DataFrame.iloc,iloc,Purely integer-location based indexing for selection by position.
+323,DataFrame,"Indexing, iteration",pandas.DataFrame.insert,insert,Insert column into DataFrame at specified location.
+324,DataFrame,"Indexing, iteration",pandas.DataFrame.__iter__,__iter__,Iterate over infor axis
+325,DataFrame,"Indexing, iteration",pandas.DataFrame.iteritems,iteritems,"Iterator over (column name, Series) pairs."
+326,DataFrame,"Indexing, iteration",pandas.DataFrame.iterrows,iterrows,"Iterate over DataFrame rows as (index, Series) pairs."
+327,DataFrame,"Indexing, iteration",pandas.DataFrame.itertuples,itertuples,"Iterate over DataFrame rows as namedtuples, with index value as first element of the tuple."
+328,DataFrame,"Indexing, iteration",pandas.DataFrame.lookup,lookup,Label-based fancy indexing function for DataFrame.
+329,DataFrame,"Indexing, iteration",pandas.DataFrame.pop,pop,Return item and drop from frame.
+330,DataFrame,"Indexing, iteration",pandas.DataFrame.tail,tail,Return the last n rows.
+331,DataFrame,"Indexing, iteration",pandas.DataFrame.xs,xs,Returns a cross-section (row(s) or column(s)) from the Series/DataFrame.
+332,DataFrame,"Indexing, iteration",pandas.DataFrame.isin,isin,Return boolean DataFrame showing whether each element in the DataFrame is contained in values.
+333,DataFrame,"Indexing, iteration",pandas.DataFrame.where,where,Return an object of same shape as self and whose corresponding entries are from self where cond is True and otherwise are from other.
+334,DataFrame,"Indexing, iteration",pandas.DataFrame.mask,mask,Return an object of same shape as self and whose corresponding entries are from self where cond is False and otherwise are from other.
+335,DataFrame,"Indexing, iteration",pandas.DataFrame.query,query,Query the columns of a frame with a boolean expression.
+336,DataFrame,Binary operator functions,pandas.DataFrame.add,add,"Addition of dataframe and other, element-wise (binary operator add)."
+337,DataFrame,Binary operator functions,pandas.DataFrame.sub,sub,"Subtraction of dataframe and other, element-wise (binary operator sub)."
+338,DataFrame,Binary operator functions,pandas.DataFrame.mul,mul,"Multiplication of dataframe and other, element-wise (binary operator mul)."
+339,DataFrame,Binary operator functions,pandas.DataFrame.div,div,"Floating division of dataframe and other, element-wise (binary operator truediv)."
+340,DataFrame,Binary operator functions,pandas.DataFrame.truediv,truediv,"Floating division of dataframe and other, element-wise (binary operator truediv)."
+341,DataFrame,Binary operator functions,pandas.DataFrame.floordiv,floordiv,"Integer division of dataframe and other, element-wise (binary operator floordiv)."
+342,DataFrame,Binary operator functions,pandas.DataFrame.mod,mod,"Modulo of dataframe and other, element-wise (binary operator mod)."
+343,DataFrame,Binary operator functions,pandas.DataFrame.pow,pow,"Exponential power of dataframe and other, element-wise (binary operator pow)."
+344,DataFrame,Binary operator functions,pandas.DataFrame.radd,radd,"Addition of dataframe and other, element-wise (binary operator radd)."
+345,DataFrame,Binary operator functions,pandas.DataFrame.rsub,rsub,"Subtraction of dataframe and other, element-wise (binary operator rsub)."
+346,DataFrame,Binary operator functions,pandas.DataFrame.rmul,rmul,"Multiplication of dataframe and other, element-wise (binary operator rmul)."
+347,DataFrame,Binary operator functions,pandas.DataFrame.rdiv,rdiv,"Floating division of dataframe and other, element-wise (binary operator rtruediv)."
+348,DataFrame,Binary operator functions,pandas.DataFrame.rtruediv,rtruediv,"Floating division of dataframe and other, element-wise (binary operator rtruediv)."
+349,DataFrame,Binary operator functions,pandas.DataFrame.rfloordiv,rfloordiv,"Integer division of dataframe and other, element-wise (binary operator rfloordiv)."
+350,DataFrame,Binary operator functions,pandas.DataFrame.rmod,rmod,"Modulo of dataframe and other, element-wise (binary operator rmod)."
+351,DataFrame,Binary operator functions,pandas.DataFrame.rpow,rpow,"Exponential power of dataframe and other, element-wise (binary operator rpow)."
+352,DataFrame,Binary operator functions,pandas.DataFrame.lt,lt,Wrapper for flexible comparison methods lt
+353,DataFrame,Binary operator functions,pandas.DataFrame.gt,gt,Wrapper for flexible comparison methods gt
+354,DataFrame,Binary operator functions,pandas.DataFrame.le,le,Wrapper for flexible comparison methods le
+355,DataFrame,Binary operator functions,pandas.DataFrame.ge,ge,Wrapper for flexible comparison methods ge
+356,DataFrame,Binary operator functions,pandas.DataFrame.ne,ne,Wrapper for flexible comparison methods ne
+357,DataFrame,Binary operator functions,pandas.DataFrame.eq,eq,Wrapper for flexible comparison methods eq
+358,DataFrame,Binary operator functions,pandas.DataFrame.combine,combine,"Add two DataFrame objects and do not propagate NaN values, so if for a"
+359,DataFrame,Binary operator functions,pandas.DataFrame.combine_first,combine_first,Combine two DataFrame objects and default to non-null values in frame calling the method.
+360,DataFrame,"Function application, GroupBy & Window",pandas.DataFrame.apply,apply,Applies function along input axis of DataFrame.
+361,DataFrame,"Function application, GroupBy & Window",pandas.DataFrame.applymap,applymap,"Apply a function to a DataFrame that is intended to operate elementwise, i.e."
+362,DataFrame,"Function application, GroupBy & Window",pandas.DataFrame.aggregate,aggregate,"Aggregate using callable, string, dict, or list of string/callables"
+363,DataFrame,"Function application, GroupBy & Window",pandas.DataFrame.transform,transform,Call function producing a like-indexed NDFrame
+364,DataFrame,"Function application, GroupBy & Window",pandas.DataFrame.groupby,groupby,"Group series using mapper (dict or key function, apply given 
+function to group, return result as series) or by a series of columns."
+365,DataFrame,"Function application, GroupBy & Window",pandas.DataFrame.rolling,rolling,Provides rolling window calculations.
+366,DataFrame,"Function application, GroupBy & Window",pandas.DataFrame.expanding,expanding,Provides expanding transformations.
+367,DataFrame,"Function application, GroupBy & Window",pandas.DataFrame.ewm,ewm,Provides exponential weighted functions
+368,DataFrame,Computations / Descriptive Stats,pandas.DataFrame.abs,abs,Return an object with absolute value takenonly applicable to objects that are all numeric.
+369,DataFrame,Computations / Descriptive Stats,pandas.DataFrame.all,all,Return whether all elements are True over requested axis
+370,DataFrame,Computations / Descriptive Stats,pandas.DataFrame.any,any,Return whether any element is True over requested axis
+371,DataFrame,Computations / Descriptive Stats,pandas.DataFrame.clip,clip,Trim values at input threshold(s).
+372,DataFrame,Computations / Descriptive Stats,pandas.DataFrame.clip_lower,clip_lower,Return copy of the input with values below given value(s) truncated.
+373,DataFrame,Computations / Descriptive Stats,pandas.DataFrame.clip_upper,clip_upper,Return copy of input with values above given value(s) truncated.
+374,DataFrame,Computations / Descriptive Stats,pandas.DataFrame.corr,corr,"Compute pairwise correlation of columns, excluding NA/null values"
+375,DataFrame,Computations / Descriptive Stats,pandas.DataFrame.corrwith,corrwith,Compute pairwise correlation between rows or columns of two DataFrame objects.
+376,DataFrame,Computations / Descriptive Stats,pandas.DataFrame.count,count,Return Series with number of non-NA/null observations over requested axis.
+377,DataFrame,Computations / Descriptive Stats,pandas.DataFrame.cov,cov,"Compute pairwise covariance of columns, excluding NA/null values"
+378,DataFrame,Computations / Descriptive Stats,pandas.DataFrame.cummax,cummax,Return cumulative max over requested axis.
+379,DataFrame,Computations / Descriptive Stats,pandas.DataFrame.cummin,cummin,Return cumulative minimum over requested axis.
+380,DataFrame,Computations / Descriptive Stats,pandas.DataFrame.cumprod,cumprod,Return cumulative product over requested axis.
+381,DataFrame,Computations / Descriptive Stats,pandas.DataFrame.cumsum,cumsum,Return cumulative sum over requested axis.
+382,DataFrame,Computations / Descriptive Stats,pandas.DataFrame.describe,describe,"Generates descriptive statistics that summarize the central 
+tendency, dispersion and shape of a datasets distribution, excluding NaN values."
+383,DataFrame,Computations / Descriptive Stats,pandas.DataFrame.diff,diff,1st discrete difference of object
+384,DataFrame,Computations / Descriptive Stats,pandas.DataFrame.eval,eval,Evaluate an expression in the context of the calling DataFrame instance.
+385,DataFrame,Computations / Descriptive Stats,pandas.DataFrame.kurt,kurt,Return unbiased kurtosis over requested axis using Fishers definition of kurtosis (kurtosis of normal == 0.0).
+386,DataFrame,Computations / Descriptive Stats,pandas.DataFrame.mad,mad,Return the mean absolute deviation of the values for the requested axis
+387,DataFrame,Computations / Descriptive Stats,pandas.DataFrame.max,max,This method returns the maximum of the values in the object.
+388,DataFrame,Computations / Descriptive Stats,pandas.DataFrame.mean,mean,Return the mean of the values for the requested axis
+389,DataFrame,Computations / Descriptive Stats,pandas.DataFrame.median,median,Return the median of the values for the requested axis
+390,DataFrame,Computations / Descriptive Stats,pandas.DataFrame.min,min,This method returns the minimum of the values in the object.
+391,DataFrame,Computations / Descriptive Stats,pandas.DataFrame.mode,mode,Gets the mode(s) of each element along the axis selected.
+392,DataFrame,Computations / Descriptive Stats,pandas.DataFrame.pct_change,pct_change,Percent change over given number of periods.
+393,DataFrame,Computations / Descriptive Stats,pandas.DataFrame.prod,prod,Return the product of the values for the requested axis
+394,DataFrame,Computations / Descriptive Stats,pandas.DataFrame.quantile,quantile,"Return values at the given quantile over requested axis, a la numpy.percentile."
+395,DataFrame,Computations / Descriptive Stats,pandas.DataFrame.rank,rank,Compute numerical data ranks (1 through n) along axis.
+396,DataFrame,Computations / Descriptive Stats,pandas.DataFrame.round,round,Round a DataFrame to a variable number of decimal places.
+397,DataFrame,Computations / Descriptive Stats,pandas.DataFrame.sem,sem,Return unbiased standard error of the mean over requested axis.
+398,DataFrame,Computations / Descriptive Stats,pandas.DataFrame.skew,skew,Return unbiased skew over requested axis
+399,DataFrame,Computations / Descriptive Stats,pandas.DataFrame.sum,sum,Return the sum of the values for the requested axis
+400,DataFrame,Computations / Descriptive Stats,pandas.DataFrame.std,std,Return sample standard deviation over requested axis.
+401,DataFrame,Computations / Descriptive Stats,pandas.DataFrame.var,var,Return unbiased variance over requested axis.
+402,DataFrame,Reindexing / Selection / Label manipulation,pandas.DataFrame.add_prefix,add_prefix,Concatenate prefix string with panel items names.
+403,DataFrame,Reindexing / Selection / Label manipulation,pandas.DataFrame.add_suffix,add_suffix,Concatenate suffix string with panel items names.
+404,DataFrame,Reindexing / Selection / Label manipulation,pandas.DataFrame.align,align,Align two objects on their axes with the
+405,DataFrame,Reindexing / Selection / Label manipulation,pandas.DataFrame.drop,drop,Return new object with labels in requested axis removed.
+406,DataFrame,Reindexing / Selection / Label manipulation,pandas.DataFrame.drop_duplicates,drop_duplicates,"Return DataFrame with duplicate rows removed, optionally only"
+407,DataFrame,Reindexing / Selection / Label manipulation,pandas.DataFrame.duplicated,duplicated,"Return boolean Series denoting duplicate rows, optionally only"
+408,DataFrame,Reindexing / Selection / Label manipulation,pandas.DataFrame.equals,equals,Determines if two NDFrame objects contain the same elements.
+409,DataFrame,Reindexing / Selection / Label manipulation,pandas.DataFrame.filter,filter,Subset rows or columns of dataframe according to labels in the specified index.
+410,DataFrame,Reindexing / Selection / Label manipulation,pandas.DataFrame.first,first,Convenience method for subsetting initial periods of time series data based on a date offset.
+411,DataFrame,Reindexing / Selection / Label manipulation,pandas.DataFrame.head,head,Return the first n rows.
+412,DataFrame,Reindexing / Selection / Label manipulation,pandas.DataFrame.idxmax,idxmax,Return index of first occurrence of maximum over requested axis.
+413,DataFrame,Reindexing / Selection / Label manipulation,pandas.DataFrame.idxmin,idxmin,Return index of first occurrence of minimum over requested axis.
+414,DataFrame,Reindexing / Selection / Label manipulation,pandas.DataFrame.last,last,Convenience method for subsetting final periods of time series data based on a date offset.
+415,DataFrame,Reindexing / Selection / Label manipulation,pandas.DataFrame.reindex,reindex,"Conform DataFrame to new index with optional filling logic, placing NA/NaN in locations having no value in the previous index."
+416,DataFrame,Reindexing / Selection / Label manipulation,pandas.DataFrame.reindex_axis,reindex_axis,"Conform input object to new index with optional filling logic, 
+placing NA/NaN in locations having no value in the previous index."
+417,DataFrame,Reindexing / Selection / Label manipulation,pandas.DataFrame.reindex_like,reindex_like,Return an object with matching indices to myself.
+418,DataFrame,Reindexing / Selection / Label manipulation,pandas.DataFrame.rename,rename,Alter axes labels.
+419,DataFrame,Reindexing / Selection / Label manipulation,pandas.DataFrame.rename_axis,rename_axis,Alter the name of the index or columns.
+420,DataFrame,Reindexing / Selection / Label manipulation,pandas.DataFrame.reset_index,reset_index,"For DataFrame with multi-level index, return new DataFrame with 
+labeling information in the columns under the index names, defaulting to
+ level_0, level_1, etc."
+421,DataFrame,Reindexing / Selection / Label manipulation,pandas.DataFrame.sample,sample,Returns a random sample of items from an axis of object.
+422,DataFrame,Reindexing / Selection / Label manipulation,pandas.DataFrame.select,select,Return data corresponding to axis labels matching criteria
+423,DataFrame,Reindexing / Selection / Label manipulation,pandas.DataFrame.set_index,set_index,Set the DataFrame index (row labels) using one or more existing columns.
+424,DataFrame,Reindexing / Selection / Label manipulation,pandas.DataFrame.tail,tail,Return the last n rows.
+425,DataFrame,Reindexing / Selection / Label manipulation,pandas.DataFrame.take,take,Return the elements in the given positional indices along an axis.
+426,DataFrame,Reindexing / Selection / Label manipulation,pandas.DataFrame.truncate,truncate,Truncates a sorted DataFrame/Series before and/or after some particular index value.
+427,DataFrame,Missing data handling,pandas.DataFrame.dropna,dropna,Return object with labels on given axis omitted where alternately any
+428,DataFrame,Missing data handling,pandas.DataFrame.fillna,fillna,Fill NA/NaN values using the specified method
+429,DataFrame,Missing data handling,pandas.DataFrame.replace,replace,Replace values given in to_replace with value.
+430,DataFrame,"Reshaping, sorting, transposing",pandas.DataFrame.pivot,pivot,Reshape data (produce a pivot table) based on column values.
+431,DataFrame,"Reshaping, sorting, transposing",pandas.DataFrame.reorder_levels,reorder_levels,Rearrange index levels using input order.
+432,DataFrame,"Reshaping, sorting, transposing",pandas.DataFrame.sort_values,sort_values,Sort by the values along either axis
+433,DataFrame,"Reshaping, sorting, transposing",pandas.DataFrame.sort_index,sort_index,Sort object by labels (along an axis)
+434,DataFrame,"Reshaping, sorting, transposing",pandas.DataFrame.nlargest,nlargest,Get the rows of a DataFrame sorted by the n largest values of columns.
+435,DataFrame,"Reshaping, sorting, transposing",pandas.DataFrame.nsmallest,nsmallest,Get the rows of a DataFrame sorted by the n smallest values of columns.
+436,DataFrame,"Reshaping, sorting, transposing",pandas.DataFrame.swaplevel,swaplevel,Swap levels i and j in a MultiIndex on a particular axis
+437,DataFrame,"Reshaping, sorting, transposing",pandas.DataFrame.stack,stack,"Pivot a level of the (possibly hierarchical) column labels, 
+returning a DataFrame (or Series in the case of an object with a single 
+level of column labels) having a hierarchical index with a new 
+inner-most level of row labels."
+438,DataFrame,"Reshaping, sorting, transposing",pandas.DataFrame.unstack,unstack,"Pivot a level of the (necessarily hierarchical) index labels, 
+returning a DataFrame having a new level of column labels whose 
+inner-most level consists of the pivoted index labels."
+439,DataFrame,"Reshaping, sorting, transposing",pandas.DataFrame.melt,melt,"Unpivots a DataFrame from wide format to long format, optionally"
+440,DataFrame,"Reshaping, sorting, transposing",pandas.DataFrame.T,T,Transpose index and columns
+441,DataFrame,"Reshaping, sorting, transposing",pandas.DataFrame.to_panel,to_panel,"Transform long (stacked) format (DataFrame) into wide (3D, Panel) format."
+442,DataFrame,"Reshaping, sorting, transposing",pandas.DataFrame.to_xarray,to_xarray,Return an xarray object from the pandas object.
+443,DataFrame,"Reshaping, sorting, transposing",pandas.DataFrame.transpose,transpose,Transpose index and columns
+444,DataFrame,Combining / joining / merging,pandas.DataFrame.append,append,"Append rows of other to the end of this frame, returning a new object."
+445,DataFrame,Combining / joining / merging,pandas.DataFrame.assign,assign,"Assign new columns to a DataFrame, returning a new object (a copy) with all the original columns in addition to the new ones."
+446,DataFrame,Combining / joining / merging,pandas.DataFrame.join,join,Join columns with other DataFrame either on index or on a key column.
+447,DataFrame,Combining / joining / merging,pandas.DataFrame.merge,merge,Merge DataFrame objects by performing a database-style join operation by columns or indexes.
+448,DataFrame,Combining / joining / merging,pandas.DataFrame.update,update,Modify DataFrame in place using non-NA values from passed DataFrame.
+449,DataFrame,Time series-related,pandas.DataFrame.asfreq,asfreq,Convert TimeSeries to specified frequency.
+450,DataFrame,Time series-related,pandas.DataFrame.asof,asof,The last row without any NaN is taken (or the last row without
+451,DataFrame,Time series-related,pandas.DataFrame.shift,shift,Shift index by desired number of periods with an optional time freq
+452,DataFrame,Time series-related,pandas.DataFrame.first_valid_index,first_valid_index,Return index for first non-NA/null value.
+453,DataFrame,Time series-related,pandas.DataFrame.last_valid_index,last_valid_index,Return index for last non-NA/null value.
+454,DataFrame,Time series-related,pandas.DataFrame.resample,resample,Convenience method for frequency conversion and resampling of time series.
+455,DataFrame,Time series-related,pandas.DataFrame.to_period,to_period,Convert DataFrame from DatetimeIndex to PeriodIndex with desired
+456,DataFrame,Time series-related,pandas.DataFrame.to_timestamp,to_timestamp,"Cast to DatetimeIndex of timestamps, at beginning of period"
+457,DataFrame,Time series-related,pandas.DataFrame.tz_convert,tz_convert,Convert tz-aware axis to target time zone.
+458,DataFrame,Time series-related,pandas.DataFrame.tz_localize,tz_localize,Localize tz-naive TimeSeries to target time zone.
+459,DataFrame,Plotting,pandas.DataFrame.plot,plot,DataFrame plotting accessor and method
+460,DataFrame,Serialization / IO / Conversion,pandas.DataFrame.from_csv,from_csv,"Read CSV file (DEPRECATED, please use pandas.read_csv() instead)."
+461,DataFrame,Serialization / IO / Conversion,pandas.DataFrame.from_dict,from_dict,Construct DataFrame from dict of array-like or dicts
+462,DataFrame,Serialization / IO / Conversion,pandas.DataFrame.from_items,from_items,"Convert (key, value) pairs to DataFrame."
+463,DataFrame,Serialization / IO / Conversion,pandas.DataFrame.from_records,from_records,Convert structured or record ndarray to DataFrame
+464,DataFrame,Serialization / IO / Conversion,pandas.DataFrame.info,info,Concise summary of a DataFrame.
+465,DataFrame,Serialization / IO / Conversion,pandas.DataFrame.to_pickle,to_pickle,Pickle (serialize) object to input file path.
+466,DataFrame,Serialization / IO / Conversion,pandas.DataFrame.to_csv,to_csv,Write DataFrame to a comma-separated values (csv) file
+467,DataFrame,Serialization / IO / Conversion,pandas.DataFrame.to_hdf,to_hdf,Write the contained data to an HDF5 file using HDFStore.
+468,DataFrame,Serialization / IO / Conversion,pandas.DataFrame.to_sql,to_sql,Write records stored in a DataFrame to a SQL database.
+469,DataFrame,Serialization / IO / Conversion,pandas.DataFrame.to_dict,to_dict,Convert DataFrame to dictionary.
+470,DataFrame,Serialization / IO / Conversion,pandas.DataFrame.to_excel,to_excel,Write DataFrame to an excel sheet
+471,DataFrame,Serialization / IO / Conversion,pandas.DataFrame.to_json,to_json,Convert the object to a JSON string.
+472,DataFrame,Serialization / IO / Conversion,pandas.DataFrame.to_html,to_html,Render a DataFrame as an HTML table.
+473,DataFrame,Serialization / IO / Conversion,pandas.DataFrame.to_feather,to_feather,write out the binary feather-format for DataFrames
+474,DataFrame,Serialization / IO / Conversion,pandas.DataFrame.to_latex,to_latex,Render an object to a tabular environment table.
+475,DataFrame,Serialization / IO / Conversion,pandas.DataFrame.to_stata,to_stata,A class for writing Stata binary dta files from array-like objects
+476,DataFrame,Serialization / IO / Conversion,pandas.DataFrame.to_msgpack,to_msgpack,msgpack (serialize) object to input file path
+477,DataFrame,Serialization / IO / Conversion,pandas.DataFrame.to_gbq,to_gbq,Write a DataFrame to a Google BigQuery table.
+478,DataFrame,Serialization / IO / Conversion,pandas.DataFrame.to_records,to_records,Convert DataFrame to record array.
+479,DataFrame,Serialization / IO / Conversion,pandas.DataFrame.to_sparse,to_sparse,Convert to SparseDataFrame
+480,DataFrame,Serialization / IO / Conversion,pandas.DataFrame.to_dense,to_dense,Return dense representation of NDFrame (as opposed to sparse)
+481,DataFrame,Serialization / IO / Conversion,pandas.DataFrame.to_string,to_string,Render a DataFrame to a console-friendly tabular output.
+482,DataFrame,Serialization / IO / Conversion,pandas.DataFrame.to_clipboard,to_clipboard,"Attempt to write text representation of object to the system clipboard This can be pasted into Excel, for example."
+483,DataFrame,Sparse,pandas.SparseDataFrame.to_coo,to_coo,Return the contents of the frame as a sparse SciPy COO matrix.
+484,Panel,Constructor,pandas.Panel,Panel,"Represents wide format panel data, stored as 3-dimensional array"
+485,Panel,Attributes and underlying data,pandas.Panel.values,values,Numpy representation of NDFrame
+486,Panel,Attributes and underlying data,pandas.Panel.axes,axes,Return index label(s) of the internal NDFrame
+487,Panel,Attributes and underlying data,pandas.Panel.ndim,ndim,Number of axes / array dimensions
+488,Panel,Attributes and underlying data,pandas.Panel.size,size,number of elements in the NDFrame
+489,Panel,Attributes and underlying data,pandas.Panel.shape,shape,Return a tuple of axis dimensions
+490,Panel,Attributes and underlying data,pandas.Panel.dtypes,dtypes,Return the dtypes in this object.
+491,Panel,Attributes and underlying data,pandas.Panel.ftypes,ftypes,Return the ftypes (indication of sparse/dense and dtype) in this object.
+492,Panel,Attributes and underlying data,pandas.Panel.get_dtype_counts,get_dtype_counts,Return the counts of dtypes in this object.
+493,Panel,Attributes and underlying data,pandas.Panel.get_ftype_counts,get_ftype_counts,Return the counts of ftypes in this object.
+494,Panel,Conversion,pandas.Panel.astype,astype,Cast a pandas object to a specified dtype dtype.
+495,Panel,Conversion,pandas.Panel.copy,copy,Make a copy of this objects data.
+496,Panel,Conversion,pandas.Panel.isna,isna,Return a boolean same-sized object indicating if the values are NA.
+497,Panel,Conversion,pandas.Panel.notna,notna,Return a boolean same-sized object indicating if the values are not NA.
+498,Panel,Getting and setting,pandas.Panel.get_value,get_value,"Quickly retrieve single value at (item, major, minor) location"
+499,Panel,Getting and setting,pandas.Panel.set_value,set_value,"Quickly set single value at (item, major, minor) location"
+500,Panel,"Indexing, iteration, slicing",pandas.Panel.at,at,Fast label-based scalar accessor
+501,Panel,"Indexing, iteration, slicing",pandas.Panel.iat,iat,Fast integer location scalar accessor.
+502,Panel,"Indexing, iteration, slicing",pandas.Panel.loc,loc,Purely label-location based indexer for selection by label.
+503,Panel,"Indexing, iteration, slicing",pandas.Panel.iloc,iloc,Purely integer-location based indexing for selection by position.
+504,Panel,"Indexing, iteration, slicing",pandas.Panel.__iter__,__iter__,Iterate over infor axis
+505,Panel,"Indexing, iteration, slicing",pandas.Panel.iteritems,iteritems,"Iterate over (label, values) on info axis"
+506,Panel,"Indexing, iteration, slicing",pandas.Panel.pop,pop,Return item and drop from frame.
+507,Panel,"Indexing, iteration, slicing",pandas.Panel.xs,xs,Return slice of panel along selected axis
+508,Panel,"Indexing, iteration, slicing",pandas.Panel.major_xs,major_xs,Return slice of panel along major axis
+509,Panel,"Indexing, iteration, slicing",pandas.Panel.minor_xs,minor_xs,Return slice of panel along minor axis
+510,Panel,Binary operator functions,pandas.Panel.add,add,"Addition of series and other, element-wise (binary operator add)."
+511,Panel,Binary operator functions,pandas.Panel.sub,sub,"Subtraction of series and other, element-wise (binary operator sub)."
+512,Panel,Binary operator functions,pandas.Panel.mul,mul,"Multiplication of series and other, element-wise (binary operator mul)."
+513,Panel,Binary operator functions,pandas.Panel.div,div,"Floating division of series and other, element-wise (binary operator truediv)."
+514,Panel,Binary operator functions,pandas.Panel.truediv,truediv,"Floating division of series and other, element-wise (binary operator truediv)."
+515,Panel,Binary operator functions,pandas.Panel.floordiv,floordiv,"Integer division of series and other, element-wise (binary operator floordiv)."
+516,Panel,Binary operator functions,pandas.Panel.mod,mod,"Modulo of series and other, element-wise (binary operator mod)."
+517,Panel,Binary operator functions,pandas.Panel.pow,pow,"Exponential power of series and other, element-wise (binary operator pow)."
+518,Panel,Binary operator functions,pandas.Panel.radd,radd,"Addition of series and other, element-wise (binary operator radd)."
+519,Panel,Binary operator functions,pandas.Panel.rsub,rsub,"Subtraction of series and other, element-wise (binary operator rsub)."
+520,Panel,Binary operator functions,pandas.Panel.rmul,rmul,"Multiplication of series and other, element-wise (binary operator rmul)."
+521,Panel,Binary operator functions,pandas.Panel.rdiv,rdiv,"Floating division of series and other, element-wise (binary operator rtruediv)."
+522,Panel,Binary operator functions,pandas.Panel.rtruediv,rtruediv,"Floating division of series and other, element-wise (binary operator rtruediv)."
+523,Panel,Binary operator functions,pandas.Panel.rfloordiv,rfloordiv,"Integer division of series and other, element-wise (binary operator rfloordiv)."
+524,Panel,Binary operator functions,pandas.Panel.rmod,rmod,"Modulo of series and other, element-wise (binary operator rmod)."
+525,Panel,Binary operator functions,pandas.Panel.rpow,rpow,"Exponential power of series and other, element-wise (binary operator rpow)."
+526,Panel,Binary operator functions,pandas.Panel.lt,lt,Wrapper for comparison method lt
+527,Panel,Binary operator functions,pandas.Panel.gt,gt,Wrapper for comparison method gt
+528,Panel,Binary operator functions,pandas.Panel.le,le,Wrapper for comparison method le
+529,Panel,Binary operator functions,pandas.Panel.ge,ge,Wrapper for comparison method ge
+530,Panel,Binary operator functions,pandas.Panel.ne,ne,Wrapper for comparison method ne
+531,Panel,Binary operator functions,pandas.Panel.eq,eq,Wrapper for comparison method eq
+532,Panel,"Function application, GroupBy",pandas.Panel.apply,apply,Applies function along axis (or axes) of the Panel
+533,Panel,"Function application, GroupBy",pandas.Panel.groupby,groupby,"Group data on given axis, returning GroupBy object"
+534,Panel,Computations / Descriptive Stats,pandas.Panel.abs,abs,Return an object with absolute value takenonly applicable to objects that are all numeric.
+535,Panel,Computations / Descriptive Stats,pandas.Panel.clip,clip,Trim values at input threshold(s).
+536,Panel,Computations / Descriptive Stats,pandas.Panel.clip_lower,clip_lower,Return copy of the input with values below given value(s) truncated.
+537,Panel,Computations / Descriptive Stats,pandas.Panel.clip_upper,clip_upper,Return copy of input with values above given value(s) truncated.
+538,Panel,Computations / Descriptive Stats,pandas.Panel.count,count,Return number of observations over requested axis.
+539,Panel,Computations / Descriptive Stats,pandas.Panel.cummax,cummax,Return cumulative max over requested axis.
+540,Panel,Computations / Descriptive Stats,pandas.Panel.cummin,cummin,Return cumulative minimum over requested axis.
+541,Panel,Computations / Descriptive Stats,pandas.Panel.cumprod,cumprod,Return cumulative product over requested axis.
+542,Panel,Computations / Descriptive Stats,pandas.Panel.cumsum,cumsum,Return cumulative sum over requested axis.
+543,Panel,Computations / Descriptive Stats,pandas.Panel.max,max,This method returns the maximum of the values in the object.
+544,Panel,Computations / Descriptive Stats,pandas.Panel.mean,mean,Return the mean of the values for the requested axis
+545,Panel,Computations / Descriptive Stats,pandas.Panel.median,median,Return the median of the values for the requested axis
+546,Panel,Computations / Descriptive Stats,pandas.Panel.min,min,This method returns the minimum of the values in the object.
+547,Panel,Computations / Descriptive Stats,pandas.Panel.pct_change,pct_change,Percent change over given number of periods.
+548,Panel,Computations / Descriptive Stats,pandas.Panel.prod,prod,Return the product of the values for the requested axis
+549,Panel,Computations / Descriptive Stats,pandas.Panel.sem,sem,Return unbiased standard error of the mean over requested axis.
+550,Panel,Computations / Descriptive Stats,pandas.Panel.skew,skew,Return unbiased skew over requested axis
+551,Panel,Computations / Descriptive Stats,pandas.Panel.sum,sum,Return the sum of the values for the requested axis
+552,Panel,Computations / Descriptive Stats,pandas.Panel.std,std,Return sample standard deviation over requested axis.
+553,Panel,Computations / Descriptive Stats,pandas.Panel.var,var,Return unbiased variance over requested axis.
+554,Panel,Reindexing / Selection / Label manipulation,pandas.Panel.add_prefix,add_prefix,Concatenate prefix string with panel items names.
+555,Panel,Reindexing / Selection / Label manipulation,pandas.Panel.add_suffix,add_suffix,Concatenate suffix string with panel items names.
+556,Panel,Reindexing / Selection / Label manipulation,pandas.Panel.drop,drop,Return new object with labels in requested axis removed.
+557,Panel,Reindexing / Selection / Label manipulation,pandas.Panel.equals,equals,Determines if two NDFrame objects contain the same elements.
+558,Panel,Reindexing / Selection / Label manipulation,pandas.Panel.filter,filter,Subset rows or columns of dataframe according to labels in the specified index.
+559,Panel,Reindexing / Selection / Label manipulation,pandas.Panel.first,first,Convenience method for subsetting initial periods of time series data based on a date offset.
+560,Panel,Reindexing / Selection / Label manipulation,pandas.Panel.last,last,Convenience method for subsetting final periods of time series data based on a date offset.
+561,Panel,Reindexing / Selection / Label manipulation,pandas.Panel.reindex,reindex,"Conform Panel to new index with optional filling logic, placing NA/NaN in locations having no value in the previous index."
+562,Panel,Reindexing / Selection / Label manipulation,pandas.Panel.reindex_axis,reindex_axis,"Conform input object to new index with optional filling logic, 
+placing NA/NaN in locations having no value in the previous index."
+563,Panel,Reindexing / Selection / Label manipulation,pandas.Panel.reindex_like,reindex_like,Return an object with matching indices to myself.
+564,Panel,Reindexing / Selection / Label manipulation,pandas.Panel.rename,rename,Alter axes input function or functions.
+565,Panel,Reindexing / Selection / Label manipulation,pandas.Panel.sample,sample,Returns a random sample of items from an axis of object.
+566,Panel,Reindexing / Selection / Label manipulation,pandas.Panel.select,select,Return data corresponding to axis labels matching criteria
+567,Panel,Reindexing / Selection / Label manipulation,pandas.Panel.take,take,Return the elements in the given positional indices along an axis.
+568,Panel,Reindexing / Selection / Label manipulation,pandas.Panel.truncate,truncate,Truncates a sorted DataFrame/Series before and/or after some particular index value.
+569,Panel,Missing data handling,pandas.Panel.dropna,dropna,"Drop 2D from panel, holding passed axis constant"
+570,Panel,Missing data handling,pandas.Panel.fillna,fillna,Fill NA/NaN values using the specified method
+571,Panel,"Reshaping, sorting, transposing",pandas.Panel.sort_index,sort_index,Sort object by labels (along an axis)
+572,Panel,"Reshaping, sorting, transposing",pandas.Panel.swaplevel,swaplevel,Swap levels i and j in a MultiIndex on a particular axis
+573,Panel,"Reshaping, sorting, transposing",pandas.Panel.transpose,transpose,Permute the dimensions of the Panel
+574,Panel,"Reshaping, sorting, transposing",pandas.Panel.swapaxes,swapaxes,Interchange axes and swap values axes appropriately
+575,Panel,"Reshaping, sorting, transposing",pandas.Panel.conform,conform,Conform input DataFrame to align with chosen axis pair.
+576,Panel,Combining / joining / merging,pandas.Panel.join,join,Join items with other Panel either on major and minor axes column
+577,Panel,Combining / joining / merging,pandas.Panel.update,update,"Modify Panel in place using non-NA values from passed Panel, or object coercible to Panel."
+578,Panel,Time series-related,pandas.Panel.asfreq,asfreq,Convert TimeSeries to specified frequency.
+579,Panel,Time series-related,pandas.Panel.shift,shift,Shift index by desired number of periods with an optional time freq.
+580,Panel,Time series-related,pandas.Panel.resample,resample,Convenience method for frequency conversion and resampling of time series.
+581,Panel,Time series-related,pandas.Panel.tz_convert,tz_convert,Convert tz-aware axis to target time zone.
+582,Panel,Time series-related,pandas.Panel.tz_localize,tz_localize,Localize tz-naive TimeSeries to target time zone.
+583,Panel,Serialization / IO / Conversion,pandas.Panel.from_dict,from_dict,Construct Panel from dict of DataFrame objects
+584,Panel,Serialization / IO / Conversion,pandas.Panel.to_pickle,to_pickle,Pickle (serialize) object to input file path.
+585,Panel,Serialization / IO / Conversion,pandas.Panel.to_excel,to_excel,Write each DataFrame in Panel to a separate excel sheet
+586,Panel,Serialization / IO / Conversion,pandas.Panel.to_hdf,to_hdf,Write the contained data to an HDF5 file using HDFStore.
+587,Panel,Serialization / IO / Conversion,pandas.Panel.to_sparse,to_sparse,"NOT IMPLEMENTED: do not call this method, as sparsifying is not supported for Panel objects and will raise an error."
+588,Panel,Serialization / IO / Conversion,pandas.Panel.to_frame,to_frame,"Transform wide format into long (stacked) format as DataFrame whose 
+columns are the Panels items and whose index is a MultiIndex formed of 
+the Panels major and minor axes."
+589,Panel,Serialization / IO / Conversion,pandas.Panel.to_xarray,to_xarray,Return an xarray object from the pandas object.
+590,Panel,Serialization / IO / Conversion,pandas.Panel.to_clipboard,to_clipboard,"Attempt to write text representation of object to the system clipboard This can be pasted into Excel, for example."
+591,Index,Attributes,pandas.Index.values,values,return the underlying data as an ndarray
+592,Index,Attributes,pandas.Index.is_monotonic,is_monotonic,alias for is_monotonic_increasing (deprecated)
+593,Index,Attributes,pandas.Index.is_monotonic_increasing,is_monotonic_increasing,return if the index is monotonic increasing (only equal or
+594,Index,Attributes,pandas.Index.is_monotonic_decreasing,is_monotonic_decreasing,return if the index is monotonic decreasing (only equal or
+595,Index,Attributes,pandas.Index.is_unique,is_unique,
+596,Index,Attributes,pandas.Index.has_duplicates,has_duplicates,
+597,Index,Attributes,pandas.Index.dtype,dtype,
+598,Index,Attributes,pandas.Index.inferred_type,inferred_type,
+599,Index,Attributes,pandas.Index.is_all_dates,is_all_dates,
+600,Index,Attributes,pandas.Index.shape,shape,return a tuple of the shape of the underlying data
+601,Index,Attributes,pandas.Index.nbytes,nbytes,return the number of bytes in the underlying data
+602,Index,Attributes,pandas.Index.ndim,ndim,"return the number of dimensions of the underlying data,"
+603,Index,Attributes,pandas.Index.size,size,return the number of elements in the underlying data
+604,Index,Attributes,pandas.Index.empty,empty,
+605,Index,Attributes,pandas.Index.strides,strides,return the strides of the underlying data
+606,Index,Attributes,pandas.Index.itemsize,itemsize,return the size of the dtype of the item of the underlying data
+607,Index,Attributes,pandas.Index.base,base,return the base object if the memory of the underlying data is
+608,Index,Attributes,pandas.Index.T,T,"return the transpose, which is by definition self"
+609,Index,Attributes,pandas.Index.memory_usage,memory_usage,Memory usage of my values
+610,Index,Modifying and Computations,pandas.Index.all,all,Return whether all elements are True
+611,Index,Modifying and Computations,pandas.Index.any,any,Return whether any element is True
+612,Index,Modifying and Computations,pandas.Index.argmin,argmin,return a ndarray of the minimum argument indexer
+613,Index,Modifying and Computations,pandas.Index.argmax,argmax,return a ndarray of the maximum argument indexer
+614,Index,Modifying and Computations,pandas.Index.copy,copy,Make a copy of this object.
+615,Index,Modifying and Computations,pandas.Index.delete,delete,Make new Index with passed location(-s) deleted
+616,Index,Modifying and Computations,pandas.Index.drop,drop,Make new Index with passed list of labels deleted
+617,Index,Modifying and Computations,pandas.Index.drop_duplicates,drop_duplicates,Return Index with duplicate values removed
+618,Index,Modifying and Computations,pandas.Index.duplicated,duplicated,Return boolean np.ndarray denoting duplicate values
+619,Index,Modifying and Computations,pandas.Index.equals,equals,Determines if two Index objects contain the same elements.
+620,Index,Modifying and Computations,pandas.Index.factorize,factorize,Encode the object as an enumerated type or categorical variable
+621,Index,Modifying and Computations,pandas.Index.identical,identical,"Similar to equals, but check that other comparable attributes are"
+622,Index,Modifying and Computations,pandas.Index.insert,insert,Make new Index inserting new item at location.
+623,Index,Modifying and Computations,pandas.Index.min,min,The minimum value of the object
+624,Index,Modifying and Computations,pandas.Index.max,max,The maximum value of the object
+625,Index,Modifying and Computations,pandas.Index.reindex,reindex,Create index with targets values (move/add/delete values as necessary)
+626,Index,Modifying and Computations,pandas.Index.repeat,repeat,Repeat elements of an Index.
+627,Index,Modifying and Computations,pandas.Index.where,where,"
+New in version 0.19.0.
+
+"
+628,Index,Modifying and Computations,pandas.Index.take,take,return a new Index of the values selected by the indices
+629,Index,Modifying and Computations,pandas.Index.putmask,putmask,return a new Index of the values set with the mask
+630,Index,Modifying and Computations,pandas.Index.set_names,set_names,Set new names on index.
+631,Index,Modifying and Computations,pandas.Index.unique,unique,Return unique values in the object.
+632,Index,Modifying and Computations,pandas.Index.nunique,nunique,Return number of unique elements in the object.
+633,Index,Modifying and Computations,pandas.Index.value_counts,value_counts,Returns object containing counts of unique values.
+634,Index,Missing Values,pandas.Index.fillna,fillna,Fill NA/NaN values with the specified value
+635,Index,Missing Values,pandas.Index.dropna,dropna,Return Index without NA/NaN values
+636,Index,Missing Values,pandas.Index.isna,isna,Detect missing values
+637,Index,Missing Values,pandas.Index.notna,notna,Inverse of isna
+638,Index,Conversion,pandas.Index.astype,astype,Create an Index with values cast to dtypes.
+639,Index,Conversion,pandas.Index.tolist,tolist,Return a list of the values.
+640,Index,Conversion,pandas.Index.to_datetime,to_datetime,DEPRECATED: use pandas.to_datetime() instead.
+641,Index,Conversion,pandas.Index.to_series,to_series,Create a Series with both index and values equal to the index keys
+642,Index,Conversion,pandas.Index.to_frame,to_frame,Create a DataFrame with a column containing the Index.
+643,Index,Sorting,pandas.Index.argsort,argsort,Returns the indices that would sort the index and its underlying data.
+644,Index,Sorting,pandas.Index.sort_values,sort_values,Return sorted copy of Index
+645,Index,Time-specific operations,pandas.Index.shift,shift,Shift Index containing datetime objects by input number of periods and
+646,Index,Combining / joining / set operations,pandas.Index.append,append,Append a collection of Index options together
+647,Index,Combining / joining / set operations,pandas.Index.join,join,this is an internal non-public method
+648,Index,Combining / joining / set operations,pandas.Index.intersection,intersection,Form the intersection of two Index objects.
+649,Index,Combining / joining / set operations,pandas.Index.union,union,Form the union of two Index objects and sorts if possible.
+650,Index,Combining / joining / set operations,pandas.Index.difference,difference,Return a new Index with elements from the index that are not in other.
+651,Index,Combining / joining / set operations,pandas.Index.symmetric_difference,symmetric_difference,Compute the symmetric difference of two Index objects.
+652,Index,Selecting,pandas.Index.get_indexer,get_indexer,Compute indexer and mask for new index given the current index.
+653,Index,Selecting,pandas.Index.get_indexer_non_unique,get_indexer_non_unique,Compute indexer and mask for new index given the current index.
+654,Index,Selecting,pandas.Index.get_level_values,get_level_values,"Return an Index of values for requested level, equal to the length of the index."
+655,Index,Selecting,pandas.Index.get_loc,get_loc,"Get integer location, slice or boolean mask for requested label."
+656,Index,Selecting,pandas.Index.get_value,get_value,Fast lookup of value from 1-dimensional ndarray.
+657,Index,Selecting,pandas.Index.isin,isin,Compute boolean array of whether each index value is found in the passed set of values.
+658,Index,Selecting,pandas.Index.slice_indexer,slice_indexer,"For an ordered Index, compute the slice indexer for input labels and"
+659,Index,Selecting,pandas.Index.slice_locs,slice_locs,Compute slice locations for input labels.
+660,CategoricalIndex,Categorical Components,pandas.CategoricalIndex.codes,codes,
+661,CategoricalIndex,Categorical Components,pandas.CategoricalIndex.categories,categories,
+662,CategoricalIndex,Categorical Components,pandas.CategoricalIndex.ordered,ordered,
+663,CategoricalIndex,Categorical Components,pandas.CategoricalIndex.rename_categories,rename_categories,Renames categories.
+664,CategoricalIndex,Categorical Components,pandas.CategoricalIndex.reorder_categories,reorder_categories,Reorders categories as specified in new_categories.
+665,CategoricalIndex,Categorical Components,pandas.CategoricalIndex.add_categories,add_categories,Add new categories.
+666,CategoricalIndex,Categorical Components,pandas.CategoricalIndex.remove_categories,remove_categories,Removes the specified categories.
+667,CategoricalIndex,Categorical Components,pandas.CategoricalIndex.remove_unused_categories,remove_unused_categories,Removes categories which are not used.
+668,CategoricalIndex,Categorical Components,pandas.CategoricalIndex.set_categories,set_categories,Sets the categories to the specified new_categories.
+669,CategoricalIndex,Categorical Components,pandas.CategoricalIndex.as_ordered,as_ordered,Sets the Categorical to be ordered
+670,CategoricalIndex,Categorical Components,pandas.CategoricalIndex.as_unordered,as_unordered,Sets the Categorical to be unordered
+671,IntervalIndex,IntervalIndex Components,pandas.IntervalIndex.from_arrays,from_arrays,Construct an IntervalIndex from a a left and right array
+672,IntervalIndex,IntervalIndex Components,pandas.IntervalIndex.from_tuples,from_tuples,Construct an IntervalIndex from a list/array of tuples
+673,IntervalIndex,IntervalIndex Components,pandas.IntervalIndex.from_breaks,from_breaks,Construct an IntervalIndex from an array of splits
+674,IntervalIndex,IntervalIndex Components,pandas.IntervalIndex.from_intervals,from_intervals,Construct an IntervalIndex from a 1d array of Interval objects
+675,MultiIndex,MultiIndex Components,pandas.MultiIndex.from_arrays,from_arrays,Convert arrays to MultiIndex
+676,MultiIndex,MultiIndex Components,pandas.MultiIndex.from_tuples,from_tuples,Convert list of tuples to MultiIndex
+677,MultiIndex,MultiIndex Components,pandas.MultiIndex.from_product,from_product,Make a MultiIndex from the cartesian product of multiple iterables
+678,MultiIndex,MultiIndex Components,pandas.MultiIndex.set_levels,set_levels,Set new levels on MultiIndex.
+679,MultiIndex,MultiIndex Components,pandas.MultiIndex.set_labels,set_labels,Set new labels on MultiIndex.
+680,MultiIndex,MultiIndex Components,pandas.MultiIndex.to_hierarchical,to_hierarchical,Return a MultiIndex reshaped to conform to the shapes given by n_repeat and n_shuffle.
+681,MultiIndex,MultiIndex Components,pandas.MultiIndex.to_frame,to_frame,Create a DataFrame with the levels of the MultiIndex as columns.
+682,MultiIndex,MultiIndex Components,pandas.MultiIndex.is_lexsorted,is_lexsorted,Return True if the labels are lexicographically sorted
+683,MultiIndex,MultiIndex Components,pandas.MultiIndex.droplevel,droplevel,Return Index with requested level removed.
+684,MultiIndex,MultiIndex Components,pandas.MultiIndex.swaplevel,swaplevel,Swap level i with level j.
+685,MultiIndex,MultiIndex Components,pandas.MultiIndex.reorder_levels,reorder_levels,Rearrange levels using input order.
+686,MultiIndex,MultiIndex Components,pandas.MultiIndex.remove_unused_levels,remove_unused_levels,create a new MultiIndex from the current that removing
+687,DatetimeIndex,Time/Date Components,pandas.DatetimeIndex.year,year,The year of the datetime
+688,DatetimeIndex,Time/Date Components,pandas.DatetimeIndex.month,month,"The month as January=1, December=12"
+689,DatetimeIndex,Time/Date Components,pandas.DatetimeIndex.day,day,The days of the datetime
+690,DatetimeIndex,Time/Date Components,pandas.DatetimeIndex.hour,hour,The hours of the datetime
+691,DatetimeIndex,Time/Date Components,pandas.DatetimeIndex.minute,minute,The minutes of the datetime
+692,DatetimeIndex,Time/Date Components,pandas.DatetimeIndex.second,second,The seconds of the datetime
+693,DatetimeIndex,Time/Date Components,pandas.DatetimeIndex.microsecond,microsecond,The microseconds of the datetime
+694,DatetimeIndex,Time/Date Components,pandas.DatetimeIndex.nanosecond,nanosecond,The nanoseconds of the datetime
+695,DatetimeIndex,Time/Date Components,pandas.DatetimeIndex.date,date,"Returns numpy array of python datetime.date objects (namely, the date part of Timestamps without timezone information)."
+696,DatetimeIndex,Time/Date Components,pandas.DatetimeIndex.time,time,Returns numpy array of datetime.time.
+697,DatetimeIndex,Time/Date Components,pandas.DatetimeIndex.dayofyear,dayofyear,The ordinal day of the year
+698,DatetimeIndex,Time/Date Components,pandas.DatetimeIndex.weekofyear,weekofyear,The week ordinal of the year
+699,DatetimeIndex,Time/Date Components,pandas.DatetimeIndex.week,week,The week ordinal of the year
+700,DatetimeIndex,Time/Date Components,pandas.DatetimeIndex.dayofweek,dayofweek,"The day of the week with Monday=0, Sunday=6"
+701,DatetimeIndex,Time/Date Components,pandas.DatetimeIndex.weekday,weekday,"The day of the week with Monday=0, Sunday=6"
+702,DatetimeIndex,Time/Date Components,pandas.DatetimeIndex.weekday_name,weekday_name,The name of day in a week (ex: Friday)
+703,DatetimeIndex,Time/Date Components,pandas.DatetimeIndex.quarter,quarter,The quarter of the date
+704,DatetimeIndex,Time/Date Components,pandas.DatetimeIndex.tz,tz,
+705,DatetimeIndex,Time/Date Components,pandas.DatetimeIndex.freq,freq,get/set the frequency of the Index
+706,DatetimeIndex,Time/Date Components,pandas.DatetimeIndex.freqstr,freqstr,"Return the frequency object as a string if its set, otherwise None"
+707,DatetimeIndex,Time/Date Components,pandas.DatetimeIndex.is_month_start,is_month_start,Logical indicating if first day of month (defined by frequency)
+708,DatetimeIndex,Time/Date Components,pandas.DatetimeIndex.is_month_end,is_month_end,Logical indicating if last day of month (defined by frequency)
+709,DatetimeIndex,Time/Date Components,pandas.DatetimeIndex.is_quarter_start,is_quarter_start,Logical indicating if first day of quarter (defined by frequency)
+710,DatetimeIndex,Time/Date Components,pandas.DatetimeIndex.is_quarter_end,is_quarter_end,Logical indicating if last day of quarter (defined by frequency)
+711,DatetimeIndex,Time/Date Components,pandas.DatetimeIndex.is_year_start,is_year_start,Logical indicating if first day of year (defined by frequency)
+712,DatetimeIndex,Time/Date Components,pandas.DatetimeIndex.is_year_end,is_year_end,Logical indicating if last day of year (defined by frequency)
+713,DatetimeIndex,Time/Date Components,pandas.DatetimeIndex.is_leap_year,is_leap_year,Logical indicating if the date belongs to a leap year
+714,DatetimeIndex,Time/Date Components,pandas.DatetimeIndex.inferred_freq,inferred_freq,
+715,DatetimeIndex,Selecting,pandas.DatetimeIndex.indexer_at_time,indexer_at_time,Select values at particular time of day (e.g.
+716,DatetimeIndex,Selecting,pandas.DatetimeIndex.indexer_between_time,indexer_between_time,"Select values between particular times of day (e.g., 9:00-9:30AM)."
+717,DatetimeIndex,Time-specific operations,pandas.DatetimeIndex.normalize,normalize,Return DatetimeIndex with times to midnight.
+718,DatetimeIndex,Time-specific operations,pandas.DatetimeIndex.strftime,strftime,"Return an array of formatted strings specified by date_format, which
+ supports the same string format as the python standard library."
+719,DatetimeIndex,Time-specific operations,pandas.DatetimeIndex.snap,snap,Snap time stamps to nearest occurring frequency
+720,DatetimeIndex,Time-specific operations,pandas.DatetimeIndex.tz_convert,tz_convert,Convert tz-aware DatetimeIndex from one time zone to another (using
+721,DatetimeIndex,Time-specific operations,pandas.DatetimeIndex.tz_localize,tz_localize,Localize tz-naive DatetimeIndex to given time zone (using
+722,DatetimeIndex,Time-specific operations,pandas.DatetimeIndex.round,round,round the index to the specified freq
+723,DatetimeIndex,Time-specific operations,pandas.DatetimeIndex.floor,floor,floor the index to the specified freq
+724,DatetimeIndex,Time-specific operations,pandas.DatetimeIndex.ceil,ceil,ceil the index to the specified freq
+725,DatetimeIndex,Conversion,pandas.DatetimeIndex.to_datetime,to_datetime,
+726,DatetimeIndex,Conversion,pandas.DatetimeIndex.to_period,to_period,Cast to PeriodIndex at a particular frequency
+727,DatetimeIndex,Conversion,pandas.DatetimeIndex.to_perioddelta,to_perioddelta,Calcuates TimedeltaIndex of difference between index values and index converted to PeriodIndex at specified freq.
+728,DatetimeIndex,Conversion,pandas.DatetimeIndex.to_pydatetime,to_pydatetime,Return DatetimeIndex as object ndarray of datetime.datetime objects
+729,DatetimeIndex,Conversion,pandas.DatetimeIndex.to_series,to_series,Create a Series with both index and values equal to the index keys
+730,DatetimeIndex,Conversion,pandas.DatetimeIndex.to_frame,to_frame,Create a DataFrame with a column containing the Index.
+731,TimedeltaIndex,Components,pandas.TimedeltaIndex.days,days,Number of days for each element.
+732,TimedeltaIndex,Components,pandas.TimedeltaIndex.seconds,seconds,Number of seconds (>= 0 and less than 1 day) for each element.
+733,TimedeltaIndex,Components,pandas.TimedeltaIndex.microseconds,microseconds,Number of microseconds (>= 0 and less than 1 second) for each element.
+734,TimedeltaIndex,Components,pandas.TimedeltaIndex.nanoseconds,nanoseconds,Number of nanoseconds (>= 0 and less than 1 microsecond) for each element.
+735,TimedeltaIndex,Components,pandas.TimedeltaIndex.components,components,"Return a dataframe of the components (days, hours, minutes, seconds, milliseconds, microseconds, nanoseconds) of the Timedeltas."
+736,TimedeltaIndex,Components,pandas.TimedeltaIndex.inferred_freq,inferred_freq,
+737,TimedeltaIndex,Conversion,pandas.TimedeltaIndex.to_pytimedelta,to_pytimedelta,Return TimedeltaIndex as object ndarray of datetime.timedelta objects
+738,TimedeltaIndex,Conversion,pandas.TimedeltaIndex.to_series,to_series,Create a Series with both index and values equal to the index keys
+739,TimedeltaIndex,Conversion,pandas.TimedeltaIndex.round,round,round the index to the specified freq
+740,TimedeltaIndex,Conversion,pandas.TimedeltaIndex.floor,floor,floor the index to the specified freq
+741,TimedeltaIndex,Conversion,pandas.TimedeltaIndex.ceil,ceil,ceil the index to the specified freq
+742,TimedeltaIndex,Conversion,pandas.TimedeltaIndex.to_frame,to_frame,Create a DataFrame with a column containing the Index.
+743,PeriodIndex,Attributes,pandas.PeriodIndex.day,day,The days of the period
+744,PeriodIndex,Attributes,pandas.PeriodIndex.dayofweek,dayofweek,"The day of the week with Monday=0, Sunday=6"
+745,PeriodIndex,Attributes,pandas.PeriodIndex.dayofyear,dayofyear,The ordinal day of the year
+746,PeriodIndex,Attributes,pandas.PeriodIndex.days_in_month,days_in_month,The number of days in the month
+747,PeriodIndex,Attributes,pandas.PeriodIndex.daysinmonth,daysinmonth,The number of days in the month
+748,PeriodIndex,Attributes,pandas.PeriodIndex.end_time,end_time,
+749,PeriodIndex,Attributes,pandas.PeriodIndex.freq,freq,
+750,PeriodIndex,Attributes,pandas.PeriodIndex.freqstr,freqstr,"Return the frequency object as a string if its set, otherwise None"
+751,PeriodIndex,Attributes,pandas.PeriodIndex.hour,hour,The hour of the period
+752,PeriodIndex,Attributes,pandas.PeriodIndex.is_leap_year,is_leap_year,Logical indicating if the date belongs to a leap year
+753,PeriodIndex,Attributes,pandas.PeriodIndex.minute,minute,The minute of the period
+754,PeriodIndex,Attributes,pandas.PeriodIndex.month,month,"The month as January=1, December=12"
+755,PeriodIndex,Attributes,pandas.PeriodIndex.quarter,quarter,The quarter of the date
+756,PeriodIndex,Attributes,pandas.PeriodIndex.qyear,qyear,
+757,PeriodIndex,Attributes,pandas.PeriodIndex.second,second,The second of the period
+758,PeriodIndex,Attributes,pandas.PeriodIndex.start_time,start_time,
+759,PeriodIndex,Attributes,pandas.PeriodIndex.week,week,The week ordinal of the year
+760,PeriodIndex,Attributes,pandas.PeriodIndex.weekday,weekday,"The day of the week with Monday=0, Sunday=6"
+761,PeriodIndex,Attributes,pandas.PeriodIndex.weekofyear,weekofyear,The week ordinal of the year
+762,PeriodIndex,Attributes,pandas.PeriodIndex.year,year,The year of the period
+763,PeriodIndex,Methods,pandas.PeriodIndex.asfreq,asfreq,Convert the PeriodIndex to the specified frequency freq.
+764,PeriodIndex,Methods,pandas.PeriodIndex.strftime,strftime,"Return an array of formatted strings specified by date_format, which
+ supports the same string format as the python standard library."
+765,PeriodIndex,Methods,pandas.PeriodIndex.to_timestamp,to_timestamp,Cast to DatetimeIndex
+766,PeriodIndex,Methods,pandas.PeriodIndex.tz_convert,tz_convert,Convert tz-aware DatetimeIndex from one time zone to another (using
+767,PeriodIndex,Methods,pandas.PeriodIndex.tz_localize,tz_localize,Localize tz-naive DatetimeIndex to given time zone (using
+768,Scalars,Period,pandas.Period,Period,Represents a period of time
+769,Scalars,Attributes,pandas.Period.day,day,
+770,Scalars,Attributes,pandas.Period.dayofweek,dayofweek,
+771,Scalars,Attributes,pandas.Period.dayofyear,dayofyear,
+772,Scalars,Attributes,pandas.Period.days_in_month,days_in_month,
+773,Scalars,Attributes,pandas.Period.daysinmonth,daysinmonth,
+774,Scalars,Attributes,pandas.Period.end_time,end_time,
+775,Scalars,Attributes,pandas.Period.freq,freq,
+776,Scalars,Attributes,pandas.Period.freqstr,freqstr,
+777,Scalars,Attributes,pandas.Period.hour,hour,
+778,Scalars,Attributes,pandas.Period.is_leap_year,is_leap_year,
+779,Scalars,Attributes,pandas.Period.minute,minute,
+780,Scalars,Attributes,pandas.Period.month,month,
+781,Scalars,Attributes,pandas.Period.ordinal,ordinal,
+782,Scalars,Attributes,pandas.Period.quarter,quarter,
+783,Scalars,Attributes,pandas.Period.qyear,qyear,
+784,Scalars,Attributes,pandas.Period.second,second,
+785,Scalars,Attributes,pandas.Period.start_time,start_time,
+786,Scalars,Attributes,pandas.Period.week,week,
+787,Scalars,Attributes,pandas.Period.weekday,weekday,
+788,Scalars,Attributes,pandas.Period.weekofyear,weekofyear,
+789,Scalars,Attributes,pandas.Period.year,year,
+790,Scalars,Methods,pandas.Period.asfreq,asfreq,"Convert Period to desired frequency, either at the start or end of the"
+791,Scalars,Methods,pandas.Period.now,now,
+792,Scalars,Methods,pandas.Period.strftime,strftime,"Returns the string representation of the Period, depending on the selected format."
+793,Scalars,Methods,pandas.Period.to_timestamp,to_timestamp,Return the Timestamp representation of the Period at the target
+794,Scalars,Timestamp,pandas.Timestamp,Timestamp,TimeStamp is the pandas equivalent of pythons Datetime and is interchangable with it in most cases.
+795,Scalars,Properties,pandas.Timestamp.asm8,asm8,
+796,Scalars,Properties,pandas.Timestamp.day,day,
+797,Scalars,Properties,pandas.Timestamp.dayofweek,dayofweek,
+798,Scalars,Properties,pandas.Timestamp.dayofyear,dayofyear,
+799,Scalars,Properties,pandas.Timestamp.days_in_month,days_in_month,
+800,Scalars,Properties,pandas.Timestamp.daysinmonth,daysinmonth,
+801,Scalars,Properties,pandas.Timestamp.hour,hour,
+802,Scalars,Properties,pandas.Timestamp.is_leap_year,is_leap_year,
+803,Scalars,Properties,pandas.Timestamp.is_month_end,is_month_end,
+804,Scalars,Properties,pandas.Timestamp.is_month_start,is_month_start,
+805,Scalars,Properties,pandas.Timestamp.is_quarter_end,is_quarter_end,
+806,Scalars,Properties,pandas.Timestamp.is_quarter_start,is_quarter_start,
+807,Scalars,Properties,pandas.Timestamp.is_year_end,is_year_end,
+808,Scalars,Properties,pandas.Timestamp.is_year_start,is_year_start,
+809,Scalars,Properties,pandas.Timestamp.max,max,
+810,Scalars,Properties,pandas.Timestamp.microsecond,microsecond,
+811,Scalars,Properties,pandas.Timestamp.min,min,
+812,Scalars,Properties,pandas.Timestamp.month,month,
+813,Scalars,Properties,pandas.Timestamp.nanosecond,nanosecond,
+814,Scalars,Properties,pandas.Timestamp.quarter,quarter,
+815,Scalars,Properties,pandas.Timestamp.resolution,resolution,
+816,Scalars,Properties,pandas.Timestamp.second,second,
+817,Scalars,Properties,pandas.Timestamp.tz,tz,Alias for tzinfo
+818,Scalars,Properties,pandas.Timestamp.tzinfo,tzinfo,
+819,Scalars,Properties,pandas.Timestamp.value,value,
+820,Scalars,Properties,pandas.Timestamp.weekday_name,weekday_name,
+821,Scalars,Properties,pandas.Timestamp.weekofyear,weekofyear,
+822,Scalars,Properties,pandas.Timestamp.year,year,
+823,Scalars,Methods,pandas.Timestamp.astimezone,astimezone,Convert tz-aware Timestamp to another time zone.
+824,Scalars,Methods,pandas.Timestamp.ceil,ceil,return a new Timestamp ceiled to this resolution
+825,Scalars,Methods,pandas.Timestamp.combine,combine,
+826,Scalars,Methods,pandas.Timestamp.ctime,ctime,Return ctime() style string.
+827,Scalars,Methods,pandas.Timestamp.date,date,"Return date object with same year, month and day."
+828,Scalars,Methods,pandas.Timestamp.dst,dst,Return self.tzinfo.dst(self).
+829,Scalars,Methods,pandas.Timestamp.floor,floor,return a new Timestamp floored to this resolution
+830,Scalars,Methods,pandas.Timestamp.freq,freq,
+831,Scalars,Methods,pandas.Timestamp.freqstr,freqstr,
+832,Scalars,Methods,pandas.Timestamp.fromordinal,fromordinal,"passed an ordinal, translate and convert to a ts"
+833,Scalars,Methods,pandas.Timestamp.fromtimestamp,fromtimestamp,
+834,Scalars,Methods,pandas.Timestamp.isocalendar,isocalendar,"Return a 3-tuple containing ISO year, week number, and weekday."
+835,Scalars,Methods,pandas.Timestamp.isoformat,isoformat,
+836,Scalars,Methods,pandas.Timestamp.isoweekday,isoweekday,Return the day of the week represented by the date.
+837,Scalars,Methods,pandas.Timestamp.normalize,normalize,"Normalize Timestamp to midnight, preserving tz information."
+838,Scalars,Methods,pandas.Timestamp.now,now,Return the current time in the local timezone.
+839,Scalars,Methods,pandas.Timestamp.replace,replace,"implements datetime.replace, handles nanoseconds"
+840,Scalars,Methods,pandas.Timestamp.round,round,Round the Timestamp to the specified resolution
+841,Scalars,Methods,pandas.Timestamp.strftime,strftime,format -> strftime() style string.
+842,Scalars,Methods,pandas.Timestamp.strptime,strptime,"string, format -> new datetime parsed from a string (like time.strptime())."
+843,Scalars,Methods,pandas.Timestamp.time,time,Return time object with same time but with tzinfo=None.
+844,Scalars,Methods,pandas.Timestamp.timestamp,timestamp,Return POSIX timestamp as float.
+845,Scalars,Methods,pandas.Timestamp.timetuple,timetuple,"Return time tuple, compatible with time.localtime()."
+846,Scalars,Methods,pandas.Timestamp.timetz,timetz,Return time object with same time and tzinfo.
+847,Scalars,Methods,pandas.Timestamp.to_datetime64,to_datetime64,Returns a numpy.datetime64 object with ns precision
+848,Scalars,Methods,pandas.Timestamp.to_julian_date,to_julian_date,Convert TimeStamp to a Julian Date.
+849,Scalars,Methods,pandas.Timestamp.to_period,to_period,Return an period of which this timestamp is an observation.
+850,Scalars,Methods,pandas.Timestamp.to_pydatetime,to_pydatetime,Convert a Timestamp object to a native Python datetime object.
+851,Scalars,Methods,pandas.Timestamp.today,today,Return the current time in the local timezone.
+852,Scalars,Methods,pandas.Timestamp.toordinal,toordinal,Return proleptic Gregorian ordinal.
+853,Scalars,Methods,pandas.Timestamp.tz_convert,tz_convert,Convert tz-aware Timestamp to another time zone.
+854,Scalars,Methods,pandas.Timestamp.tz_localize,tz_localize,"Convert naive Timestamp to local time zone, or remove timezone from tz-aware Timestamp."
+855,Scalars,Methods,pandas.Timestamp.tzname,tzname,Return self.tzinfo.tzname(self).
+856,Scalars,Methods,pandas.Timestamp.utcfromtimestamp,utcfromtimestamp,
+857,Scalars,Methods,pandas.Timestamp.utcnow,utcnow,
+858,Scalars,Methods,pandas.Timestamp.utcoffset,utcoffset,Return self.tzinfo.utcoffset(self).
+859,Scalars,Methods,pandas.Timestamp.utctimetuple,utctimetuple,"Return UTC time tuple, compatible with time.localtime()."
+860,Scalars,Methods,pandas.Timestamp.weekday,weekday,Return the day of the week represented by the date.
+861,Scalars,Interval,pandas.Interval,Interval,"Immutable object implementing an Interval, a bounded slice-like interval."
+862,Scalars,Properties,pandas.Interval.closed,closed,
+863,Scalars,Properties,pandas.Interval.closed_left,closed_left,
+864,Scalars,Properties,pandas.Interval.closed_right,closed_right,
+865,Scalars,Properties,pandas.Interval.left,left,
+866,Scalars,Properties,pandas.Interval.mid,mid,
+867,Scalars,Properties,pandas.Interval.open_left,open_left,
+868,Scalars,Properties,pandas.Interval.open_right,open_right,
+869,Scalars,Properties,pandas.Interval.right,right,
+870,Scalars,Timedelta,pandas.Timedelta,Timedelta,"Represents a duration, the difference between two dates or times."
+871,Scalars,Properties,pandas.Timedelta.asm8,asm8,return a numpy timedelta64 array view of myself
+872,Scalars,Properties,pandas.Timedelta.components,components,Return a Components NamedTuple-like
+873,Scalars,Properties,pandas.Timedelta.days,days,Number of Days
+874,Scalars,Properties,pandas.Timedelta.freq,freq,
+875,Scalars,Properties,pandas.Timedelta.max,max,
+876,Scalars,Properties,pandas.Timedelta.microseconds,microseconds,Number of microseconds (>= 0 and less than 1 second).
+877,Scalars,Properties,pandas.Timedelta.min,min,
+878,Scalars,Properties,pandas.Timedelta.nanoseconds,nanoseconds,Number of nanoseconds (>= 0 and less than 1 microsecond).
+879,Scalars,Properties,pandas.Timedelta.resolution,resolution,return a string representing the lowest resolution that we have
+880,Scalars,Properties,pandas.Timedelta.seconds,seconds,Number of seconds (>= 0 and less than 1 day).
+881,Scalars,Properties,pandas.Timedelta.value,value,
+882,Scalars,Methods,pandas.Timedelta.ceil,ceil,return a new Timedelta ceiled to this resolution
+883,Scalars,Methods,pandas.Timedelta.floor,floor,return a new Timedelta floored to this resolution
+884,Scalars,Methods,pandas.Timedelta.isoformat,isoformat,"Format Timedelta as ISO 8601 Duration like P[n]Y[n]M[n]DT[n]H[n]M[n]S, where the `[n]`s are replaced by the values."
+885,Scalars,Methods,pandas.Timedelta.round,round,Round the Timedelta to the specified resolution
+886,Scalars,Methods,pandas.Timedelta.to_pytimedelta,to_pytimedelta,return an actual datetime.timedelta object
+887,Scalars,Methods,pandas.Timedelta.to_timedelta64,to_timedelta64,Returns a numpy.timedelta64 object with ns precision
+888,Scalars,Methods,pandas.Timedelta.total_seconds,total_seconds,Total duration of timedelta in seconds (to ns precision)
+889,Window,Standard moving window functions,pandas.core.window.Rolling.count,count,rolling count of number of non-NaN
+890,Window,Standard moving window functions,pandas.core.window.Rolling.sum,sum,rolling sum
+891,Window,Standard moving window functions,pandas.core.window.Rolling.mean,mean,rolling mean
+892,Window,Standard moving window functions,pandas.core.window.Rolling.median,median,rolling median
+893,Window,Standard moving window functions,pandas.core.window.Rolling.var,var,rolling variance
+894,Window,Standard moving window functions,pandas.core.window.Rolling.std,std,rolling standard deviation
+895,Window,Standard moving window functions,pandas.core.window.Rolling.min,min,rolling minimum
+896,Window,Standard moving window functions,pandas.core.window.Rolling.max,max,rolling maximum
+897,Window,Standard moving window functions,pandas.core.window.Rolling.corr,corr,rolling sample correlation
+898,Window,Standard moving window functions,pandas.core.window.Rolling.cov,cov,rolling sample covariance
+899,Window,Standard moving window functions,pandas.core.window.Rolling.skew,skew,Unbiased rolling skewness
+900,Window,Standard moving window functions,pandas.core.window.Rolling.kurt,kurt,Unbiased rolling kurtosis
+901,Window,Standard moving window functions,pandas.core.window.Rolling.apply,apply,rolling function apply
+902,Window,Standard moving window functions,pandas.core.window.Rolling.quantile,quantile,rolling quantile
+903,Window,Standard moving window functions,pandas.core.window.Window.mean,mean,window mean
+904,Window,Standard moving window functions,pandas.core.window.Window.sum,sum,window sum
+905,Window,Standard expanding window functions,pandas.core.window.Expanding.count,count,expanding count of number of non-NaN
+906,Window,Standard expanding window functions,pandas.core.window.Expanding.sum,sum,expanding sum
+907,Window,Standard expanding window functions,pandas.core.window.Expanding.mean,mean,expanding mean
+908,Window,Standard expanding window functions,pandas.core.window.Expanding.median,median,expanding median
+909,Window,Standard expanding window functions,pandas.core.window.Expanding.var,var,expanding variance
+910,Window,Standard expanding window functions,pandas.core.window.Expanding.std,std,expanding standard deviation
+911,Window,Standard expanding window functions,pandas.core.window.Expanding.min,min,expanding minimum
+912,Window,Standard expanding window functions,pandas.core.window.Expanding.max,max,expanding maximum
+913,Window,Standard expanding window functions,pandas.core.window.Expanding.corr,corr,expanding sample correlation
+914,Window,Standard expanding window functions,pandas.core.window.Expanding.cov,cov,expanding sample covariance
+915,Window,Standard expanding window functions,pandas.core.window.Expanding.skew,skew,Unbiased expanding skewness
+916,Window,Standard expanding window functions,pandas.core.window.Expanding.kurt,kurt,Unbiased expanding kurtosis
+917,Window,Standard expanding window functions,pandas.core.window.Expanding.apply,apply,expanding function apply
+918,Window,Standard expanding window functions,pandas.core.window.Expanding.quantile,quantile,expanding quantile
+919,Window,Exponentially-weighted moving window functions,pandas.core.window.EWM.mean,mean,exponential weighted moving average
+920,Window,Exponentially-weighted moving window functions,pandas.core.window.EWM.std,std,exponential weighted moving stddev
+921,Window,Exponentially-weighted moving window functions,pandas.core.window.EWM.var,var,exponential weighted moving variance
+922,Window,Exponentially-weighted moving window functions,pandas.core.window.EWM.corr,corr,exponential weighted sample correlation
+923,Window,Exponentially-weighted moving window functions,pandas.core.window.EWM.cov,cov,exponential weighted sample covariance
+924,GroupBy,"Indexing, iteration",pandas.core.groupby.GroupBy.__iter__,__iter__,Groupby iterator
+925,GroupBy,"Indexing, iteration",pandas.core.groupby.GroupBy.groups,groups,dict {group name -> group labels}
+926,GroupBy,"Indexing, iteration",pandas.core.groupby.GroupBy.indices,indices,dict {group name -> group indices}
+927,GroupBy,"Indexing, iteration",pandas.core.groupby.GroupBy.get_group,get_group,Constructs NDFrame from group with provided name
+928,GroupBy,Function application,pandas.core.groupby.GroupBy.apply,apply,Apply function func  group-wise and combine the results together.
+929,GroupBy,Function application,pandas.core.groupby.GroupBy.aggregate,aggregate,
+930,GroupBy,Function application,pandas.core.groupby.GroupBy.transform,transform,
+931,GroupBy,Function application,pandas.core.groupby.GroupBy.pipe,pipe,"Apply a function with arguments to this GroupBy object,"
+932,GroupBy,Computations / Descriptive Stats,pandas.core.groupby.GroupBy.count,count,"Compute count of group, excluding missing values"
+933,GroupBy,Computations / Descriptive Stats,pandas.core.groupby.GroupBy.cumcount,cumcount,Number each item in each group from 0 to the length of that group - 1.
+934,GroupBy,Computations / Descriptive Stats,pandas.core.groupby.GroupBy.first,first,Compute first of group values
+935,GroupBy,Computations / Descriptive Stats,pandas.core.groupby.GroupBy.head,head,Returns first n rows of each group.
+936,GroupBy,Computations / Descriptive Stats,pandas.core.groupby.GroupBy.last,last,Compute last of group values
+937,GroupBy,Computations / Descriptive Stats,pandas.core.groupby.GroupBy.max,max,Compute max of group values
+938,GroupBy,Computations / Descriptive Stats,pandas.core.groupby.GroupBy.mean,mean,"Compute mean of groups, excluding missing values"
+939,GroupBy,Computations / Descriptive Stats,pandas.core.groupby.GroupBy.median,median,"Compute median of groups, excluding missing values"
+940,GroupBy,Computations / Descriptive Stats,pandas.core.groupby.GroupBy.min,min,Compute min of group values
+941,GroupBy,Computations / Descriptive Stats,pandas.core.groupby.GroupBy.ngroup,ngroup,Number each group from 0 to the number of groups - 1.
+942,GroupBy,Computations / Descriptive Stats,pandas.core.groupby.GroupBy.nth,nth,"Take the nth row from each group if n is an int, or a subset of rows if n is a list of ints."
+943,GroupBy,Computations / Descriptive Stats,pandas.core.groupby.GroupBy.ohlc,ohlc,"Compute sum of values, excluding missing values"
+944,GroupBy,Computations / Descriptive Stats,pandas.core.groupby.GroupBy.prod,prod,Compute prod of group values
+945,GroupBy,Computations / Descriptive Stats,pandas.core.groupby.GroupBy.size,size,Compute group sizes
+946,GroupBy,Computations / Descriptive Stats,pandas.core.groupby.GroupBy.sem,sem,"Compute standard error of the mean of groups, excluding missing values"
+947,GroupBy,Computations / Descriptive Stats,pandas.core.groupby.GroupBy.std,std,"Compute standard deviation of groups, excluding missing values"
+948,GroupBy,Computations / Descriptive Stats,pandas.core.groupby.GroupBy.sum,sum,Compute sum of group values
+949,GroupBy,Computations / Descriptive Stats,pandas.core.groupby.GroupBy.var,var,"Compute variance of groups, excluding missing values"
+950,GroupBy,Computations / Descriptive Stats,pandas.core.groupby.GroupBy.tail,tail,Returns last n rows of each group
+951,Resampling,"Indexing, iteration",pandas.core.resample.Resampler.__iter__,__iter__,Groupby iterator
+952,Resampling,"Indexing, iteration",pandas.core.resample.Resampler.groups,groups,dict {group name -> group labels}
+953,Resampling,"Indexing, iteration",pandas.core.resample.Resampler.indices,indices,dict {group name -> group indices}
+954,Resampling,"Indexing, iteration",pandas.core.resample.Resampler.get_group,get_group,Constructs NDFrame from group with provided name
+955,Resampling,Function application,pandas.core.resample.Resampler.apply,apply,"Aggregate using callable, string, dict, or list of string/callables"
+956,Resampling,Function application,pandas.core.resample.Resampler.aggregate,aggregate,"Aggregate using callable, string, dict, or list of string/callables"
+957,Resampling,Function application,pandas.core.resample.Resampler.transform,transform,Call function producing a like-indexed Series on each group and return
+958,Resampling,Upsampling,pandas.core.resample.Resampler.ffill,ffill,Forward fill the values
+959,Resampling,Upsampling,pandas.core.resample.Resampler.backfill,backfill,Backward fill the values
+960,Resampling,Upsampling,pandas.core.resample.Resampler.bfill,bfill,Backward fill the values
+961,Resampling,Upsampling,pandas.core.resample.Resampler.pad,pad,Forward fill the values
+962,Resampling,Upsampling,pandas.core.resample.Resampler.nearest,nearest,Fill values with nearest neighbor starting from center
+963,Resampling,Upsampling,pandas.core.resample.Resampler.fillna,fillna,Fill missing values
+964,Resampling,Upsampling,pandas.core.resample.Resampler.asfreq,asfreq,"return the values at the new freq,"
+965,Resampling,Upsampling,pandas.core.resample.Resampler.interpolate,interpolate,Interpolate values according to different methods.
+966,Resampling,Computations / Descriptive Stats,pandas.core.resample.Resampler.count,count,"Compute count of group, excluding missing values"
+967,Resampling,Computations / Descriptive Stats,pandas.core.resample.Resampler.nunique,nunique,Returns number of unique elements in the group
+968,Resampling,Computations / Descriptive Stats,pandas.core.resample.Resampler.first,first,Compute first of group values
+969,Resampling,Computations / Descriptive Stats,pandas.core.resample.Resampler.last,last,Compute last of group values
+970,Resampling,Computations / Descriptive Stats,pandas.core.resample.Resampler.max,max,Compute max of group values
+971,Resampling,Computations / Descriptive Stats,pandas.core.resample.Resampler.mean,mean,"Compute mean of groups, excluding missing values"
+972,Resampling,Computations / Descriptive Stats,pandas.core.resample.Resampler.median,median,"Compute median of groups, excluding missing values"
+973,Resampling,Computations / Descriptive Stats,pandas.core.resample.Resampler.min,min,Compute min of group values
+974,Resampling,Computations / Descriptive Stats,pandas.core.resample.Resampler.ohlc,ohlc,"Compute sum of values, excluding missing values"
+975,Resampling,Computations / Descriptive Stats,pandas.core.resample.Resampler.prod,prod,Compute prod of group values
+976,Resampling,Computations / Descriptive Stats,pandas.core.resample.Resampler.size,size,Compute group sizes
+977,Resampling,Computations / Descriptive Stats,pandas.core.resample.Resampler.sem,sem,"Compute standard error of the mean of groups, excluding missing values"
+978,Resampling,Computations / Descriptive Stats,pandas.core.resample.Resampler.std,std,"Compute standard deviation of groups, excluding missing values"
+979,Resampling,Computations / Descriptive Stats,pandas.core.resample.Resampler.sum,sum,Compute sum of group values
+980,Resampling,Computations / Descriptive Stats,pandas.core.resample.Resampler.var,var,"Compute variance of groups, excluding missing values"
+981,Style,Constructor,pandas.io.formats.style.Styler,Styler,Helps style a DataFrame or Series according to the data with HTML and CSS.
+982,Style,Style Application,pandas.io.formats.style.Styler.apply,apply,"Apply a function column-wise, row-wise, or table-wase, updating the HTML representation with the result."
+983,Style,Style Application,pandas.io.formats.style.Styler.applymap,applymap,"Apply a function elementwise, updating the HTML representation with the result."
+984,Style,Style Application,pandas.io.formats.style.Styler.where,where,"Apply a function elementwise, updating the HTML representation with a
+ style which is selected in accordance with the return value of a 
+function."
+985,Style,Style Application,pandas.io.formats.style.Styler.format,format,Format the text display value of cells.
+986,Style,Style Application,pandas.io.formats.style.Styler.set_precision,set_precision,Set the precision used to render.
+987,Style,Style Application,pandas.io.formats.style.Styler.set_table_styles,set_table_styles,Set the table styles on a Styler.
+988,Style,Style Application,pandas.io.formats.style.Styler.set_caption,set_caption,Se the caption on a Styler
+989,Style,Style Application,pandas.io.formats.style.Styler.set_properties,set_properties,Convience method for setting one or more non-data dependent properties or each cell.
+990,Style,Style Application,pandas.io.formats.style.Styler.set_uuid,set_uuid,Set the uuid for a Styler.
+991,Style,Style Application,pandas.io.formats.style.Styler.clear,clear,"Reset the styler, removing any previously applied styles."
+992,Style,Builtin Styles,pandas.io.formats.style.Styler.highlight_max,highlight_max,Highlight the maximum by shading the background
+993,Style,Builtin Styles,pandas.io.formats.style.Styler.highlight_min,highlight_min,Highlight the minimum by shading the background
+994,Style,Builtin Styles,pandas.io.formats.style.Styler.highlight_null,highlight_null,Shade the background null_color for missing values.
+995,Style,Builtin Styles,pandas.io.formats.style.Styler.background_gradient,background_gradient,Color the background in a gradient according to the data in each column (optionally row).
+996,Style,Builtin Styles,pandas.io.formats.style.Styler.bar,bar,Color the background color proptional to the values in each column.
+997,Style,Style Export and Import,pandas.io.formats.style.Styler.render,render,Render the built up styles to HTML
+998,Style,Style Export and Import,pandas.io.formats.style.Styler.export,export,Export the styles to applied to the current Styler.
+999,Style,Style Export and Import,pandas.io.formats.style.Styler.use,use,"Set the styles on the current Styler, possibly using styles from Styler.export."
+1000,Style,Plotting,pandas.plotting.register_matplotlib_converters,register_matplotlib_converters,Register Pandas Formatters and Converters with matplotlib
+1001,Style,Plotting,pandas.plotting.deregister_matplotlib_converters,deregister_matplotlib_converters,Remove pandas formatters and converters
+1002,General utility functions,Working with options,pandas.describe_option,describe_option,Prints the description for one or more registered options.
+1003,General utility functions,Working with options,pandas.reset_option,reset_option,Reset one or more options to their default value.
+1004,General utility functions,Working with options,pandas.get_option,get_option,Retrieves the value of the specified option.
+1005,General utility functions,Working with options,pandas.set_option,set_option,Sets the value of the specified option.
+1006,General utility functions,Working with options,pandas.option_context,option_context,Context manager to temporarily set options in the with statement context.
+1007,General utility functions,Testing functions,pandas.testing.assert_frame_equal,assert_frame_equal,Check that left and right DataFrame are equal.
+1008,General utility functions,Testing functions,pandas.testing.assert_series_equal,assert_series_equal,Check that left and right Series are equal.
+1009,General utility functions,Testing functions,pandas.testing.assert_index_equal,assert_index_equal,Check that left and right Index are equal.
+1010,General utility functions,Exceptions and warnings,pandas.errors.DtypeWarning,DtypeWarning,Warning that is raised for a dtype incompatiblity.
+1011,General utility functions,Exceptions and warnings,pandas.errors.EmptyDataError,EmptyDataError,Exception that is thrown in pd.read_csv (by both the C and Python engines) when empty data or header is encountered.
+1012,General utility functions,Exceptions and warnings,pandas.errors.OutOfBoundsDatetime,OutOfBoundsDatetime,
+1013,General utility functions,Exceptions and warnings,pandas.errors.ParserError,ParserError,Exception that is raised by an error encountered in pd.read_csv.
+1014,General utility functions,Exceptions and warnings,pandas.errors.ParserWarning,ParserWarning,"Warning that is raised in pd.read_csv whenever it is 
+necessary to change parsers (generally from c to python) contrary to
+ the one specified by the user due to lack of support or functionality 
+for parsing particular attributes of a CSV file with the requsted 
+engine."
+1015,General utility functions,Exceptions and warnings,pandas.errors.PerformanceWarning,PerformanceWarning,Warning raised when there is a possible performance impact.
+1016,General utility functions,Exceptions and warnings,pandas.errors.UnsortedIndexError,UnsortedIndexError,"Error raised when attempting to get a slice of a MultiIndex, and the index has not been lexsorted."
+1017,General utility functions,Exceptions and warnings,pandas.errors.UnsupportedFunctionCall,UnsupportedFunctionCall,"Exception raised when attempting to call a numpy function on a 
+pandas object, but that function is not supported by the object e.g."
+1018,General utility functions,Data types related functionality,pandas.api.types.union_categoricals,union_categoricals,"Combine list-like of Categorical-like, unioning categories."
+1019,General utility functions,Data types related functionality,pandas.api.types.infer_dtype,infer_dtype,"Efficiently infer the type of a passed val, or list-like array of values."
+1020,General utility functions,Data types related functionality,pandas.api.types.pandas_dtype,pandas_dtype,Converts input into a pandas only dtype object or a numpy dtype object.

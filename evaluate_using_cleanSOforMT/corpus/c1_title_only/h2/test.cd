@@ -1,0 +1,36 @@
+df.argmax df.argmax df.argmax dfrm.idxmax dfrm.ix np.random.randn np.random dfrm.idxmax
+df.reindex_axis df.columns
+df.columns
+df.str.contains df.str
+p.version.short_version p.version df1.loc df1.assign np.random.randn df1.index np.random.randn df1.index np.random.randn df1.index sLength.np.random.randn.p.Series.values np.random np.random np.random np.random.randn np.random
+a.iterrows.row._.row.split.row.Series.pd.concat.reset_index pd.concat row.split a.iterrows
+df.fillna df.fillna
+df.columns df.columns df.columns.get_level_values df.columns col.join.strip df.columns.values col.join.strip df.columns.values df.columns df.columns join join
+gb.get_group gb.get_group gb.get_group
+df.dtypes df.convert_objects.dtypes df.convert_objects df.convert_objects
+changed.index.names df2.df1.any df2.df1.stack changed.index np.where df1.values df2.values changed.index
+df.sort_values df.sort df1.sort df1.sort df1.sort np.random.randint np.random
+df.c.df.values df.c
+df.df.loc.values df.loc np.random.rand df.loc np.random
+df.plot df.plot np.random.rand np.random.rand np.random np.random
+df.dtypes df.groupby.apply df.groupby.apply df.groupby.apply df.groupby.apply df.groupby x.sum x.sum df.groupby df.groupby df.groupby join
+df.dtypes df.apply df.applymap str.df.applymap.iloc np.arange.reshape df.apply df.applymap np.arange
+df.index.name df.index.name df.index.name df.index df.index df.index
+df.fillna df.fillna.groupby.sum df.fillna.groupby df.fillna
+df.set_index.to_dict df.set_index.to_dict df.set_index df.set_index
+df.loc df.query df.query df.query np.random.choice np.random df.Time df.Product df.Time
+dataframe.map
+my_dataframe.columns.values my_dataframe.columns
+df.pivot df.pivot
+writer.book writer.sheets pandas.ExcelWriter data_filtered.to_excel writer.save ws.title book.worksheets
+df.index df.reset_index df.reset_index
+glob.glob pd.concat pd.read_csv list_.append
+df.tolist
+df.groupby.count df.value_counts df.groupby.transform df.groupby df.groupby
+df.values.tolist df.tolist df.drop_duplicates.values.tolist df.values df.drop_duplicates.values df.drop_duplicates
+pd.read_csv
+df.dtypes df.dtypes pd.to_numeric pd.to_numeric pd.to_numeric df.apply pd.to_numeric df.apply pd.to_numeric df.infer_objects
+pd.option_context
+df.drop_duplicates
+df3.index.duplicated df3.index
+df.read_csv

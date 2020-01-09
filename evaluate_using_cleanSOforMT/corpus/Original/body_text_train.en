@@ -1,0 +1,581 @@
+"g1 here is a DataFrame. It has a hierarchical index, though:
+
+Perhaps you want something like this?
+
+Or something like:
+
+"
+"Why don't you simply use set_index method?
+
+"
+"As Wes says, io/sql's read_sql will do it, once you've gotten a database connection using a DBI compatible library.  We can look at two short examples using the MySQLdb and cx_Oracle libraries to connect to Oracle and MySQL and query their data dictionaries. Here is the example for cx_Oracle:
+
+And here is the equivalent example for MySQLdb:
+
+"
+"The column names (which are strings) cannot be sliced in the manner you tried.
+Here you have a couple of options. If you know from context which variables you want to slice out, you can just return a view of only those columns by passing a list into the __getitem__ syntax (the []'s).
+
+Alternatively, if it matters to index them numerically and not by their name (say your code should automatically do this without knowing the names of the first two columns) then you can do this instead:
+
+Additionally, you should familiarize yourself with the idea of a view into a Pandas object vs. a copy of that object. The first of the above methods will return a new copy in memory of the desired sub-object (the desired slices). 
+Sometimes, however, there are indexing conventions in Pandas that don't do this and instead give you a new variable that just refers to the same chunk of memory as the sub-object or slice in the original object. This will happen with the second way of indexing, so you can modify it with the copy() function to get a regular copy. When this happens, changing what you think is the sliced object can sometimes alter the original object. Always good to be on the look out for this.
+
+"
+"Use the rename function and refer the columns to be renamed. Not all the columns have to be renamed:
+
+http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.rename.html
+"
+"There is too much data to be displayed on the screen, therefore a summary is displayed instead.
+If you want to output the data anyway (it won't probably fit on a screen and does not look very well):
+
+converts the dataframe to its numpy-array matrix representation.
+
+stores the respective column names and
+
+stores the respective index (row names).
+"
+"As @bmu mentioned, pandas auto detects (by default) the size of the display area, a summary view will be used when an object repr does not fit on the display. You mentioned resizing the IDLE window, to no effect. If you do print df.describe().to_string() does it fit on the IDLE window?
+The terminal size is determined by pandas.util.terminal.get_terminal_size(), this returns a tuple containing the (width, height) of the display. Does the output match the size of your IDLE window? There might be an issue (there was one before when running a terminal in emacs).
+Note that it is possible to bypass the autodetect, pandas.set_printoptions(max_rows=200, max_columns=10) will never switch to summary view if number of rows, columns does not exceed the given limits.
+
+Update: Pandas 0.11.0 onwards
+pandas.set_printoptions(...) is depracted. Instead, use pandas.set_option. Like:
+
+Here is the help:
+
+"
+"I'm not entirely sure what you want, and your last line of code does not help either, but anyway:
+""Chained"" filtering is done by ""chaining"" the criteria in the boolean index.
+
+If you want to chain methods, you can add your own mask method and use that one.
+
+"
+"This is indeed a duplicate of how to filter the dataframe rows of pandas by ""within""/""in""?, translating the response to your example gives:
+
+"
+"
+"
+"One easy way would be to reassign the dataframe with a list of the columns, rearranged as needed. 
+This is what you have now: 
+
+Rearrange cols in any way you want. This is how I moved the last element to the first position: 
+
+Then reorder the dataframe like this: 
+
+"
+"Don't drop. Just take rows where EPS is finite:
+
+"
+"This question is already resolved, but... 
+...also consider the solution suggested by Wouter in his original comment. The ability to handle missing data, including dropna(), is built into pandas explicitly. Aside from potentially improved performance over doing it manually, these functions also come with a variety of options which may be useful. 
+
+
+
+
+
+
+
+
+
+There are also other options (See docs at http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.dropna.html), including dropping columns instead of rows. 
+Pretty handy! 
+"
+"
+"
+"To convert numpy.datetime64 to datetime object that represents time in UTC on numpy-1.8:
+
+The above example assumes that a naive datetime object is interpreted by np.datetime64 as time in UTC.
+
+To convert datetime to np.datetime64 and back (numpy-1.6):
+
+It works both on a single np.datetime64 object and a numpy array of np.datetime64.
+Think of np.datetime64 the same way you would about np.int8, np.int16, etc and apply the same methods to convert beetween Python objects such as int, datetime and corresponding numpy objects.
+Your ""nasty example"" works correctly:
+
+I can reproduce the long value on numpy-1.8.0 installed as:
+
+The same example:
+
+It returns long because for numpy.datetime64 type .astype(datetime) is equivalent to .astype(object) that returns Python integer (long) on numpy-1.8. 
+To get datetime object you could:
+
+To get datetime64 that uses seconds directly:
+
+The numpy docs say that the datetime API is experimental and may change in future numpy versions.
+"
+"Here's a couple of suggestions:
+Use date_range for the index:
+
+Note: we could create an empty DataFrame (with NaNs) simply by writing:
+
+To do these type of calculations for the data, use a numpy array:
+
+Hence we can create the DataFrame:
+
+"
+"RukTech's answer, df.set_value('C', 'x', 10), is far and away faster than the options I've suggested below.
+
+Warning: It is sometimes difficult to predict if an operation returns a copy or a view. For this reason the docs recommend avoiding using ""chained indexing"". 
+
+Why df.xs('C')['x']=10 does not work:
+df.xs('C') by default, returns a new dataframe with a copy of the data, so 
+
+modifies this new dataframe only.
+df['x'] returns a view of the df dataframe, so 
+
+modifies df itself.
+
+Alternatively,
+
+does modify df.
+
+df.set_value('C', 'x', 10) is the fastest:
+
+"
+"When you do len(df['column name']) you are just getting one number, namely the number of rows in the DataFrame (i.e., the length of the column itself).  If you want to apply len to each element in the column, use df['column name'].map(len).  So try
+
+"
+"Use DataFrame.drop and pass it a Series of index labels:
+
+"
+"There might be a better way, but this here's one approach:
+
+"
+"A simple solution is to use drop_duplicates
+
+For me, this operated quickly on large data sets.
+This requires that 'rownum' be the column with duplicates.  In the modified example, 'rownum' has no duplicates, therefore nothing gets eliminated.  What we really want is to have the 'cols' be set to the index.  I've not found a way to tell drop_duplicates to only consider the index.
+Here is a solution that adds the index as a dataframe column, drops duplicates on that, then removes the new column:
+
+And if you want things back in the proper order, just call sort on the dataframe.
+
+Edit: Better answer below
+Take a look at n8yoder's answer using 'duplicated'.  I don't believe this existed in older versions of Pandas, where this answer might still apply.
+"
+"Groupby A:
+
+Within each group, sum over B and broadcast the values using transform.  Then sort by B:
+
+Index the original df by passing the index from above.  This will re-order the A values by the aggregate sum of the B values:
+
+Finally, sort the 'C' values within groups of 'A' using the sort=False option to preserve the A sort order from step 1:
+
+Clean up the df index by using reset_index with drop=True:
+
+"
+"One way which seems to work (at least in 0.10.1 and 0.11.0.dev-fc8de6d):
+
+Note that this approach requires that you give names to the columns you want, though.  Not as general as some other ways, but works well enough when it applies.
+"
+"
+"
+"I believe this is what you want:
+
+Example:
+
+"
+"
+To get the indices of the original DF you can do:
+
+Note that if you have multiple max values per group, all will be returned.
+Update
+On a hail mary chance that this is what the OP is requesting:
+
+"
+"What about something like this:
+First resample the data frame into 1D intervals.  This takes the mean of the values for all duplicate days.  Use the fill_method option to fill in missing date values.  Next, pass the resampled frame into pd.rolling_mean with a window of 3 and min_periods=1 :
+
+UPDATE: As Ben points out in the comments, with pandas 0.18.0 the syntax has changed.  With the new syntax this would be:
+
+"
+"You can use the .shape property or just len(DataFrame.index). However, there are notable performance differences ( the .shape property is faster):
+
+
+EDIT: As @Dan Allen noted in the comments len(df.index) and df[0].count() are not interchangeable as count excludes NaNs,
+"
+"echoing @HYRY, see the new docs in 0.11
+http://pandas.pydata.org/pandas-docs/stable/indexing.html
+Here we have new operators, .iloc to explicity support only integer indexing, and .loc to explicity support only label indexing
+e.g. imagine this scenario
+
+[] slices the rows (by label location) only
+"
+"Seems you forgot the '' of your string.
+
+BTW, in my opinion, following way is more elegant:
+
+"
+"That should work:
+
+but the append doesn't happen in-place, so you'll have to store the output if you want it:
+
+"
+"If you have a DataFrame with only one row, then access the first (only) row as a Series using iloc, and then the value using the column name:
+
+"
+"To delimit by a tab you can use the sep argument of to_csv:
+
+To use a specific encoding (e.g. 'utf-8') use the encoding argument:
+
+"
+"Close: first you call ExcelFile, but then you call the .parse method and pass it the sheet name.
+
+What you're doing is calling the method which lives on the class itself, rather than the instance, which is okay (although not very idiomatic), but if you're doing that you would also need to pass the sheet name:
+
+"
+"To select rows whose column value equals a scalar, some_value, use ==:
+
+To select rows whose column value is in an iterable, some_values, use isin:
+
+Combine multiple conditions with &: 
+
+
+To select rows whose column value does not equal some_value, use !=:
+
+isin returns a boolean Series, so to select rows whose value is not in some_values, negate the boolean Series using ~:
+
+
+For example,
+
+yields
+
+
+If you have multiple values you want to include, put them in a
+list (or more generally, any iterable) and use isin:
+
+yields
+
+
+Note, however, that if you wish to do this many times, it is more efficient to
+make an index first, and then use df.loc:
+
+yields
+
+or, to include multiple values from the index use df.index.isin:
+
+yields
+
+"
+"The easiest way is to pickle it using to_pickle:
+
+Then you can load it back using:
+
+Note: before 0.11.1 save and load were the only way to do this (they are now deprecated in favor of to_pickle and read_pickle respectively).
+
+Another popular choice is to use HDF5 (pytables) which offers very fast access times for large datasets:
+
+More advanced strategies are discussed in the cookbook.
+
+Since 0.13 there's also msgpack which may be be better for interoperability, as a faster alternative to JSON, or if you have python object/text-heavy data (see this question).
+"
+"The easiest way is to use to_datetime:
+
+It also offers a dayfirst argument for European times (but beware this isn't strict).
+Here it is in action:
+
+You can pass a specific format:
+
+"
+"You should use the values attribute:
+
+This accesses how the data is already stored, so there's no need for a conversion.
+Note: This attribute is also available for many other pandas' objects.
+"
+"You can append to a csv by opening the file in append mode:
+
+If this was your csv, foo.csv:
+
+If you read that and then append, for example, df + 6:
+
+foo.csv becomes:
+
+"
+"Your code works for me.
+
+
+Did you paste as is?
+
+
+UPDATE DataFrame.sort is deprecated; use DataFrame.sort_values.
+
+"
+"Many ways to do that 
+1
+
+2
+
+3
+
+"
+"I think concat is a nice way to do this. If they are present it uses the name attributes of the Series as the columns (otherwise it simply numbers them):
+
+Note: This extends to more than 2 Series.
+"
+"you could also try;
+
+"
+"If I'm understanding correctly, it should be as simple as:
+
+"
+"
+Though I admit that there should be a better way to do that, but this at least avoids iterating and looping through the object and moves it to the C level.
+"
+"The error here, is since calling the DataFrame constructor with scalar values (where it expects values to be a list/dict/... i.e. have multiple columns):
+
+You could take the items from the dictionary (i.e. the key-value pairs):
+
+But I think it makes more sense to pass the Series constructor:
+
+"
+"You just do an opposite comparison. if Col2 <= 1. This will return a boolean Series with False values for those greater than 1 and True values for the other. If you convert it to an int64 dtype, True becomes 1 and False become 0,
+
+If you want a more general solution, where you can assign any number to the Col3 depending on the value of the Col2 you should do something like:
+
+Or:
+
+"
+"You could use Series.reindex:
+
+yields
+
+"
+"On groupby object, the agg function can take a list to apply several aggregation methods at once. This should give you the result you need:
+
+"
+"The rename method takes a dictionary for the index which applies to index values.
+You want to rename to index level's name:
+
+A good way to think about this is that columns and index are the same type of object (Index or MultiIndex), and you can interchange the two via transpose.
+This is a little bit confusing since the index names have a similar meaning to columns, so here are some more examples:
+
+You can see the rename on the index, which can change the value 1:
+
+Whilst renaming the level names:
+
+Note: this attribute is just a list, and you could do the renaming as a list comprehension/map.
+
+"
+"You can use something.isin(somewhere) and ~something.isin(somewhere):
+
+"
+"
+Numpy unique sorts, so its faster to do it this way (and then sort if you need to)
+
+"
+"reset_index() is what you're looking for. if you don't want it saved as a column, then
+
+"
+"A one liner does exist:
+
+Following is the docstring for the rename method.
+
+"
+"I found a quick and easy solution to what I wanted using json_normalize function included in the latest release of pandas 0.13.   
+
+This gives a nice flattened dataframe with the json data that I got from the google maps API.
+"
+"To modify the float output do this:
+
+"
+"The point of the SettingWithCopy is to warn the user that you may be doing something that will not update the original data frame as one might expect.
+Here, data is a dataframe, possibly of a single dtype (or not). You are then taking a reference to this data['amount'] which is a Series, and updating it. This probably works in your case because you are returning the same dtype of data as existed.
+However it could create a copy which updates a copy of data['amount'] which you would not see; Then you would be wondering why it is not updating.
+Pandas returns a copy of an object in almost all method calls. The inplace operations are a convience operation which work, but in general are not clear that data is being modified and could potentially work on copies.
+Much more clear to do this:
+
+One further plus to working on copies. You can chain operations, this is not possible with inplace ones.
+e.g.
+
+And just an FYI. inplace operations are neither faster nor more memory efficient. my2c they should be banned. But too late on that API.
+You can of course turn this off:
+
+Pandas runs with the entire test suite with this set to raise (so we know if chaining is happening) on, FYI.
+"
+"df.iloc[i] returns the ith row of df. i does not refer to the index label, i is a 0-based index.
+In contrast, the attribute index returns actual index labels, not numeric row-indices:
+
+or equivalently,
+
+You can see the difference quite clearly by playing with a DataFrame with
+an ""unusual"" index:
+
+
+If you want to use the index labels, 
+
+then you can select the rows using loc instead of iloc:
+
+
+Note that loc can also accept boolean arrays:
+
+
+If you have a boolean array, mask, and need ordinal index values, you can compute them using np.flatnonzero:
+
+Use df.iloc to select rows by ordinal index:
+
+"
+"One way to convert to string is to use astype:
+
+However, perhaps you are looking for the to_json function, which will convert keys to valid json (and therefore your keys to strings):
+
+Note: you can pass in a buffer/file to save this to, along with some other options...
+"
+"If you want a list of columns of a certain type, you can use groupby:
+
+"
+"If I understand right, you want something like this:
+
+(Here I convert the values to numbers instead of strings containing numbers.  You can convert them to ""1"" and ""0"", if you really want, but I'm not sure why you'd want that.)
+The reason your code doesn't work is because using ['female'] on a column (the second 'female' in your w['female']['female']) doesn't mean ""select rows where the value is 'female'"".  It means to select rows where the index is 'female', of which there may not be any in your DataFrame.
+"
+"I would just use numpy's randn:
+
+And just to see this has worked:
+
+"
+"Pandas has something built in...
+
+"
+"To select the ith row, use iloc:
+
+To select the ith value in the Btime column you could use:
+
+
+Warning: I had previously suggested df_test.ix[i, 'Btime']. But this is not guaranteed to give you the ith value since ix tries to index by label before trying to index by position. So if the DataFrame has an integer index which is not in sorted order starting at 0, then using ix[i] will return the row labeled i rather than the ith row. For example,
+
+"
+"Try this:
+
+"
+"You can just sum and set param axis=1 to sum the rows, this will ignore none numeric columns:
+
+If you want to just sum specific columns then you can create a list of the columns and remove the ones you are not interested in:
+
+"
+"The error shows that the machine does not have enough memory to read the entire
+CSV into a DataFrame at one time. Assuming you do not need the entire dataset in
+memory all at one time, one way to avoid the problem would be to process the CSV in
+chunks (by specifying the chunksize parameter):
+
+"
+"You can use the isnull() method and then sum to count the nan values. For one column:
+
+For several columns, it also works:
+
+"
+"What you are seeing is pandas truncating the output for display purposes only. 
+The default max_colwidth value is 50 which is what you are seeing.
+You can set this value to whatever you desire or you can set it to -1 which effectively turns this off:
+
+Although I would advise against this, it would be better to set it to something that can be displayed easily in your console or ipython.
+A list of the options can be found here: http://pandas.pydata.org/pandas-docs/stable/options.html
+"
+"One method would be to store the result of an inner merge form both dfs, then we can simply select the rows when one column's values are not in this common:
+
+EDIT
+Another method as you've found is to use isin which will produce NaN rows which you can drop:
+
+However if df2 does not start rows in the same manner then this won't work:
+
+will produce the entire df:
+
+"
+"jwilner's response is spot on. I was exploring to see if there's a faster option, since in my experience, summing flat arrays is (strangely) faster than counting. This code seems faster:
+
+For example:
+
+df.isnull().sum().sum() is a bit slower, but of course, has additional information -- the number of NaNs.
+"
+"Assumed imports:
+
+John Galt's answer is basically a reduce operation.  If I have more than a handful of dataframes, I'd put them in a list like this (generated via list comprehensions or loops or whatnot):
+
+Assuming they have some common column, like name in your example, I'd do the following:
+
+That way, your code should work with whatever number of dataframes you want to merge.
+Edit August 1, 2016: For those using Python 3: reduce has been moved into functools. So to use this function, you'll first need to import that module.
+"
+"tl;dr
+If you just want to count the number of rows per group, do:
+
+where key_columns is the column or list of columns you are grouping by. For example key_columns = ['col1','col2']
+
+A simple example:
+
+Note that counts is a pandas Series:
+
+If you want the results as a pandas Dataframe, do the following:
+
+
+
+In what follows I will elaborate some more.
+Setup some test data
+
+
+Below we show the data types and data for the test dataframe:
+
+ 
+Now, suppose you want to get the mean and the count for some of the columns. Let's go ahead and run a simple aggreagation (agg) to do this:
+One count per aggregated column
+
+It is kind of annoying that you get one count column for each of the columns aggregated.  If all of your data is valid (i.e., you do not have any NaN cells) then all of the count columns will be redundant.  
+ 
+One count per group
+To end up with a single count column, we can save the groupby results to a variable, and use it separately to calculate the mean, and to get the size of each group. 
+We then join the means with the counts (renaming the columns along the  way for clarity) to end up with a single dataframe:
+
+
+Disclaimer:
+If some of the columns that you are aggregating have null values, then you really want to be looking at the group sizes independently for each aggregated column. Otherwise you may be misled as to how many records are actually being used to calculate the mean.
+"
+"TL;DR version:
+For the simple case of:
+
+I have a text column with a delimiter and I want two columns
+
+The simplest solution is:
+
+Or you can create create a DataFrame with one column for each entry of the split automatically with:
+
+Notice how, in either case, the .tolist() method is not necessary. Neither is zip().
+In detail:
+Andy Hayden's solution is most excellent in demonstrating the power of the str.extract() method.
+But for a simple split over a known separator (like, splitting by dashes, or splitting by whitespace), the .str.split() method is enough1. It operates on a column (Series) of strings, and returns a column (Series) of lists:
+
+1: If you're unsure what the first two parameters of .str.split() do,
+ I recommend the docs for the plain Python version of the method.
+But how do you go from:
+
+a column containing two-element lists
+
+to:
+
+two columns, each containing the respective element of the lists?
+
+Well, we need to take a closer look at the .str attribute of a column.
+It's a magical object that is used to collect methods that treat each element in a column as a string, and then apply the respective method in each element as efficient as possible:
+
+But it also has an ""indexing"" interface for getting each element of a string by its index:
+
+Of course, this indexing interface of .str doesn't really care if each element it's indexing is actually a string, as long as it can be indexed, so:
+
+Then, it's a simple matter of taking advantage of the Python tuple unpacking of iterables to do
+
+Of course, getting a DataFrame out of splitting a column of strings is so useful that the .str.split() method can do it for you with the expand=True parameter:
+
+So, another way of accomplishing what we wanted is to do:
+
+"
+"2017 Answer - pandas 0.20: .ix is deprecated. Use .loc
+See the deprecation in the docs
+.loc uses label based indexing to select both rows and columns. The labels being the values of the index or the columns. Slicing with .loc includes the last element. 
+
+Let's assume we have a DataFrame with the following columns:
+foo, bar, quz, ant, cat, sat, dat.
+
+
+.loc accepts the same slice notation that Python lists do for both row and columns. Slice notation being start:stop:step
+
+You can slice by rows and columns. For instance if you have 5 rows with labels v, w, x, y, z
+
+"

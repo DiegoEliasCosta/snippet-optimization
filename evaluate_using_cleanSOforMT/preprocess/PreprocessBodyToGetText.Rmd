@@ -1,0 +1,53 @@
+---
+jupyter:
+  jupytext:
+    text_representation:
+      extension: .Rmd
+      format_name: rmarkdown
+      format_version: '1.1'
+      jupytext_version: 1.2.4
+  kernelspec:
+    display_name: Python 3
+    language: python
+    name: python3
+---
+
+```{python}
+from bs4 import BeautifulSoup
+import pandas as pd
+```
+
+```{python}
+so_dump_processed_file = '../../data/stack-overflow/pandas-preprocessedcode-dataset-part3'
+```
+
+```{python}
+processed_stackoverflow_df = pd.read_pickle(so_dump_processed_file)
+```
+
+```{python}
+processed_stackoverflow_df.head(1)
+```
+
+```{python}
+def extract_text_from_body(df):
+    soup = BeautifulSoup(df['Body'], "html.parser")
+    [s.extract() for s in soup('pre')]
+    df['BodyText'] = soup.getText()
+    return df
+    
+
+processed_stackoverflow_df = processed_stackoverflow_df.apply(extract_text_from_body, axis=1)
+```
+
+```{python}
+output_file = '../../data/stack-overflow/pandas-preprocessedcode-dataset-part3'
+```
+
+```{python}
+processed_stackoverflow_df.to_pickle(output_file)
+```
+
+```{python}
+processed_stackoverflow_df.to_csv(output_file+'.csv', index=False)
+```

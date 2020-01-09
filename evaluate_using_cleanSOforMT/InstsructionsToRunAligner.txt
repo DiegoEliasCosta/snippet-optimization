@@ -1,0 +1,47 @@
+Berkeley Aligner Installation
+============================
+
+mkdir /my/installation/dir
+cd /my/installation/dir
+wget http://berkeleyaligner.googlecode.com/files/berkeleyaligner_unsupervised-2.1.tar.gz
+tar xzf berkeleyaligner_unsupervised-2.1.tar.gz
+
+Berkeley Aligner Execute
+============================
+cd berkeleyaligner
+chmod +x align 
+./align example.conf
+
+
+ ./align configuration.conf
+
+
+ http://www.statmt.org/moses/?n=Moses.ExternalTools
+
+ Copy output/stage2.1.params.txt and paste to alignment_entropy/<config> folder. This will be first (input) argument for AlignmentEntropyStat.py script
+
+ Generate Alignment Entropy
+ ===========================
+
+ # File is in folder: alignment_entropy
+
+# This script takes two command line arguments:
+arg1 -> File to read (in which Alignment frequency and entropy are saved) Example: ../Data/C1_Title_Data/Alignment/eng2code_alignment.txt
+arg2 -> File to write the extracted entropy Example: ../Data/C1_Title_Data/Alignment/title2code_alignment.csv
+Command to run the file:
+
+Word Entropy
+--------------
+python alignment_entropy/AlignmentEntropyStat.py corpus/c2_body_text_rake/baseline/alignment/stage2.1.params.txt alignment_entropy/WordEntropy/baseline.csv
+python alignment_entropy/AlignmentEntropyStat.py corpus/c2_body_text_rake/h1/alignment/stage2.1.params.txt alignment_entropy/WordEntropy/h1.csv
+python alignment_entropy/AlignmentEntropyStat.py corpus/c2_body_text_rake/h2/alignment/stage2.1.params.txt alignment_entropy/WordEntropy/h2.csv
+python alignment_entropy/AlignmentEntropyStat.py corpus/c2_body_text_rake/h1h2/alignment/stage2.1.params.txt alignment_entropy/WordEntropy/h1h2.csv
+python alignment_entropy/AlignmentEntropyStat.py corpus/c2_body_text_rake/m1/alignment/stage2.1.params.txt alignment_entropy/WordEntropy/m1.csv
+
+Code Entropy
+--------------
+python alignment_entropy/AlignmentEntropyStat.py corpus/c2_body_text_rake/baseline/alignment/stage2.2.params.txt alignment_entropy/CodeEntropy/baseline.csv
+python alignment_entropy/AlignmentEntropyStat.py corpus/c2_body_text_rake/h1/alignment/stage2.2.params.txt alignment_entropy/CodeEntropy/h1.csv
+python alignment_entropy/AlignmentEntropyStat.py corpus/c2_body_text_rake/h2/alignment/stage2.2.params.txt alignment_entropy/CodeEntropy/h2.csv
+python alignment_entropy/AlignmentEntropyStat.py corpus/c2_body_text_rake/h1h2/alignment/stage2.2.params.txt alignment_entropy/CodeEntropy/h1h2.csv
+python alignment_entropy/AlignmentEntropyStat.py corpus/c2_body_text_rake/m1/alignment/stage2.2.params.txt alignment_entropy/CodeEntropy/m1.csv

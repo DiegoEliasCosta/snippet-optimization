@@ -1,0 +1,271 @@
+"You just need the argmax() (now called idxmax) function. It's straightforward:
+
+This function was updated to the name idxmax in the Pandas API, though as of Pandas 0.16, argmax still exists and performs the same function (though appears to run more slowly than idxmax).
+You can also just use numpy.argmax, such as numpy.argmax(df['A']) -- it provides the same thing as either of the two pandas functions, and appears at least as fast as idxmax in cursory observations.
+Previously (as noted in the comments) it appeared that argmax would exist as a separate function which provided the integer position within the index of the row location of the maximum element. For example, if you have string values as your index labels, like rows 'a' through 'e', you might want to know that the max occurs in row 4 (not row 'd'). However, in pandas 0.16, all of the listed methods above only provide the label from the Index for the row in question, and if you want the position integer of that label within the Index you have to get it manually (which can be tricky now that duplicate row labels are allowed).
+In general, I think the move to idxmax-like behavior for all three of the approaches (argmax, which still exists, idxmax, and numpy.argmax) is a bad thing, since it is very common to require the positional integer location of a maximum, perhaps even more common than desiring the label of that positional location within some index, especially in applications where duplicate row labels are common.
+For example, consider this toy DataFrame with a duplicate row label:
+
+So here a naive use of idxmax is not sufficient, whereas the old form of argmax would correctly provide the positional location of the max row (in this case, position 9).
+This is exactly one of those nasty kinds of bug-prone behaviors in dynamically typed languages that makes this sort of thing so unfortunate, and worth beating a dead horse over. If you are writing systems code and your system suddenly gets used on some data sets that are not cleaned properly before being joined, it's very easy to end up with duplicate row labels, especially string labels like a CUSIP or SEDOL identifier for financial assets. You can't easily use the type system to help you out, and you may not be able to enforce uniqueness on the index without running into unexpectedly missing data. 
+So you're left with hoping that your unit tests covered everything (they didn't, or more likely no one wrote any tests) -- otherwise (most likely) you're just left waiting to see if you happen to smack into this error at runtime, in which case you probably have to go drop many hours worth of work from the database you were outputting results to, bang your head against the wall in IPython trying to manually reproduce the problem, finally figuring out that it's because idxmax can only report the label of the max row, and then being disappointed that no standard function automatically gets the positions of the max row for you, writing a buggy implementation yourself, editing the code, and praying you don't run into the problem again.
+"
+"
+This assumes that sorting the column names will give the order you want.  If your column names won't sort lexicographically (e.g., if you want column Q10.3 to appear after Q9.1), you'll need to sort differently, but that has nothing to do with pandas.
+"
+"Just assign it to the .columns attribute:
+
+"
+"Based on github issue #620, it looks like you'll soon be able to do the following:
+
+Update: vectorized string methods (i.e., Series.str) are available in pandas 0.8.1 and up. 
+"
+"Use the original df1 indexes to create the series:
+
+
+
+Edit 2015
+Some reported to get the SettingWithCopyWarning with this code.
+However, the code still runs perfect with the current pandas version 0.16.1.
+
+The SettingWithCopyWarning aims to inform of a possibly invalid assignment on a copy of the Dataframe. It doesn't necessarily say you did it wrong (it can trigger false positives) but from 0.13.0 it let you know there are more adequate methods for the same purpose. Then, if you get the warning, just follow its advise: Try using .loc[row_index,col_indexer] = value instead
+
+In fact, this is currently the more efficient method as described in pandas docs
+
+
+Edit 2017
+As indicated in the comments and by @Alexander, currently the best method to add the values of a Series as a new column of a DataFrame could be using assign:
+
+"
+"How about something like this:
+
+Then you just have to rename the columns
+"
+"I believe DataFrame.fillna() will do this for you.
+Link to Docs for a dataframe and for a Series. 
+Example: 
+
+To fill the NaNs in only one column, select just that column. in this case I'm using inplace=True to actually change the contents of df. 
+
+"
+"I think the easiest way to do this would be to set the columns to the top level:
+
+Note: if the to level has a name you can also access it by this, rather than 0.
+.
+If you want to combine/join your MultiIndex into one Index (assuming you have just string entries in your columns) you could:
+
+Note: we must strip the whitespace for when there is no second index.
+
+"
+"You can use the get_group method:
+
+Note: This doesn't require creating an intermediary dictionary / copy of every subdataframe for every group, so will be much more memory-efficient that creating the naive dictionary with dict(iter(gb)). This is because it uses data-structures already available in the groupby object.
+
+You can select different columns using the groupby slicing:
+
+"
+"This is available in 0.11. Forces conversion (or set's to nan)
+This will work even when astype will fail; its also series by series
+so it won't convert say a complete string column
+
+"
+"The first part is similar to Constantine, you can get the boolean of which rows are empty*:
+
+Then we can see which entries have changed:
+
+Here the first entry is the index and the second the columns which has been changed.
+
+* Note: it's important that df1 and df2 share the same index here. To overcome this ambiguity, you can ensure you only look at the shared labels using df1.index & df2.index, but I think I'll leave that as an exercise.
+"
+"As of the 0.17.0 release, the sort method was deprecated in favor of sort_values.  sort was completely removed in the 0.20.0 release. The arguments (and results) remain the same:
+
+
+You can use the ascending argument of sort:
+
+For example:
+
+
+As commented by @renadeen
+
+Sort isn't in place by default! So you should assign result of the sort method to a variable or add inplace=True to method call.
+
+that is, if you want to reuse df1 as a sorted DataFrame:
+
+or
+
+"
+"Use its value directly:
+
+"
+".loc accept row and column selectors simultaneously (as do .ix/.iloc FYI)
+This is done in a single pass as well.
+
+And if you want the values (though this should pass directly to sklearn as is); frames support the array interface
+
+"
+"You can specify the style of the plotted line when calling df.plot:
+
+The style argument can also be a dict or list, e.g.:
+
+All the accepted style formats are listed in the documentation of matplotlib.pyplot.plot.
+
+"
+"
+When you apply your own function, there is not automatic exclusions of non-numeric columns. This is slower, though (that the applicatino of .sum() to the groupby
+
+Sum by default concatenates
+
+You can do pretty much what you want
+
+Doing this a whole frame group at a time. Key is to return a Series
+
+"
+"
+Convert a series
+
+Convert the whole frame
+
+"
+"You can just get/set the index via its name property
+
+"
+"This is mentioned in the Missing Data section of the docs:
+
+NA groups in GroupBy are automatically excluded. This behavior is consistent with R, for example.
+
+One workaround is to use a placeholder before doing the groupby (e.g. -1):
+
+That said, this feels pretty awful hack... perhaps there should be an option to include NaN in groupby (see this github issue - which uses the same placeholder hack).
+"
+"See the docs for to_dict. You can use it like this:
+
+And if you have only one column, to avoid the column name is also a level in the dict (actually, in this case you use the Series.to_dict()):
+
+"
+"I'll assume that Time and Product are columns in a DataFrame,  df is an instance of DataFrame, and that other variables are scalar values:
+For now, you'll have to reference the DataFrame instance:
+
+The parentheses are also necessary, because of the precedence of the & operator vs. the comparison operators. The & operator is actually an overloaded bitwise operator which has the same precedence as arithmetic operators which in turn have a higher precedence than comparison operators.
+In pandas 0.13 a new experimental DataFrame.query() method will be available. It's extremely similar to subset modulo the select argument:
+With query() you'd do it like this:
+
+Here's a simple example:
+
+The final query that you're interested will even be able to take advantage of chained comparisons, like this:
+
+"
+"
+"
+"You can get the values as a list by doing:
+
+Also you can simply use:
+
+"
+"You can pivot your DataFrame after creating:
+
+"
+"Pandas docs says it uses openpyxl for xlsx files. Quick look through the code in ExcelWriter gives a clue that something like this might work out:
+
+"
+"either:
+
+or, .reset_index:
+
+
+so, if you have a multi-index frame with 3 levels of index, like:
+
+and you want to convert the 1st (tick) and 3rd (obs) levels in the index into columns, you would do:
+
+"
+"If you have same columns in all your csv files then you can try the code below.
+I have added header=0 so that after reading csv first row can be assigned as the column names.
+
+"
+"Pandas DataFrame columns are Pandas Series when you pull them out, which you can then call .tolist() on to turn them into a Python list
+
+This question might be helpful. And the Pandas docs are actually quite good once you get your head around their style. 
+So in your case you could:
+my_list = df[""cluster""].tolist()
+and then go from there.
+"
+"Use groupby and count:
+
+See the online docs: http://pandas.pydata.org/pandas-docs/stable/groupby.html
+Also value_counts() as @DSM has commented, many ways to skin a cat here
+
+If you wanted to add frequency back to the original dataframe use transform to return an aligned index:
+
+"
+"Use .values to get a numpy.array and then .tolist() to get a list.
+For example:
+
+Result:
+
+or you can just use
+
+To drop duplicates you can do one of the following:
+
+"
+"The answer by @chip completely misses the point of two keyword arguments.
+
+names is only necessary when there is no header and you want to specify other arguments using column names rather than integer indices.
+usecols is supposed to provide a filter before reading the whole DataFrame into memory; if used properly, there should never be a need to delete columns after reading.
+
+This solution corrects those oddities:
+
+Which gives us:
+
+"
+"You can use pd.to_numeric (introduced in version 0.17) to convert a column or a Series to a numeric type. The function can also be applied over multiple columns of a DataFrame using apply.
+Importantly, the function also takes an errors key word argument that lets you force not-numeric values to be NaN, or simply ignore columns containing these values.
+Example uses are shown below.
+Individual column / Series
+Here's an example using a Series of strings s which has the object dtype:
+
+The function's default behaviour is to raise if it can't convert a value. In this case, it can't cope with the string 'pandas':
+
+Rather than fail, we might want 'pandas' to be considered a missing/bad value. We can coerce invalid values to NaN as follows:
+
+The third option is just to ignore the operation if an invalid value is encountered:
+
+Multiple columns / entire DataFrames
+We might want to apply this operation to multiple columns. Processing each column in turn is tedious, so we can use DataFrame.apply to have the function act on each column.
+Borrowing the DataFrame from the question:
+
+Then we can write:
+
+and now 'col2' and 'col3' have dtype float64 as desired.
+However, we might not know which of our columns can be converted reliably to a numeric type. In that case we can just write:
+
+Then the function will be applied to the whole DataFrame. Columns that can be converted to a numeric type will be converted, while columns that cannot (e.g. they contain non-digit strings or dates) will be left alone.
+There is also pd.to_datetime and pd.to_timedelta for conversion to dates and timestamps.
+Soft conversions
+Version 0.21.0 introduces the method infer_objects() for converting columns of a DataFrame that have an object datatype to a more specific type.
+For example, let's create a DataFrame with two columns of object type, with one holding integers and the other holding strings of integers:
+
+Then using infer_objects(), we can change the type of column 'a' to int64:
+
+Column 'b' has been left alone since its values were strings, not integers. If we wanted to try and force the conversion of both columns to an integer type, we could use df.astype(int) instead.
+"
+"You can also use the option_context, with one or more options:
+
+This will automatically return the options to their previous values.
+"
+"This is much easier in pandas now with drop_duplicates and the keep parameter.
+
+"
+"I would suggest using the duplicated method on the Pandas Index itself:
+
+While all the other methods work, the currently accepted answer is by far the least performant for the provided example. Furthermore, while the groupby method is only slightly less performant, I find the duplicated method to be more readable.
+Using the sample data provided:
+
+Note that you can keep the last element by changing the keep argument.
+It should also be noted that this method works with MultiIndex as well (using df1 as specified in Paul's example):
+
+"
+"When reading to and from your csv file include the argument index=False so for example
+
+and to read from the csv
+
+This should prevent the issue so you don't need to fix it later.
+"

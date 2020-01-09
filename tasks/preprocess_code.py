@@ -30,7 +30,7 @@ class FilterPosts(JupyterNotebookTask):
             data_path, 'pandas-filteredposts-dataset')
         )
 
-		
+
 class ExtractCode(JupyterNotebookTask):
     notebook_path = os.path.join(notebooks_path, 'codeblock-extractor.ipynb')
     kernel_name = 'python3'
@@ -46,7 +46,7 @@ class ExtractCode(JupyterNotebookTask):
             data_path, 'pandas-code-dataset')
         )
 
-		
+
 class FormatCode(JupyterNotebookTask):
     notebook_path = os.path.join(notebooks_path, 'code-formatter.ipynb')
     kernel_name = 'python3'
@@ -64,7 +64,7 @@ class FormatCode(JupyterNotebookTask):
         return luigi.LocalTarget(os.path.join(
             data_path, 'pandas-formattedcode-dataset')
         )
-		
+
 
 class PreProcessSpecialCharsCode(JupyterNotebookTask):
     notebook_path = os.path.join(notebooks_path, 'code-preprocess-specialchars.ipynb')
@@ -83,7 +83,7 @@ class PreProcessSpecialCharsCode(JupyterNotebookTask):
         return luigi.LocalTarget(os.path.join(
             data_path, 'pandas-preprocessedcode-dataset-part1')
         )
-		
+
 
 class PreProcessTerminalLikeCode(JupyterNotebookTask):
     notebook_path = os.path.join(notebooks_path, 'code-preprocess-terminalcode.ipynb')
@@ -102,7 +102,7 @@ class PreProcessTerminalLikeCode(JupyterNotebookTask):
         return luigi.LocalTarget(os.path.join(
             data_path, 'pandas-preprocessedcode-dataset-part2')
         )
-		
+
 class PreProcessExtraCode(JupyterNotebookTask):
     notebook_path = os.path.join(notebooks_path, 'code-preprocess-extra.ipynb')
     kernel_name = 'python3'
@@ -120,7 +120,7 @@ class PreProcessExtraCode(JupyterNotebookTask):
         return luigi.LocalTarget(os.path.join(
             data_path, 'pandas-preprocessedcode-dataset-part2_1')
         )
-		
+
 class PreProcessParseableCode(JupyterNotebookTask):
     notebook_path = os.path.join(notebooks_path, 'code-preprocess-parseableiteractive.ipynb')
     kernel_name = 'python3'
@@ -138,4 +138,60 @@ class PreProcessParseableCode(JupyterNotebookTask):
         return luigi.LocalTarget(os.path.join(
             data_path, 'pandas-preprocessedcode-dataset-part3')
         )
-		
+
+
+class PreProcessBodyText(JupyterNotebookTask):
+    notebook_path = os.path.join(notebooks_path, 'text-preprocess-bodyremovetags.ipynb')
+    kernel_name = 'python3'
+    timeout = 120
+    
+    input_col = luigi.Parameter(default='Body')
+    output_col = luigi.Parameter(default='BodyText')
+	
+    debug = luigi.Parameter(default=DEBUG)
+
+    def requires(self):
+        return PreProcessParseableCode()
+        
+    def output(self):
+        return luigi.LocalTarget(os.path.join(
+            data_path, 'pandas-preprocessedcode-dataset-part3')
+        )
+
+
+class PreProcessBodyTextRake(JupyterNotebookTask):
+    notebook_path = os.path.join(notebooks_path, 'text-preprocess-rake.ipynb')
+    kernel_name = 'python3'
+    timeout = 120
+    
+    input_col = luigi.Parameter(default='BodyText')
+    output_col = luigi.Parameter(default='BodyTextRake')
+	
+    debug = luigi.Parameter(default=DEBUG)
+
+    def requires(self):
+        return PreProcessBodyText()
+        
+    def output(self):
+        return luigi.LocalTarget(os.path.join(
+            data_path, 'pandas-preprocessedcode-dataset-part3')
+        )
+
+
+class PreProcessTitleTextRake(JupyterNotebookTask):
+    notebook_path = os.path.join(notebooks_path, 'text-preprocess-rake.ipynb')
+    kernel_name = 'python3'
+    timeout = 120
+    
+    input_col = luigi.Parameter(default='Title')
+    output_col = luigi.Parameter(default='TitleRake')
+	
+    debug = luigi.Parameter(default=DEBUG)
+
+    def requires(self):
+        return PreProcessBodyTextRake()
+        
+    def output(self):
+        return luigi.LocalTarget(os.path.join(
+            data_path, 'pandas-preprocessedcode-dataset-part3')
+        )

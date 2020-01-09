@@ -2,7 +2,6 @@ import luigi
 import os
 import sys
 
-from preprocess_code import PreProcessParseableCode
 from evaluate import *
 
 # Import parent module
@@ -39,6 +38,7 @@ class AnalyzeAllBlock(JupyterNotebookTask):
             'h2': EvaluateH2(),
             'h1h2': EvaluateH1H2(),
             'm1': EvaluateM1(),
+            'm1Doc2Vec': EvaluateM1Doc2Vec()
             }
         
 
@@ -46,7 +46,7 @@ class AnalyzeAllBlock(JupyterNotebookTask):
         return luigi.LocalTarget(os.path.join(results_path, 'all-methods-block'))
 
         
-        
+
 class AnalyzeAllLine(JupyterNotebookTask):
     notebook_path = os.path.join(analyze_notebook_path, 'analyze-all.ipynb')
     kernel_name = 'python3'
@@ -61,6 +61,7 @@ class AnalyzeAllLine(JupyterNotebookTask):
             'h2': EvaluateH2_Line(),
             'h1h2': EvaluateH1H2_Line(),
             'm1': EvaluateM1_Line(),
+            'm1Doc2Vec': EvaluateM1Doc2Vec_Line()
             }
         
 

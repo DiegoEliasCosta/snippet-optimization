@@ -1,0 +1,36 @@
+pandas.DataFrame df.argmax df.argmax df.argmax dfrm.idxmax dfrm.idxmax
+df.reindex_axis
+pd.DataFrame
+df.str.contains
+p.Series df1.loc p.Series df1.assign df1.index df1.index df1.index sLength.np.random.randn.p.Series.values p.Series
+a.iterrows.row._.row.split.row.Series.pd.concat.reset_index pd.concat row.split a.iterrows
+df.fillna df.fillna
+df.columns.get_level_values col.join.strip df.columns.values col.join.strip df.columns.values join join
+gb.get_group gb.get_group gb.get_group
+df.convert_objects df.convert_objects
+df2.df1.any df2.df1.stack changed.index np.where df1.values df2.values pd.DataFrame changed.index
+df.sort_values pd.DataFrame
+df.c.df.values
+df.df.loc.values df.loc df.loc
+df.plot pd.DataFrame df.plot
+df.dtypes df.groupby.apply df.groupby.apply df.groupby.apply df.groupby.apply df.groupby x.sum x.sum df.groupby df.groupby df.groupby join
+df.dtypes df.apply df.applymap str.df.applymap.iloc df.apply df.applymap
+df.index df.index df.index
+df.fillna df.fillna.groupby.sum df.fillna.groupby df.fillna
+df.set_index.to_dict df.set_index.to_dict df.set_index df.set_index
+df.query df.query df.query
+""
+my_dataframe.columns.values
+pd.DataFrame df.pivot df.pivot
+data_filtered.to_excel ws.title
+df.index df.reset_index df.reset_index
+pd.DataFrame pd.concat pd.read_csv list_.append
+df.tolist
+pd.DataFrame df.groupby.count df.value_counts
+pd.DataFrame df.values.tolist df.tolist df.drop_duplicates.values.tolist df.values df.drop_duplicates.values df.drop_duplicates
+pd.read_csv
+df.dtypes df.dtypes pd.Series pd.to_numeric pd.to_numeric pd.to_numeric pd.DataFrame df.apply pd.to_numeric df.apply pd.to_numeric pd.DataFrame df.infer_objects
+pd.option_context
+pd.DataFrame df.drop_duplicates
+df3.index.duplicated df3.index
+df.read_csv

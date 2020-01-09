@@ -1,0 +1,2931 @@
+# Name: HMM:normal
+# Reverse: false
+# Distortion probabilities
+0: <= -5	0.0
+0: = -4	0.0
+0: = -3	0.0
+0: = -2	0.0
+0: = -1	0.0
+0: = 0	0.0
+0: = 1	17.373998832433873
+0: = 2	6.765473982862466
+0: = 3	14.028323661517241
+0: = 4	13.147964747340202
+0: >= 5	57.53975038274071
+1: <= -5	3.1418582280350082
+1: = -4	4.793412687761168
+1: = -3	9.446334403934276
+1: = -2	12.537649112471753
+1: = -1	19.808921208663985
+1: = 0	123.07678412579847
+1: = 1	29.333246197477344
+1: = 2	27.42249824019161
+1: = 3	7.610288231391611
+1: = 4	15.010639238675875
+1: >= 5	48.81784394285384
+2: <= -5	0.0
+2: = -4	0.0
+2: = -3	0.0
+2: = -2	0.0
+2: = -1	0.0
+2: = 0	0.0
+2: = 1	2873.155162079495
+2: = 2	96.53334769510211
+2: = 3	300.79953541351125
+2: = 4	52.18470057557913
+2: >= 5	229.5679824988728
+3: <= -5	0.0
+3: = -4	0.0
+3: = -3	0.0
+3: = -2	0.0
+3: = -1	0.0
+3: = 0	0.0
+3: = 1	0.0
+3: = 2	0.0
+3: = 3	0.0
+3: = 4	0.0
+3: >= 5	0.0
+# Translation probabilities
+properli	entropy 0	nTrans 4	sum 1.000000
+  pd.read_csv: 1.000000
+notat	entropy 0	nTrans 1	sum 1.000000
+  df.loc: 1.000000
+tupl	entropy 0	nTrans 6	sum 1.000000
+  pd.set_option: 1.000000
+elimin	entropy 7.82e-06	nTrans 4	sum 1.000000
+  df3.drop_duplicates: 0.999999
+  df3.reset_index.drop_duplicates.set_index: 0.000001
+slower	entropy 0.009	nTrans 9	sum 1.000000
+  df.groupby.apply: 0.998870
+  df.isnull.values.any: 0.001130
+without	entropy 0	nTrans 4	sum 1.000000
+  df.ix.copy: 1.000000
+via	entropy 1.67e-07	nTrans 6	sum 1.000000
+  df.index: 1.000000
+  pd.merge: 0.000000
+describ	entropy 0.030	nTrans 6	sum 1.000000
+  sLength.np.random.randn.p.Series.values: 0.995228
+  pd.set_option: 0.004764
+  df1.index: 0.000008
+  df1.assign: 0.000001
+  p.Series: 0.000000
+functool	entropy 0	nTrans 1	sum 1.000000
+  pd.merge: 1.000000
+would	entropy 5.37e-04	nTrans 37	sum 1.000000
+  pd.DataFrame: 0.999955
+  pd.set_option: 0.000028
+  xl.parse: 0.000013
+  df.columns.tolist: 0.000003
+  df.reset_index: 0.000001
+sometim	entropy 0	nTrans 2	sum 1.000000
+  df.xs: 1.000000
+dtype	entropy 0	nTrans 13	sum 1.000000
+  df.astype: 1.000000
+concat	entropy 0.689	nTrans 3	sum 1.000000
+  s2.s1.pd.concat.reset_index: 0.544691
+  pd.concat: 0.455309
+version	entropy 1.54e-04	nTrans 25	sum 1.000000
+  df1.loc: 0.999988
+  df3.reset_index.drop_duplicates: 0.000008
+  df3.reset_index: 0.000004
+overload	entropy 0	nTrans 2	sum 1.000000
+  df.query: 1.000000
+furthermor	entropy 0.010	nTrans 2	sum 1.000000
+  df3.index: 0.998658
+  df3.index.duplicated: 0.001342
+size	entropy 0.288	nTrans 10	sum 1.000000
+  df.groupby.size.rename: 0.916284
+  x.groupby_object.agg.rename.join: 0.083716
+  pd.set_option: 0.000000
+util	entropy 0	nTrans 1	sum 1.000000
+  pd.set_option: 1.000000
+jwilner	entropy 4.31e-11	nTrans 4	sum 1.000000
+  df.isnull.values: 1.000000
+stop	entropy 0	nTrans 1	sum 1.000000
+  df.loc: 1.000000
+left	entropy 2.197	nTrans 9	sum 1.000000
+  pd.to_numeric: 0.111111
+  pd.Series: 0.111111
+  pd.DataFrame: 0.111111
+  df.apply: 0.111111
+  df.dtypes: 0.111111
+  df.argmax: 0.111111
+  dfrm.idxmax: 0.111111
+  df.infer_objects: 0.111111
+  pandas.DataFrame: 0.111111
+handl	entropy 0	nTrans 3	sum 1.000000
+  df.dropna: 1.000000
+detail	entropy 1.609	nTrans 5	sum 1.000000
+  df.str.split: 0.200000
+  pd.DataFrame: 0.200000
+  df.str.split.rename: 0.200000
+  df.join: 0.200000
+  upper_lower_df.str.lower: 0.200000
+seri	entropy 1.088	nTrans 53	sum 1.000000
+  pd.Series: 0.401758
+  df.set_index: 0.311388
+  df.dtypes: 0.286854
+  df.drop: 0.000000
+handi	entropy 0	nTrans 3	sum 1.000000
+  df.dropna: 1.000000
+much	entropy 7.30e-05	nTrans 13	sum 1.000000
+  df.drop_duplicates: 0.999995
+  gb.get_group: 0.000003
+  df.groupby.apply: 0.000002
+  paramdata.index: 0.000001
+object	entropy 0.121	nTrans 31	sum 1.000000
+  dt64.dtype: 0.974096
+  df.index.values: 0.025847
+  datetime.utcnow.np.datetime64.astype: 0.000040
+  myseries.myseries.index: 0.000012
+  df.groupby: 0.000004
+  datetime.utcnow: 0.000000
+  gb.get_group: 0.000000
+ahead	entropy 0	nTrans 9	sum 1.000000
+  df.groupby.size: 1.000000
+least	entropy 0.003	nTrans 7	sum 1.000000
+  pd.read_csv: 0.999683
+  myseries.myseries.index: 0.000317
+turn	entropy 0.649	nTrans 13	sum 1.000000
+  pd.set_option: 0.648269
+  df.tolist: 0.351731
+manual	entropy 0	nTrans 6	sum 1.000000
+  df.dropna: 1.000000
+matrix	entropy 0	nTrans 1	sum 1.000000
+  paramdata.index: 1.000000
+suffici	entropy 1.099	nTrans 3	sum 1.000000
+  df.argmax: 0.333333
+  dfrm.idxmax: 0.333333
+  pandas.DataFrame: 0.333333
+result	entropy 0.054	nTrans 24	sum 1.000000
+  df.values.tolist: 0.990968
+  df.drop_duplicates.values.tolist: 0.008560
+  df.groupby: 0.000316
+  df1.col1.isin: 0.000143
+  df.sort_values: 0.000013
+  df1.col2.isin: 0.000000
+machin	entropy 0	nTrans 1	sum 1.000000
+  pd.read_csv: 1.000000
+behavior	entropy 4.82e-04	nTrans 6	sum 1.000000
+  df.fillna.groupby: 0.999956
+  df.fillna.groupby.sum: 0.000044
+  df.fillna: 0.000000
+close	entropy 0.022	nTrans 3	sum 1.000000
+  pd.io.parsers.ExcelFile.parse: 0.996678
+  df.head: 0.003322
+connect	entropy 0	nTrans 1	sum 1.000000
+  pd.read_sql: 1.000000
+hand	entropy 0	nTrans 1	sum 1.000000
+  pd.merge: 1.000000
+xlsx	entropy 1.74e-15	nTrans 2	sum 1.000000
+  data_filtered.to_excel: 1.000000
+b	entropy 2.74e-05	nTrans 12	sum 1.000000
+  sort1.groupby.apply: 0.999998
+  sort2.reset_index: 0.000002
+c	entropy 1.131	nTrans 8	sum 1.000000
+  sort1.groupby: 0.387320
+  myseries.myseries.index: 0.331216
+  df.xs: 0.272800
+  grp.transform: 0.007932
+  sum.grp.transform.sort.index: 0.000733
+e	entropy 1.035	nTrans 32	sum 1.000000
+  df.fillna.groupby.sum: 0.646609
+  df.reindex_axis: 0.230241
+  df.plot: 0.054502
+  pd.DataFrame: 0.042684
+  s.reset_index: 0.012508
+  df.to_csv: 0.010165
+  df.str.contains: 0.002696
+  df.map: 0.000555
+  df.fillna.groupby: 0.000040
+  df.iloc: 0.000000
+  df.fillna: 0.000000
+excelwrit	entropy 0.608	nTrans 2	sum 1.000000
+  data_filtered.to_excel: 0.702892
+  ws.title: 0.297108
+g	entropy 0.314	nTrans 18	sum 1.000000
+  df.plot: 0.916813
+  df.fillna.groupby.sum: 0.074653
+  df.to_csv: 0.008514
+  df.reindex_axis: 0.000020
+  df.fillna.groupby: 0.000000
+abl	entropy 0.053	nTrans 6	sum 1.000000
+  df.str.contains: 0.990630
+  df.query: 0.009370
+r	entropy 8.05e-04	nTrans 3	sum 1.000000
+  df.fillna.groupby.sum: 0.999923
+  df.fillna.groupby: 0.000077
+autodetect	entropy 0	nTrans 1	sum 1.000000
+  pd.set_option: 1.000000
+fast	entropy 6.42e-30	nTrans 5	sum 1.000000
+  df.to_pickle: 1.000000
+v	entropy 0	nTrans 1	sum 1.000000
+  df.loc: 1.000000
+w	entropy 8.40e-14	nTrans 2	sum 1.000000
+  w.map: 1.000000
+x	entropy 9.15e-30	nTrans 2	sum 1.000000
+  df.xs: 1.000000
+z	entropy 0	nTrans 1	sum 1.000000
+  df.loc: 1.000000
+demonstr	entropy 1.609	nTrans 5	sum 1.000000
+  df.str.split: 0.200000
+  pd.DataFrame: 0.200000
+  df.str.split.rename: 0.200000
+  df.join: 0.200000
+  upper_lower_df.str.lower: 0.200000
+discuss	entropy 3.46e-11	nTrans 2	sum 1.000000
+  pd.read_pickle: 1.000000
+standard	entropy 1.099	nTrans 3	sum 1.000000
+  df.argmax: 0.333333
+  dfrm.idxmax: 0.333333
+  pandas.DataFrame: 0.333333
+correct	entropy 0	nTrans 1	sum 1.000000
+  pd.read_csv: 1.000000
+good	entropy 0.150	nTrans 7	sum 1.000000
+  df.tolist: 0.965506
+  df1.rename: 0.034494
+got	entropy 0	nTrans 1	sum 1.000000
+  "": 1.000000
+specif	entropy 0.096	nTrans 10	sum 1.000000
+  pd.Series: 0.982818
+  df.sum: 0.012956
+  df.to_csv: 0.004221
+  col_list.df.sum: 0.000006
+wish	entropy 8.89e-11	nTrans 7	sum 1.000000
+  df.index.isin: 1.000000
+aggreg	entropy 0	nTrans 14	sum 1.000000
+  df.groupby: 1.000000
+act	entropy 1.792	nTrans 6	sum 1.000000
+  pd.to_numeric: 0.166667
+  pd.Series: 0.166667
+  pd.DataFrame: 0.166667
+  df.apply: 0.166667
+  df.dtypes: 0.166667
+  df.infer_objects: 0.166667
+exceed	entropy 0	nTrans 1	sum 1.000000
+  pd.set_option: 1.000000
+sampl	entropy 9.14e-25	nTrans 2	sum 1.000000
+  df3.index: 1.000000
+implement	entropy 1.099	nTrans 3	sum 1.000000
+  df.argmax: 0.333333
+  dfrm.idxmax: 0.333333
+  pandas.DataFrame: 0.333333
+advis	entropy 0.574	nTrans 6	sum 1.000000
+  p.Series: 0.739566
+  sLength.np.random.randn.p.Series.values: 0.260434
+  pd.set_option: 0.000000
+ith	entropy 4.11e-24	nTrans 6	sum 1.000000
+  df_test.iloc: 1.000000
+placehold	entropy 8.31e-10	nTrans 3	sum 1.000000
+  df.fillna.groupby.sum: 1.000000
+add	entropy 1.091	nTrans 16	sum 1.000000
+  df3.reset_index: 0.402670
+  "": 0.316875
+  p.Series: 0.279864
+  df.groupby.count: 0.000581
+  df.value_counts: 0.000010
+area	entropy 0	nTrans 1	sum 1.000000
+  pd.set_option: 1.000000
+wherea	entropy 1.099	nTrans 3	sum 1.000000
+  df.argmax: 0.333333
+  dfrm.idxmax: 0.333333
+  pandas.DataFrame: 0.333333
+need	entropy 0.431	nTrans 25	sum 1.000000
+  df.values.ravel.Series.unique: 0.909061
+  pd.read_csv: 0.038322
+  xl.parse: 0.031919
+  df.groupby: 0.007159
+  df.read_csv: 0.006858
+  df.reindex_axis: 0.003890
+  df.columns.tolist: 0.002037
+  df.index.values: 0.000754
+wrote	entropy 1.099	nTrans 3	sum 1.000000
+  df.argmax: 0.333333
+  dfrm.idxmax: 0.333333
+  pandas.DataFrame: 0.333333
+european	entropy 0	nTrans 2	sum 1.000000
+  pd.to_datetime: 1.000000
+equival	entropy 3.51e-04	nTrans 12	sum 1.000000
+  datetime.utcnow: 0.999969
+  df.df.index.tolist: 0.000031
+  pd.read_sql: 0.000000
+reduc	entropy 0	nTrans 1	sum 1.000000
+  pd.merge: 1.000000
+list	entropy 0.908	nTrans 44	sum 1.000000
+  pd.DataFrame: 0.630390
+  df.set_index: 0.255973
+  df.dtypes.df.columns.to_series.groupby.groups: 0.108600
+  df.columns.to_series.groupby: 0.004838
+  my_dataframe.columns.values: 0.000186
+  df.columns.to_series: 0.000014
+  df.columns.tolist: 0.000000
+  df.drop_duplicates.values: 0.000000
+  df.groupby: 0.000000
+tediou	entropy 1.792	nTrans 6	sum 1.000000
+  pd.to_numeric: 0.166667
+  pd.Series: 0.166667
+  pd.DataFrame: 0.166667
+  df.apply: 0.166667
+  df.dtypes: 0.166667
+  df.infer_objects: 0.166667
+respect	entropy 1.18e-08	nTrans 8	sum 1.000000
+  paramdata.index: 1.000000
+  df.to_pickle: 0.000000
+argmax	entropy 1.099	nTrans 3	sum 1.000000
+  df.argmax: 0.333333
+  dfrm.idxmax: 0.333333
+  pandas.DataFrame: 0.333333
+altern	entropy 1.57e-07	nTrans 4	sum 1.000000
+  df.xs: 1.000000
+  df.to_pickle: 0.000000
+http	entropy 0.433	nTrans 10	sum 1.000000
+  df.iloc: 0.844721
+  df.rename: 0.155059
+  df.value_counts: 0.000206
+  pd.set_option: 0.000014
+ascend	entropy 0	nTrans 2	sum 1.000000
+  df.sort_values: 1.000000
+ensur	entropy 0.693	nTrans 7	sum 1.000000
+  df2.values: 0.513843
+  df1.values: 0.486149
+  np.where: 0.000008
+coerc	entropy 1.792	nTrans 6	sum 1.000000
+  pd.to_numeric: 0.166667
+  pd.Series: 0.166667
+  pd.DataFrame: 0.166667
+  df.apply: 0.166667
+  df.dtypes: 0.166667
+  df.infer_objects: 0.166667
+prevent	entropy 0	nTrans 1	sum 1.000000
+  df.read_csv: 1.000000
+determin	entropy 0	nTrans 1	sum 1.000000
+  pd.set_option: 1.000000
+interoper	entropy 0.616	nTrans 2	sum 1.000000
+  df.to_pickle: 0.694081
+  pd.read_pickle: 0.305919
+accomplish	entropy 1.609	nTrans 5	sum 1.000000
+  df.str.split: 0.200000
+  pd.DataFrame: 0.200000
+  df.str.split.rename: 0.200000
+  df.join: 0.200000
+  upper_lower_df.str.lower: 0.200000
+chunksiz	entropy 0	nTrans 1	sum 1.000000
+  pd.read_csv: 1.000000
+combin	entropy 1.48e-04	nTrans 11	sum 1.000000
+  join: 0.999988
+  df.index.isin: 0.000012
+  split: 0.000000
+  df.columns.values: 0.000000
+end	entropy 2.62e-06	nTrans 12	sum 1.000000
+  groupby_object.agg.rename: 1.000000
+  groupby_object.size: 0.000000
+strang	entropy 0	nTrans 4	sum 1.000000
+  df.isnull.values.any: 1.000000
+liner	entropy 0	nTrans 2	sum 1.000000
+  Series.rename: 1.000000
+live	entropy 0.003	nTrans 3	sum 1.000000
+  df.head: 0.999721
+  xl.parse: 0.000279
+modifi	entropy 1.08e-06	nTrans 13	sum 1.000000
+  df.a.astype: 1.000000
+  format: 0.000000
+otherwis	entropy 7.41e-17	nTrans 15	sum 1.000000
+  s2.s1.pd.concat.reset_index: 1.000000
+perform	entropy 0.090	nTrans 10	sum 1.000000
+  df3.index: 0.984660
+  df3.index.duplicated: 0.008118
+  df.shape: 0.007222
+label	entropy 7.98e-04	nTrans 17	sum 1.000000
+  df.drop: 0.999924
+  df.iloc: 0.000076
+  df.loc: 0.000000
+  df_test.iloc: 0.000000
+howev	entropy 0.146	nTrans 33	sum 1.000000
+  df.shape: 0.968155
+  df1.col2.isin: 0.030650
+  df.to_json: 0.001195
+  df1.col1.isin: 0.000000
+  sLength.np.random.randn.p.Series.values: 0.000000
+better	entropy 0.193	nTrans 11	sum 1.000000
+  df.row.str.split.tolist: 0.952076
+  pd.read_pickle: 0.047877
+  df.row.str.split: 0.000032
+  pd.set_option: 0.000015
+  myseries.myseries.index: 0.000000
+numer	entropy 0.005	nTrans 17	sum 1.000000
+  df.sum: 0.999436
+  df.groupby.apply: 0.000564
+  df.df.index.tolist: 0.000000
+well	entropy 0.515	nTrans 11	sum 1.000000
+  paramdata.index: 0.792004
+  pd.read_csv: 0.207502
+  df.df.loc.values: 0.000342
+  df3.index.duplicated: 0.000152
+syntax	entropy 0.091	nTrans 6	sum 1.000000
+  df.resample.sum.fillna: 0.981816
+  df.resample.sum: 0.018182
+  df.resample.sum.fillna.rolling: 0.000002
+pytabl	entropy 6.72e-15	nTrans 2	sum 1.000000
+  df.to_pickle: 1.000000
+empti	entropy 0.955	nTrans 12	sum 1.000000
+  df_.fillna: 0.536141
+  datetime.datetime.now.date: 0.344114
+  np.arange.np.array.T: 0.119745
+  np.where: 0.000000
+agg	entropy 0	nTrans 9	sum 1.000000
+  df.groupby: 1.000000
+properti	entropy 0	nTrans 3	sum 1.000000
+  df.index: 1.000000
+desir	entropy 0	nTrans 11	sum 1.000000
+  pd.set_option: 1.000000
+approach	entropy 4.61e-06	nTrans 7	sum 1.000000
+  df.row.str.split.tolist: 1.000000
+  pd.read_csv: 0.000000
+slightli	entropy 1.14e-15	nTrans 2	sum 1.000000
+  df3.index.duplicated: 1.000000
+number	entropy 6.62e-08	nTrans 21	sum 1.000000
+  df.map: 1.000000
+  s2.s1.pd.concat.reset_index: 0.000000
+identifi	entropy 1.099	nTrans 3	sum 1.000000
+  df.argmax: 0.333333
+  dfrm.idxmax: 0.333333
+  pandas.DataFrame: 0.333333
+variabl	entropy 0.054	nTrans 13	sum 1.000000
+  df.sort_values: 0.990382
+  key_columns.df.groupby.size: 0.009602
+  df.query: 0.000015
+experiment	entropy 0.329	nTrans 8	sum 1.000000
+  dt64.astype: 0.901717
+  df.query: 0.096743
+  datetime.utcnow: 0.001539
+  datetime.utcfromtimestamp: 0.000000
+specifi	entropy 0.633	nTrans 5	sum 1.000000
+  pd.read_csv: 0.741820
+  df.plot: 0.241628
+  df3.index.duplicated: 0.016552
+nan	entropy 0.655	nTrans 36	sum 1.000000
+  s.isnull.sum: 0.655622
+  df.dtypes: 0.342673
+  df.fillna: 0.001704
+  df.shape: 0.000000
+  df.isnull: 0.000000
+  df2.df1.isin.df1.dropna: 0.000000
+per	entropy 0	nTrans 11	sum 1.000000
+  df.groupby: 1.000000
+write	entropy 4.12e-32	nTrans 14	sum 1.000000
+  df_.fillna: 1.000000
+order	entropy 0.142	nTrans 13	sum 1.000000
+  sort1.groupby.apply: 0.967883
+  df.reindex_axis: 0.032072
+  df3.reset_index.drop_duplicates: 0.000031
+  df_test.iloc: 0.000014
+  sort2.reset_index: 0.000000
+similar	entropy 0.788	nTrans 13	sum 1.000000
+  df2.values: 0.661188
+  df1.values: 0.285753
+  np.where: 0.053023
+  df1.rename: 0.000027
+  df.query: 0.000010
+  changed.index: 0.000000
+shape	entropy 0	nTrans 3	sum 1.000000
+  df.shape: 1.000000
+understand	entropy 1.46e-18	nTrans 2	sum 1.000000
+  "": 1.000000
+integ	entropy 0.680	nTrans 19	sum 1.000000
+  df_test.iloc: 0.593899
+  df.iloc: 0.405416
+  pd.read_csv: 0.000686
+  dt64.dtype: 0.000000
+idiomat	entropy 5.05e-08	nTrans 3	sum 1.000000
+  df.head: 1.000000
+  xl.parse: 0.000000
+system	entropy 1.099	nTrans 3	sum 1.000000
+  df.argmax: 0.333333
+  dfrm.idxmax: 0.333333
+  pandas.DataFrame: 0.333333
+even	entropy 3.09e-07	nTrans 8	sum 1.000000
+  df.convert_objects.dtypes: 1.000000
+  df.query: 0.000000
+spot	entropy 9.36e-40	nTrans 4	sum 1.000000
+  df.isnull.values.any: 1.000000
+issu	entropy 0.002	nTrans 6	sum 1.000000
+  df.read_csv: 0.999791
+  df.str.contains: 0.000209
+msgpack	entropy 2.88e-16	nTrans 2	sum 1.000000
+  df.to_pickle: 1.000000
+wait	entropy 1.099	nTrans 3	sum 1.000000
+  df.argmax: 0.333333
+  dfrm.idxmax: 0.333333
+  pandas.DataFrame: 0.333333
+aim	entropy 1.62e-04	nTrans 5	sum 1.000000
+  df1.index: 0.999987
+  df1.assign: 0.000013
+save	entropy 8.36e-13	nTrans 14	sum 1.000000
+  df.reset_index: 1.000000
+parenthes	entropy 0	nTrans 2	sum 1.000000
+  df.query: 1.000000
+matter	entropy 0	nTrans 6	sum 1.000000
+  df.ix.copy: 1.000000
+cell	entropy 0.016	nTrans 9	sum 1.000000
+  df.groupby.size: 0.997779
+  key_columns.df.groupby.size: 0.002221
+valid	entropy 2.38e-06	nTrans 11	sum 1.000000
+  total_rows.astype: 1.000000
+  key_columns.df.groupby.size: 0.000000
+interfac	entropy 0	nTrans 7	sum 1.000000
+  df.df.loc.values: 1.000000
+top	entropy 0.183	nTrans 4	sum 1.000000
+  df.columns.values: 0.955306
+  col.join.strip: 0.044694
+assum	entropy 0.606	nTrans 15	sum 1.000000
+  join: 0.711611
+  pd.read_csv: 0.287700
+  df.reindex_axis: 0.000683
+  df.loc: 0.000006
+  pd.merge: 0.000000
+cookbook	entropy 4.03e-17	nTrans 2	sum 1.000000
+  pd.read_pickle: 1.000000
+locat	entropy 0	nTrans 5	sum 1.000000
+  df.iloc: 1.000000
+yield	entropy 0.207	nTrans 11	sum 1.000000
+  s.index: 0.947226
+  s.reindex: 0.052682
+  df.index.isin: 0.000091
+  df.isin: 0.000001
+share	entropy 0.051	nTrans 7	sum 1.000000
+  df2.df1.any: 0.991176
+  df2.df1.stack: 0.008812
+  np.where: 0.000011
+  changed.index: 0.000000
+slowli	entropy 1.099	nTrans 3	sum 1.000000
+  df.argmax: 0.333333
+  dfrm.idxmax: 0.333333
+  pandas.DataFrame: 0.333333
+toy	entropy 1.099	nTrans 3	sum 1.000000
+  df.argmax: 0.333333
+  dfrm.idxmax: 0.333333
+  pandas.DataFrame: 0.333333
+andi	entropy 1.609	nTrans 5	sum 1.000000
+  df.str.split: 0.200000
+  pd.DataFrame: 0.200000
+  df.str.split.rename: 0.200000
+  df.join: 0.200000
+  upper_lower_df.str.lower: 0.200000
+idxmax	entropy 1.099	nTrans 3	sum 1.000000
+  df.argmax: 0.333333
+  dfrm.idxmax: 0.333333
+  pandas.DataFrame: 0.333333
+avail	entropy 0.247	nTrans 10	sum 1.000000
+  df.index.values: 0.942667
+  df.convert_objects: 0.049695
+  df.str.contains: 0.003926
+  df.convert_objects.dtypes: 0.003712
+product	entropy 0	nTrans 2	sum 1.000000
+  df.query: 1.000000
+question	entropy 0.356	nTrans 14	sum 1.000000
+  df.dropna: 0.885785
+  df.tolist: 0.114161
+  df.to_pickle: 0.000053
+littl	entropy 5.12e-29	nTrans 5	sum 1.000000
+  df1.rename: 1.000000
+duplic	entropy 0.676	nTrans 22	sum 1.000000
+  df.drop_duplicates.values.tolist: 0.592478
+  df.isin: 0.407516
+  df.values.tolist: 0.000006
+  df3.reset_index: 0.000000
+notic	entropy 1.609	nTrans 5	sum 1.000000
+  df.str.split: 0.200000
+  pd.DataFrame: 0.200000
+  df.str.split.rename: 0.200000
+  df.join: 0.200000
+  upper_lower_df.str.lower: 0.200000
+exampl	entropy 0.725	nTrans 58	sum 1.000000
+  pd.DataFrame: 0.774931
+  table.groupby.CLIENTCODE.nunique: 0.131501
+  df.fillna: 0.079790
+  df.read_csv: 0.013760
+  df.drop_duplicates.values: 0.000017
+  df.isin: 0.000001
+  df.to_csv: 0.000000
+  table.groupby: 0.000000
+  pd.read_sql: 0.000000
+instanc	entropy 6.25e-04	nTrans 5	sum 1.000000
+  df.head: 0.999943
+  df.query: 0.000055
+  xl.parse: 0.000001
+  pd.io.parsers.ExcelFile.parse: 0.000001
+  df.loc: 0.000000
+col	entropy 0.008	nTrans 5	sum 1.000000
+  df3.reset_index: 0.998942
+  df.columns.tolist: 0.001058
+instal	entropy 1.36e-05	nTrans 6	sum 1.000000
+  datetime.utcnow.np.datetime64.astype: 0.999999
+  datetime.utcfromtimestamp: 0.000001
+  datetime.utcnow: 0.000000
+almost	entropy 0.458	nTrans 4	sum 1.000000
+  data.groupby: 0.869974
+  data.fillna: 0.098465
+  data.groupby.transform: 0.031561
+screen	entropy 0	nTrans 1	sum 1.000000
+  paramdata.index: 1.000000
+manner	entropy 0.693	nTrans 7	sum 1.000000
+  df1.col2.isin: 0.509554
+  df1.col1.isin: 0.490446
+pray	entropy 1.099	nTrans 3	sum 1.000000
+  df.argmax: 0.333333
+  dfrm.idxmax: 0.333333
+  pandas.DataFrame: 0.333333
+correspond	entropy 7.84e-06	nTrans 6	sum 1.000000
+  dt64.dtype: 0.999999
+  datetime.utcnow: 0.000001
+mode	entropy 0	nTrans 2	sum 1.000000
+  df.to_csv: 1.000000
+etc	entropy 0.014	nTrans 6	sum 1.000000
+  datetime.utcnow: 0.998128
+  dt64.astype: 0.001872
+applicatino	entropy 0.006	nTrans 5	sum 1.000000
+  join: 0.999322
+  x.sum: 0.000678
+function	entropy 4.13e-04	nTrans 21	sum 1.000000
+  df.groupby: 0.999963
+  df.rename: 0.000037
+  df.to_json: 0.000000
+  "": 0.000000
+ordin	entropy 1.71e-35	nTrans 5	sum 1.000000
+  df.df.index.tolist: 1.000000
+buffer	entropy 0	nTrans 3	sum 1.000000
+  df.to_json: 1.000000
+new	entropy 2.56e-09	nTrans 19	sum 1.000000
+  df.loc: 1.000000
+  df.resample.sum.fillna: 0.000000
+comparison	entropy 0.095	nTrans 4	sum 1.000000
+  df.astype: 0.980663
+  df.query: 0.019337
+read	entropy 0.004	nTrans 6	sum 1.000000
+  pd.read_csv: 0.999577
+  df.read_csv: 0.000423
+tri	entropy 0.653	nTrans 21	sum 1.000000
+  pd.read_csv: 0.640280
+  df.loc: 0.359720
+tick	entropy 0	nTrans 2	sum 1.000000
+  df.reset_index: 1.000000
+less	entropy 2.98e-16	nTrans 2	sum 1.000000
+  df3.index: 1.000000
+nasti	entropy 2.73e-05	nTrans 9	sum 1.000000
+  datetime.utcnow.np.datetime64.astype: 0.999998
+  datetime.utcfromtimestamp: 0.000002
+  datetime.utcnow: 0.000000
+translat	entropy 0	nTrans 1	sum 1.000000
+  df.isin: 1.000000
+uniqu	entropy 2.35e-29	nTrans 5	sum 1.000000
+  df.values.ravel.Series.unique: 1.000000
+unit	entropy 1.099	nTrans 3	sum 1.000000
+  df.argmax: 0.333333
+  dfrm.idxmax: 0.333333
+  pandas.DataFrame: 0.333333
+settingwithcopi	entropy 0.331	nTrans 4	sum 1.000000
+  data.fillna: 0.906742
+  data.groupby.transform: 0.087822
+  data.groupby: 0.005436
+alreadi	entropy 3.40e-14	nTrans 6	sum 1.000000
+  df.index.values: 1.000000
+therefor	entropy 0.030	nTrans 8	sum 1.000000
+  df3.drop_duplicates: 0.995314
+  paramdata.index: 0.004674
+  df.to_json: 0.000012
+numpi	entropy 5.88e-07	nTrans 23	sum 1.000000
+  df.values: 1.000000
+  pd.DataFrame: 0.000000
+basic	entropy 0	nTrans 1	sum 1.000000
+  pd.merge: 1.000000
+collect	entropy 1.609	nTrans 5	sum 1.000000
+  df.str.split: 0.200000
+  pd.DataFrame: 0.200000
+  df.str.split.rename: 0.200000
+  df.join: 0.200000
+  upper_lower_df.str.lower: 0.200000
+reassign	entropy 0	nTrans 1	sum 1.000000
+  df.columns.tolist: 1.000000
+reorder	entropy 0	nTrans 1	sum 1.000000
+  df.columns.tolist: 1.000000
+around	entropy 0	nTrans 1	sum 1.000000
+  df.tolist: 1.000000
+respons	entropy 0.028	nTrans 5	sum 1.000000
+  df.isin: 0.995677
+  df.isnull.values.any: 0.004249
+  df.isnull.values: 0.000074
+disappoint	entropy 1.099	nTrans 3	sum 1.000000
+  df.argmax: 0.333333
+  dfrm.idxmax: 0.333333
+  pandas.DataFrame: 0.333333
+unexpectedli	entropy 1.099	nTrans 3	sum 1.000000
+  df.argmax: 0.333333
+  dfrm.idxmax: 0.333333
+  pandas.DataFrame: 0.333333
+resolv	entropy 0	nTrans 3	sum 1.000000
+  df.dropna: 1.000000
+calcul	entropy 5.31e-05	nTrans 14	sum 1.000000
+  datetime.datetime.now: 0.999996
+  groupby_object.agg.rename: 0.000004
+  df.groupby.size: 0.000000
+predict	entropy 0	nTrans 1	sum 1.000000
+  df.xs: 1.000000
+row	entropy 4.76e-04	nTrans 46	sum 1.000000
+  df.loc: 0.999959
+  sub_df.iloc: 0.000034
+  df2.df1.isin.df1.dropna: 0.000007
+  df.isin: 0.000000
+  df.map: 0.000000
+  df.iloc: 0.000000
+  df.sum: 0.000000
+unpack	entropy 1.609	nTrans 5	sum 1.000000
+  df.str.split: 0.200000
+  pd.DataFrame: 0.200000
+  df.str.split.rename: 0.200000
+  df.join: 0.200000
+  upper_lower_df.str.lower: 0.200000
+ant	entropy 0	nTrans 1	sum 1.000000
+  df.loc: 1.000000
+strategi	entropy 1.06e-15	nTrans 2	sum 1.000000
+  df.to_pickle: 1.000000
+flatnonzero	entropy 1.93e-04	nTrans 5	sum 1.000000
+  df.df.index.tolist: 0.999984
+  df.df.index: 0.000016
+previou	entropy 0	nTrans 1	sum 1.000000
+  pd.option_context: 1.000000
+femal	entropy 0	nTrans 1	sum 1.000000
+  w.map: 1.000000
+plu	entropy 0.384	nTrans 4	sum 1.000000
+  data.fillna: 0.884642
+  data.groupby.transform: 0.108193
+  data.groupby: 0.007165
+wall	entropy 1.099	nTrans 3	sum 1.000000
+  df.argmax: 0.333333
+  dfrm.idxmax: 0.333333
+  pandas.DataFrame: 0.333333
+openpyxl	entropy 1.78e-05	nTrans 2	sum 1.000000
+  ws.title: 0.999999
+  data_filtered.to_excel: 0.000001
+cluster	entropy 0	nTrans 1	sum 1.000000
+  df.tolist: 1.000000
+reason	entropy 0.017	nTrans 2	sum 1.000000
+  w.map: 0.997657
+  df.xs: 0.002343
+gotten	entropy 0	nTrans 1	sum 1.000000
+  pd.read_sql: 1.000000
+csv	entropy 2.25e-04	nTrans 6	sum 1.000000
+  pd.read_csv: 0.999981
+  df.read_csv: 0.000019
+  list_.append: 0.000000
+datafram	entropy 5.36e-04	nTrans 74	sum 1.000000
+  pd.DataFrame: 0.999953
+  df1.groupby: 0.000040
+  pandas.DataFrame: 0.000006
+  df.drop: 0.000001
+simultan	entropy 0	nTrans 2	sum 1.000000
+  df.df.loc.values: 1.000000
+echo	entropy 0	nTrans 2	sum 1.000000
+  df.iloc: 1.000000
+naiv	entropy 2.14e-05	nTrans 10	sum 1.000000
+  gb.get_group: 0.999999
+  datetime.utcnow: 0.000001
+  dt64.dtype: 0.000000
+  datetime.utcnow.np.datetime64.astype: 0.000000
+  datetime.utcfromtimestamp: 0.000000
+len	entropy 0.690	nTrans 4	sum 1.000000
+  df.shape: 0.537356
+  df.map: 0.462644
+ambigu	entropy 3.24e-27	nTrans 7	sum 1.000000
+  changed.index: 1.000000
+odditi	entropy 0	nTrans 1	sum 1.000000
+  pd.read_csv: 1.000000
+pivot	entropy 0	nTrans 2	sum 1.000000
+  df.pivot: 1.000000
+let	entropy 1.17e-05	nTrans 19	sum 1.000000
+  df.dtypes: 0.999999
+  df.loc: 0.000001
+api	entropy 3.43e-04	nTrans 14	sum 1.000000
+  "": 0.999970
+  datetime.utcnow.np.datetime64.astype: 0.000030
+onlin	entropy 9.27e-04	nTrans 5	sum 1.000000
+  df.groupby.count: 0.999910
+  df.value_counts: 0.000090
+element	entropy 3.00e-05	nTrans 13	sum 1.000000
+  df.map: 0.999998
+  df.columns.tolist: 0.000002
+  df3.index.duplicated: 0.000000
+dictionari	entropy 0.061	nTrans 10	sum 1.000000
+  s.reset_index: 0.988891
+  df1.index: 0.011107
+  gb.get_group: 0.000002
+gener	entropy 0.224	nTrans 21	sum 1.000000
+  df.rename: 0.943265
+  pd.read_csv: 0.055542
+  pd.merge: 0.001172
+  df.dropna: 0.000021
+remain	entropy 0	nTrans 2	sum 1.000000
+  df.sort_values: 1.000000
+want	entropy 0.173	nTrans 71	sum 1.000000
+  df.dtypes: 0.967716
+  df.map: 0.018778
+  table.groupby.CLIENTCODE.nunique: 0.009537
+  df.reset_index: 0.003850
+  g1.index: 0.000083
+  df.loc: 0.000033
+  pd.DataFrame: 0.000003
+  df.append: 0.000000
+  df.reindex_axis: 0.000000
+databas	entropy 0	nTrans 4	sum 1.000000
+  pd.read_sql: 1.000000
+pickl	entropy 9.88e-15	nTrans 2	sum 1.000000
+  df.to_pickle: 1.000000
+matplotlib	entropy 0	nTrans 2	sum 1.000000
+  df.plot: 1.000000
+must	entropy 0.011	nTrans 4	sum 1.000000
+  col.join.strip: 0.998606
+  df.columns.values: 0.001394
+necessarili	entropy 0.004	nTrans 5	sum 1.000000
+  df1.assign: 0.999568
+  p.Series: 0.000432
+  df1.loc: 0.000000
+document	entropy 0	nTrans 2	sum 1.000000
+  df.plot: 1.000000
+recommend	entropy 0	nTrans 6	sum 1.000000
+  df.xs: 1.000000
+two	entropy 8.97e-04	nTrans 20	sum 1.000000
+  pd.read_sql: 0.999919
+  df1.rename: 0.000056
+  pd.read_csv: 0.000026
+worth	entropy 1.099	nTrans 3	sum 1.000000
+  df.argmax: 0.333333
+  dfrm.idxmax: 0.333333
+  pandas.DataFrame: 0.333333
+anyway	entropy 0.025	nTrans 2	sum 1.000000
+  "": 0.996199
+  paramdata.index: 0.003801
+default	entropy 0.026	nTrans 13	sum 1.000000
+  pd.set_option: 0.996453
+  df.groupby.apply: 0.002358
+  df.xs: 0.001156
+  df.sort_values: 0.000033
+found	entropy 0.002	nTrans 12	sum 1.000000
+  "": 0.999790
+  df1.col2.isin: 0.000202
+  pd.set_option: 0.000007
+  df3.reset_index: 0.000001
+scenario	entropy 0	nTrans 2	sum 1.000000
+  df.iloc: 1.000000
+larg	entropy 4.23e-06	nTrans 6	sum 1.000000
+  df3.reset_index.drop_duplicates: 1.000000
+  df.to_pickle: 0.000000
+anoth	entropy 0.009	nTrans 12	sum 1.000000
+  df2.df1.isin.df1.dropna: 0.998912
+  df.to_pickle: 0.001088
+advantag	entropy 0	nTrans 7	sum 1.000000
+  df.query: 1.000000
+popular	entropy 1.23e-05	nTrans 2	sum 1.000000
+  pd.read_pickle: 0.999999
+  df.to_pickle: 0.000001
+timestamp	entropy 1.792	nTrans 6	sum 1.000000
+  pd.to_numeric: 0.166667
+  pd.Series: 0.166667
+  pd.DataFrame: 0.166667
+  df.apply: 0.166667
+  df.dtypes: 0.166667
+  df.infer_objects: 0.166667
+latest	entropy 0	nTrans 1	sum 1.000000
+  "": 1.000000
+think	entropy 6.59e-15	nTrans 30	sum 1.000000
+  pd.Series: 1.000000
+hayden	entropy 1.609	nTrans 5	sum 1.000000
+  df.str.split: 0.200000
+  pd.DataFrame: 0.200000
+  df.str.split.rename: 0.200000
+  df.join: 0.200000
+  upper_lower_df.str.lower: 0.200000
+call	entropy 0.350	nTrans 21	sum 1.000000
+  pd.DataFrame: 0.889060
+  df.tolist: 0.110711
+  pd.io.parsers.ExcelFile.parse: 0.000226
+  df.head: 0.000003
+  xl.parse: 0.000000
+googl	entropy 0	nTrans 1	sum 1.000000
+  "": 1.000000
+quit	entropy 0.020	nTrans 6	sum 1.000000
+  df.df.index.tolist: 0.997040
+  df.tolist: 0.002960
+thing	entropy 0.003	nTrans 7	sum 1.000000
+  df3.reset_index.drop_duplicates: 0.999727
+  df3.reset_index: 0.000273
+  df3.reset_index.drop_duplicates.set_index: 0.000000
+dataset	entropy 0.243	nTrans 3	sum 1.000000
+  pd.read_csv: 0.933926
+  df.to_pickle: 0.066074
+fillna	entropy 0	nTrans 1	sum 1.000000
+  df.fillna: 1.000000
+run	entropy 0.062	nTrans 21	sum 1.000000
+  df1.assign: 0.990244
+  pd.set_option: 0.005392
+  p.Series: 0.004364
+  df1.loc: 0.000000
+  df.groupby.size.rename: 0.000000
+  x.groupby_object.agg.rename.join: 0.000000
+align	entropy 0.023	nTrans 5	sum 1.000000
+  df.groupby.count: 0.996559
+  df.value_counts: 0.003441
+bitwis	entropy 0	nTrans 2	sum 1.000000
+  df.query: 1.000000
+either	entropy 2.88e-12	nTrans 11	sum 1.000000
+  df.reset_index: 1.000000
+view	entropy 6.94e-10	nTrans 3	sum 1.000000
+  df.xs: 1.000000
+structur	entropy 0	nTrans 1	sum 1.000000
+  gb.get_group: 1.000000
+late	entropy 0.435	nTrans 4	sum 1.000000
+  data.fillna: 0.862386
+  data.groupby.transform: 0.128366
+  data.groupby: 0.009249
+entir	entropy 0.422	nTrans 17	sum 1.000000
+  df2.df1.isin.df1.dropna: 0.865498
+  pd.read_csv: 0.127904
+  df1.col1.isin: 0.006534
+  "": 0.000064
+keyword	entropy 0	nTrans 1	sum 1.000000
+  pd.read_csv: 1.000000
+actual	entropy 0.279	nTrans 22	sum 1.000000
+  df.set_index.to_dict: 0.936458
+  df.fillna: 0.038843
+  df.tolist: 0.024672
+  df.query: 0.000021
+  df.groupby.size: 0.000007
+given	entropy 0	nTrans 1	sum 1.000000
+  pd.set_option: 1.000000
+last	entropy 0.240	nTrans 5	sum 1.000000
+  "": 0.936558
+  df.columns.tolist: 0.062674
+  df3.index.duplicated: 0.000768
+reindex	entropy 8.71e-06	nTrans 4	sum 1.000000
+  s.reindex: 0.999999
+  s.index: 0.000001
+might	entropy 3.13e-04	nTrans 22	sum 1.000000
+  df.row.str.split: 0.999973
+  data_filtered.to_excel: 0.000027
+  df3.reset_index.drop_duplicates.set_index: 0.000000
+  df.row.str.split.tolist: 0.000000
+  df3.reset_index.drop_duplicates: 0.000000
+reproduc	entropy 0.613	nTrans 9	sum 1.000000
+  numpy.datetime64.astype: 0.726676
+  datetime.utcfromtimestamp: 0.267896
+  datetime.utcnow.np.datetime64.astype: 0.005428
+  dt64.astype: 0.000000
+effici	entropy 0.045	nTrans 21	sum 1.000000
+  gb.get_group: 0.992429
+  df1.assign: 0.007571
+warn	entropy 0.004	nTrans 12	sum 1.000000
+  df_test.iloc: 0.999631
+  df1.assign: 0.000256
+  df.xs: 0.000113
+  df1.index: 0.000000
+introduc	entropy 1.792	nTrans 6	sum 1.000000
+  pd.to_numeric: 0.166667
+  pd.Series: 0.166667
+  pd.DataFrame: 0.166667
+  df.apply: 0.166667
+  df.dtypes: 0.166667
+  df.infer_objects: 0.166667
+easiest	entropy 0.402	nTrans 8	sum 1.000000
+  df.columns.values: 0.869585
+  pd.to_datetime: 0.127294
+  col.join.strip: 0.003115
+  df.to_pickle: 0.000006
+importantli	entropy 1.792	nTrans 6	sum 1.000000
+  pd.to_numeric: 0.166667
+  pd.Series: 0.166667
+  pd.DataFrame: 0.166667
+  df.apply: 0.166667
+  df.dtypes: 0.166667
+  df.infer_objects: 0.166667
+name	entropy 0.692	nTrans 27	sum 1.000000
+  df.set_index: 0.601344
+  pd.concat: 0.395524
+  df.map: 0.002939
+  df.index: 0.000138
+  pd.read_csv: 0.000049
+  paramdata.index: 0.000005
+  sub_df.iloc: 0.000000
+notabl	entropy 0	nTrans 3	sum 1.000000
+  df.shape: 1.000000
+next	entropy 0.083	nTrans 5	sum 1.000000
+  df.resample: 0.983852
+  df.resample.sum: 0.016148
+away	entropy 0	nTrans 1	sum 1.000000
+  df.xs: 1.000000
+string	entropy 0.307	nTrans 24	sum 1.000000
+  df.dtypes: 0.910733
+  total_rows.astype: 0.088197
+  df.apply: 0.000631
+  df.columns.get_level_values: 0.000440
+  df.str.contains: 0.000000
+import	entropy 0.277	nTrans 8	sum 1.000000
+  pd.merge: 0.927287
+  np.where: 0.068548
+  df1.values: 0.004166
+show	entropy 0.179	nTrans 10	sum 1.000000
+  pd.read_csv: 0.963768
+  x.groupby_object.agg.rename.join: 0.024289
+  df.groupby.size.rename: 0.011942
+non	entropy 4.09e-07	nTrans 10	sum 1.000000
+  df.groupby.apply: 1.000000
+  x.sum: 0.000000
+comput	entropy 4.04e-40	nTrans 5	sum 1.000000
+  df.df.index: 1.000000
+overcom	entropy 0.058	nTrans 7	sum 1.000000
+  np.where: 0.989631
+  df1.values: 0.010268
+  df2.df1.stack: 0.000067
+  changed.index: 0.000019
+  df2.values: 0.000016
+clariti	entropy 0.135	nTrans 9	sum 1.000000
+  groupby_object.agg.rename: 0.971947
+  df.groupby.size: 0.026164
+  groupby_object.size: 0.001890
+start	entropy 0.015	nTrans 8	sum 1.000000
+  df2.df1.isin.df1.dropna: 0.998017
+  df_test.iloc: 0.001943
+  df.loc: 0.000041
+way	entropy 0.003	nTrans 54	sum 1.000000
+  d.sales.replace: 0.999707
+  d.loc: 0.000229
+  pd.Series: 0.000034
+  df.values.ravel.Series.unique: 0.000023
+  df.columns.tolist: 0.000004
+  df.row.str.split: 0.000001
+  df.row.str.split.tolist: 0.000001
+  pd.read_csv: 0.000001
+pair	entropy 2.67e-13	nTrans 4	sum 1.000000
+  s.index: 1.000000
+bypass	entropy 0	nTrans 1	sum 1.000000
+  pd.set_option: 1.000000
+equal	entropy 7.22e-08	nTrans 7	sum 1.000000
+  df.isin: 1.000000
+  df.index.isin: 0.000000
+  split: 0.000000
+chanc	entropy 0.005	nTrans 3	sum 1.000000
+  df.groupby.max: 0.999393
+  df.groupby.transform: 0.000607
+transpos	entropy 7.23e-16	nTrans 5	sum 1.000000
+  df1.rename: 1.000000
+refer	entropy 7.49e-04	nTrans 12	sum 1.000000
+  df.rename: 0.999929
+  df.df.index.tolist: 0.000071
+chang	entropy 0.356	nTrans 31	sum 1.000000
+  df.resample: 0.890172
+  df1.index: 0.107969
+  df3.index: 0.001592
+  changed.index: 0.000266
+  df.fillna: 0.000001
+  df2.values: 0.000000
+  df1.rename: 0.000000
+short	entropy 0	nTrans 1	sum 1.000000
+  pd.read_sql: 1.000000
+financi	entropy 1.099	nTrans 3	sum 1.000000
+  df.argmax: 0.333333
+  dfrm.idxmax: 0.333333
+  pandas.DataFrame: 0.333333
+unusu	entropy 0	nTrans 5	sum 1.000000
+  df.df.index.tolist: 1.000000
+aggreag	entropy 0.486	nTrans 9	sum 1.000000
+  key_columns.df.groupby.size: 0.810421
+  df.groupby.size: 0.189579
+time	entropy 0.200	nTrans 24	sum 1.000000
+  df.groupby.apply: 0.957465
+  df.to_pickle: 0.031994
+  pd.to_datetime: 0.010426
+  datetime.utcnow.np.datetime64.astype: 0.000115
+  df.isin: 0.000000
+  pd.read_csv: 0.000000
+window	entropy 0.144	nTrans 6	sum 1.000000
+  df.resample.sum: 0.967243
+  df.resample.sum.fillna: 0.032757
+suddenli	entropy 1.099	nTrans 3	sum 1.000000
+  df.argmax: 0.333333
+  dfrm.idxmax: 0.333333
+  pandas.DataFrame: 0.333333
+play	entropy 0	nTrans 5	sum 1.000000
+  df.df.index.tolist: 1.000000
+criteria	entropy 0	nTrans 1	sum 1.000000
+  "": 1.000000
+wouter	entropy 0	nTrans 3	sum 1.000000
+  df.dropna: 1.000000
+arithmet	entropy 0	nTrans 2	sum 1.000000
+  df.query: 1.000000
+three	entropy 1.099	nTrans 3	sum 1.000000
+  df.argmax: 0.333333
+  dfrm.idxmax: 0.333333
+  pandas.DataFrame: 0.333333
+put	entropy 0.088	nTrans 8	sum 1.000000
+  pd.merge: 0.982427
+  df.index.isin: 0.017573
+multi	entropy 0	nTrans 2	sum 1.000000
+  df.reset_index: 1.000000
+axi	entropy 6.69e-14	nTrans 3	sum 1.000000
+  df.sum: 1.000000
+slice	entropy 7.46e-11	nTrans 4	sum 1.000000
+  df.loc: 1.000000
+far	entropy 0.001	nTrans 3	sum 1.000000
+  df3.index: 0.999889
+  df.xs: 0.000111
+quickli	entropy 8.99e-08	nTrans 4	sum 1.000000
+  df3.reset_index.drop_duplicates: 1.000000
+  df3.reset_index.drop_duplicates.set_index: 0.000000
+greater	entropy 0	nTrans 3	sum 1.000000
+  df.astype: 1.000000
+case	entropy 0.505	nTrans 21	sum 1.000000
+  df.fillna: 0.801653
+  df.set_index.to_dict: 0.197162
+  df.tolist: 0.001184
+okay	entropy 0.123	nTrans 3	sum 1.000000
+  df.head: 0.973323
+  xl.parse: 0.026677
+applic	entropy 1.099	nTrans 3	sum 1.000000
+  df.argmax: 0.333333
+  dfrm.idxmax: 0.333333
+  pandas.DataFrame: 0.333333
+give	entropy 0.002	nTrans 10	sum 1.000000
+  df.groupby: 0.999802
+  df.isin: 0.000147
+  ws.title: 0.000029
+  "": 0.000012
+  df_test.iloc: 0.000006
+  pd.read_csv: 0.000004
+  df.reindex_axis: 0.000001
+  data_filtered.to_excel: 0.000000
+item	entropy 2.26e-16	nTrans 4	sum 1.000000
+  s.reset_index: 1.000000
+multipl	entropy 1.016	nTrans 17	sum 1.000000
+  df.groupby.max: 0.528827
+  pd.Series: 0.256374
+  df.index.isin: 0.214799
+  split: 0.000000
+iter	entropy 0.068	nTrans 13	sum 1.000000
+  myseries.myseries.index: 0.987242
+  gb.get_group: 0.012758
+modul	entropy 0	nTrans 1	sum 1.000000
+  pd.merge: 1.000000
+preced	entropy 0	nTrans 2	sum 1.000000
+  df.query: 1.000000
+sedol	entropy 1.099	nTrans 3	sum 1.000000
+  df.argmax: 0.333333
+  dfrm.idxmax: 0.333333
+  pandas.DataFrame: 0.333333
+explicitli	entropy 0	nTrans 3	sum 1.000000
+  df.dropna: 1.000000
+consid	entropy 4.52e-04	nTrans 15	sum 1.000000
+  df3.reset_index: 0.999959
+  df.dropna: 0.000041
+memori	entropy 4.23e-04	nTrans 7	sum 1.000000
+  pd.read_csv: 0.999962
+  gb.get_group: 0.000038
+futur	entropy 0.072	nTrans 6	sum 1.000000
+  dt64.dtype: 0.986699
+  datetime.utcnow: 0.013137
+  datetime.utcfromtimestamp: 0.000124
+  datetime.utcnow.np.datetime64.astype: 0.000040
+everyth	entropy 1.099	nTrans 3	sum 1.000000
+  df.argmax: 0.333333
+  dfrm.idxmax: 0.333333
+  pandas.DataFrame: 0.333333
+hyri	entropy 0	nTrans 2	sum 1.000000
+  df.iloc: 1.000000
+style	entropy 1.18e-05	nTrans 3	sum 1.000000
+  df.plot: 0.999999
+  df.tolist: 0.000001
+suit	entropy 0.183	nTrans 4	sum 1.000000
+  data.fillna: 0.956876
+  data.groupby.transform: 0.042084
+  data.groupby: 0.001040
+explor	entropy 2.60e-16	nTrans 4	sum 1.000000
+  df.isnull.values: 1.000000
+care	entropy 1.609	nTrans 5	sum 1.000000
+  df.str.split: 0.200000
+  pd.DataFrame: 0.200000
+  df.str.split.rename: 0.200000
+  df.join: 0.200000
+  upper_lower_df.str.lower: 0.200000
+repr	entropy 0	nTrans 1	sum 1.000000
+  pd.set_option: 1.000000
+loc	entropy 0	nTrans 16	sum 1.000000
+  df.loc: 1.000000
+older	entropy 2.76e-04	nTrans 4	sum 1.000000
+  df3.reset_index.drop_duplicates: 0.999976
+  df3.reset_index: 0.000024
+  df3.reset_index.drop_duplicates.set_index: 0.000000
+chain	entropy 1.50e-34	nTrans 8	sum 1.000000
+  "": 1.000000
+alon	entropy 1.792	nTrans 6	sum 1.000000
+  pd.to_numeric: 0.166667
+  pd.Series: 0.166667
+  pd.DataFrame: 0.166667
+  df.apply: 0.166667
+  df.dtypes: 0.166667
+  df.infer_objects: 0.166667
+display	entropy 0.003	nTrans 2	sum 1.000000
+  paramdata.index: 0.999621
+  pd.set_option: 0.000379
+interchang	entropy 0.055	nTrans 6	sum 1.000000
+  df.shape: 0.990320
+  df1.rename: 0.009680
+wrong	entropy 0.009	nTrans 5	sum 1.000000
+  df1.assign: 0.998845
+  df1.index: 0.001155
+  p.Series: 0.000000
+onward	entropy 0	nTrans 1	sum 1.000000
+  pd.set_option: 1.000000
+width	entropy 0	nTrans 1	sum 1.000000
+  pd.set_option: 1.000000
+advanc	entropy 6.78e-16	nTrans 2	sum 1.000000
+  df.to_pickle: 1.000000
+certain	entropy 0.726	nTrans 5	sum 1.000000
+  df.dtypes.df.columns.to_series.groupby.groups: 0.641823
+  df.columns.to_series.groupby: 0.339363
+  df.columns.to_series: 0.018814
+quick	entropy 0.011	nTrans 3	sum 1.000000
+  data_filtered.to_excel: 0.998472
+  "": 0.001528
+  ws.title: 0.000000
+concaten	entropy 0	nTrans 5	sum 1.000000
+  df.groupby.apply: 1.000000
+whitespac	entropy 0.031	nTrans 9	sum 1.000000
+  df.columns.values: 0.995168
+  col.join.strip: 0.004832
+tell	entropy 4.23e-04	nTrans 4	sum 1.000000
+  df3.reset_index.drop_duplicates: 0.999962
+  df3.reset_index.drop_duplicates.set_index: 0.000038
+section	entropy 0.282	nTrans 3	sum 1.000000
+  df.fillna.groupby.sum: 0.918869
+  df.fillna.groupby: 0.081131
+  df.fillna: 0.000000
+simpli	entropy 0.694	nTrans 20	sum 1.000000
+  my_dataframe.columns.values: 0.525221
+  data.set_index: 0.474502
+  pd.Series: 0.000277
+dan	entropy 0	nTrans 3	sum 1.000000
+  df.shape: 1.000000
+flatten	entropy 0	nTrans 1	sum 1.000000
+  "": 1.000000
+shown	entropy 1.792	nTrans 6	sum 1.000000
+  pd.to_numeric: 0.166667
+  pd.Series: 0.166667
+  pd.DataFrame: 0.166667
+  df.apply: 0.166667
+  df.dtypes: 0.166667
+  df.infer_objects: 0.166667
+pyplot	entropy 0	nTrans 2	sum 1.000000
+  df.plot: 1.000000
+dat	entropy 0	nTrans 1	sum 1.000000
+  df.loc: 1.000000
+beat	entropy 1.099	nTrans 3	sum 1.000000
+  df.argmax: 0.333333
+  dfrm.idxmax: 0.333333
+  pandas.DataFrame: 0.333333
+dict	entropy 0.003	nTrans 8	sum 1.000000
+  df.set_index.to_dict: 0.999625
+  df.plot: 0.000370
+  gb.get_group: 0.000006
+day	entropy 0.110	nTrans 5	sum 1.000000
+  df.resample.sum.fillna: 0.976861
+  df.resample.sum.fillna.rolling: 0.023139
+  df.resample.sum: 0.000000
+group	entropy 1.40e-21	nTrans 23	sum 1.000000
+  df.groupby: 1.000000
+suppos	entropy 0.235	nTrans 10	sum 1.000000
+  pd.read_csv: 0.937052
+  df.groupby.size.rename: 0.062948
+kind	entropy 0	nTrans 12	sum 1.000000
+  key_columns.df.groupby.size: 1.000000
+eleg	entropy 0	nTrans 1	sum 1.000000
+  df.apply: 1.000000
+resiz	entropy 0	nTrans 1	sum 1.000000
+  pd.set_option: 1.000000
+format	entropy 0.222	nTrans 4	sum 1.000000
+  pd.to_datetime: 0.941881
+  df.plot: 0.058119
+dbi	entropy 0	nTrans 1	sum 1.000000
+  pd.read_sql: 1.000000
+rais	entropy 2.303	nTrans 10	sum 1.000000
+  pd.to_numeric: 0.100000
+  pd.Series: 0.100000
+  pd.DataFrame: 0.100000
+  df.apply: 0.100000
+  df.dtypes: 0.100000
+  df.infer_objects: 0.100000
+  data.fillna: 0.100000
+  pd.set_option: 0.100000
+  data.groupby: 0.100000
+  data.groupby.transform: 0.100000
+done	entropy 0.686	nTrans 3	sum 1.000000
+  "": 0.560484
+  df.df.loc.values: 0.439516
+inner	entropy 1.50e-18	nTrans 6	sum 1.000000
+  df1.merge: 1.000000
+rownum	entropy 1.02e-10	nTrans 4	sum 1.000000
+  df3.reset_index: 1.000000
+delimit	entropy 0	nTrans 6	sum 1.000000
+  df.to_csv: 1.000000
+unsur	entropy 1.609	nTrans 5	sum 1.000000
+  df.str.split: 0.200000
+  pd.DataFrame: 0.200000
+  df.str.split.rename: 0.200000
+  df.join: 0.200000
+  upper_lower_df.str.lower: 0.200000
+imagin	entropy 0	nTrans 2	sum 1.000000
+  df.iloc: 1.000000
+alexand	entropy 0.036	nTrans 5	sum 1.000000
+  sLength.np.random.randn.p.Series.values: 0.994045
+  p.Series: 0.005955
+keep	entropy 0.001	nTrans 4	sum 1.000000
+  df.drop_duplicates: 0.999880
+  df3.index.duplicated: 0.000120
+effect	entropy 0	nTrans 1	sum 1.000000
+  pd.set_option: 1.000000
+option	entropy 4.62e-04	nTrans 31	sum 1.000000
+  pd.option_context: 0.999959
+  df.to_json: 0.000040
+  df.resample.sum.fillna: 0.000001
+  df.isnull.values.any: 0.000000
+  df.dropna: 0.000000
+  df.resample.sum.fillna.rolling: 0.000000
+request	entropy 1.85e-17	nTrans 3	sum 1.000000
+  df.groupby.max: 1.000000
+adequ	entropy 6.67e-09	nTrans 5	sum 1.000000
+  df1.index: 1.000000
+  df1.assign: 0.000000
+pars	entropy 2.70e-16	nTrans 3	sum 1.000000
+  df.head: 1.000000
+part	entropy 0.049	nTrans 7	sum 1.000000
+  np.where: 0.991496
+  df2.df1.stack: 0.008463
+  changed.index: 0.000041
+depract	entropy 0	nTrans 1	sum 1.000000
+  pd.set_option: 1.000000
+subdatafram	entropy 0	nTrans 1	sum 1.000000
+  gb.get_group: 1.000000
+buggi	entropy 1.099	nTrans 3	sum 1.000000
+  df.argmax: 0.333333
+  dfrm.idxmax: 0.333333
+  pandas.DataFrame: 0.333333
+point	entropy 0.257	nTrans 10	sum 1.000000
+  df.resample.sum.fillna: 0.928953
+  pd.read_csv: 0.071012
+  df.resample.sum.fillna.rolling: 0.000035
+  df.resample.sum: 0.000000
+galt	entropy 0	nTrans 1	sum 1.000000
+  pd.merge: 1.000000
+along	entropy 3.35e-06	nTrans 11	sum 1.000000
+  df.to_json: 1.000000
+  key_columns.df.groupby.size: 0.000000
+sheet	entropy 4.06e-14	nTrans 3	sum 1.000000
+  xl.parse: 1.000000
+easi	entropy 0.137	nTrans 5	sum 1.000000
+  df.columns.tolist: 0.969483
+  "": 0.030517
+move	entropy 0.074	nTrans 6	sum 1.000000
+  df.columns.tolist: 0.985899
+  myseries.myseries.index: 0.014101
+  pd.merge: 0.000000
+process	entropy 0	nTrans 7	sum 1.000000
+  pd.read_csv: 1.000000
+amount	entropy 0.058	nTrans 4	sum 1.000000
+  data.fillna: 0.989668
+  data.groupby.transform: 0.010280
+  data.groupby: 0.000052
+built	entropy 4.37e-22	nTrans 4	sum 1.000000
+  df.as_matrix: 1.000000
+isnul	entropy 7.05e-13	nTrans 8	sum 1.000000
+  df.isnull.sum: 1.000000
+attribut	entropy 1.07e-35	nTrans 17	sum 1.000000
+  pd.DataFrame: 1.000000
+sat	entropy 0	nTrans 1	sum 1.000000
+  df.loc: 1.000000
+clear	entropy 0.713	nTrans 4	sum 1.000000
+  data.fillna: 0.734903
+  data.groupby.transform: 0.210357
+  data.groupby: 0.054740
+also	entropy 0.702	nTrans 49	sum 1.000000
+  my_dataframe.columns.values: 0.540565
+  pd.Series: 0.457691
+  pd.DataFrame: 0.001670
+  pd.read_csv: 0.000074
+  pd.option_context: 0.000000
+say	entropy 0.076	nTrans 18	sum 1.000000
+  data_filtered.to_excel: 0.985498
+  df.convert_objects.dtypes: 0.014502
+  df1.assign: 0.000000
+enough	entropy 0	nTrans 1	sum 1.000000
+  pd.read_csv: 1.000000
+clean	entropy 0.330	nTrans 9	sum 1.000000
+  sum.grp.transform.sort.index: 0.904730
+  sort1.groupby: 0.091775
+  grp.transform: 0.003325
+  sort2.reset_index: 0.000169
+differ	entropy 0.104	nTrans 9	sum 1.000000
+  gb.get_group: 0.981943
+  df.shape: 0.013077
+  df.reindex_axis: 0.003829
+  df.df.index.tolist: 0.001151
+dayfirst	entropy 0	nTrans 2	sum 1.000000
+  pd.to_datetime: 1.000000
+consol	entropy 0	nTrans 1	sum 1.000000
+  pd.set_option: 1.000000
+third	entropy 1.792	nTrans 6	sum 1.000000
+  pd.to_numeric: 0.166667
+  pd.Series: 0.166667
+  pd.DataFrame: 0.166667
+  df.apply: 0.166667
+  df.dtypes: 0.166667
+  df.infer_objects: 0.166667
+favor	entropy 0.002	nTrans 4	sum 1.000000
+  pd.read_pickle: 0.999837
+  df.sort_values: 0.000163
+  df.to_pickle: 0.000000
+mean	entropy 0.002	nTrans 19	sum 1.000000
+  w.map: 0.999759
+  df.resample: 0.000241
+  key_columns.df.groupby.size: 0.000000
+  df.groupby.size: 0.000000
+  df.resample.sum: 0.000000
+  df.groupby.size.rename: 0.000000
+neither	entropy 0.082	nTrans 9	sum 1.000000
+  data.fillna: 0.984704
+  data.groupby.transform: 0.014576
+  data.groupby: 0.000720
+confus	entropy 5.23e-19	nTrans 5	sum 1.000000
+  df1.rename: 1.000000
+user	entropy 0.366	nTrans 4	sum 1.000000
+  data.fillna: 0.893019
+  data.groupby.transform: 0.100110
+  data.groupby: 0.006870
+bad	entropy 2.197	nTrans 9	sum 1.000000
+  pd.to_numeric: 0.111111
+  pd.Series: 0.111111
+  pd.DataFrame: 0.111111
+  df.apply: 0.111111
+  df.dtypes: 0.111111
+  df.argmax: 0.111111
+  dfrm.idxmax: 0.111111
+  df.infer_objects: 0.111111
+  pandas.DataFrame: 0.111111
+potenti	entropy 0	nTrans 7	sum 1.000000
+  df.dropna: 1.000000
+addit	entropy 2.01e-33	nTrans 5	sum 1.000000
+  df.isnull.values.any: 1.000000
+complet	entropy 0.005	nTrans 6	sum 1.000000
+  df.convert_objects.dtypes: 0.999376
+  df.sort_values: 0.000624
+ban	entropy 0.944	nTrans 4	sum 1.000000
+  data.fillna: 0.604618
+  data.groupby: 0.214832
+  data.groupby.transform: 0.180550
+fit	entropy 9.89e-04	nTrans 2	sum 1.000000
+  paramdata.index: 0.999903
+  pd.set_option: 0.000097
+offer	entropy 6.70e-04	nTrans 4	sum 1.000000
+  pd.to_datetime: 0.999937
+  df.to_pickle: 0.000063
+bar	entropy 0	nTrans 1	sum 1.000000
+  df.loc: 1.000000
+fix	entropy 0	nTrans 1	sum 1.000000
+  df.read_csv: 1.000000
+dev	entropy 0	nTrans 1	sum 1.000000
+  pd.read_csv: 1.000000
+record	entropy 0.002	nTrans 9	sum 1.000000
+  df.groupby.size: 0.999831
+  key_columns.df.groupby.size: 0.000169
+strict	entropy 0	nTrans 2	sum 1.000000
+  pd.to_datetime: 1.000000
+soft	entropy 1.792	nTrans 6	sum 1.000000
+  pd.to_numeric: 0.166667
+  pd.Series: 0.166667
+  pd.DataFrame: 0.166667
+  df.apply: 0.166667
+  df.dtypes: 0.166667
+  df.infer_objects: 0.166667
+posit	entropy 0.067	nTrans 11	sum 1.000000
+  df_test.iloc: 0.987684
+  df.columns.tolist: 0.012294
+  df1.assign: 0.000022
+happen	entropy 0	nTrans 10	sum 1.000000
+  df.append: 1.000000
+ad	entropy 4.95e-28	nTrans 4	sum 1.000000
+  list_.append: 1.000000
+sure	entropy 0.031	nTrans 2	sum 1.000000
+  w.map: 0.995108
+  "": 0.004892
+reus	entropy 0	nTrans 2	sum 1.000000
+  df.sort_values: 1.000000
+pass	entropy 0.306	nTrans 26	sum 1.000000
+  pd.Series: 0.908339
+  df.drop: 0.091660
+  df.df.loc.values: 0.000000
+  sort1.groupby.apply: 0.000000
+  df.to_json: 0.000000
+past	entropy 1.57e-38	nTrans 2	sum 1.000000
+  pandas.DataFrame: 1.000000
+disclaim	entropy 5.40e-09	nTrans 9	sum 1.000000
+  groupby_object.size: 1.000000
+  groupby_object.agg.rename: 0.000000
+automat	entropy 2.12e-04	nTrans 18	sum 1.000000
+  pd.option_context: 0.999982
+  df.groupby.apply: 0.000018
+especi	entropy 1.099	nTrans 3	sum 1.000000
+  df.argmax: 0.333333
+  dfrm.idxmax: 0.333333
+  pandas.DataFrame: 0.333333
+datetim	entropy 0.236	nTrans 6	sum 1.000000
+  datetime.utcnow.np.datetime64.astype: 0.945839
+  dt64.dtype: 0.046485
+  datetime.utcnow: 0.006653
+  datetime.utcfromtimestamp: 0.001023
+whose	entropy 0.572	nTrans 7	sum 1.000000
+  split: 0.753623
+  df.isin: 0.243968
+  df.index.isin: 0.002409
+cours	entropy 8.77e-12	nTrans 12	sum 1.000000
+  df.isnull.values: 1.000000
+extend	entropy 3.25e-06	nTrans 3	sum 1.000000
+  s2.s1.pd.concat.reset_index: 1.000000
+  pd.concat: 0.000000
+aw	entropy 3.78e-16	nTrans 3	sum 1.000000
+  df.fillna.groupby.sum: 1.000000
+multiindex	entropy 0.544	nTrans 11	sum 1.000000
+  df.columns.values: 0.772855
+  df3.index.duplicated: 0.225928
+  join: 0.001032
+  df3.index: 0.000185
+  col.join.strip: 0.000000
+  df1.rename: 0.000000
+preserv	entropy 7.89e-08	nTrans 6	sum 1.000000
+  sort1.groupby.apply: 1.000000
+  sort2.reset_index: 0.000000
+""	entropy 1.888	nTrans 11	sum 1.000000
+  dataframe.map: 0.250003
+  pd.DataFrame: 0.250003
+  x.lstrip: 0.161173
+  df_norm.mean: 0.136071
+  data.map: 0.070680
+  df_norm.max: 0.059659
+  df_norm.min: 0.035921
+  x.lstrip.rstrip: 0.018146
+  df.mean: 0.015635
+  df.min: 0.002543
+  df.max: 0.000167
+dead	entropy 1.099	nTrans 3	sum 1.000000
+  df.argmax: 0.333333
+  dfrm.idxmax: 0.333333
+  pandas.DataFrame: 0.333333
+delet	entropy 0	nTrans 1	sum 1.000000
+  pd.read_csv: 1.000000
+see	entropy 2.20e-08	nTrans 36	sum 1.000000
+  pd.DataFrame: 1.000000
+  pd.set_option: 0.000000
+releas	entropy 0.445	nTrans 3	sum 1.000000
+  df.sort_values: 0.836737
+  "": 0.163263
+inde	entropy 0	nTrans 1	sum 1.000000
+  df.isin: 1.000000
+sep	entropy 0	nTrans 1	sum 1.000000
+  df.to_csv: 1.000000
+explic	entropy 0	nTrans 2	sum 1.000000
+  df.iloc: 1.000000
+chip	entropy 0	nTrans 1	sum 1.000000
+  pd.read_csv: 1.000000
+set	entropy 0.286	nTrans 22	sum 1.000000
+  df.index: 0.918743
+  df.convert_objects.dtypes: 0.080602
+  df.sum: 0.000618
+  pd.set_option: 0.000035
+  df.columns.values: 0.000001
+  df3.reset_index: 0.000000
+  df3.reset_index.drop_duplicates: 0.000000
+contain	entropy 8.30e-09	nTrans 12	sum 1.000000
+  w.map: 1.000000
+  pd.set_option: 0.000000
+fastest	entropy 0	nTrans 1	sum 1.000000
+  df.xs: 1.000000
+column	entropy 0.671	nTrans 90	sum 1.000000
+  pd.DataFrame: 0.604964
+  pd.concat: 0.395034
+  df.dtypes: 0.000002
+  df.reset_index: 0.000000
+familiar	entropy 0	nTrans 1	sum 1.000000
+  df.ix.copy: 1.000000
+right	entropy 0	nTrans 1	sum 1.000000
+  w.map: 1.000000
+opposit	entropy 0	nTrans 3	sum 1.000000
+  df.astype: 1.000000
+figur	entropy 1.099	nTrans 3	sum 1.000000
+  df.argmax: 0.333333
+  dfrm.idxmax: 0.333333
+  pandas.DataFrame: 0.333333
+renam	entropy 0.097	nTrans 19	sum 1.000000
+  df.rename: 0.980321
+  a.iterrows.row._.row.split.row.Series.pd.concat.reset_index: 0.019671
+  row.split: 0.000006
+  df1.rename: 0.000002
+  a.iterrows: 0.000000
+constantin	entropy 0.290	nTrans 7	sum 1.000000
+  df2.values: 0.915243
+  df1.values: 0.084757
+  np.where: 0.000000
+answer	entropy 1.082	nTrans 10	sum 1.000000
+  df3.reset_index.drop_duplicates.set_index: 0.401201
+  pd.merge: 0.374979
+  pd.read_csv: 0.221667
+  df3.reset_index.drop_duplicates: 0.001930
+  df3.index.duplicated: 0.000223
+  df.xs: 0.000000
+maximum	entropy 1.099	nTrans 3	sum 1.000000
+  df.argmax: 0.333333
+  dfrm.idxmax: 0.333333
+  pandas.DataFrame: 0.333333
+borrow	entropy 1.792	nTrans 6	sum 1.000000
+  pd.to_numeric: 0.166667
+  pd.Series: 0.166667
+  pd.DataFrame: 0.166667
+  df.apply: 0.166667
+  df.dtypes: 0.166667
+  df.infer_objects: 0.166667
+paul	entropy 1.13e-19	nTrans 2	sum 1.000000
+  df3.index.duplicated: 1.000000
+intermediari	entropy 0	nTrans 1	sum 1.000000
+  gb.get_group: 1.000000
+represent	entropy 0	nTrans 1	sum 1.000000
+  paramdata.index: 1.000000
+correctli	entropy 0	nTrans 10	sum 1.000000
+  "": 1.000000
+df	entropy 0.078	nTrans 44	sum 1.000000
+  pd.DataFrame: 0.985067
+  df.to_csv: 0.014904
+  df.map: 0.000023
+  df.xs: 0.000004
+  df.loc: 0.000001
+  df.fillna: 0.000001
+  df1.col2.isin: 0.000000
+  df.tolist: 0.000000
+  df1.isin: 0.000000
+  df.groupby.max: 0.000000
+forc	entropy 2.53e-20	nTrans 8	sum 1.000000
+  df.convert_objects.dtypes: 1.000000
+ben	entropy 0.002	nTrans 5	sum 1.000000
+  df.resample.sum.fillna: 0.999792
+  df.resample.sum.fillna.rolling: 0.000208
+  df.resample.sum: 0.000000
+dr	entropy 3.52e-05	nTrans 13	sum 1.000000
+  groupby_object.size: 0.999997
+  groupby_object.agg.rename: 0.000003
+hold	entropy 1.792	nTrans 6	sum 1.000000
+  pd.to_numeric: 0.166667
+  pd.Series: 0.166667
+  pd.DataFrame: 0.166667
+  df.apply: 0.166667
+  df.dtypes: 0.166667
+  df.infer_objects: 0.166667
+later	entropy 0	nTrans 1	sum 1.000000
+  df.read_csv: 1.000000
+elabor	entropy 0.638	nTrans 9	sum 1.000000
+  groupby_object.agg.rename: 0.664245
+  groupby_object.size: 0.335755
+astyp	entropy 4.94e-04	nTrans 16	sum 1.000000
+  df.convert_objects: 0.999958
+  datetime.utcnow: 0.000028
+  df.to_json: 0.000015
+clue	entropy 3.42e-16	nTrans 2	sum 1.000000
+  ws.title: 1.000000
+digit	entropy 1.792	nTrans 6	sum 1.000000
+  pd.to_numeric: 0.166667
+  pd.Series: 0.166667
+  pd.DataFrame: 0.166667
+  df.apply: 0.166667
+  df.dtypes: 0.166667
+  df.infer_objects: 0.166667
+test	entropy 0.040	nTrans 16	sum 1.000000
+  df.groupby.size: 0.993419
+  key_columns.df.groupby.size: 0.006581
+datatyp	entropy 1.792	nTrans 6	sum 1.000000
+  pd.to_numeric: 0.166667
+  pd.Series: 0.166667
+  pd.DataFrame: 0.166667
+  df.apply: 0.166667
+  df.dtypes: 0.166667
+  df.infer_objects: 0.166667
+count	entropy 0.643	nTrans 21	sum 1.000000
+  df.isnull: 0.657614
+  df.groupby: 0.342373
+  df.shape: 0.000013
+ep	entropy 0	nTrans 1	sum 1.000000
+  "": 1.000000
+inplac	entropy 3.16e-08	nTrans 7	sum 1.000000
+  df.fillna: 1.000000
+  df.sort_values: 0.000000
+take	entropy 0.153	nTrans 33	sum 1.000000
+  "": 0.970635
+  df.groupby: 0.018602
+  pd.Series: 0.010457
+  df.resample.sum: 0.000306
+never	entropy 1.33e-16	nTrans 2	sum 1.000000
+  pd.read_csv: 1.000000
+usecol	entropy 0	nTrans 1	sum 1.000000
+  pd.read_csv: 1.000000
+final	entropy 0.718	nTrans 11	sum 1.000000
+  sort2.reset_index: 0.551625
+  sum.grp.transform.sort.index: 0.442690
+  sort1.groupby.apply: 0.005685
+perhap	entropy 0.280	nTrans 15	sum 1.000000
+  df1.groupby: 0.920106
+  df1.groupby.size: 0.079657
+  g1.add_suffix: 0.000237
+  df1.groupby.size.DataFrame.reset_index: 0.000000
+  df.to_json: 0.000000
+compat	entropy 0	nTrans 1	sum 1.000000
+  pd.read_sql: 1.000000
+frame	entropy 0.169	nTrans 21	sum 1.000000
+  str.df.applymap.iloc: 0.966314
+  df.applymap: 0.024598
+  df.reset_index: 0.008795
+  df.resample.sum.fillna: 0.000184
+  df.resample.sum.fillna.rolling: 0.000049
+  df.dtypes: 0.000047
+  df.groupby.apply: 0.000008
+  df.df.loc.values: 0.000004
+indic	entropy 0.951	nTrans 14	sum 1.000000
+  df.groupby.max: 0.642549
+  df.df.index.tolist: 0.204450
+  pd.read_csv: 0.137712
+  df.df.index: 0.014123
+  sLength.np.random.randn.p.Series.values: 0.000815
+  p.Series: 0.000240
+  df1.assign: 0.000111
+  df1.index: 0.000000
+rather	entropy 0.117	nTrans 15	sum 1.000000
+  df.columns.values: 0.977877
+  df_test.iloc: 0.019127
+  df.head: 0.001617
+  xl.parse: 0.001372
+  col.join.strip: 0.000007
+  pd.read_csv: 0.000000
+pydata	entropy 0.019	nTrans 10	sum 1.000000
+  df.iloc: 0.997377
+  df.rename: 0.002283
+  df.value_counts: 0.000340
+misl	entropy 0.544	nTrans 9	sum 1.000000
+  x.groupby_object.agg.rename.join: 0.766116
+  df.groupby.size.rename: 0.233884
+origin	entropy 3.80e-24	nTrans 23	sum 1.000000
+  df.groupby.transform: 1.000000
+foo	entropy 7.29e-32	nTrans 3	sum 1.000000
+  df.to_csv: 1.000000
+exclud	entropy 4.62e-11	nTrans 6	sum 1.000000
+  df.shape: 1.000000
+back	entropy 0.684	nTrans 17	sum 1.000000
+  datetime.utcnow: 0.566329
+  df.value_counts: 0.433666
+  df3.reset_index.drop_duplicates: 0.000005
+  df.to_pickle: 0.000000
+content	entropy 0	nTrans 1	sum 1.000000
+  df.fillna: 1.000000
+miss	entropy 1.07e-07	nTrans 20	sum 1.000000
+  df.resample.sum.fillna.rolling.mean: 1.000000
+  df.resample: 0.000000
+  df.fillna.groupby.sum: 0.000000
+load	entropy 1.39e-12	nTrans 2	sum 1.000000
+  df.to_pickle: 1.000000
+plot	entropy 0	nTrans 2	sum 1.000000
+  df.plot: 1.000000
+exclus	entropy 0	nTrans 5	sum 1.000000
+  df.groupby.apply: 1.000000
+json	entropy 3.39e-04	nTrans 6	sum 1.000000
+  total_rows.astype: 0.999971
+  df.to_pickle: 0.000029
+  "": 0.000001
+selector	entropy 0	nTrans 2	sum 1.000000
+  df.df.loc.values: 1.000000
+gb	entropy 0	nTrans 1	sum 1.000000
+  gb.get_group: 1.000000
+class	entropy 3.82e-06	nTrans 3	sum 1.000000
+  pd.io.parsers.ExcelFile.parse: 1.000000
+  df.head: 0.000000
+stabl	entropy 0.005	nTrans 10	sum 1.000000
+  df.iloc: 0.999358
+  df.rename: 0.000623
+  df.groupby.count: 0.000015
+  df.value_counts: 0.000004
+asid	entropy 0	nTrans 3	sum 1.000000
+  df.dropna: 1.000000
+coupl	entropy 0	nTrans 7	sum 1.000000
+  datetime.datetime.now: 1.000000
+someth	entropy 0.700	nTrans 27	sum 1.000000
+  g1.index: 0.619866
+  a.iterrows.row._.row.split.row.Series.pd.concat.reset_index: 0.372914
+  df.as_matrix: 0.007180
+  df.countries.isin: 0.000039
+  row.split: 0.000000
+  pd.set_option: 0.000000
+  a.iterrows: 0.000000
+go	entropy 1.83e-06	nTrans 17	sum 1.000000
+  df.tolist: 1.000000
+  df.groupby.size: 0.000000
+length	entropy 0	nTrans 1	sum 1.000000
+  df.map: 1.000000
+(NULL)	entropy 0.136	nTrans 194	sum 1.000000
+  pd.DataFrame: 0.981031
+  df.apply: 0.010314
+  df.drop_duplicates: 0.001444
+  changed.index: 0.001303
+  df.max: 0.001116
+  df.set_index: 0.000657
+  df.index: 0.000453
+  df.columns.to_series: 0.000337
+  df.fillna: 0.000228
+  pd.concat: 0.000185
+  df.tolist: 0.000167
+  df.groupby.size: 0.000148
+  df.loc: 0.000129
+  df.dtypes: 0.000109
+  a.iterrows: 0.000091
+  df.resample: 0.000088
+  df.mean: 0.000083
+  df.min: 0.000082
+  pd.Series: 0.000077
+  df.str.split: 0.000074
+  s.index: 0.000072
+  df.groupby: 0.000068
+  df2.df1.stack: 0.000067
+  df.fillna.groupby.sum: 0.000059
+  df.groupby.transform: 0.000056
+  pd.to_numeric: 0.000055
+  datetime.utcnow: 0.000054
+  df_norm.max: 0.000054
+  x.lstrip.rstrip: 0.000048
+  df_.fillna: 0.000043
+  df.index.isin: 0.000040
+  df.values: 0.000037
+  data.map: 0.000035
+  pd.date_range: 0.000035
+  df.map: 0.000034
+  datetime.utcnow.np.datetime64.astype: 0.000032
+  str.df.applymap.iloc: 0.000030
+  df.columns.to_series.groupby: 0.000029
+  datetime.utcfromtimestamp: 0.000026
+  s.isnull: 0.000026
+  upper_lower_df.str.lower: 0.000025
+  df.rename: 0.000024
+  df.join: 0.000023
+  Series.rename: 0.000022
+  pd.read_csv: 0.000022
+  np.arange.np.array.T: 0.000021
+  df.iloc: 0.000021
+  row.split: 0.000020
+  df.isin: 0.000020
+  df.values.tolist: 0.000020
+  df.infer_objects: 0.000020
+  df.dtypes.df.columns.to_series.groupby.groups: 0.000018
+  df2.df1.isin.df1.dropna: 0.000018
+  df_norm.mean: 0.000017
+  col.join.strip: 0.000016
+  data.fillna: 0.000016
+  a.iterrows.row._.row.split.row.Series.pd.concat.reset_index: 0.000015
+  col_list.df.sum: 0.000014
+  groupby_object.size: 0.000014
+  df.columns.values: 0.000014
+  sort1.groupby.apply: 0.000013
+  s.isnull.sum: 0.000013
+  df.argmax: 0.000013
+  df1.assign: 0.000012
+  df.resample.sum.fillna.rolling: 0.000012
+  np.where: 0.000011
+  df.str.split.rename: 0.000011
+  p.Series: 0.000011
+  sort1.groupby: 0.000010
+  sort2.reset_index: 0.000010
+  df.reset_index: 0.000010
+  df.drop_duplicates.values.tolist: 0.000010
+  df1.loc: 0.000010
+  pd.set_option: 0.000009
+  df.value_counts: 0.000009
+  s2.s1.pd.concat.reset_index: 0.000009
+  df.sum: 0.000009
+  dfrm.idxmax: 0.000009
+  df1.index: 0.000008
+  df.groupby.size.rename: 0.000008
+  df.df.index.tolist: 0.000008
+  xl.parse: 0.000008
+  df.isnull.values.any: 0.000008
+  df_norm.min: 0.000008
+  df1.groupby: 0.000008
+  key_columns.df.groupby.size: 0.000008
+  table.groupby.CLIENTCODE.nunique: 0.000007
+  df.resample.sum: 0.000007
+  df.drop: 0.000007
+  df.groupby.apply: 0.000007
+  pandas.DataFrame: 0.000007
+  g1.add_suffix.reset_index: 0.000007
+  df.resample.sum.fillna: 0.000006
+  df1.groupby.size: 0.000006
+  df3.reset_index.drop_duplicates: 0.000006
+  d.loc: 0.000006
+  datetime.datetime.now.date: 0.000006
+  x.lstrip: 0.000006
+  df.df.index: 0.000005
+  df.convert_objects.dtypes: 0.000005
+  split: 0.000005
+  g1.index: 0.000005
+  df.to_csv: 0.000005
+  df.columns.get_level_values: 0.000005
+  numpy.datetime64.astype: 0.000005
+  data.groupby: 0.000005
+  data.groupby.transform: 0.000005
+  df3.reset_index.drop_duplicates.set_index: 0.000005
+  dt64.astype: 0.000005
+  df1.values: 0.000005
+  df.df.loc.values: 0.000005
+  df.dropna: 0.000005
+  df1.col1.isin: 0.000005
+  df3.index.duplicated: 0.000005
+  data_filtered.to_excel: 0.000005
+  g1.add_suffix: 0.000005
+  df1.col2.isin: 0.000005
+  df.plot: 0.000005
+  x.sum: 0.000005
+  sLength.np.random.randn.p.Series.values: 0.000005
+  grp.transform: 0.000004
+  df2.values: 0.000004
+  df1.rename: 0.000004
+  pd.to_datetime: 0.000004
+  df.query: 0.000004
+  df.resample.sum.fillna.rolling.mean: 0.000004
+  df1.groupby.size.DataFrame.reset_index: 0.000004
+  x.groupby_object.agg.rename.join: 0.000004
+  table.groupby: 0.000004
+  df.countries.isin: 0.000004
+  df.groupby.count: 0.000004
+  dt64.dtype: 0.000004
+  df.sort_values: 0.000004
+  gb.get_group: 0.000003
+  df.isnull.values: 0.000003
+  df.fillna.groupby: 0.000003
+  join: 0.000003
+  groupby_object.agg.rename: 0.000003
+  df.index.values: 0.000003
+  df.pivot: 0.000003
+  df1.isin: 0.000003
+  df.set_index.to_dict: 0.000003
+  df_test.iloc: 0.000003
+  sum.grp.transform.sort.index: 0.000003
+  df.convert_objects: 0.000003
+  df.to_pickle: 0.000003
+  df.applymap: 0.000003
+  df.append: 0.000003
+  df.head: 0.000003
+  df.to_json: 0.000003
+  df.groupby.max: 0.000003
+  df.row.str.split.tolist: 0.000003
+  df1.merge: 0.000002
+  df.ix.copy: 0.000002
+  pd.read_pickle: 0.000002
+  sub_df.iloc: 0.000002
+  df.astype: 0.000002
+  df.shape: 0.000002
+  df.isnull.sum: 0.000002
+  df3.index: 0.000002
+  format: 0.000002
+  df.values.ravel.Series.unique: 0.000002
+  df.c.df.values: 0.000002
+  df.xs: 0.000002
+  df2.df1.any: 0.000002
+  list_.append: 0.000002
+  df.drop_duplicates.values: 0.000001
+  pd.read_sql: 0.000001
+  df.isnull: 0.000001
+  total_rows.astype: 0.000001
+  paramdata.index: 0.000001
+  df3.drop_duplicates: 0.000001
+  df3.reset_index: 0.000001
+  df.row.str.split: 0.000001
+  w.map: 0.000001
+  df.columns.tolist: 0.000001
+  df.read_csv: 0.000001
+  pd.io.parsers.ExcelFile.parse: 0.000001
+  "": 0.000000
+  df.a.astype: 0.000000
+  s.reset_index: 0.000000
+  datetime.datetime.now: 0.000000
+  ws.title: 0.000000
+  s.reindex: 0.000000
+  d.sales.replace: 0.000000
+  pd.merge: 0.000000
+  my_dataframe.columns.values: 0.000000
+  pd.option_context: 0.000000
+  dataframe.map: 0.000000
+  df.as_matrix: 0.000000
+  df.reindex_axis: 0.000000
+  myseries.myseries.index: 0.000000
+  df.str.contains: 0.000000
+  data.set_index: 0.000000
+print	entropy 0	nTrans 1	sum 1.000000
+  pd.set_option: 1.000000
+condit	entropy 9.93e-12	nTrans 7	sum 1.000000
+  df.index.isin: 1.000000
+form	entropy 1.08e-09	nTrans 9	sum 1.000000
+  df1.merge: 1.000000
+although	entropy 0.692	nTrans 4	sum 1.000000
+  pd.io.parsers.ExcelFile.parse: 0.528383
+  pd.set_option: 0.471617
+interpret	entropy 0.222	nTrans 6	sum 1.000000
+  datetime.utcfromtimestamp: 0.944385
+  dt64.astype: 0.054094
+  numpy.datetime64.astype: 0.001522
+  datetime.utcnow.np.datetime64.astype: 0.000000
+setup	entropy 1.08e-08	nTrans 9	sum 1.000000
+  x.groupby_object.agg.rename.join: 1.000000
+  df.groupby.size.rename: 0.000000
+avoid	entropy 0.002	nTrans 5	sum 1.000000
+  df.set_index.to_dict: 0.999804
+  pd.read_csv: 0.000191
+  myseries.myseries.index: 0.000005
+subset	entropy 0	nTrans 2	sum 1.000000
+  df.query: 1.000000
+append	entropy 0.138	nTrans 4	sum 1.000000
+  df.append: 0.969191
+  df.to_csv: 0.030809
+cursori	entropy 1.099	nTrans 3	sum 1.000000
+  df.argmax: 0.333333
+  dfrm.idxmax: 0.333333
+  pandas.DataFrame: 0.333333
+assign	entropy 3.67e-27	nTrans 13	sum 1.000000
+  pd.DataFrame: 1.000000
+straightforward	entropy 1.099	nTrans 3	sum 1.000000
+  df.argmax: 0.333333
+  dfrm.idxmax: 0.333333
+  pandas.DataFrame: 0.333333
+select	entropy 9.25e-09	nTrans 20	sum 1.000000
+  df.loc: 1.000000
+  gb.get_group: 0.000000
+easili	entropy 0	nTrans 4	sum 1.000000
+  pd.set_option: 1.000000
+convers	entropy 4.48e-04	nTrans 10	sum 1.000000
+  df.convert_objects.dtypes: 0.999960
+  df.index.values: 0.000038
+  df.dtypes: 0.000002
+convert	entropy 0.232	nTrans 25	sum 1.000000
+  df.applymap: 0.949264
+  str.df.applymap.iloc: 0.035401
+  df.dtypes: 0.015210
+  df.apply: 0.000125
+  df.reset_index: 0.000000
+  dt64.dtype: 0.000000
+ignor	entropy 2.00e-08	nTrans 8	sum 1.000000
+  df.sum: 1.000000
+  col_list.df.sum: 0.000000
+hope	entropy 1.099	nTrans 3	sum 1.000000
+  df.argmax: 0.333333
+  dfrm.idxmax: 0.333333
+  pandas.DataFrame: 0.333333
+bit	entropy 3.44e-04	nTrans 8	sum 1.000000
+  df.isnull.values.any: 0.999970
+  df1.rename: 0.000030
+soon	entropy 0	nTrans 1	sum 1.000000
+  df.str.contains: 1.000000
+output	entropy 0.176	nTrans 9	sum 1.000000
+  format: 0.960983
+  df.append: 0.036034
+  df.a.astype: 0.002790
+  paramdata.index: 0.000193
+docstr	entropy 0.019	nTrans 2	sum 1.000000
+  Series.rename: 0.997280
+  df.rename: 0.002720
+context	entropy 0	nTrans 1	sum 1.000000
+  df.ix.copy: 1.000000
+action	entropy 0	nTrans 2	sum 1.000000
+  pd.to_datetime: 1.000000
+join	entropy 0.012	nTrans 16	sum 1.000000
+  join: 0.998337
+  df.columns.values: 0.001663
+  key_columns.df.groupby.size: 0.000000
+text	entropy 3.46e-16	nTrans 7	sum 1.000000
+  df.to_pickle: 1.000000
+creat	entropy 0.797	nTrans 28	sum 1.000000
+  df.pivot: 0.635707
+  df_.fillna: 0.316786
+  col_list.df.sum: 0.047507
+python	entropy 0.001	nTrans 16	sum 1.000000
+  dt64.dtype: 0.999850
+  df.tolist: 0.000150
+  pd.merge: 0.000000
+  df.to_pickle: 0.000000
+io	entropy 0	nTrans 1	sum 1.000000
+  pd.read_sql: 1.000000
+termin	entropy 0	nTrans 1	sum 1.000000
+  pd.set_option: 1.000000
+index	entropy 4.36e-18	nTrans 69	sum 1.000000
+  df.index: 1.000000
+abil	entropy 0	nTrans 3	sum 1.000000
+  df.dropna: 1.000000
+ix	entropy 0.158	nTrans 4	sum 1.000000
+  df_test.iloc: 0.963133
+  df.df.loc.values: 0.036866
+  df.loc: 0.000001
+contrast	entropy 1.09e-10	nTrans 5	sum 1.000000
+  df.df.index: 1.000000
+experi	entropy 8.85e-11	nTrans 4	sum 1.000000
+  df.isnull.values: 1.000000
+invalid	entropy 0.144	nTrans 11	sum 1.000000
+  df1.assign: 0.967240
+  p.Series: 0.032755
+  df1.loc: 0.000004
+singl	entropy 0.447	nTrans 21	sum 1.000000
+  x.groupby_object.agg.rename.join: 0.835794
+  df.groupby.size.rename: 0.164189
+  df.df.loc.values: 0.000018
+  df.groupby.size: 0.000000
+doc	entropy 0.005	nTrans 34	sum 1.000000
+  df.fillna: 0.999504
+  df.iloc: 0.000425
+  df.set_index.to_dict: 0.000036
+  df.rename: 0.000028
+  data_filtered.to_excel: 0.000007
+  df.groupby.count: 0.000000
+  pd.set_option: 0.000000
+john	entropy 0	nTrans 1	sum 1.000000
+  pd.merge: 1.000000
+valu	entropy 0.794	nTrans 78	sum 1.000000
+  df.loc: 0.549994
+  pd.Series: 0.421693
+  df.c.df.values: 0.028218
+  df.drop_duplicates.values.tolist: 0.000095
+  sort1.groupby.apply: 0.000000
+  my_dataframe.columns.values: 0.000000
+  pd.DataFrame: 0.000000
+librari	entropy 0	nTrans 1	sum 1.000000
+  pd.read_sql: 1.000000
+skin	entropy 0.556	nTrans 5	sum 1.000000
+  df.groupby.count: 0.756076
+  df.value_counts: 0.243924
+paramet	entropy 5.58e-08	nTrans 7	sum 1.000000
+  df.drop_duplicates: 1.000000
+  pd.read_csv: 0.000000
+unfortun	entropy 1.099	nTrans 3	sum 1.000000
+  df.argmax: 0.333333
+  dfrm.idxmax: 0.333333
+  pandas.DataFrame: 0.333333
+believ	entropy 0.675	nTrans 7	sum 1.000000
+  table.groupby: 0.595545
+  table.groupby.CLIENTCODE.nunique: 0.404455
+mention	entropy 0.001	nTrans 4	sum 1.000000
+  df.fillna.groupby.sum: 0.999884
+  pd.set_option: 0.000073
+  df.fillna.groupby: 0.000042
+file	entropy 0.317	nTrans 10	sum 1.000000
+  df.to_csv: 0.925258
+  list_.append: 0.057074
+  df.read_csv: 0.014139
+  df.to_json: 0.002995
+  ws.title: 0.000533
+  data_filtered.to_excel: 0.000000
+known	entropy 1.609	nTrans 5	sum 1.000000
+  df.str.split: 0.200000
+  pd.DataFrame: 0.200000
+  df.str.split.rename: 0.200000
+  df.join: 0.200000
+  upper_lower_df.str.lower: 0.200000
+ruktech	entropy 0	nTrans 1	sum 1.000000
+  df.xs: 1.000000
+map	entropy 1.47e-04	nTrans 7	sum 1.000000
+  df1.rename: 0.999988
+  df.map: 0.000012
+  "": 0.000000
+heavi	entropy 2.75e-18	nTrans 2	sum 1.000000
+  df.to_pickle: 1.000000
+independ	entropy 0.688	nTrans 9	sum 1.000000
+  df.groupby.size.rename: 0.550629
+  x.groupby_object.agg.rename.join: 0.449371
+may	entropy 0.123	nTrans 27	sum 1.000000
+  w.map: 0.977342
+  df.to_pickle: 0.014842
+  df.dropna: 0.007816
+  key_columns.df.groupby.size: 0.000000
+  datetime.utcnow.np.datetime64.astype: 0.000000
+within	entropy 0.340	nTrans 10	sum 1.000000
+  sort1.groupby.apply: 0.893289
+  df.isin: 0.106711
+max	entropy 9.95e-17	nTrans 6	sum 1.000000
+  df.groupby.max: 1.000000
+could	entropy 0.016	nTrans 39	sum 1.000000
+  pd.date_range: 0.997743
+  df1.index: 0.002218
+  pd.read_csv: 0.000039
+  s.index: 0.000000
+smack	entropy 1.099	nTrans 3	sum 1.000000
+  df.argmax: 0.333333
+  dfrm.idxmax: 0.333333
+  pandas.DataFrame: 0.333333
+trigger	entropy 1.70e-15	nTrans 5	sum 1.000000
+  df1.assign: 1.000000
+exercis	entropy 0.641	nTrans 7	sum 1.000000
+  df1.values: 0.660128
+  np.where: 0.339871
+  df2.values: 0.000001
+report	entropy 0.345	nTrans 8	sum 1.000000
+  df1.assign: 0.910432
+  df1.index: 0.073285
+  p.Series: 0.016178
+  sLength.np.random.randn.p.Series.values: 0.000105
+  df1.loc: 0.000001
+probabl	entropy 0	nTrans 8	sum 1.000000
+  paramdata.index: 1.000000
+return	entropy 0.654	nTrans 39	sum 1.000000
+  df.groupby.transform: 0.655142
+  df.loc: 0.343312
+  pd.option_context: 0.001546
+auto	entropy 0	nTrans 1	sum 1.000000
+  pd.set_option: 1.000000
+use	entropy 0.009	nTrans 126	sum 1.000000
+  pd.DataFrame: 0.998990
+  pd.Series: 0.000521
+  df.c.df.values: 0.000489
+feel	entropy 0.004	nTrans 3	sum 1.000000
+  df.fillna.groupby.sum: 0.999577
+  df.fillna: 0.000423
+bmu	entropy 0	nTrans 1	sum 1.000000
+  pd.set_option: 1.000000
+directli	entropy 6.91e-35	nTrans 9	sum 1.000000
+  df.c.df.values: 1.000000
+second	entropy 5.39e-06	nTrans 19	sum 1.000000
+  df.columns.get_level_values: 1.000000
+  w.map: 0.000000
+convent	entropy 0	nTrans 1	sum 1.000000
+  df.ix.copy: 1.000000
+faster	entropy 0.617	nTrans 15	sum 1.000000
+  df.values.ravel.Series.unique: 0.807284
+  df.values: 0.121301
+  df.isnull.values.any: 0.071415
+  df.shape: 0.000000
+strip	entropy 0.425	nTrans 4	sum 1.000000
+  df.columns.values: 0.848549
+  col.join.strip: 0.151451
+split	entropy 1.609	nTrans 5	sum 1.000000
+  df.str.split: 0.200000
+  pd.DataFrame: 0.200000
+  df.str.split.rename: 0.200000
+  df.join: 0.200000
+  upper_lower_df.str.lower: 0.200000
+find	entropy 4.17e-05	nTrans 2	sum 1.000000
+  df3.index: 0.999997
+  df3.index.duplicated: 0.000003
+oracl	entropy 0	nTrans 1	sum 1.000000
+  pd.read_sql: 1.000000
+limit	entropy 0	nTrans 1	sum 1.000000
+  pd.set_option: 1.000000
+exactli	entropy 1.099	nTrans 3	sum 1.000000
+  df.argmax: 0.333333
+  dfrm.idxmax: 0.333333
+  pandas.DataFrame: 0.333333
+alter	entropy 0	nTrans 1	sum 1.000000
+  df.ix.copy: 1.000000
+entri	entropy 0.814	nTrans 15	sum 1.000000
+  np.where: 0.668015
+  df1.values: 0.256664
+  df.columns.get_level_values: 0.075287
+  df2.values: 0.000035
+  changed.index: 0.000000
+level	entropy 2.31e-04	nTrans 12	sum 1.000000
+  df.set_index: 0.999981
+  df.reset_index: 0.000019
+utc	entropy 0.677	nTrans 6	sum 1.000000
+  datetime.utcnow.np.datetime64.astype: 0.593888
+  numpy.datetime64.astype: 0.405946
+  datetime.utcfromtimestamp: 0.000166
+occur	entropy 1.099	nTrans 3	sum 1.000000
+  df.argmax: 0.333333
+  dfrm.idxmax: 0.333333
+  pandas.DataFrame: 0.333333
+utf	entropy 0	nTrans 1	sum 1.000000
+  df.to_csv: 1.000000
+difficult	entropy 0	nTrans 1	sum 1.000000
+  df.xs: 1.000000
+sort	entropy 0.182	nTrans 19	sum 1.000000
+  df.sort_values: 0.955489
+  df.values.ravel.Series.unique: 0.044511
+  df.reindex_axis: 0.000000
+fill	entropy 0.294	nTrans 6	sum 1.000000
+  df.fillna: 0.913540
+  df.resample: 0.086460
+guarante	entropy 0	nTrans 2	sum 1.000000
+  df_test.iloc: 1.000000
+expand	entropy 1.609	nTrans 5	sum 1.000000
+  df.str.split: 0.200000
+  pd.DataFrame: 0.200000
+  df.str.split.rename: 0.200000
+  df.join: 0.200000
+  upper_lower_df.str.lower: 0.200000
+na	entropy 4.06e-07	nTrans 3	sum 1.000000
+  df.fillna.groupby.sum: 1.000000
+  df.fillna.groupby: 0.000000
+null	entropy 4.39e-11	nTrans 9	sum 1.000000
+  key_columns.df.groupby.size: 1.000000
+hors	entropy 1.099	nTrans 3	sum 1.000000
+  df.argmax: 0.333333
+  dfrm.idxmax: 0.333333
+  pandas.DataFrame: 0.333333
+true	entropy 0.010	nTrans 16	sum 1.000000
+  df.astype: 0.998768
+  sort1.groupby.apply: 0.001201
+  df.sort_values: 0.000026
+  df.fillna: 0.000006
+updat	entropy 3.25e-05	nTrans 17	sum 1.000000
+  pandas.DataFrame: 0.999998
+  df.resample.sum: 0.000002
+  df.str.contains: 0.000000
+  df.groupby.max: 0.000000
+header	entropy 0.001	nTrans 4	sum 1.000000
+  list_.append: 0.999882
+  pd.read_csv: 0.000118
+present	entropy 2.80e-08	nTrans 3	sum 1.000000
+  s2.s1.pd.concat.reset_index: 1.000000
+  pd.concat: 0.000000
+produc	entropy 2.07e-07	nTrans 6	sum 1.000000
+  df2.df1.isin.df1.dropna: 1.000000
+  df1.col1.isin: 0.000000
+dsm	entropy 1.60e-16	nTrans 5	sum 1.000000
+  df.value_counts: 1.000000
+np	entropy 0.005	nTrans 11	sum 1.000000
+  df.df.index.tolist: 0.999465
+  datetime.utcnow.np.datetime64.astype: 0.000535
+  numpy.datetime64.astype: 0.000000
+  datetime.utcfromtimestamp: 0.000000
+code	entropy 1.065	nTrans 22	sum 1.000000
+  list_.append: 0.450930
+  w.map: 0.308897
+  pandas.DataFrame: 0.240089
+  ws.title: 0.000047
+  df1.loc: 0.000018
+  pd.merge: 0.000017
+  "": 0.000003
+  df1.assign: 0.000000
+best	entropy 3.72e-08	nTrans 5	sum 1.000000
+  df1.index: 1.000000
+  df1.assign: 0.000000
+sql	entropy 0	nTrans 1	sum 1.000000
+  pd.read_sql: 1.000000
+switch	entropy 0	nTrans 1	sum 1.000000
+  pd.set_option: 1.000000
+head	entropy 0	nTrans 4	sum 1.000000
+  df.tolist: 1.000000
+transform	entropy 0.051	nTrans 10	sum 1.000000
+  df.groupby.count: 0.992232
+  sort1.groupby.apply: 0.003933
+  df.value_counts: 0.003835
+ob	entropy 0	nTrans 2	sum 1.000000
+  df.reset_index: 1.000000
+hour	entropy 1.099	nTrans 3	sum 1.000000
+  df.argmax: 0.333333
+  dfrm.idxmax: 0.333333
+  pandas.DataFrame: 0.333333
+tolist	entropy 4.60e-11	nTrans 11	sum 1.000000
+  df.tolist: 1.000000
+possibl	entropy 1.30e-06	nTrans 14	sum 1.000000
+  df1.assign: 1.000000
+  pd.set_option: 0.000000
+dynam	entropy 1.099	nTrans 3	sum 1.000000
+  df.argmax: 0.333333
+  dfrm.idxmax: 0.333333
+  pandas.DataFrame: 0.333333
+make	entropy 5.29e-08	nTrans 13	sum 1.000000
+  s.index: 1.000000
+  s.reset_index: 0.000000
+op	entropy 9.08e-33	nTrans 3	sum 1.000000
+  df.groupby.max: 1.000000
+purpos	entropy 0.039	nTrans 6	sum 1.000000
+  pd.set_option: 0.993623
+  p.Series: 0.006288
+  df1.assign: 0.000081
+  sLength.np.random.randn.p.Series.values: 0.000009
+  df1.loc: 0.000000
+  df1.index: 0.000000
+encod	entropy 0	nTrans 1	sum 1.000000
+  df.to_csv: 1.000000
+whilst	entropy 5.59e-22	nTrans 5	sum 1.000000
+  df1.rename: 1.000000
+comprehens	entropy 0.007	nTrans 6	sum 1.000000
+  df1.rename: 0.999188
+  pd.merge: 0.000812
+pretti	entropy 4.46e-04	nTrans 11	sum 1.000000
+  df.groupby.apply: 0.999960
+  df.fillna.groupby.sum: 0.000040
+extrem	entropy 0	nTrans 2	sum 1.000000
+  df.query: 1.000000
+pd	entropy 2.80e-08	nTrans 11	sum 1.000000
+  df.resample.sum: 1.000000
+  df.resample: 0.000000
+fyi	entropy 0	nTrans 6	sum 1.000000
+  df.df.loc.values: 1.000000
+easier	entropy 0	nTrans 2	sum 1.000000
+  df.drop_duplicates: 1.000000
+dropna	entropy 0	nTrans 3	sum 1.000000
+  df.dropna: 1.000000
+merg	entropy 8.02e-04	nTrans 7	sum 1.000000
+  df1.merge: 0.999923
+  pd.merge: 0.000077
+annoy	entropy 0.772	nTrans 9	sum 1.000000
+  groupby_object.agg.rename: 0.708272
+  df.groupby.size: 0.214752
+  groupby_object.size: 0.076977
+inform	entropy 1.55e-06	nTrans 9	sum 1.000000
+  df.isnull.values.any: 1.000000
+  p.Series: 0.000000
+  sLength.np.random.randn.p.Series.values: 0.000000
+depend	entropy 0	nTrans 3	sum 1.000000
+  df.astype: 1.000000
+iloc	entropy 1.11e-04	nTrans 8	sum 1.000000
+  df.iloc: 0.999991
+  sub_df.iloc: 0.000009
+  df.loc: 0.000000
+cover	entropy 1.099	nTrans 3	sum 1.000000
+  df.argmax: 0.333333
+  dfrm.idxmax: 0.333333
+  pandas.DataFrame: 0.333333
+necessari	entropy 1.40e-08	nTrans 8	sum 1.000000
+  pd.read_csv: 1.000000
+  df.query: 0.000000
+bang	entropy 1.099	nTrans 3	sum 1.000000
+  df.argmax: 0.333333
+  dfrm.idxmax: 0.333333
+  pandas.DataFrame: 0.333333
+height	entropy 0	nTrans 1	sum 1.000000
+  pd.set_option: 1.000000
+github	entropy 3.30e-04	nTrans 4	sum 1.000000
+  df.str.contains: 0.999971
+  df.fillna.groupby.sum: 0.000029
+august	entropy 0	nTrans 1	sum 1.000000
+  pd.merge: 1.000000
+edit	entropy 0.727	nTrans 21	sum 1.000000
+  p.Series: 0.764769
+  df1.loc: 0.159000
+  df1.merge: 0.064067
+  df3.reset_index: 0.012142
+  df.shape: 0.000016
+  df2.df1.isin.df1.dropna: 0.000005
+varieti	entropy 0	nTrans 3	sum 1.000000
+  df.dropna: 1.000000
+old	entropy 1.099	nTrans 3	sum 1.000000
+  df.argmax: 0.333333
+  dfrm.idxmax: 0.333333
+  pandas.DataFrame: 0.333333
+accept	entropy 0.015	nTrans 9	sum 1.000000
+  df.loc: 0.998141
+  df3.index.duplicated: 0.001182
+  df.plot: 0.000677
+str	entropy 0	nTrans 6	sum 1.000000
+  df.str.contains: 1.000000
+scalar	entropy 7.22e-05	nTrans 11	sum 1.000000
+  s.index: 0.999995
+  df.loc: 0.000005
+  df.index.isin: 0.000000
+includ	entropy 0.315	nTrans 14	sum 1.000000
+  df.index.isin: 0.904992
+  df.read_csv: 0.094847
+  "": 0.000160
+  df.dropna: 0.000002
+encount	entropy 1.792	nTrans 6	sum 1.000000
+  pd.to_numeric: 0.166667
+  pd.Series: 0.166667
+  pd.DataFrame: 0.166667
+  df.apply: 0.166667
+  df.dtypes: 0.166667
+  df.infer_objects: 0.166667
+modulo	entropy 0	nTrans 2	sum 1.000000
+  df.query: 1.000000
+sub	entropy 0	nTrans 1	sum 1.000000
+  df.ix.copy: 1.000000
+fact	entropy 0.024	nTrans 5	sum 1.000000
+  sLength.np.random.randn.p.Series.values: 0.996733
+  df1.assign: 0.001898
+  df1.index: 0.001369
+  p.Series: 0.000001
+access	entropy 5.98e-08	nTrans 10	sum 1.000000
+  sub_df.iloc: 1.000000
+  df.to_pickle: 0.000000
+languag	entropy 1.099	nTrans 3	sum 1.000000
+  df.argmax: 0.333333
+  dfrm.idxmax: 0.333333
+  pandas.DataFrame: 0.333333
+deprec	entropy 5.92e-09	nTrans 6	sum 1.000000
+  df.sort_values: 1.000000
+  pd.read_pickle: 0.000000
+sum	entropy 0.285	nTrans 20	sum 1.000000
+  df.isnull: 0.917564
+  df.sum: 0.082432
+  df.groupby.apply: 0.000005
+  sort1.groupby.apply: 0.000000
+long	entropy 1.46e-05	nTrans 11	sum 1.000000
+  datetime.utcnow.np.datetime64.astype: 0.999999
+  datetime.utcfromtimestamp: 0.000001
+  datetime.utcnow: 0.000000
+workaround	entropy 6.97e-06	nTrans 3	sum 1.000000
+  df.fillna.groupby.sum: 1.000000
+  df.fillna.groupby: 0.000000
+seem	entropy 0.688	nTrans 6	sum 1.000000
+  pd.read_csv: 0.553976
+  df.apply: 0.445992
+  df.isnull.values.any: 0.000031
+bewar	entropy 0	nTrans 2	sum 1.000000
+  pd.to_datetime: 1.000000
+current	entropy 0.861	nTrans 7	sum 1.000000
+  df1.loc: 0.673826
+  p.Series: 0.241221
+  df3.index.duplicated: 0.068112
+  sLength.np.random.randn.p.Series.values: 0.016841
+vector	entropy 0	nTrans 1	sum 1.000000
+  df.str.contains: 1.000000
+key	entropy 0.057	nTrans 14	sum 1.000000
+  x.sum: 0.990844
+  s.reset_index: 0.007436
+  df.to_json: 0.001582
+  df.groupby.apply: 0.000137
+though	entropy 1.189	nTrans 18	sum 1.000000
+  g1.add_suffix: 0.387292
+  df1.groupby.size.DataFrame.reset_index: 0.338529
+  df1.groupby.size: 0.249474
+  df1.groupby: 0.014038
+  g1.add_suffix.reset_index: 0.010575
+  myseries.myseries.index: 0.000046
+  pd.read_csv: 0.000037
+  df.groupby.apply: 0.000008
+  df.df.loc.values: 0.000000
+btw	entropy 0	nTrans 1	sum 1.000000
+  df.apply: 1.000000
+one	entropy 1.131	nTrans 62	sum 1.000000
+  pd.option_context: 0.548091
+  df.row.str.split.tolist: 0.253433
+  s.isnull.sum: 0.162945
+  Series.rename: 0.018522
+  df.fillna: 0.008218
+  df.drop_duplicates.values.tolist: 0.008168
+  pd.DataFrame: 0.000525
+  df2.df1.isin.df1.dropna: 0.000084
+  col.join.strip: 0.000005
+  df.set_index.to_dict: 0.000004
+  sub_df.iloc: 0.000003
+  df.columns.tolist: 0.000001
+  df.values.tolist: 0.000000
+  pd.read_csv: 0.000000
+  df.to_json: 0.000000
+store	entropy 0.042	nTrans 10	sum 1.000000
+  df.index.values: 0.993133
+  df.append: 0.006765
+  df1.col1.isin: 0.000062
+  paramdata.index: 0.000040
+interv	entropy 1.28e-04	nTrans 5	sum 1.000000
+  df.resample.sum.fillna: 0.999990
+  df.resample.sum.fillna.rolling: 0.000010
+  df.resample.sum: 0.000000
+closer	entropy 1.609	nTrans 5	sum 1.000000
+  df.str.split: 0.200000
+  pd.DataFrame: 0.200000
+  df.str.split.rename: 0.200000
+  df.join: 0.200000
+  upper_lower_df.str.lower: 0.200000
+appear	entropy 0	nTrans 4	sum 1.000000
+  df.reindex_axis: 1.000000
+pull	entropy 0	nTrans 1	sum 1.000000
+  df.tolist: 1.000000
+hierarch	entropy 0.346	nTrans 6	sum 1.000000
+  g1.add_suffix.reset_index: 0.891394
+  df1.groupby.size.DataFrame.reset_index: 0.108321
+  g1.index: 0.000198
+  g1.add_suffix: 0.000087
+  df1.groupby.size: 0.000000
+enforc	entropy 1.099	nTrans 3	sum 1.000000
+  df.argmax: 0.333333
+  dfrm.idxmax: 0.333333
+  pandas.DataFrame: 0.333333
+bug	entropy 1.099	nTrans 3	sum 1.000000
+  df.argmax: 0.333333
+  dfrm.idxmax: 0.333333
+  pandas.DataFrame: 0.333333
+remov	entropy 0.009	nTrans 8	sum 1.000000
+  df.sum: 0.998817
+  col_list.df.sum: 0.001182
+  df.sort_values: 0.000001
+  df3.reset_index: 0.000000
+tl	entropy 0.032	nTrans 13	sum 1.000000
+  df.groupby.size.rename: 0.994883
+  x.groupby_object.agg.rename.join: 0.005117
+  df.groupby.size: 0.000000
+reliabl	entropy 1.792	nTrans 6	sum 1.000000
+  pd.to_numeric: 0.166667
+  pd.Series: 0.166667
+  pd.DataFrame: 0.166667
+  df.apply: 0.166667
+  df.dtypes: 0.166667
+  df.infer_objects: 0.166667
+oper	entropy 2.96e-08	nTrans 23	sum 1.000000
+  df.query: 1.000000
+  df.iloc: 0.000000
+  df3.reset_index.drop_duplicates: 0.000000
+groupbi	entropy 0.183	nTrans 29	sum 1.000000
+  df.groupby: 0.959284
+  df.dtypes.df.columns.to_series.groupby.groups: 0.036920
+  df.columns.to_series.groupby: 0.003796
+  df.columns.to_series: 0.000000
+mani	entropy 5.42e-05	nTrans 24	sum 1.000000
+  d.loc: 0.999996
+  d.sales.replace: 0.000004
+open	entropy 0	nTrans 2	sum 1.000000
+  df.to_csv: 1.000000
+cusip	entropy 1.099	nTrans 3	sum 1.000000
+  df.argmax: 0.333333
+  dfrm.idxmax: 0.333333
+  pandas.DataFrame: 0.333333
+treat	entropy 1.609	nTrans 5	sum 1.000000
+  df.str.split: 0.200000
+  pd.DataFrame: 0.200000
+  df.str.split.rename: 0.200000
+  df.join: 0.200000
+  upper_lower_df.str.lower: 0.200000
+whatev	entropy 0.395	nTrans 2	sum 1.000000
+  pd.set_option: 0.865357
+  pd.merge: 0.134643
+sever	entropy 0.274	nTrans 7	sum 1.000000
+  df.isnull.sum: 0.921891
+  s.isnull: 0.078109
+  df.groupby: 0.000000
+loop	entropy 6.56e-04	nTrans 2	sum 1.000000
+  myseries.myseries.index: 0.999939
+  pd.merge: 0.000061
+mysql	entropy 0	nTrans 1	sum 1.000000
+  pd.read_sql: 1.000000
+randn	entropy 0	nTrans 1	sum 1.000000
+  pd.DataFrame: 1.000000
+us	entropy 0	nTrans 1	sum 1.000000
+  pd.read_csv: 1.000000
+solut	entropy 0.054	nTrans 16	sum 1.000000
+  "": 0.990882
+  df.astype: 0.008614
+  df3.reset_index: 0.000504
+  pd.read_csv: 0.000000
+constructor	entropy 1.12e-12	nTrans 4	sum 1.000000
+  s.index: 1.000000
+resampl	entropy 0.040	nTrans 5	sum 1.000000
+  df.resample.sum.fillna.rolling: 0.993446
+  df.resample.sum.fillna: 0.006534
+  df.resample: 0.000020
+look	entropy 3.24e-04	nTrans 32	sum 1.000000
+  df.reset_index: 0.999972
+  paramdata.index: 0.000027
+  data_filtered.to_excel: 0.000001
+  df.to_json: 0.000000
+repres	entropy 2.35e-06	nTrans 6	sum 1.000000
+  datetime.utcnow.np.datetime64.astype: 1.000000
+  datetime.utcfromtimestamp: 0.000000
+idl	entropy 0	nTrans 1	sum 1.000000
+  pd.set_option: 1.000000
+extract	entropy 1.609	nTrans 5	sum 1.000000
+  df.str.split: 0.200000
+  pd.DataFrame: 0.200000
+  df.str.split.rename: 0.200000
+  df.join: 0.200000
+  upper_lower_df.str.lower: 0.200000
+know	entropy 0.004	nTrans 19	sum 1.000000
+  p.Series: 0.999561
+  sLength.np.random.randn.p.Series.values: 0.000276
+  df1.loc: 0.000084
+  df1.assign: 0.000079
+support	entropy 4.15e-31	nTrans 3	sum 1.000000
+  df.loc: 1.000000
+vs	entropy 0	nTrans 3	sum 1.000000
+  df.query: 1.000000
+sinc	entropy 0.092	nTrans 21	sum 1.000000
+  pd.Series: 0.981926
+  df.isnull.values.any: 0.017812
+  df_test.iloc: 0.000262
+higher	entropy 0	nTrans 2	sum 1.000000
+  df.query: 1.000000
+drop	entropy 0.491	nTrans 30	sum 1.000000
+  "": 0.854237
+  df.drop_duplicates.values.tolist: 0.115249
+  df.drop: 0.030278
+  df.values.tolist: 0.000235
+  sum.grp.transform.sort.index: 0.000000
+  df1.col2.isin: 0.000000
+  sort2.reset_index: 0.000000
+allow	entropy 1.099	nTrans 3	sum 1.000000
+  df.argmax: 0.333333
+  dfrm.idxmax: 0.333333
+  pandas.DataFrame: 0.333333
+idea	entropy 0	nTrans 1	sum 1.000000
+  df.ix.copy: 1.000000
+sklearn	entropy 0	nTrans 2	sum 1.000000
+  df.df.loc.values: 1.000000
+detect	entropy 0	nTrans 1	sum 1.000000
+  pd.set_option: 1.000000
+proper	entropy 9.97e-06	nTrans 4	sum 1.000000
+  df3.reset_index.drop_duplicates: 0.999999
+  df3.reset_index.drop_duplicates.set_index: 0.000001
+everi	entropy 0	nTrans 1	sum 1.000000
+  gb.get_group: 1.000000
+we	entropy 0	nTrans 1	sum 1.000000
+  pd.read_sql: 1.000000
+summari	entropy 1.59e-33	nTrans 2	sum 1.000000
+  paramdata.index: 1.000000
+rearrang	entropy 0	nTrans 1	sum 1.000000
+  df.columns.tolist: 1.000000
+admit	entropy 0	nTrans 1	sum 1.000000
+  myseries.myseries.index: 1.000000
+common	entropy 5.80e-10	nTrans 10	sum 1.000000
+  df1.isin: 1.000000
+appli	entropy 0.976	nTrans 30	sum 1.000000
+  df1.index: 0.575808
+  df.groupby: 0.220341
+  pd.read_csv: 0.203817
+  datetime.utcnow: 0.000033
+interest	entropy 4.42e-07	nTrans 5	sum 1.000000
+  col_list.df.sum: 1.000000
+  df.sum: 0.000000
+beetween	entropy 3.59e-19	nTrans 6	sum 1.000000
+  dt64.dtype: 1.000000
+param	entropy 3.90e-14	nTrans 3	sum 1.000000
+  df.sum: 1.000000
+queri	entropy 1.95e-05	nTrans 3	sum 1.000000
+  df.query: 0.999999
+  pd.read_sql: 0.000001
+quz	entropy 0	nTrans 1	sum 1.000000
+  df.loc: 1.000000
+wonder	entropy 0.321	nTrans 4	sum 1.000000
+  data.fillna: 0.910766
+  data.groupby.transform: 0.083991
+  data.groupby: 0.005243
+mask	entropy 0.001	nTrans 6	sum 1.000000
+  "": 0.999897
+  df.df.index.tolist: 0.000103
+choic	entropy 0.002	nTrans 2	sum 1.000000
+  df.to_pickle: 0.999776
+  pd.read_pickle: 0.000224
+previous	entropy 0	nTrans 5	sum 1.000000
+  df_test.iloc: 1.000000
+org	entropy 0.074	nTrans 10	sum 1.000000
+  df.iloc: 0.986496
+  df.rename: 0.012903
+  df.value_counts: 0.000601
+emac	entropy 0	nTrans 1	sum 1.000000
+  pd.set_option: 1.000000
+ipython	entropy 0	nTrans 4	sum 1.000000
+  pd.set_option: 1.000000
+mari	entropy 5.48e-04	nTrans 3	sum 1.000000
+  df.groupby.max: 0.999950
+  df.groupby.transform: 0.000050
+comment	entropy 0.509	nTrans 23	sum 1.000000
+  df.shape: 0.842782
+  df.resample: 0.134368
+  sLength.np.random.randn.p.Series.values: 0.020159
+  df.groupby.count: 0.002689
+  df.sort_values: 0.000002
+step	entropy 0.423	nTrans 7	sum 1.000000
+  sort1.groupby.apply: 0.869463
+  df.loc: 0.120343
+  sort2.reset_index: 0.010194
+xs	entropy 0	nTrans 1	sum 1.000000
+  df.xs: 1.000000
+redund	entropy 0.316	nTrans 9	sum 1.000000
+  x.groupby_object.agg.rename.join: 0.904104
+  df.groupby.size.rename: 0.095896
+base	entropy 0.007	nTrans 6	sum 1.000000
+  df.str.contains: 0.999180
+  df.loc: 0.000793
+  df.df.index.tolist: 0.000027
+runtim	entropy 1.099	nTrans 3	sum 1.000000
+  df.argmax: 0.333333
+  dfrm.idxmax: 0.333333
+  pandas.DataFrame: 0.333333
+individu	entropy 1.792	nTrans 6	sum 1.000000
+  pd.to_numeric: 0.166667
+  pd.Series: 0.166667
+  pd.DataFrame: 0.166667
+  df.apply: 0.166667
+  df.dtypes: 0.166667
+  df.infer_objects: 0.166667
+whole	entropy 5.89e-09	nTrans 13	sum 1.000000
+  df.dtypes: 1.000000
+  str.df.applymap.iloc: 0.000000
+none	entropy 4.41e-12	nTrans 3	sum 1.000000
+  df.sum: 1.000000
+type	entropy 4.37e-07	nTrans 34	sum 1.000000
+  df.dtypes: 1.000000
+  df_.fillna: 0.000000
+consist	entropy 0.096	nTrans 3	sum 1.000000
+  df.fillna.groupby: 0.980584
+  df.fillna.groupby.sum: 0.019416
+hack	entropy 7.15e-11	nTrans 3	sum 1.000000
+  df.fillna.groupby.sum: 1.000000
+problem	entropy 0	nTrans 4	sum 1.000000
+  pd.read_csv: 1.000000
+settingwithcopywarn	entropy 0.553	nTrans 5	sum 1.000000
+  df1.index: 0.757935
+  df1.assign: 0.242065
+tricki	entropy 1.099	nTrans 3	sum 1.000000
+  df.argmax: 0.333333
+  dfrm.idxmax: 0.333333
+  pandas.DataFrame: 0.333333
+zip	entropy 1.609	nTrans 5	sum 1.000000
+  df.str.split: 0.200000
+  pd.DataFrame: 0.200000
+  df.str.split.rename: 0.200000
+  df.join: 0.200000
+  upper_lower_df.str.lower: 0.200000
+still	entropy 0.354	nTrans 12	sum 1.000000
+  df3.reset_index.drop_duplicates: 0.891079
+  df3.reset_index.drop_duplicates.set_index: 0.107082
+  df1.loc: 0.001839
+method	entropy 0.011	nTrans 56	sum 1.000000
+  data.set_index: 0.998713
+  df1.index: 0.000734
+  Series.rename: 0.000540
+  df.sort_values: 0.000008
+  df.isnull.sum: 0.000003
+  df2.df1.isin.df1.dropna: 0.000002
+  s.isnull: 0.000000
+  df3.index.duplicated: 0.000000
+work	entropy 6.83e-06	nTrans 37	sum 1.000000
+  pd.DataFrame: 1.000000
+  pandas.DataFrame: 0.000000
+  pd.read_csv: 0.000000
+come	entropy 0	nTrans 3	sum 1.000000
+  df.dropna: 1.000000
+exist	entropy 5.05e-04	nTrans 13	sum 1.000000
+  Series.rename: 0.999954
+  df3.reset_index: 0.000046
+fail	entropy 0.094	nTrans 8	sum 1.000000
+  df.convert_objects.dtypes: 0.981074
+  df.convert_objects: 0.018926
+word	entropy 1.792	nTrans 6	sum 1.000000
+  pd.to_numeric: 0.166667
+  pd.Series: 0.166667
+  pd.DataFrame: 0.166667
+  df.apply: 0.166667
+  df.dtypes: 0.166667
+  df.infer_objects: 0.166667
+broadcast	entropy 0.473	nTrans 6	sum 1.000000
+  grp.transform: 0.818962
+  sort1.groupby: 0.181038
+  sum.grp.transform.sort.index: 0.000000
+henc	entropy 0	nTrans 6	sum 1.000000
+  datetime.datetime.now: 1.000000
+renadeen	entropy 0	nTrans 2	sum 1.000000
+  df.sort_values: 1.000000
+convienc	entropy 0.262	nTrans 4	sum 1.000000
+  data.fillna: 0.931931
+  data.groupby.transform: 0.064673
+  data.groupby: 0.003397
+copi	entropy 5.49e-04	nTrans 12	sum 1.000000
+  gb.get_group: 0.999950
+  sLength.np.random.randn.p.Series.values: 0.000048
+  df.xs: 0.000002
+  p.Series: 0.000000
+requir	entropy 0.042	nTrans 9	sum 1.000000
+  pd.read_csv: 0.993424
+  gb.get_group: 0.005845
+  df3.reset_index: 0.000730
+cope	entropy 1.792	nTrans 6	sum 1.000000
+  pd.to_numeric: 0.166667
+  pd.Series: 0.166667
+  pd.DataFrame: 0.166667
+  df.apply: 0.166667
+  df.dtypes: 0.166667
+  df.infer_objects: 0.166667
+flat	entropy 1.87e-18	nTrans 4	sum 1.000000
+  df.isnull.values.any: 1.000000
+get	entropy 0.884	nTrans 49	sum 1.000000
+  my_dataframe.columns.values: 0.572910
+  df.index: 0.350570
+  df.groupby: 0.076453
+  df.drop_duplicates.values: 0.000059
+  df3.drop_duplicates: 0.000007
+  df.tolist: 0.000002
+  df.drop_duplicates.values.tolist: 0.000000
+place	entropy 1.46e-05	nTrans 3	sum 1.000000
+  df.append: 0.999999
+  df.sort_values: 0.000001
+power	entropy 1.609	nTrans 5	sum 1.000000
+  df.str.split: 0.200000
+  pd.DataFrame: 0.200000
+  df.str.split.rename: 0.200000
+  df.join: 0.200000
+  upper_lower_df.str.lower: 0.200000
+leav	entropy 0.028	nTrans 7	sum 1.000000
+  np.where: 0.995727
+  df1.values: 0.004273
+  df2.df1.stack: 0.000001
+  changed.index: 0.000000
+regular	entropy 0	nTrans 1	sum 1.000000
+  df.ix.copy: 1.000000
+simplest	entropy 1.609	nTrans 5	sum 1.000000
+  df.str.spli

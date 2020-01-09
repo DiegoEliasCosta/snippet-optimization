@@ -1,0 +1,426 @@
+---
+jupyter:
+  jupytext:
+    text_representation:
+      extension: .Rmd
+      format_name: rmarkdown
+      format_version: '1.1'
+      jupytext_version: 1.2.4
+  kernelspec:
+    display_name: Python 3
+    language: python
+    name: python3
+---
+
+```{python}
+import nltk, string
+from nltk.tokenize import word_tokenize
+from sklearn.feature_extraction.text import TfidfVectorizer
+import ast
+import pickle
+import os
+import re
+import pandas as pd
+import numpy as np
+```
+
+```{python}
+stemmer = nltk.stem.porter.PorterStemmer()
+remove_punctuation_map = dict((ord(char), None) for char in string.punctuation)
+
+def stem_tokens(tokens):
+    return [stemmer.stem(item) for item in tokens]
+
+
+'''remove punctuation, lowercase, stem'''
+def normalize(text):
+    return stem_tokens(nltk.word_tokenize(text.lower().translate(remove_punctuation_map)))
+
+vectorizer = TfidfVectorizer(tokenizer=normalize, stop_words='english')
+
+def cosine_sim(text1, text2):
+    text1 = removeSpecialChars(text1)
+    text2 = removeSpecialChars(text2)
+    tfidf = vectorizer.fit_transform([text1, text2])
+    return ((tfidf * tfidf.T).A)[0,1]
+
+def removeSpecialChars(text):
+    return re.sub("[^a-zA-Z0-9]", " ", text)
+```
+
+```{python}
+from nltk.corpus import stopwords
+stop_words = stopwords.words('english')
+
+from nltk.stem.porter import PorterStemmer
+porter = PorterStemmer()
+
+def process_text(text):
+    # Tokenize
+    tokens = word_tokenize(text)
+    # remove all tokens that are not alphabetic. Special Characters
+    words = [word for word in tokens if word.isalpha()]
+    # Remove stopwords
+    words = [w for w in words if not w in stop_words]
+    # stemming of words
+    stemmed = [porter.stem(word) for word in words]
+    processed_text = (' ').join(stemmed)
+    return processed_text
+```
+
+```{python}
+from collections import deque
+
+# Class to extract method as well as attribute calls. Each token after '.' is called attribute 
+# be it function call or anything else
+
+class AttributeVisitor(ast.NodeVisitor):
+    def __init__(self):
+        self._name = deque()
+        self._pos = -1 
+    
+    @property
+    def name(self):
+        return '.'.join(self._name)
+    
+    @property
+    def lineno(self):
+        return self._pos
+    
+    @name.deleter
+    def name(self):
+        self._name.clear()
+    
+    def visit_Name(self, node):
+        self._pos = node.lineno # line number
+        self._name.appendleft(node.id)
+    
+    def visit_Attribute(self, node):
+        try:
+            self._pos = node.lineno # line number
+            self._name.appendleft(node.attr)
+            self._name.appendleft(node.value.id)
+        except AttributeError:
+            self.generic_visit(node)
+            
+def get_all_calls(tree):
+    all_calls = []
+    for node in ast.walk(tree):
+        if isinstance(node, ast.Attribute):
+            callvisitor = AttributeVisitor()
+            callvisitor.visit(node)
+            all_calls.append(callvisitor.name)
+    return all_calls
+
+# Visitin method calls only
+class FunctionCallVisitor(ast.NodeVisitor):
+    def __init__(self):
+        self._name = deque()
+        self._pos = -1 
+    
+    @property
+    def name(self):
+        return '.'.join(self._name)
+    
+    @property
+    def lineno(self):
+        return self._pos
+    
+    @name.deleter
+    def name(self):
+        self._name.clear()
+    
+    def visit_Name(self, node):
+        self._pos = node.lineno # line number
+        self._name.appendleft(node.id)
+    
+    def visit_Attribute(self, node):
+        try:
+            self._pos = node.lineno # line number
+            self._name.appendleft(node.attr)
+            self._name.appendleft(node.value.id)
+        except AttributeError:
+            self.generic_visit(node)
+            
+def get_func_calls(tree):
+    func_calls = []
+    for node in ast.walk(tree):
+        if isinstance(node, ast.Call):
+            callvisitor = FunctionCallVisitor()
+            callvisitor.visit(node.func)
+            func_calls.append((callvisitor.name, callvisitor.lineno))
+    return func_calls
+```
+
+```{python}
+so_dump_processed_file = '../data/stack-overflow/pandas-preprocessedcode-dataset-part3'
+dataset ='../data/stack-overflow/Dataset - Pandas.csv'
+api_doc_file = '../code/data-import/build_api_doc_base/api_doc.csv'
+id_col = 'Id' 
+```
+
+```{python}
+processed_stackoverflow_df = pd.read_pickle(so_dump_processed_file)
+api_df = pd.read_csv(api_doc_file, encoding='ISO-8859-1', error_bad_lines=False)
+dataset_df = pd.read_csv(dataset, encoding='ISO-8859-1', error_bad_lines=False)
+```
+
+```{python}
+api_df.to_csv('api_df.csv', index=False)
+```
+
+```{python}
+## Get API description with fully qualified name for a method from API doc and build the context
+def buildAPIDictionary(api_df):
+    api_dict = dict()
+    try:
+        
+        for index, row in api_df.iterrows():
+            methodContext = row['Description']
+            tokens = row['FullyQualifiedName'].split('.')
+        
+            for token in tokens:
+                methodContext = str(methodContext)+' '+token
+            api_dict[row['MethodName']] = methodContext
+    except Exception as e:
+        print(e)
+    return api_dict
+        
+## Get AnswerId and Question Text combo from dataset to build the context
+def buildAnswerIdQuestionTextDict(dataset_df):
+    dataset_answerId_QText_Dict = dict()
+    try:
+        for idx, row in dataset_df.iterrows():
+            answerId = row['AnswerId']
+            if answerId != 0:
+                dataset_answerId_QText_Dict[answerId] = process_text(row['QuestionText'])
+    except Exception as e:
+        print(e)
+        
+    return dataset_answerId_QText_Dict
+
+api_dict = buildAPIDictionary(api_df)
+dataset_answerId_QText_Dict = buildAnswerIdQuestionTextDict(dataset_df)
+```
+
+```{python}
+def lookUpAPIDocForContext(method_name):
+    if method_name in api_dict.keys():
+        return api_dict[method_name]
+    else:
+        return ""
+
+def getSOContext(answerId):
+    return dataset_answerId_QText_Dict[int(answerId)]
+```
+
+```{python}
+processed_stackoverflow_df.columns
+```
+
+```{python}
+title_codeElement_pair_df = pd.DataFrame(columns=['title', 'body_text', 'body_text_rake', 'all_calls'])
+for index, row in processed_stackoverflow_df.iterrows():
+    try:
+        if row.PostTypeId !=1:
+            tile = getSOContext(row.Id)
+            #title_rake = process_text(row.TitleRake)
+            body_text = row.BodyText
+            body_text_rake = process_text(row.BodyTextRake)
+            code_snippet = row.PreprocessedCode3
+            tree = ast.parse(code_snippet)
+            all_calls = get_all_calls(tree)
+            if(len(all_calls) !=0):
+                title_codeElement_pair_df.loc[index] = [tile, body_text, body_text_rake, all_calls]
+            
+    except KeyError:
+        pass
+```
+
+```{python}
+title_codeElement_pair_df.head()
+```
+
+```{python}
+def filter_code_elements_using_H1(df):
+    all_calls = df['all_calls']
+    filtered_calls = []
+    for call in all_calls:
+        tokens = call.split('.')
+        method_name = tokens[len(tokens)-1]
+        if lookUpAPIDocForContext(method_name):
+            filtered_calls.append(call)
+    df['h1_filtered_calls'] = filtered_calls
+    return df
+```
+
+```{python}
+title_codeElement_pair_df_after_h1 = title_codeElement_pair_df.apply(filter_code_elements_using_H1, axis=1)
+```
+
+```{python}
+title_codeElement_pair_df_after_h1
+```
+
+```{python}
+def buildAPIDictionaryForH2(api_df):
+    api_dict = dict()
+    try:
+        
+        for index, row in api_df.iterrows():
+            methodContext = row['SubCategory']
+            api_dict[row['MethodName']] = methodContext
+    except Exception as e:
+        print('Error in method buildAPIDictionary',e)
+    return api_dict
+
+api_dict_H2 = buildAPIDictionaryForH2(api_df)
+```
+
+```{python}
+def lookUpAPIDocForContextH2(method_name):
+    try:
+        if method_name in api_dict_H2.keys() and api_dict_H2[method_name] == "Constructor":
+            return True
+        else:
+            return False
+    except Exception as e:
+        print('Error in method lookUpAPIDocForContext', e)
+```
+
+```{python}
+def filter_code_elements_using_H2(df):
+    all_calls = df['all_calls']
+    filtered_calls = []
+    for call in all_calls:
+        tokens = call.split('.')
+        method_name = tokens[len(tokens)-1]
+        if not lookUpAPIDocForContextH2(method_name):
+            filtered_calls.append(call)
+    df['h2_filtered_calls'] = filtered_calls
+    return df
+```
+
+```{python}
+title_codeElement_pair_df_after_h2 = title_codeElement_pair_df_after_h1.apply(filter_code_elements_using_H2, axis=1)
+```
+
+```{python}
+title_codeElement_pair_df_after_h2
+```
+
+```{python}
+def filter_code_elements_using_H1H2(df):
+    # H1 filtered call
+    h1_filtered_calls = df['h1_filtered_calls']
+    len_h1 = len(h1_filtered_calls)
+    filtered_calls = []
+    for call in h1_filtered_calls:
+        tokens = call.split('.')
+        method_name = tokens[len(tokens)-1]
+        if not lookUpAPIDocForContextH2(method_name):
+            filtered_calls.append(call)
+    df['h1h2_filtered_calls'] = filtered_calls
+    len_h1h2 = len(filtered_calls)
+    return df
+```
+
+```{python}
+title_codeElement_pair_df_after_h1h2 = title_codeElement_pair_df_after_h2.apply(filter_code_elements_using_H1H2, axis=1)
+```
+
+```{python}
+title_codeElement_pair_df_after_h1h2
+```
+
+```{python}
+def filter_code_elements_using_M1(df, cosine_sim_threshould):
+    all_calls = df['all_calls']
+    len_all = len(all_calls)
+    filtered_calls = []
+    for call in all_calls:
+        tokens = call.split('.')
+        method_name = tokens[len(tokens)-1]
+        api_context = lookUpAPIDocForContext(method_name)
+        if api_context == "":
+            cos_score = -1
+        else:
+            cos_score = cosine_sim(api_context, df['title'])
+        if cos_score > cosine_sim_threshould:
+            filtered_calls.append(call)
+    df['m1_filtered_calls'] = filtered_calls
+    return df
+```
+
+```{python}
+title_codeElement_pair_df_after_m1 = title_codeElement_pair_df_after_h1h2.apply(filter_code_elements_using_M1, args=(0.0,), axis=1)
+```
+
+```{python}
+title_codeElement_pair_df_after_m1
+```
+
+```{python}
+def list_to_text(df, columns):
+    for col in columns:
+        list_ = df[col]
+        df[col] = " ".join(list_)
+    return df
+```
+
+```{python}
+list_columns = ['all_calls', 'h1_filtered_calls', 'h2_filtered_calls', 'h1h2_filtered_calls', 'm1_filtered_calls']
+title_codeElement_pair = title_codeElement_pair_df_after_m1.apply(list_to_text, args=(list_columns,), axis=1)
+```
+
+```{python}
+title_codeElement_pair
+```
+
+```{python}
+title_codeElement_pair.columns
+```
+
+```{python}
+msk = np.random.rand(len(title_codeElement_pair)) < 0.7
+```
+
+```{python}
+train = title_codeElement_pair[msk]
+test = title_codeElement_pair[~msk]
+print(len(train))
+print(len(test))
+```
+
+```{python}
+train.to_csv('corpus/title_train.en', columns = ['title'], index=False, header=False)
+train.to_csv('corpus/body_text_train.en', columns = ['body_text'], index=False, header=False)
+train.to_csv('corpus/body_text_rake_train.en', columns = ['body_text_rake'], index=False, header=False)
+train.to_csv('corpus/all_calls_code_train.cd', columns = ['all_calls'], index=False, header=False)
+train.to_csv('corpus/h1_filtered_calls_code_train.cd', columns = ['h1_filtered_calls'], index=False, header=False)
+train.to_csv('corpus/h2_filtered_calls_code_train.cd', columns = ['h2_filtered_calls'], index=False, header=False)
+train.to_csv('corpus/h1h2_filtered_calls_code_train.cd', columns = ['h1h2_filtered_calls'], index=False, header=False)
+train.to_csv('corpus/m1_filtered_calls_code_train.cd', columns = ['m1_filtered_calls'], index=False, header=False)
+```
+
+```{python}
+test.to_csv('corpus/title_test.en', columns = ['title'], index=False, header=False)
+test.to_csv('corpus/body_text_test.en', columns = ['body_text'], index=False, header=False)
+test.to_csv('corpus/body_text_rake_test.en', columns = ['body_text_rake'], index=False, header=False)
+test.to_csv('corpus/all_calls_code_test.cd', columns = ['all_calls'], index=False, header=False)
+test.to_csv('corpus/h1_filtered_calls_code_test.cd', columns = ['h1_filtered_calls'], index=False, header=False)
+test.to_csv('corpus/h2_filtered_calls_code_test.cd', columns = ['h2_filtered_calls'], index=False, header=False)
+test.to_csv('corpus/h1h2_filtered_calls_code_test.cd', columns = ['h1h2_filtered_calls'], index=False, header=False)
+test.to_csv('corpus/m1_filtered_calls_code_test.cd', columns = ['m1_filtered_calls'], index=False, header=False)
+```
+
+```{python}
+title_codeElement_pair.to_csv('corpus/title.txt', columns = ['title'], index=False, header=False)
+title_codeElement_pair.to_csv('corpus/body_text.txt', columns = ['body_text'], index=False, header=False)
+title_codeElement_pair.to_csv('corpus/body_text_rake.txt', columns = ['body_text_rake'], index=False, header=False)
+title_codeElement_pair.to_csv('corpus/all_calls_code.txt', columns = ['all_calls'], index=False, header=False)
+title_codeElement_pair.to_csv('corpus/h1_filtered_calls_code.txt', columns = ['h1_filtered_calls'], index=False, header=False)
+title_codeElement_pair.to_csv('corpus/h2_filtered_calls_code.txt', columns = ['h2_filtered_calls'], index=False, header=False)
+title_codeElement_pair.to_csv('corpus/h1h2_filtered_calls_code.txt', columns = ['h1h2_filtered_calls'], index=False, header=False)
+title_codeElement_pair.to_csv('corpus/m1_filtered_calls_code.txt', columns = ['m1_filtered_calls'], index=False, header=False)
+```

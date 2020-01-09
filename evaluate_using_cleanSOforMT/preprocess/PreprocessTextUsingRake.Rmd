@@ -1,0 +1,75 @@
+---
+jupyter:
+  jupytext:
+    text_representation:
+      extension: .Rmd
+      format_name: rmarkdown
+      format_version: '1.1'
+      jupytext_version: 1.2.4
+  kernelspec:
+    display_name: Python 3
+    language: python
+    name: python3
+---
+
+```{python}
+import pandas as pd
+from rake_nltk import Rake 
+```
+
+```{python}
+so_dump_processed_file = '../../data/stack-overflow/pandas-preprocessedcode-dataset-part3'
+processed_stackoverflow_df = pd.read_pickle(so_dump_processed_file)
+```
+
+```{python}
+processed_stackoverflow_df.columns
+```
+
+```{python}
+def apply_rake_title(df):
+    try:
+        r = Rake() # Uses stopwords for english from NLTK, and all puntuation characters.
+        r.extract_keywords_from_text(df['Title'])
+        df['Rake_Proecessed_Title'] = ' '.join(r.get_ranked_phrases())
+    except:
+        df['Rake_Proecessed_Title'] = df['Title']
+    
+    return df
+```
+
+```{python}
+processed_stackoverflow_df = processed_stackoverflow_df.apply(apply_rake_title, axis=1)
+```
+
+```{python}
+processed_stackoverflow_df[['Title', 'Rake_Proecessed_Title']]
+```
+
+```{python}
+def apply_rake_bodytext(df):
+    try:
+        r = Rake() # Uses stopwords for english from NLTK, and all puntuation characters.
+        r.extract_keywords_from_text(df['BodyText'])
+        df['Rake_Proecessed_BodyText'] = ' '.join(r.get_ranked_phrases())
+    except:
+        df['Rake_Proecessed_BodyText'] = df['BodyText']
+    
+    return df
+```
+
+```{python}
+processed_stackoverflow_df = processed_stackoverflow_df.apply(apply_rake_bodytext, axis=1)
+```
+
+```{python}
+processed_stackoverflow_df[['BodyText', 'Rake_Proecessed_BodyText']]
+```
+
+```{python}
+processed_stackoverflow_df.to_pickle(so_dump_processed_file)
+```
+
+```{python}
+processed_stackoverflow_df.columns
+```
