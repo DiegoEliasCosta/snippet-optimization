@@ -77,27 +77,31 @@ print('median: ', m1.median(axis=0))
 m1[0].plot(kind='kde')
 ```
 
-## Box Plot
+## Consolidate result
 
 ```{python}
-box_plot_df = pd.DataFrame(columns=['baseline', 'h1', 'h2', 'h1h2', 'm1'])
+consolidated_df = pd.DataFrame(columns=['baseline', 'h1', 'h2', 'h1h2', 'm1'])
 ```
 
 ```{python}
-box_plot_df['baseline'] = baseline[0]
-box_plot_df['h1'] = h1[0]
-box_plot_df['h2'] = h2[0]
-box_plot_df['h1h2'] = h1h2[0]
-box_plot_df['m1'] = m1[0]
+consolidated_df['baseline'] = baseline[0]
+consolidated_df['h1'] = h1[0]
+consolidated_df['h2'] = h2[0]
+consolidated_df['h1h2'] = h1h2[0]
+consolidated_df['m1'] = m1[0]
 ```
 
 ```{python}
-box_plot_df.median(axis=0)
+consolidated_df.median(axis=0)
 ```
 
 ```{python}
-fig, axes = plt.subplots(figsize=(10, 6), nrows=1, ncols=1, sharey=True)
-entropy_box_plot = sns.boxplot(data = box_plot_df, whis=1, fliersize=0.5, color='white', orient='h') 
+consolidated_df.describe()
+```
+
+```{python}
+fig, axes = plt.subplots(figsize=(8, 5))
+entropy_box_plot = sns.boxplot(data = consolidated_df, whis=1, fliersize=0.5, color='white', orient='h') 
 ```
 
 ```{python}
