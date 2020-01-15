@@ -230,10 +230,10 @@ class EvaluateH1H2_Line(JupyterNotebookTask):
 
 
 # ------------------------------------------------
-#  					M1
+#  					M1TFIDF
 # ------------------------------------------------
-class RunM1(JupyterNotebookTask):
-    notebook_path = os.path.join(method_notebook_path, 'm1', 'M1-Question_Text_Api_Desc.ipynb')
+class RunM1TFIDF(JupyterNotebookTask):
+    notebook_path = os.path.join(method_notebook_path, 'm1', 'M1TFIDF-Question_Text_Api_Desc.ipynb')
     kernel_name = 'python3'
     timeout = 60
 
@@ -248,13 +248,10 @@ class RunM1(JupyterNotebookTask):
         return PreProcessTitleTextRake()
 
     def output(self):
-        return luigi.LocalTarget(os.path.join(data_path, 'pandas-solutioncode-m1'))
+        return luigi.LocalTarget(os.path.join(data_path, 'pandas-solutioncode-m1tfidf'))
 
-		
 
-        
-
-class EvaluateM1(JupyterNotebookTask):
+class EvaluateM1TFIDF(JupyterNotebookTask):
     notebook_path = os.path.join(analyze_notebook_path, 'evaluate.ipynb')
     kernel_name = 'python3'
     timeout = 60
@@ -263,14 +260,13 @@ class EvaluateM1(JupyterNotebookTask):
     debug = luigi.Parameter(default=DEBUG)
 
     def requires(self):
-        return RunM1()
+        return RunM1TFIDF()
 
     def output(self):
-        return luigi.LocalTarget(os.path.join(results_path, 'results-m1'))
+        return luigi.LocalTarget(os.path.join(results_path, 'results-m1tfidf'))
 
-        
 
-class EvaluateM1_Line(JupyterNotebookTask):
+class EvaluateM1TFIDF_Line(JupyterNotebookTask):
     notebook_path = os.path.join(analyze_notebook_path, 'evaluate-line-granularity.ipynb')
     kernel_name = 'python3'
     timeout = 60
@@ -280,17 +276,17 @@ class EvaluateM1_Line(JupyterNotebookTask):
 
 
     def requires(self):
-        return RunM1()
+        return RunM1TFIDF()
 
     def output(self):
-        return luigi.LocalTarget(os.path.join(results_path, 'results-m1-line'))
+        return luigi.LocalTarget(os.path.join(results_path, 'results-m1tfidf-line'))
 
 
 # ------------------------------------------------
-#  					M1Doc2Vec
+#  					M1TFIDFH2
 # ------------------------------------------------
-class RunM1Doc2Vec(JupyterNotebookTask):
-    notebook_path = os.path.join(method_notebook_path, 'm1', 'M1-Question_Text_Doc2Vec_Api_Desc.ipynb')
+class RunM1TFIDFH2(JupyterNotebookTask):
+    notebook_path = os.path.join(method_notebook_path, 'm1', 'M1TFIDFH2-Question_Text_Api_Desc.ipynb')
     kernel_name = 'python3'
     timeout = 60
 
@@ -305,10 +301,10 @@ class RunM1Doc2Vec(JupyterNotebookTask):
         return PreProcessTitleTextRake()
 
     def output(self):
-        return luigi.LocalTarget(os.path.join(data_path, 'pandas-solutioncode-m1-doc2vec'))
+        return luigi.LocalTarget(os.path.join(data_path, 'pandas-solutioncode-m1tfidfh2'))
 
 
-class EvaluateM1Doc2Vec(JupyterNotebookTask):
+class EvaluateM1TFIDFH2(JupyterNotebookTask):
     notebook_path = os.path.join(analyze_notebook_path, 'evaluate.ipynb')
     kernel_name = 'python3'
     timeout = 60
@@ -317,13 +313,13 @@ class EvaluateM1Doc2Vec(JupyterNotebookTask):
     debug = luigi.Parameter(default=DEBUG)
 
     def requires(self):
-        return RunM1Doc2Vec()
+        return RunM1TFIDFH2()
 
     def output(self):
-        return luigi.LocalTarget(os.path.join(results_path, 'results-m1-doc2vec'))
+        return luigi.LocalTarget(os.path.join(results_path, 'results-m1tfidfh2'))
 
 
-class EvaluateM1Doc2Vec_Line(JupyterNotebookTask):
+class EvaluateM1TFIDFH2_Line(JupyterNotebookTask):
     notebook_path = os.path.join(analyze_notebook_path, 'evaluate-line-granularity.ipynb')
     kernel_name = 'python3'
     timeout = 60
@@ -333,7 +329,219 @@ class EvaluateM1Doc2Vec_Line(JupyterNotebookTask):
 
 
     def requires(self):
-        return RunM1Doc2Vec()
+        return RunM1TFIDFH2()
 
     def output(self):
-        return luigi.LocalTarget(os.path.join(results_path, 'results-m1-doc2vec-line'))
+        return luigi.LocalTarget(os.path.join(results_path, 'results-m1tfidfh2-line'))
+
+
+# ------------------------------------------------
+#  					M1Doc2VecTitle
+# ------------------------------------------------
+class RunM1Doc2VecTitle(JupyterNotebookTask):
+    notebook_path = os.path.join(method_notebook_path, 'm1', 'M1D2VTitle-Question_Text_Api_Desc.ipynb')
+    kernel_name = 'python3'
+    timeout = 60
+
+    dataset = luigi.Parameter(default=os.path.join(data_path, 'Dataset - Pandas.csv'))
+
+    code_snippet_col = luigi.Parameter(default='PreprocessedCode3')
+    id_col = luigi.Parameter(default='Id')     
+    api_doc_file = luigi.Parameter(default=api_doc_file)   
+    cosine_sim_th = luigi.Parameter(default=0.0)
+     
+    def requires(self):
+        return PreProcessTitleTextRake()
+
+    def output(self):
+        return luigi.LocalTarget(os.path.join(data_path, 'pandas-solutioncode-m1-d2vtitle'))
+
+
+class EvaluateM1Doc2VecTitle(JupyterNotebookTask):
+    notebook_path = os.path.join(analyze_notebook_path, 'evaluate.ipynb')
+    kernel_name = 'python3'
+    timeout = 60
+
+    dataset = luigi.Parameter(default=os.path.join(data_path, 'Dataset - Pandas.csv'))
+    debug = luigi.Parameter(default=DEBUG)
+
+    def requires(self):
+        return RunM1Doc2VecTitle()
+
+    def output(self):
+        return luigi.LocalTarget(os.path.join(results_path, 'results-m1-d2vtitle'))
+
+
+class EvaluateM1Doc2VecTitle_Line(JupyterNotebookTask):
+    notebook_path = os.path.join(analyze_notebook_path, 'evaluate-line-granularity.ipynb')
+    kernel_name = 'python3'
+    timeout = 60
+
+    dataset = luigi.Parameter(default=os.path.join(data_path, 'Dataset - Pandas.csv'))
+    debug = luigi.Parameter(default=DEBUG)
+
+
+    def requires(self):
+        return RunM1Doc2VecTitle()
+
+    def output(self):
+        return luigi.LocalTarget(os.path.join(results_path, 'results-m1-d2vtitle-line'))
+
+
+# ------------------------------------------------
+#  					M1Doc2VecTitleH2
+# ------------------------------------------------
+class RunM1Doc2VecTitleH2(JupyterNotebookTask):
+    notebook_path = os.path.join(method_notebook_path, 'm1', 'M1D2VTitleH2-Question_Text_Doc2Vec_Api_Desc.ipynb')
+    kernel_name = 'python3'
+    timeout = 60
+
+    dataset = luigi.Parameter(default=os.path.join(data_path, 'Dataset - Pandas.csv'))
+
+    code_snippet_col = luigi.Parameter(default='PreprocessedCode3')
+    id_col = luigi.Parameter(default='Id')     
+    api_doc_file = luigi.Parameter(default=api_doc_file)   
+    cosine_sim_th = luigi.Parameter(default=0.0)
+     
+    def requires(self):
+        return PreProcessTitleTextRake()
+
+    def output(self):
+        return luigi.LocalTarget(os.path.join(data_path, 'pandas-solutioncode-m1-d2vtitleh2'))
+
+
+class EvaluateM1Doc2VecTitleH2(JupyterNotebookTask):
+    notebook_path = os.path.join(analyze_notebook_path, 'evaluate.ipynb')
+    kernel_name = 'python3'
+    timeout = 60
+
+    dataset = luigi.Parameter(default=os.path.join(data_path, 'Dataset - Pandas.csv'))
+    debug = luigi.Parameter(default=DEBUG)
+
+    def requires(self):
+        return RunM1Doc2VecTitleH2()
+
+    def output(self):
+        return luigi.LocalTarget(os.path.join(results_path, 'results-m1-d2vtitleh2'))
+
+
+class EvaluateM1Doc2VecTitleH2_Line(JupyterNotebookTask):
+    notebook_path = os.path.join(analyze_notebook_path, 'evaluate-line-granularity.ipynb')
+    kernel_name = 'python3'
+    timeout = 60
+
+    dataset = luigi.Parameter(default=os.path.join(data_path, 'Dataset - Pandas.csv'))
+    debug = luigi.Parameter(default=DEBUG)
+
+
+    def requires(self):
+        return RunM1Doc2VecTitleH2()
+
+    def output(self):
+        return luigi.LocalTarget(os.path.join(results_path, 'results-m1-d2vtitleh2-line'))
+
+
+# ------------------------------------------------
+#  					M1Doc2VecTitleBody
+# ------------------------------------------------
+class RunM1Doc2VecTitleBody(JupyterNotebookTask):
+    notebook_path = os.path.join(method_notebook_path, 'm1', 'M1D2VTitleBody-Question_Text_Api_Desc.ipynb')
+    kernel_name = 'python3'
+    timeout = 60
+
+    dataset = luigi.Parameter(default=os.path.join(data_path, 'Dataset - Pandas.csv'))
+
+    code_snippet_col = luigi.Parameter(default='PreprocessedCode3')
+    id_col = luigi.Parameter(default='Id')     
+    api_doc_file = luigi.Parameter(default=api_doc_file)   
+    cosine_sim_th = luigi.Parameter(default=0.0)
+     
+    def requires(self):
+        return PreProcessTitleTextRake()
+
+    def output(self):
+        return luigi.LocalTarget(os.path.join(data_path, 'pandas-solutioncode-m1-d2vtitlebody'))
+
+
+class EvaluateM1Doc2VecTitleBody(JupyterNotebookTask):
+    notebook_path = os.path.join(analyze_notebook_path, 'evaluate.ipynb')
+    kernel_name = 'python3'
+    timeout = 60
+
+    dataset = luigi.Parameter(default=os.path.join(data_path, 'Dataset - Pandas.csv'))
+    debug = luigi.Parameter(default=DEBUG)
+
+    def requires(self):
+        return RunM1Doc2VecTitleBody()
+
+    def output(self):
+        return luigi.LocalTarget(os.path.join(results_path, 'results-m1-d2vtitlebody'))
+
+
+class EvaluateM1Doc2VecTitleBody_Line(JupyterNotebookTask):
+    notebook_path = os.path.join(analyze_notebook_path, 'evaluate-line-granularity.ipynb')
+    kernel_name = 'python3'
+    timeout = 60
+
+    dataset = luigi.Parameter(default=os.path.join(data_path, 'Dataset - Pandas.csv'))
+    debug = luigi.Parameter(default=DEBUG)
+
+
+    def requires(self):
+        return RunM1Doc2VecTitleBody()
+
+    def output(self):
+        return luigi.LocalTarget(os.path.join(results_path, 'results-m1-d2vtitlebody-line'))
+
+
+# ------------------------------------------------
+#  					M1Doc2VecTitleBodyH2
+# ------------------------------------------------
+class RunM1Doc2VecTitleBodyH2(JupyterNotebookTask):
+    notebook_path = os.path.join(method_notebook_path, 'm1', 'M1D2VTitleBodyH2-Question_Text_Api_Desc.ipynb')
+    kernel_name = 'python3'
+    timeout = 60
+
+    dataset = luigi.Parameter(default=os.path.join(data_path, 'Dataset - Pandas.csv'))
+
+    code_snippet_col = luigi.Parameter(default='PreprocessedCode3')
+    id_col = luigi.Parameter(default='Id')     
+    api_doc_file = luigi.Parameter(default=api_doc_file)   
+    cosine_sim_th = luigi.Parameter(default=0.0)
+     
+    def requires(self):
+        return PreProcessTitleTextRake()
+
+    def output(self):
+        return luigi.LocalTarget(os.path.join(data_path, 'pandas-solutioncode-m1-d2vtitlebodyh2'))
+
+
+class EvaluateM1Doc2VecTitleH2(JupyterNotebookTask):
+    notebook_path = os.path.join(analyze_notebook_path, 'evaluate.ipynb')
+    kernel_name = 'python3'
+    timeout = 60
+
+    dataset = luigi.Parameter(default=os.path.join(data_path, 'Dataset - Pandas.csv'))
+    debug = luigi.Parameter(default=DEBUG)
+
+    def requires(self):
+        return RunM1Doc2VecTitleBodyH2()
+
+    def output(self):
+        return luigi.LocalTarget(os.path.join(results_path, 'results-m1-d2vtitlebodyh2'))
+
+
+class EvaluateM1Doc2VecTitleH2_Line(JupyterNotebookTask):
+    notebook_path = os.path.join(analyze_notebook_path, 'evaluate-line-granularity.ipynb')
+    kernel_name = 'python3'
+    timeout = 60
+
+    dataset = luigi.Parameter(default=os.path.join(data_path, 'Dataset - Pandas.csv'))
+    debug = luigi.Parameter(default=DEBUG)
+
+
+    def requires(self):
+        return RunM1Doc2VecTitleBodyH2()
+
+    def output(self):
+        return luigi.LocalTarget(os.path.join(results_path, 'results-m1-d2vtitlebodyh2-line'))

@@ -37,8 +37,12 @@ class AnalyzeAllBlock(JupyterNotebookTask):
             'h1': EvaluateH1(),
             'h2': EvaluateH2(),
             'h1h2': EvaluateH1H2(),
-            'm1': EvaluateM1(),
-            'm1Doc2Vec': EvaluateM1Doc2Vec()
+            'm1tfidf': EvaluateM1TFIDF(),
+            'm1tfidfh2': EvaluateM1TFIDFH2(),
+            'm1d2vtitle': EvaluateM1Doc2VecTitle(),
+            'm1d2vtitleh2': EvaluateM1Doc2VecTitleH2(),
+            'm1d2vtitlebody': EvaluateM1Doc2VecTitleBody(),
+            'm1d2vtitlebodyh2': EvaluateM1Doc2VecTitleH2()
             }
         
 
@@ -60,8 +64,12 @@ class AnalyzeAllLine(JupyterNotebookTask):
             'h1': EvaluateH1_Line(),
             'h2': EvaluateH2_Line(),
             'h1h2': EvaluateH1H2_Line(),
-            'm1': EvaluateM1_Line(),
-            'm1Doc2Vec': EvaluateM1Doc2Vec_Line()
+            'm1tfidf': EvaluateM1TFIDF_Line(),
+            'm1tfidfh2': EvaluateM1TFIDFH2_Line(),
+            'm1d2vtitle': EvaluateM1Doc2VecTitle_Line(),
+            'm1d2vtitleh2': EvaluateM1Doc2VecTitleH2_Line(),
+            'm1d2vtitlebody': EvaluateM1Doc2VecTitleBody_Line(),
+            'm1d2vtitlebodyh2': EvaluateM1Doc2VecTitleH2_Line()
             }
         
 

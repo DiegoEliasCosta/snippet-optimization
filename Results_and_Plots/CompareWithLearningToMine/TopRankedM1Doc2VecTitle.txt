@@ -1,0 +1,107 @@
+10202789,df = pandas.DataFrame(np.random.randn(5,3),columns=['A','B','C'])
+10374456,DataFrame({'count' : df1.groupby( [ "Name", "City"] ).size()}).reset_index()
+10458386,In : data2 = data.set_index('a')
+11067072,df.reindex_axis(sorted(df.columns), axis=1)
+11138275,df_ora = pd.read_sql('select * from user_objects', con=ora_conn)    
+11287278,df1 = df.ix[0,0:2].copy() 
+11346337,df = pd.DataFrame({'$a':[1,2], '$b': [10,20]})
+11354850,df = df.rename(columns={'oldName1': 'newName1', 'oldName2': 'newName2'})
+11362056,paramdata.index
+11531402,df[df['A'].str.contains("hello")]
+11711637,pd.set_option('display.height', 1000)
+12098586,df[df['A'].isin([3, 6])]
+12525836,df_norm.max() - df_norm.min()
+12555510,df1 = df1.assign(e=p.Series(np.random.randn(sLength)).values)
+12681217,                    for _, row in a.iterrows()]).reset_index()
+13148611,cols = df.columns.tolist()
+13295801,df.fillna(0)
+13434501,df = pd.DataFrame(np.random.randn(10,3))
+13682381,data['result'] = data['result'].map(lambda x: x.lstrip('+-').rstrip('aAbBcC'))
+13704307,dt = datetime.utcnow()
+13786327,df_ = pd.DataFrame(index=index, columns=columns)
+13842286,df.xs('C')['x']=10
+13851602,df[df['column name'].map(len) < 2]
+14508355,df.columns = df.columns.get_level_values(0)
+14661768,df.drop(df.index[[1,3]])
+14734627,gb.get_group('foo')
+14745484,df = pd.DataFrame(df.row.str.split(' ',1).tolist(),
+14900065,df4 = df3.drop_duplicates(subset='rownum', keep='last')
+14946246,grp = df.groupby('A')
+15252012,pd.read_csv("ragged.csv", names=my_cols, engine='python')
+15362700,df = pd.DataFrame({'x' : [1, 2, 3, 4], 'y' : [4, 5, 6, 7]})
+15411596,table.groupby('YEARMONTH').CLIENTCODE.nunique()
+15705958,df.groupby(['Mt'], sort=False)['count'].max()
+15772263,df.resample("1d").sum().fillna(0).rolling(window=3, min_periods=1).mean()
+15943975,df = pd.DataFrame(np.arange(9).reshape(3,3))
+16104482,df.iloc[[2]]
+16354730,df['Value'] = df.apply(lambda row: my_test(row['a'], row['c']), axis=1)
+16597375,df.append(data)
+16729808,sub_df.iloc[0]
+16735476,df.convert_objects(convert_numeric=True)
+16923367,df.to_csv(file_name, sep='\t')
+17063653,df = xl.parse("Sheet1")
+17071908,df = df.set_index(['B'])
+17095620,pd.DataFrame({'from': changed_from, 'to': changed_to}, index=changed.index)
+17098736,df = pd.read_pickle(file_name)
+17134750,df['col'] = pd.to_datetime(df['col'])
+17141755,df.sort_values(['a', 'b'], ascending=[True, False])
+17242374,df.index.values
+17531025,df = pd.read_csv('foo.csv', index_col=0)
+17619032,df.sort_values(['c1','c2'], ascending=[False,True])
+17682662,df[df.c > 0.5][['b', 'e']].values
+17682726,df.loc[df['c']>0.5,['a','d']].values
+17729985,d.sales = d.sales.replace(23, 24)
+17813222,df.plot(x='col_name_1', y='col_name_2', style='o')
+17841294,df.groupby('A').apply(lambda x: x.sum())
+17950531,df['A'].apply(str)
+18023468,df.index.name
+18062521,s1 = pd.Series([1, 2], index=['A', 'B'], name='s1')
+18129082,data = pd.read_csv('file1.csv', error_bad_lines=False)
+18327852,myseries[myseries == 7].index[0]
+18431417,df.fillna(-1)
+18695700,df.set_index('id').to_dict()
+18837389,s.reset_index()
+18942558,df['Col3'] = (df['Col2'] <= 1).astype(int)
+19237920,df[['Time', 'Product']].query('Product == p_id and Month < mn and Year == yr')
+19324591,idx = pd.date_range('09-01-2013', '09-30-2013')
+19378497,dataframe["period"] = dataframe["Year"].map(str) + dataframe["quarter"]
+19385591,df[['col1', 'col2', 'col3', 'col4']].groupby(['col1', 'col2']).agg(['mean', 'count'])
+19483025,list(my_dataframe.columns.values)
+19851521,df1 = df.set_index('A')
+19960116,df.countries.isin(countries)
+19961557,df.pivot(index=0, columns=1, values=2)
+20084895,Series(df.values.ravel()).unique()
+20221655,data_filtered.to_excel(writer, "Main", cols=['Diff1', 'Diff2'])
+20461206,df.reset_index(level=0, inplace=True)
+20491748,df = df.reset_index(drop=True)
+20868446,Series.rename
+21232849,    df = pd.read_csv(file_,index_col=None, header=0)
+21291622,df.a = df.a.astype(float)
+21463854,data['amount'] = data["amount"].fillna(data.groupby("num")["amount"].transform("mean"))
+21800319,df[df['BoolCol'] == True].index.tolist()
+22006514,df.to_json()
+22341390,dfList = df['one'].tolist()
+22391554,df['a'].value_counts()
+22475141,df = pd.DataFrame([[1, 2.3456, 'c', 'd', 78]], columns=list("ABCDE"))
+23307361,w['female'] = w['female'].map({'female': 1, 'male': 0})
+23749057,df['a'].values.tolist()
+24147363,df = pd.DataFrame(np.random.randn(100, 2))
+24793359,numpyMatrix = df.as_matrix()
+25254087,df = pd.DataFrame({'foo':list('ABC')}, index=[0,2,1])
+25376997,df.loc[len(df)]=['8/19/2014','Jun','Fly','98765'] 
+25748826,df = pd.DataFrame({'a': [1,2,3], 'b': [2,3,4], 'c':['dd','ee','ff'], 'd':[5,9,1]})
+25962187,for chunk in pd.read_csv(filename, chunksize=chunksize):
+26266451,s.isnull().sum()
+26301947,pd.set_option('display.max_colwidth', -1)
+27791362,df = pd.read_csv(StringIO(csv),
+28648923,df = pd.DataFrame(a, columns=['col1','col2','col3'])
+28902170,df2 = pd.DataFrame(data = {'col1' : [2, 3,4], 'col2' : [11, 12,13]})
+29530601,df.isnull().values.any()
+30512931,df_final = reduce(lambda left,right: pd.merge(left,right,on='name'), dfs)
+30691921,with pd.option_context('display.max_rows', None, 'display.max_columns', 3):
+32801170,groupby_object = df[['col1', 'col2', 'col3', 'col4']]\
+34272155,df.drop_duplicates(subset=['A', 'C'], keep=False)
+34297689,df3 = df3[~df3.index.duplicated(keep='first')]
+36572039,df.read_csv(filename ,  index = False)  
+39358924,df['AB'].str.split(' ', 1, expand=True)
+44736467,df.loc[:, 'foo':'sat']
